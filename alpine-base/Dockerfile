@@ -2,7 +2,7 @@ FROM alpine:3.1
 MAINTAINER Scott Mebberson <scott@scottmebberson.com>
 
 # Add commonly used packages
-RUN apk add --update curl bind-tools && \
+RUN apk add --update bind-tools && \
     rm -rf /var/cache/apk/*
 
 # Add s6-overlay
