@@ -1,5 +1,0 @@
-#!/usr/bin/execlineb -S0
-if { s6-test $# -ne 0 }
-if { s6-test ${1} -eq 256 }
-
-consul leave
