@@ -1,6 +1,8 @@
 {
-    "node_name": "agent-consul-web-ui",
     "data_dir": "/data",
     "ui_dir": "/ui",
-    "client_addr": "0.0.0.0"
+    "addresses": {
+        "http": "0.0.0.0"
+    },
+    "leave_on_terminate": true
 }

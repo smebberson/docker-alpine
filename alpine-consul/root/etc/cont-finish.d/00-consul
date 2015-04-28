@@ -1,3 +1,5 @@
 #!/bin/sh
 
-exec s6-setuidgid consul consul leave;
+HOSTNAME=`hostname`
+
+exec s6-setuidgid consul consul force-leave ${HOSTNAME};
