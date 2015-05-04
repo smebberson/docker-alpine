@@ -1,0 +1,3 @@
+
+# run the user-nodejs image
+docker run --rm --name user-nodejs smebberson/user-nodejs

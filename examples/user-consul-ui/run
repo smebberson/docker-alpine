@@ -1,0 +1,3 @@
+
+# run the user-consul-ui image
+docker run --rm --name user-consul-ui --link user-consul:consul-agent -p 8500:8500 smebberson/user-consul-ui

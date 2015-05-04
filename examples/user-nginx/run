@@ -1,0 +1,3 @@
+
+# run the user-nginx image
+docker run --rm --name user-nginx -p 80:80 smebberson/user-nginx
