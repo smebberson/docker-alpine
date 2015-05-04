@@ -11,6 +11,7 @@ The following describes the containers that are available and there inheritance 
 | alpine-base
 ├─ alpine-consul
 |  └─ alpine-consul-ui
+|  └─ alpine-consul-base
 ├─ alpine-nginx
 |  └─ alpine-nginx-nodejs
 ├─ alpine-nodejs
@@ -26,6 +27,10 @@ An example of inheriting from this container and running it [can be found here](
 ### alpine-consul
 
 This image inherits from alpine-base and adds [Consul][consul] into the mix. By default, it's setup as a consul server (with a bootstrap-expect of 1), so it will need some customisation. [Read here](https://github.com/smebberson/docker-alpine/tree/master/alpine-consul) for more information. An example of inheriting from this container and running Consul [can be found here](https://github.com/smebberson/docker-alpine/tree/master/examples/user-consul).
+
+### alpine-consul-base
+
+This image inherits from alpine-consul and is designed specifically to be inherited from, to create other images which require a work Consul setup. Consul is setup to run in agent mode, it expects one linked container called `consul-agent` and will automatically join to that ip. [Read here](https://github.com/smebberson/docker-alpine/tree/master/alpine-consul-base) for more information.
 
 ### alpine-consul-ui
 
