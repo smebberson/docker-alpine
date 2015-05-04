@@ -12,7 +12,8 @@ The following describes the containers that are available and there inheritance 
 ├─ alpine-consul
 |  ├─ alpine-consul-ui
 |  ├─ alpine-consul-base
-|  |  └─ alpine-consul-nodejs
+|  |  ├─ alpine-consul-nodejs
+|  |  └─ alpine-consul-nginx
 ├─ alpine-nginx
 |  └─ alpine-nginx-nodejs
 ├─ alpine-nodejs
@@ -36,6 +37,10 @@ This image inherits from alpine-consul and is designed specifically to be inheri
 ### alpine-consul-nodejs
 
 This image inherits from alpine-consul-base and is is perfect if you're looking to run a Node.js application within a Docker setup and wanting to benefit from Consul for service registration and discovery. [Read here](https://github.com/smebberson/docker-alpine/tree/master/alpine-consul-nodejs) for more information. An example of inheriting from this container and running a Node.js website [can be found here](https://github.com/smebberson/docker-alpine/tree/master/examples/user-consul-nodejs).
+
+### alpine-consul-nginx
+
+This image inherits from alpine-consul-base and is is perfect if you're looking to run Nginx within a Docker setup and wanting to benefit from Consul for service registration and discovery. [Read here](https://github.com/smebberson/docker-alpine/tree/master/alpine-consul-nginx) for more information. An example of inheriting from this container and running Nginx [can be found here](https://github.com/smebberson/docker-alpine/tree/master/examples/user-consul-nginx).
 
 ### alpine-consul-ui
 

@@ -1,0 +1,1 @@
+docker build -t smebberson/alpine-consul-nginx /vagrant/alpine-consul-nginx

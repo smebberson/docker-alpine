@@ -1,0 +1,1 @@
+docker build -t smebberson/user-consul-nginx /vagrant/examples/user-consul-nginx
