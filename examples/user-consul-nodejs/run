@@ -1,0 +1,3 @@
+
+# run the user-consul-nodejs image
+docker run --rm --name user-consul-nodejs --link user-consul:consul-agent -p 4000:4000 smebberson/user-consul-nodejs
