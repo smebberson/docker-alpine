@@ -1,9 +1,6 @@
-#!/bin/sh
-
-# Retrieve the hostname
-HOSTNAME=`hostname`
+#!/usr/bin/with-contenv sh
 
 # Bind to the external (LAN) IP
-BIND=`getent hosts $HOSTNAME | awk '{print $1}'`
+BIND=`getent hosts ${HOSTNAME} | awk '{print $1}'`
 
 exec s6-env GOMAXPROCS=2 s6-setuidgid consul consul agent -config-dir /etc/consul.d/bootstrap -bind $BIND;
