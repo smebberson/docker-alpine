@@ -59,6 +59,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # configuration step 7: setup environment variables
   config.vm.provision "shell", path: "vagrant/env.sh"
 
+  # configuration step 8: setup, ready for development
+  config.vm.provision "shell", path: "vagrant/development.sh"
+
   # configuration step 8: clean-up!
   config.vm.provision "shell", path: "vagrant/clean.sh"
 
