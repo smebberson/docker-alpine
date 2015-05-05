@@ -13,12 +13,12 @@ RUN apk add --update go git gcc musl-dev && \
     rm -rf /var/cache/apk/* && \
     addgroup consul && \
     adduser -D -G consul consul && \
-    mkdir -p /data && \
-    chown -R consul:consul /data
+    mkdir -p /data/consul && \
+    chown -R consul:consul /data/consul
 
 # Add the files
 ADD root /
 
-VOLUME ["/data"]
+VOLUME ["/data/consul"]
 
 EXPOSE 8300 8301 8301/udp 8302 8302/udp 8400 53 53/udp
