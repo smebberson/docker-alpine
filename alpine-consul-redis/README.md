@@ -1,11 +1,13 @@
-alpine-redis
-============
+alpine-consul-redis
+===================
 
-An image for using [redis][redis], bundled with Alpine Linux and s6.
+An image for using [redis][redis], bundled with [Alpine Linux][alpinelinux] and [s6][s6] and [Consul][consul].
 
-**_Yet another container for running nginx?_**
+This image is perfect if you're looking to run redis within a Docker setup and wanting to benefit from Consul for service registration and discovery.
 
-Yes, but this one is built from [smebberson/alpine-base][alpinebase] that contains [s6][s6] for process management. Small, fast and with s6.
+**_Yet another container for running redis?_**
+
+Yes, but this one is built from [smebberson/alpine-consul-base][alpineconsulbase] that contains [s6][s6] for process management, and Consul for service registration and discovery. Small, fast and flexible.
 
 _**Aren't you only supposed to run one process per container?**_
 
@@ -21,9 +23,9 @@ In all of these instances, there is one primary services and secondary support s
 Usage
 -----
 
-To use this image include `FROM smebberson/alpine-redis` at the top of your `Dockerfile`, or simply `docker run --name redis smebberson/alpine-redis`.
+To use this image include `FROM smebberson/alpine-consul-redis` at the top of your `Dockerfile`, or simply `docker run --name redis --link alpine-consul:consul-agent smebberson/alpine-consul-redis`.
 
-Redis logs (access and error logs) are automatically streamed to stdout.
+You need to a link to another container running Consul, so this container can join the cluster. It should have a link name of `consul-agent`.
 
 Customisation
 -------------
@@ -41,6 +43,12 @@ To update the configuration:
 
 Redis will start and load the config at `/etc/redis.conf`, and then load `/etc/redis-local.conf` and apply any overrides.
 
+### Consul service registration
+
+This container is automatically configured to register itself with Consul, as the `redis` service operating on port `6379`. It comes with a script `/usr/bin/redis-check`, that is wired up to a Consul service health check.
+
+Any of these files can be changed in your image, as required to customise the setup.
+
 [s6]: http://www.skarnet.org/software/s6/
 [logentries]: https://logentries.com/
 [loggly]: https://www.loggly.com/
@@ -48,6 +56,6 @@ Redis will start and load the config at `/etc/redis.conf`, and then load `/etc/r
 [drsp]: https://docs.docker.com/reference/commandline/cli/#restart-policies
 [redis]: http://redis.io/
 [haproxy]: http://www.haproxy.org/
-[alpinebase]: https://registry.hub.docker.com/u/smebberson/alpine-base/
+[alpineconsulbase]: https://registry.hub.docker.com/u/smebberson/alpine-consul-base/
 [s6]: http://www.skarnet.org/software/s6/
-[redisconfig]: https://github.com/smebberson/docker-alpine/blob/master/alpine-redis/root/etc/redis.conf
+[redisconfig]: https://github.com/smebberson/docker-alpine/blob/master/alpine-consul-redis/root/etc/redis.conf
