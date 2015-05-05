@@ -1,0 +1,12 @@
+{
+    "service": {
+        "name": "nginx",
+        "port": 80,
+        "checks": [
+            {
+                "script": "wget -s http://localhost:80/ping > /dev/null 2>&1 || exit 2",
+                "interval": "5s"
+            }
+        ]
+    }
+}

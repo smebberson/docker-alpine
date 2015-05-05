@@ -1,0 +1,14 @@
+body {
+    font-family: Tahoma, Verdana, Arial, sans-serif;
+    color: #FFFFFF;
+    background: #98DDC1;
+}
+
+h1 {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    right: 0px;
+    bottom: 50%;
+    left: 0px;
+}
