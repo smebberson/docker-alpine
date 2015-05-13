@@ -7,9 +7,9 @@ ENV CONSUL_VERSION=0.5.0
 ADD https://dl.bintray.com/mitchellh/consul/${CONSUL_VERSION}_web_ui.zip /tmp/consul_web_ui.zip
 RUN cd /tmp && \
     unzip consul_web_ui.zip && \
-    mkdir /ui && \
+    mkdir -p /ui /data/serf && \
     mv dist/* /ui && \
-    chown -R consul:consul /ui && \
+    chown -R consul:consul /ui /data/serf && \
     rm consul_web_ui.zip
 
 # Add the files
