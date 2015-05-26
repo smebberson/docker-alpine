@@ -1,7 +1,7 @@
 FROM smebberson/alpine-base
 MAINTAINER Scott Mebberson <scott@scottmebberson.com>
 
-ENV CONSUL_VERSION=0.5.0 GOMAXPROCS=2
+ENV CONSUL_VERSION=0.5.2 GOMAXPROCS=2
 
 # Download and install Consul
 RUN apk add --update go git gcc musl-dev && \
