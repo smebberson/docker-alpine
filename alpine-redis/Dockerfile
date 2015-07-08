@@ -1,8 +1,6 @@
 FROM smebberson/alpine-base
 MAINTAINER Scott Mebberson <scott@scottmebberson.com>
 
-ENV S6_BEHAVIOUR_IF_STAGE2_FAILS=1
-
 # Install redis
 RUN apk add --update redis && \
     rm -rf /var/cache/apk/* && \

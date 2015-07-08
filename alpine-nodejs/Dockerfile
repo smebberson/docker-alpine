@@ -1,6 +1,7 @@
 FROM smebberson/alpine-base
 MAINTAINER Scott Mebberson <scott@scottmebberson.com>
 
-# Install Node.js
-RUN apk add --update nodejs git && \
-    rm -rf /var/cache/apk/*
+# Install Node.js, and the latest version of npm (and Python in case any npm modules require building)
+RUN apk add --update nodejs git python make && \
+    rm -rf /var/cache/apk/* && \
+    npm install -g npm
