@@ -1,0 +1,6 @@
+#!/usr/bin/with-contenv sh
+
+./set-user-account
+
+ulimit -n 1024
+exec rabbitmq-server
