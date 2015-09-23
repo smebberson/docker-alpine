@@ -1,6 +1,8 @@
 alpine-rabbitmq
 ===================
 
+__Please note__ this image is using Alpine's Erlang packages which are in its [edge](http://wiki.alpinelinux.org/wiki/Edge) (testing) repo!
+
 An image for using [RabbitMQ][RabbitMQ], bundled with [Alpine Linux][alpinelinux] and [s6][s6].
 
 Usage
