@@ -5,9 +5,16 @@ This file contains all software versions, that correspond a version of this imag
 
 ## Latest
 
-Same as v1.0.0.
+Same as v1.1.0.
 
 Usage: `smebberson/alpine-base` or `smebberson/alpine-base:latest`.
+
+## v1.1.0
+
+- [alpinelinux](Alpine linux): v3.2
+- [s6-overlay][s6-overlay]: v1.14.0.4
+
+Usage: `smebberson/alpine-base:1.1.0`.
 
 ## v1.0.0
 
