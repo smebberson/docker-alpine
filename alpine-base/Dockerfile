@@ -6,7 +6,7 @@ RUN apk add --update bind-tools && \
     rm -rf /var/cache/apk/*
 
 # Add s6-overlay
-ENV S6_OVERLAY_VERSION v1.13.0.0
+ENV S6_OVERLAY_VERSION v1.14.0.4
 
 ADD https://github.com/just-containers/s6-overlay/releases/download/${S6_OVERLAY_VERSION}/s6-overlay-amd64.tar.gz /tmp/s6-overlay.tar.gz
 RUN tar xvfz /tmp/s6-overlay.tar.gz -C /
