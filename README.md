@@ -28,6 +28,8 @@ This image is the base for all containers. It contains Alpine Linux and s6 via s
 
 An example of inheriting from this container and running it [can be found here](https://github.com/smebberson/docker-alpine/tree/master/examples/user-alpine).
 
+Latest version is `1.1.0`, or `latest` ([VERSIONS.md](https://github.com/smebberson/docker-alpine/blob/upgrades/alpine-base/VERSIONS.md)).
+
 ### alpine-consul
 
 This image inherits from alpine-base and adds [Consul][consul] into the mix. By default, it's setup as a consul server (with a bootstrap-expect of 1), so it will need some customisation. [Read here](https://github.com/smebberson/docker-alpine/tree/master/alpine-consul) for more information. An example of inheriting from this container and running Consul [can be found here](https://github.com/smebberson/docker-alpine/tree/master/examples/user-consul).
