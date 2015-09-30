@@ -1,7 +1,7 @@
 alpine-base
 ===========
 
-This file contains all software versions, that correspond a version of this image itself.
+This file contains all software versions, that correspond to a version of this image itself.
 
 ## Latest
 
