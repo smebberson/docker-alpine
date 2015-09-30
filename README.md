@@ -76,6 +76,14 @@ This image inherits from alpine-base, and includes Node.js. You can [read about 
 
 This image inherits from alpine-base, and includes Redis. You can [read about using this image and customising it here](https://github.com/smebberson/docker-alpine/tree/master/alpine-redis).
 
+## Versioning
+
+Each image has it's own version and will be updated independently. All versions follow [semver](semver). If a software package or the operating system the image uses is updated, the level of update will be reflected in the new version number, for example:
+
+- if Alpine Linux is upgraded from 3.2 to 3.3, then the image version will receive a minor increment
+- if Alpine Linux is upgraded from 3.3 to 4, then the image version will receive a major increment
+- if s6-overlay is upgraded to the latest patch upgrade, and nginx is upgraded to the latest minor upgrade, then the image version will will receive a minor increment
+
 ## Setup
 
 Setup the vagrant machine by running `vagrant up --provider=vmware_fusion`. This will get you a VM running a pretty basic version of Ubuntu with:
@@ -87,3 +95,4 @@ Setup the vagrant machine by running `vagrant up --provider=vmware_fusion`. This
 [s6]: http://skarnet.org/software/s6/
 [s6overlay]: https://github.com/just-containers/s6-overlay
 [consul]: https://consul.io/
+[semver]: http://semver.org/
