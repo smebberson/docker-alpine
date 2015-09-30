@@ -28,7 +28,7 @@ This image is the base for all containers. It contains Alpine Linux and s6 via s
 
 An example of inheriting from this container and running it [can be found here](https://github.com/smebberson/docker-alpine/tree/master/examples/user-alpine).
 
-Latest version is `1.1.0`, or `latest` ([VERSIONS.md](https://github.com/smebberson/docker-alpine/blob/upgrades/alpine-base/VERSIONS.md)).
+Latest version is `1.1.0`, or `latest` ([VERSIONS.md](https://github.com/smebberson/docker-alpine/blob/master/alpine-base/VERSIONS.md)).
 
 ### alpine-consul
 
@@ -63,6 +63,8 @@ There are some configuration options which can be [read here](https://github.com
 ### alpine-nginx
 
 This image inherits from alpine-base, and includes nginx with a very basic configuration. You can [read about using this image and customising it here](https://github.com/smebberson/docker-alpine/tree/master/alpine-nginx). An example of inheriting from this container and running Nginx [can be found here](https://github.com/smebberson/docker-alpine/tree/master/examples/user-nginx).
+
+Latest version is `1.0.0`, or `latest` ([VERSIONS.md](https://github.com/smebberson/docker-alpine/blob/master/alpine-nginx/VERSIONS.md)).
 
 ### alpine-nginx-nodejs
 

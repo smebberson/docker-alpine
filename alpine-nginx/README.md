@@ -18,6 +18,13 @@ Hell no! The following are good examples of when multiple processes within one c
 
 In all of these instances, there is one primary services and secondary support services. When the secondary support services fail, they should be automatically restarted. When the primary service fails, the container itself should restart.
 
+Versions
+--------
+
+- `1.0.0`, `latest` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/faf86102b13d00784b9ae4c11727c5366d0e7907/alpine-nginx/Dockerfile)
+
+[See VERSIONS.md for image contents.](https://github.com/smebberson/docker-alpine/blob/master/alpine-nginx/VERSIONS.md)
+
 Usage
 -----
 
