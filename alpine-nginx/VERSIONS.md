@@ -13,6 +13,7 @@ Usage: `smebberson/alpine-nginx` or `smebberson/alpine-nginx:latest`.
 
 - [smebberson/alpine-base: v1.1.0][smebbersonalpinebase110]
 - [nginx][nginx]: v1.8.0
+- *breaking change*: nginx logs are now located at `/var/log/nginx/access.log` and `/var/log/nginx/error.log`
 
 Usage: `smebberson/alpine-nginx:2.0.0`.
 
