@@ -11,6 +11,14 @@ My scenario:
 - Nginx also proxies to my web-application (in another container).
 - Node.js listens for changes to the web-application container and reconfigures and restarts nginx.
 
+Versions
+--------
+
+- `1.0.0`, `latest` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/master/alpine-nginx-nodejs/VERSIONS.md)
+
+[See VERSIONS.md for image contents.](https://github.com/smebberson/docker-alpine/blob/master/alpine-nginx-nodejs/VERSIONS.md)
+
+
 Usage
 -----
 

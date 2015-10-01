@@ -70,6 +70,10 @@ Latest version is `2.0.0`, or `latest` ([VERSIONS.md](https://github.com/smebber
 
 This image inherits from alpine-nginx, and includes nginx and Node.js. This image is great if you want run nginx, but have Node.js do all of the configuration for Nginx. You can [read about using this image and customising it here](https://github.com/smebberson/docker-alpine/tree/master/alpine-nginx-nodejs).
 
+An example of inheriting from this container and running it [can be found here](https://github.com/smebberson/docker-alpine/tree/master/examples/user-nginx-nodejs).
+
+Latest version is `1.0.0`, or `latest` ([VERSIONS.md](https://github.com/smebberson/docker-alpine/blob/master/alpine-nginx-nodejs/VERSIONS.md)).
+
 ### alpine-nodejs
 
 This image inherits from alpine-base, and includes Node.js. You can [read about using this image and customising it here](https://github.com/smebberson/docker-alpine/tree/master/alpine-nodejs). An example of inheriting from this container and running a Node.js script [can be found here](https://github.com/smebberson/docker-alpine/tree/master/examples/user-nodejs).
