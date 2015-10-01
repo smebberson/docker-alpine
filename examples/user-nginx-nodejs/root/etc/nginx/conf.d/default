@@ -1,0 +1,29 @@
+server {
+    listen 80;
+    server_name "";
+
+    gzip on;
+    gzip_proxied any;
+    gzip_types text/plain text/xml text/css application/x-javascript;
+    gzip_vary on;
+    gzip_disable "MSIE [1-6]\.(?!.*SV1)";
+
+    location /favicon.ico {
+        log_not_found off;
+    }
+
+    location ~ ^/(css/) {
+        root /usr/html;
+        expires -1;
+    }
+
+    location / {
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header Host $http_host;
+        proxy_set_header X-Nginx-Proxy true;
+
+        proxy_pass http://localhost:4000;
+        proxy_redirect off;
+    }
+}

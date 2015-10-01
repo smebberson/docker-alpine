@@ -1,0 +1,14 @@
+{
+  "name": "app",
+  "version": "1.0.0",
+  "description": "An example of a Node.js application fronted by Nginx.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "author": "Scott Mebberson",
+  "license": "ISC",
+  "dependencies": {
+    "node-static": "0.7.x"
+  }
+}
