@@ -1,7 +1,0 @@
-#!/usr/bin/execlineb -P
-
-redirfd -rnb 0 /var/run/s6/nginx-error-log-fifo
-s6-envuidgid -D 32768:32768 nobody
-s6-applyuidgid -U
-exec -c
-s6-log -bp -- t /var/log/nginx-error-logs

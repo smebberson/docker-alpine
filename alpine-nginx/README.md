@@ -30,10 +30,19 @@ Usage
 
 To use this image include `FROM smebberson/alpine-nginx` at the top of your `Dockerfile`, or simply `docker run -p 80:80 -p 443:443 --name nginx smebberson/alpine-nginx`.
 
-Nginx logs (access and error logs) aren't automatically streamed to stdout. To review the access log, run the following in another terminal window:
+Nginx logs (access and error logs) aren't automatically streamed to `stdout` and `stderr`. To review the logs, you can do one of two things:
+
+Run the following in another terminal window:
 
 ```
-docker exec -i nginx tail -f /var/run/nginx-access/logs/current
+docker exec -i nginx tail -f /var/log/nginx/access.log -f /var/log/nginx/error.log
+```
+
+or, in your `Dockerfile` symlink the Nginx logs to `stdout` and `stderr`:
+
+```
+RUN ln -sf /dev/stdout /var/log/nginx/access.log && \
+    ln -sf /dev/stderr /var/log/nginx/error.log
 ```
 
 Customisation
@@ -72,7 +81,7 @@ If you're running another process to keep track of something down-stream (for ex
 
 By default, if nginx crashes, the container will stop. This has been configured within `root/etc/services.d/nginx/finish`. This is so the host machine can handle any issues, and automatically restart it (the docker way, `docker run --autorestart`).
 
-If you don't want this to happen, simply replace the `root/etc/services.d/nginx/finish` with a different file in your image. I like to `ln -s /bin/true /root/etc/services.d/nginx/finish` in those instances.
+If you don't want this to happen, simply replace the `root/etc/services.d/nginx/finish` with a different file in your image. I like to `ln -s /bin/true /root/etc/services.d/nginx/finish` in those instances in which you don't need a finish script and want to have the service restarted by s6.
 
 ### Nginx configuration
 
