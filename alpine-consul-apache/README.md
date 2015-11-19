@@ -3,7 +3,7 @@ alpine-consul-apache
 
 An image for using [apache][apache], bundled with [Alpine Linux][alpinelinux] and [s6][s6] and [Consul][consul].
 
-This image is perfect if you're looking to run [apache] within a Docker setup and wanting to benefit from Consul for service registration and discovery. It's also very small clocking in at only ~34.5MB.
+This image is perfect if you're looking to run [apache] within a Docker setup and wanting to benefit from [Consul][consul] for service registration and discovery. It's also very small clocking in at only ~34.5MB.
 
 **_Yet another container for running apache?_**
 
@@ -30,7 +30,7 @@ Customisation
 
 This container comes setup as follows:
 
-- s6 will automatically start apache for you.
+- [s6][s6] will automatically start [apache][apache] for you.
 - If apache dies, so will the container.
 - [Consul][consul] service registration, and health check of the apache service.
 
