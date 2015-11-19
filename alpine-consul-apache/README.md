@@ -3,11 +3,11 @@ alpine-consul-apache
 
 An image for using [apache][apache], bundled with [Alpine Linux][alpinelinux] and [s6][s6] and [Consul][consul].
 
-This image is perfect if you're looking to run a Node.js application within a Docker setup and wanting to benefit from Consul for service registration and discovery. It's also very small clocking in at only ~31MB.
+This image is perfect if you're looking to run [apache] within a Docker setup and wanting to benefit from Consul for service registration and discovery. It's also very small clocking in at only ~34.5MB.
 
 **_Yet another container for running apache?_**
 
-Yes, but this one is built from [smebberson/alpine-consul-base][alpinebase] that contains [s6][s6] for process management, and Consul for service registration and discovery. Small, fast and flexible.
+Yes, but this one is built from [smebberson/alpine-consul-base][alpinebase] that contains [s6][s6] for process management, and [Consul][consul] for service registration and discovery. Small, fast and flexible.
 
 _**Aren't you only supposed to run one process per container?**_
 
@@ -32,7 +32,7 @@ This container comes setup as follows:
 
 - s6 will automatically start apache for you.
 - If apache dies, so will the container.
-- Consul service registration, and health check of the apache service.
+- [Consul][consul] service registration, and health check of the apache service.
 
 apache logs (access and error logs) are automatically streamed to stdout. A service of name `apache` is automatically setup within Consul, and a health check define to report availability of the service to Consul.
 
@@ -59,7 +59,7 @@ If you're running another process to keep track of something down-stream (for ex
 
 ### apache crash
 
-By default, if apache crashes, the container will stop. This has been configured within `root/etc/services.d/apache/finish`. This is so the host machine can handle any issues, and automatically restart it (the docker way, `docker run --autorestart`).
+By default, if [apache][apache] crashes, the container will stop. This has been configured within `root/etc/services.d/apache/finish`. This is so the host machine can handle any issues, and automatically restart it (the docker way, `docker run --autorestart`).
 
 If you don't want this to happen, simply replace the `root/etc/services.d/apache/finish` with a different file in your image. I like to `ln -s /bin/true /root/etc/services.d/apache/finish` in those instances.
 
@@ -80,8 +80,10 @@ exec /usr/sbin/apachectl -DFOREGROUND;
 
 ### Consul service registration
 
-By default the file at `/etc/consul.d/apache.json` will register an `apache` service, on port `80` with Consul. It also registers a 5s health check that reports on the availability of the service. If you'd like to configure perhaps more ports, or change the health check simply create a new file that meets the requirements of a [Consul service definition][consulservicedef] and add it (in your Dockerfile) to your image, replacing the already existing `apache.json`.
+By default the file at `/etc/consul.d/apache.json` will register an `apache` service, on port `80` with [Consul][consul]. It also registers a 5s health check that reports on the availability of the service. If you'd like to configure perhaps more ports, or change the health check simply create a new file that meets the requirements of a [Consul service definition][consulservicedef] and add it (in your Dockerfile) to your image, replacing the already existing `apache.json`.
 
+[alpinelinux]: https://www.alpinelinux.org/
+[consul]: https://consul.io/
 [s6]: http://www.skarnet.org/software/s6/
 [s6-built-statically]: https://github.com/smebberson/docker-ubuntu-base/blob/master/s6/s6-build
 [logentries]: https://logentries.com/
