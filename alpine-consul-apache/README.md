@@ -55,7 +55,7 @@ A basic apache configuration is supplied with this image. But it's easy to overw
 
 ### Restarting apache
 
-If you're running another process to keep track of something down-stream (for example, automatically updating [apache][apache] proxy settings when a down-stream application server (nodejs, php, etc) restarts) execute the command `s6-svc -h /etc/services.d/apache` to send a `SIGHUP` to apache and have it reload its configuration, launch new worker process(es) using this new configuration, while gracefully shutting down the old worker processes.
+[s6][s6] provides [s6-svc][s6-svc] command to control supervised processes. If you're running another process to keep track of something down-stream (for example, automatically updating [apache][apache] proxy settings when a down-stream application server (nodejs, php, etc) restarts) execute the command `s6-svc -h /etc/services.d/apache` to send a `SIGHUP` to apache and have it reload its configuration, launch new worker process(es) using this new configuration, while gracefully shutting down the old worker processes.
 
 ### apache crash
 
@@ -85,6 +85,7 @@ By default the file at `/etc/consul.d/apache.json` will register an `apache` ser
 [alpinelinux]: https://www.alpinelinux.org/
 [consul]: https://consul.io/
 [s6]: http://www.skarnet.org/software/s6/
+[s6-svc]: http://skarnet.org/software/s6/s6-svc.html
 [s6-built-statically]: https://github.com/smebberson/docker-ubuntu-base/blob/master/s6/s6-build
 [logentries]: https://logentries.com/
 [loggly]: https://www.loggly.com/
