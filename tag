@@ -2,20 +2,17 @@
 
 # This is a simple and portable (POSIX) shell script
 
-VERSION=""
-TAG="alpine-nginx-nodejs"
-TRIGGER_URL="https://registry.hub.docker.com/u/smebberson/alpine-nginx-nodejs/trigger/426798eb-bef7-4926-b9f4-cea15301171b/"
-
 # output information about how to use this script
 usage()
 {
     echo ""
-    echo "Use this to create a remote build on Docker Hub."
+    echo "Use this to tag this image to a specific version."
     echo ""
     echo "./tag -v [version] -c [\"Comment\"]"
     echo ""
     echo "\t-h --help"
-    echo "\t-v [version] The new version (without v) to append to 'alpine-nginx-nodejs-v' to create the complete tag name 'alpine-nginx-nodejs-v1.0.0' that resides within Git.".
+    echo "\t-v [version] The new version (without v) to append to 'alpine-base-v' to create 'alpine-base-v1.0.0'".
+    echo "\t-c \"[comment]\" The comment to annotate the tag with".
     echo ""
     echo ""
 }
@@ -37,6 +34,10 @@ do
             VERSION=$OPTARG
             ;;
 
+        c)
+            COMMENT=$OPTARG
+            ;;
+
         ?)
             usage
             exit 1
@@ -46,9 +47,9 @@ done
 
 TAG="$TAG-v$VERSION"
 
-if test "$VERSION" != ""; then
-    curl -vH "Content-Type: application/json" --data '{"source_type": "Tag", "source_name": "$TAG"}' -X POST $TRIGGER_URL
-    echo "\n"
+if test "$VERSION" != "" && test "$COMMENT" != ""; then
+    git tag -a "$TAG" -m \""$COMMENT"\"
+    git push origin "$TAG"
     exit
 fi
 
