@@ -5,15 +5,25 @@ This file contains all software versions, that correspond to a version of this i
 
 ## Latest
 
-Same as v2.1.0.
+Same as v2.1.1.
 
 Usage: `smebberson/alpine-nginx` or `smebberson/alpine-nginx:latest`.
+
+## v2.1.1
+
+- [smebberson/alpine-base: v1.2.0][smebbersonalpinebase120]
+- [nginx][nginx]: v1.8.0
+
+Improvements:
+
+- Updates `finish` script to latest best practice for bringing down a container on crash.
+
+Usage: `smebberson/alpine-nginx:2.1.1`.
 
 ## v2.1.0
 
 - [smebberson/alpine-base: v1.2.0][smebbersonalpinebase120]
 - [nginx][nginx]: v1.8.0
-- *breaking change*: nginx logs are now located at `/var/log/nginx/access.log` and `/var/log/nginx/error.log`
 
 Usage: `smebberson/alpine-nginx:2.1.0`.
 
