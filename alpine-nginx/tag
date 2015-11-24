@@ -1,9 +1,0 @@
-#!/usr/bin/env sh
-
-# This is a simple and portable (POSIX) shell script
-
-VERSION=""
-TAG="alpine-nginx"
-COMMENT=""
-
-. /vagrant/tag

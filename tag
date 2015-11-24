@@ -2,6 +2,10 @@
 
 # This is a simple and portable (POSIX) shell script
 
+VERSION=""
+IMAGE=""
+COMMENT=""
+
 # output information about how to use this script
 usage()
 {
@@ -11,8 +15,9 @@ usage()
     echo "./tag -v [version] -c [\"Comment\"]"
     echo ""
     echo "\t-h --help"
-    echo "\t-v [version] The new version (without v) to append to 'alpine-base-v' to create 'alpine-base-v1.0.0'".
-    echo "\t-c \"[comment]\" The comment to annotate the tag with".
+    echo "\t-i [image] The image to tag, i.e. alpine-base"
+    echo "\t-v [version] The version to append to the tag create '[alpine-base][-v][1.0.0]'"
+    echo "\t-c \"[comment]\" The comment to annotate the tag with"
     echo ""
     echo ""
 }
@@ -22,12 +27,16 @@ if [ "$1" = "--help" ]; then
     exit
 fi
 
-while getopts "hv:c:" OPTION
+while getopts "hi:v:c:" OPTION
 do
     case $OPTION in
         h)
             usage
             exit
+            ;;
+
+        i)
+            IMAGE=$OPTARG
             ;;
 
         v)
@@ -45,9 +54,9 @@ do
     esac
 done
 
-TAG="$TAG-v$VERSION"
+TAG="$IMAGE-v$VERSION"
 
-if test "$VERSION" != "" && test "$COMMENT" != ""; then
+if test "$IMAGE" != "" && test "$VERSION" != "" && test "$COMMENT" != ""; then
     git tag -a "$TAG" -m \""$COMMENT"\"
     git push origin "$TAG"
     exit
