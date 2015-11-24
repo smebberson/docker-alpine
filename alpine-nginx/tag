@@ -21,7 +21,7 @@ usage()
     echo ""
 }
 
-if test "$1" == "--help"; then
+if [ "$1" = "--help" ]; then
     usage
     exit
 fi
