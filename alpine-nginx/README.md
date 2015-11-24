@@ -21,7 +21,8 @@ In all of these instances, there is one primary services and secondary support s
 Versions
 --------
 
-- `2.0.0`, `latest` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/d40c123d03bcf6d658ba003dcff78a062f0a3ba0/alpine-nginx/Dockerfile)
+- `2.1.0`, `latest` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/master/alpine-nginx/Dockerfile)
+- `2.0.0` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/d40c123d03bcf6d658ba003dcff78a062f0a3ba0/alpine-nginx/Dockerfile)
 - `1.0.0` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/faf86102b13d00784b9ae4c11727c5366d0e7907/alpine-nginx/Dockerfile)
 
 [See VERSIONS.md for image contents.](https://github.com/smebberson/docker-alpine/blob/master/alpine-nginx/VERSIONS.md)
