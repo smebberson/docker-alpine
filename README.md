@@ -50,6 +50,8 @@ This image inherits from alpine-consul-base and is perfect if you're looking to 
 
 This image inherits from alpine-consul-base and is perfect if you're looking to run Nginx within a Docker setup and wanting to benefit from Consul for service registration and discovery. [Read here](https://github.com/smebberson/docker-alpine/tree/master/alpine-consul-nginx) for more information. An example of inheriting from this container and running nginx [can be found here](https://github.com/smebberson/docker-alpine/tree/master/examples/user-consul-nginx).
 
+Latest version is `1.0.0`, or `latest` ([VERSIONS.md](https://github.com/smebberson/docker-alpine/blob/master/alpine-consul-nginx/VERSIONS.md)).
+
 ### alpine-consul-nginx-nodejs
 
 This image inherits from alpine-consul-nginx and is perfect if you're looking to run nginx to proxy to a Node.js application, or if you're wanting to run nginx as a load balancer (proxying to external containers) and using Node.js for nginx configuration. [Read here](https://github.com/smebberson/docker-alpine/tree/master/alpine-consul-nginx-nodejs) for more information. An example of inheriting from this container and running nginx with Node.js [can be found here](https://github.com/smebberson/docker-alpine/tree/master/examples/user-consul-nginx-nodejs).
