@@ -9,7 +9,7 @@ The following describes the containers that are available and there inheritance 
 
 ```
 | alpine-base
-| alpine-apache
+├─ alpine-apache
 ├─ alpine-consul
 |  ├─ alpine-consul-ui
 |  ├─ alpine-consul-base
@@ -26,11 +26,11 @@ The following describes the containers that are available and there inheritance 
 
 ### alpine-base
 
-This image is the base for all containers. It contains Alpine Linux and s6 via s6-overlay. It is super small and does nothing else. It clocks in at a tiny 11.9 MB.
+This image is the base for all containers. It contains Alpine Linux and s6 via s6-overlay. It is super small and does nothing else. It clocks in at a tiny 11.5 MB.
 
 An example of inheriting from this container and running it [can be found here](https://github.com/smebberson/docker-alpine/tree/master/examples/user-alpine).
 
-Latest version is `1.1.0`, or `latest` ([VERSIONS.md](https://github.com/smebberson/docker-alpine/blob/master/alpine-base/VERSIONS.md)).
+Latest version is `1.2.0`, or `latest` ([VERSIONS.md](https://github.com/smebberson/docker-alpine/blob/master/alpine-base/VERSIONS.md)).
 
 ### alpine-apache
 
@@ -42,9 +42,13 @@ Latest version is `1.0.0`, or `latest` ([VERSIONS.md](https://github.com/smebber
 
 This image inherits from alpine-base and adds [Consul][consul] into the mix. By default, it's setup as a consul server (with a bootstrap-expect of 1), so it will need some customisation. [Read here](https://github.com/smebberson/docker-alpine/tree/master/alpine-consul) for more information. An example of inheriting from this container and running Consul [can be found here](https://github.com/smebberson/docker-alpine/tree/master/examples/user-consul).
 
+Latest version is `1.1.0`, or `latest` ([VERSIONS.md](https://github.com/smebberson/docker-alpine/blob/master/alpine-consul/VERSIONS.md)).
+
 ### alpine-consul-base
 
 This image inherits from alpine-consul and is designed specifically to be inherited from, to create other images which require a work Consul setup. Consul is setup to run in agent mode, it expects one linked container called `consul-agent` and will automatically join to that ip. [Read here](https://github.com/smebberson/docker-alpine/tree/master/alpine-consul-base) for more information.
+
+Latest version is `1.0.0`, or `latest` ([VERSIONS.md](https://github.com/smebberson/docker-alpine/blob/master/alpine-consul-base/VERSIONS.md)).
 
 ### alpine-consul-apache
 
@@ -57,6 +61,8 @@ This image inherits from alpine-consul-base and is perfect if you're looking to 
 ### alpine-consul-nginx
 
 This image inherits from alpine-consul-base and is perfect if you're looking to run Nginx within a Docker setup and wanting to benefit from Consul for service registration and discovery. [Read here](https://github.com/smebberson/docker-alpine/tree/master/alpine-consul-nginx) for more information. An example of inheriting from this container and running nginx [can be found here](https://github.com/smebberson/docker-alpine/tree/master/examples/user-consul-nginx).
+
+Latest version is `1.0.0`, or `latest` ([VERSIONS.md](https://github.com/smebberson/docker-alpine/blob/master/alpine-consul-nginx/VERSIONS.md)).
 
 ### alpine-consul-nginx-nodejs
 
@@ -76,7 +82,7 @@ There are some configuration options which can be [read here](https://github.com
 
 This image inherits from alpine-base, and includes nginx with a very basic configuration. You can [read about using this image and customising it here](https://github.com/smebberson/docker-alpine/tree/master/alpine-nginx). An example of inheriting from this container and running Nginx [can be found here](https://github.com/smebberson/docker-alpine/tree/master/examples/user-nginx).
 
-Latest version is `2.0.0`, or `latest` ([VERSIONS.md](https://github.com/smebberson/docker-alpine/blob/master/alpine-nginx/VERSIONS.md)).
+Latest version is `2.1.1`, or `latest` ([VERSIONS.md](https://github.com/smebberson/docker-alpine/blob/master/alpine-nginx/VERSIONS.md)).
 
 ### alpine-nginx-nodejs
 
@@ -84,7 +90,7 @@ This image inherits from alpine-nginx, and includes nginx and Node.js. This imag
 
 An example of inheriting from this container and running it [can be found here](https://github.com/smebberson/docker-alpine/tree/master/examples/user-nginx-nodejs).
 
-Latest version is `1.0.0`, or `latest` ([VERSIONS.md](https://github.com/smebberson/docker-alpine/blob/master/alpine-nginx-nodejs/VERSIONS.md)).
+Latest version is `2.1.1`, or `latest` ([VERSIONS.md](https://github.com/smebberson/docker-alpine/blob/master/alpine-nginx-nodejs/VERSIONS.md)).
 
 ### alpine-nodejs
 
