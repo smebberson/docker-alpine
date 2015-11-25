@@ -1,5 +1,4 @@
-alpine-nginx
-============
+# alpine-consul
 
 This file contains all software versions, that correspond to a version of this image itself. Read more about the [alpine-consul image here][alpineconsul].
 
