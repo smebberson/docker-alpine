@@ -11,7 +11,7 @@ Usage: `smebberson/alpine-apache` or `smebberson/alpine-apache:latest`.
 
 ## v1.0.0
 
-- [smebberson/alpine-base: v1.1.0][smebbersonalpinebase110]
+- [smebberson/alpine-base: v1.2.0][smebbersonalpinebase120]
 - [apache][apache]: latest at the time of build
 
 Usage: `smebberson/alpine-apache:1.0.0`.

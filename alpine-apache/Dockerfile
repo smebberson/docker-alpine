@@ -1,11 +1,9 @@
-FROM smebberson/alpine-base:1.1.0
+FROM smebberson/alpine-base:1.2.0
 MAINTAINER Scott Mebberson <scott@scottmebberson.com>
 
 # Install apache
 RUN apk add --update apache2 apache2-utils && \
-    rm -rf /var/cache/apk/* && \
-    ln -sf /dev/stdout /var/log/apache2/access.log && \
-    ln -sf /dev/stderr /var/log/apache2/error.log
+    rm -rf /var/cache/apk/*
 
 # Add the files
 ADD root /
