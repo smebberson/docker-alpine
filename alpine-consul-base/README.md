@@ -6,7 +6,8 @@ This image is designed to be extended from, with specific services added to it v
 
 ## Versions
 
-- `1.0.0`, `latest` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/master/alpine-consul-base/Dockerfile)
+- `1.1.0`, `latest` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/master/alpine-consul-base/Dockerfile)
+- `1.0.0` [(Dockerfile)](https://github.com/smebberson/docker-alpine/tree/03d6d010c86aae573cd9671014fb2e7bee60f8cd/alpine-consul-base)
 
 [See VERSIONS.md for image contents.](https://github.com/smebberson/docker-alpine/blob/master/alpine-consul-base/VERSIONS.md)
 
