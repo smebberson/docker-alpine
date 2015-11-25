@@ -1,5 +1,4 @@
-alpine-consul
-=============
+# alpine-consul
 
 An image for using [consul][Consul] within Docker containers, bundled with Alpine Linux and [s6][s6].
 
@@ -18,8 +17,14 @@ Hell no! The following are good examples of when multiple processes within one c
 
 In all of these instances, there is one primary services and secondary support services. When the secondary support services fail, they should be automatically restarted. When the primary service fails, the container itself should restart.
 
-Usage
------
+## Versions
+
+- `1.1.0`, `latest` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/master/alpine-consul/Dockerfile)
+- `1.0.0` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/df6ba86de86a325fd3544bedfbdf932829feb9d8/alpine-consul/Dockerfile)
+
+[See VERSIONS.md for image contents.](https://github.com/smebberson/docker-alpine/blob/master/alpine-consul/VERSIONS.md)
+
+## Usage
 
 To use this image include `FROM smebberson/alpine-consul` at the top of your `Dockerfile`, or simply `docker run --name consul smebberson/alpine-consul`.
 
@@ -38,8 +43,7 @@ This setup serves the purpose of a single Consul agent running on a host, mainly
 
 Although easily customisable, this image has been designed to run Consul in server mode (without the web ui). If you'd like an image with Consul's web ui, refer to [smebberson/consul-ui][consului].
 
-Customisation
--------------
+## Customisation
 
 This container comes setup as follows:
 

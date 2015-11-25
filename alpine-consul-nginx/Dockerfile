@@ -1,4 +1,4 @@
-FROM smebberson/alpine-consul-base
+FROM smebberson/alpine-consul-base:1.0.0
 MAINTAINER Scott Mebberson <scott@scottmebberson.com>
 
 # Install nginx

@@ -31,12 +31,15 @@ This image is the base for all containers. It contains Alpine Linux and s6 via s
 An example of inheriting from this container and running it [can be found here](https://github.com/smebberson/docker-alpine/tree/master/examples/user-alpine).
 
 Latest version is `1.2.0`, or `latest` ([VERSIONS.md](https://github.com/smebberson/docker-alpine/blob/master/alpine-base/VERSIONS.md)).
+<<<<<<< HEAD
 
 ### alpine-apache
 
 This image inherits from alpine-base, and includes apache with a very basic configuration. You can [read about using this image and customising it here](https://github.com/smebberson/docker-alpine/tree/master/alpine-apache). An example of inheriting from this container and running Apache [can be found here](https://github.com/smebberson/docker-alpine/tree/master/examples/user-apache).
 
 Latest version is `1.0.0`, or `latest` ([VERSIONS.md](https://github.com/smebberson/docker-alpine/blob/master/alpine-apache/VERSIONS.md)).
+=======
+>>>>>>> b81d842e38a3c2c6e1a54ce9ac510af26643622c
 
 ### alpine-consul
 
@@ -50,10 +53,13 @@ This image inherits from alpine-consul and is designed specifically to be inheri
 
 Latest version is `1.0.0`, or `latest` ([VERSIONS.md](https://github.com/smebberson/docker-alpine/blob/master/alpine-consul-base/VERSIONS.md)).
 
+<<<<<<< HEAD
 ### alpine-consul-apache
 
 This image inherits from alpine-consul-base and is perfect if you're looking to run Apache within a Docker setup and wanting to benefit from Consul for service registration and discovery. [Read here](https://github.com/smebberson/docker-alpine/tree/master/alpine-consul-apache) for more information. An example of inheriting from this container and running apache [can be found here](https://github.com/smebberson/docker-alpine/tree/master/examples/user-consul-apache).
 
+=======
+>>>>>>> b81d842e38a3c2c6e1a54ce9ac510af26643622c
 ### alpine-consul-nodejs
 
 This image inherits from alpine-consul-base and is perfect if you're looking to run a Node.js application within a Docker setup and wanting to benefit from Consul for service registration and discovery. [Read here](https://github.com/smebberson/docker-alpine/tree/master/alpine-consul-nodejs) for more information. An example of inheriting from this container and running a Node.js website [can be found here](https://github.com/smebberson/docker-alpine/tree/master/examples/user-consul-nodejs).

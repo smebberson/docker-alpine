@@ -1,12 +1,17 @@
-alpine-consul-base
-==================
+# alpine-consul-base
 
 An image that contains [Consul][consul] within a Docker container, bundled with Alpine Linux and [s6][s6]. This image is designed to work hand-in-hand with [smebberson/alpine-consul][alpineconsul].
 
 This image is designed to be extended from, with specific services added to it via Consul, along with appropriate health checks.
 
-Usage
------
+## Versions
+
+- `1.1.0`, `latest` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/master/alpine-consul-base/Dockerfile)
+- `1.0.0` [(Dockerfile)](https://github.com/smebberson/docker-alpine/tree/03d6d010c86aae573cd9671014fb2e7bee60f8cd/alpine-consul-base)
+
+[See VERSIONS.md for image contents.](https://github.com/smebberson/docker-alpine/blob/master/alpine-consul-base/VERSIONS.md)
+
+## Usage
 
 To use this image include `FROM smebberson/alpine-consul-base` at the top of your `Dockerfile`, or simply `docker run --name consul-base --link "alpine-consul:consul-agent" smebberson/alpine-consul-base`.
 
