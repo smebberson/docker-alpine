@@ -1,4 +1,4 @@
-FROM smebberson/alpine-nginx:2.1.0
+FROM smebberson/alpine-nginx:2.1.1
 MAINTAINER Scott Mebberson <scott@scottmebberson.com>
 
 ENV NODE_VERSION=v4.2.2 NPM_VERSION=3

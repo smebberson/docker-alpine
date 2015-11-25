@@ -14,7 +14,8 @@ My scenario:
 Versions
 --------
 
-- `2.1.0`, `latest` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/master/alpine-nginx-nodejs/Dockerfile)
+- `2.1.1`, `latest` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/master/alpine-nginx-nodejs/Dockerfile)
+- `2.1.0` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/bbdb320fed4c6453d1ea0065c9f0089d6a91c47f/alpine-nginx-nodejs/Dockerfile)
 - `2.0.0` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/40f6de779f5d2ea0ea3f5f36a8942aa49f238304/alpine-nginx-nodejs/Dockerfile)
 - `1.0.0` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/8df61b908df740450527265d48af98bbfd296245/alpine-nginx-nodejs/Dockerfile)
 
