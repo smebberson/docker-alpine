@@ -1,7 +1,10 @@
 FROM smebberson/alpine-base:1.2.0
 MAINTAINER Scott Mebberson <scott@scottmebberson.com>
 
-ENV CONSUL_VERSION=0.5.2 GOMAXPROCS=2
+ENV CONSUL_VERSION=0.5.2 GOMAXPROCS=2 CONSUL_TEMPLATE_VERSION=0.11.1
+
+# Download and install Consul Template
+ADD https://releases.hashicorp.com/consul-template/${CONSUL_TEMPLATE_VERSION}/consul-template_${CONSUL_TEMPLATE_VERSION}_linux_amd64.zip /tmp/consul-template.zip
 
 # Download and install Consul
 # We are building it ourselves, because Alpine Linux doesn't use glibc
@@ -18,7 +21,9 @@ RUN export GOPATH=/go && \
     addgroup consul && \
     adduser -D -G consul consul && \
     mkdir -p /data/consul && \
-    chown -R consul:consul /data/consul
+    chown -R consul:consul /data/consul && \
+    unzip -d /usr/sbin/ /tmp/consul-template.zip && \
+    rm /tmp/consul-template.zip
 
 # Add the files
 ADD root /
