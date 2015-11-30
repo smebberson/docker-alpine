@@ -1,5 +1,8 @@
 #!/usr/bin/with-contenv sh
 
+# wait 5s for `consul agent` to become available
+s6-svwait -u -t 5000 /var/run/s6/services/consul
+
 # wait 5s before running consul-template, this should be enough for consul agent to connect to consul server
 tries=0
 until [ $tries -ge 5 ]; do
