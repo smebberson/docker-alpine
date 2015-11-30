@@ -4,8 +4,7 @@ MAINTAINER Scott Mebberson <scott@scottmebberson.com>
 # Install apache
 RUN apk add --update apache2 apache2-utils && \
     rm -rf /var/cache/apk/* && \
-    ln -sf /dev/stdout /var/log/apache2/access.log && \
-    ln -sf /dev/stderr /var/log/apache2/error.log
+    sed -i 's/CustomLog logs\/access.log combined/CustomLog logs\/access.log combined env=!dontlog/g' /etc/apache2/httpd.conf
 
 # Add the files
 ADD root /
