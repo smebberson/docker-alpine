@@ -1,0 +1,18 @@
+#!/usr/bin/with-contenv sh
+
+# count child directories
+# see: http://stackoverflow.com/a/6781464
+num_child=`ls -l /etc/consul-template/templates/ | grep -c ^d`
+
+# run consul-template only if there are user defined templates
+if [ $num_child -gt 0 ]; then
+  # remove down to enable service
+  if [ -e "/etc/services.d/consul-template/down" ]; then
+    rm /etc/services.d/consul-template/down
+  fi
+else
+  # add s6 specific down file to tell not to start service
+  if [ ! -e "/etc/services.d/consul-template/down" ]; then
+    touch /etc/services.d/consul-template/down
+  fi
+fi

@@ -1,23 +1,16 @@
 #!/usr/bin/with-contenv sh
 
-# count child directories
-# see: http://stackoverflow.com/a/6781464
-num_child=`ls -l /etc/consul-template/templates/ | grep -c ^d`
+# wait 5s before running consul-template, this should be enough for consul agent to connect to consul server
+tries=0
+until [ $tries -ge 5 ]; do
+  consul_node=`consul members | grep -c "Node"`
+  
+  if [ $consul_node -gt 0 ]; then
+    break;
+  fi
+  
+  sleep 1
+  n=$[$n+1]
+done
 
-# run consul-template only if there are user defined templates
-if [ $num_child -gt 0 ]; then
-  # wait 5s before running consul-template, this should be enough for consul agent to connect to consul server
-  tries=0
-  until [ $tries -ge 5 ]; do
-    consul_node=`consul members | grep -c "Node"`
-    
-    if [ $consul_node -gt 0 ]; then
-      break;
-    fi
-    
-    sleep 1
-    n=$[$n+1]
-  done
-
-  exec consul-template -config /etc/consul-template/conf.d/;
-fi
+exec consul-template -config /etc/consul-template/conf.d/;
