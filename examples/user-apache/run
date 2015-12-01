@@ -1,0 +1,3 @@
+
+# run the user-apache image
+docker run --rm --name user-apache -p 80:80 smebberson/user-apache

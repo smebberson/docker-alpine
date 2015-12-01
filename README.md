@@ -9,9 +9,11 @@ The following describes the containers that are available and there inheritance 
 
 ```
 | alpine-base
+├─ alpine-apache
 ├─ alpine-consul
 |  ├─ alpine-consul-ui
 |  ├─ alpine-consul-base
+|  |  ├─ alpine-consul-apache
 |  |  ├─ alpine-consul-nodejs
 |  |  ├─ alpine-consul-nginx
 |  |  |  └─ alpine-consul-nginx-nodejs
@@ -30,6 +32,12 @@ An example of inheriting from this container and running it [can be found here](
 
 Latest version is `1.2.0`, or `latest` ([VERSIONS.md](https://github.com/smebberson/docker-alpine/blob/master/alpine-base/VERSIONS.md)).
 
+### alpine-apache
+
+This image inherits from alpine-base, and includes apache with a very basic configuration. You can [read about using this image and customising it here](https://github.com/smebberson/docker-alpine/tree/master/alpine-apache). An example of inheriting from this container and running Apache [can be found here](https://github.com/smebberson/docker-alpine/tree/master/examples/user-apache).
+
+Latest version is `1.0.0`, or `latest` ([VERSIONS.md](https://github.com/smebberson/docker-alpine/blob/master/alpine-apache/VERSIONS.md)).
+
 ### alpine-consul
 
 This image inherits from alpine-base and adds [Consul][consul] into the mix. By default, it's setup as a consul server (with a bootstrap-expect of 1), so it will need some customisation. [Read here](https://github.com/smebberson/docker-alpine/tree/master/alpine-consul) for more information. An example of inheriting from this container and running Consul [can be found here](https://github.com/smebberson/docker-alpine/tree/master/examples/user-consul).
@@ -41,6 +49,12 @@ Latest version is `1.1.0`, or `latest` ([VERSIONS.md](https://github.com/smebber
 This image inherits from alpine-consul and is designed specifically to be inherited from, to create other images which require a work Consul setup. Consul is setup to run in agent mode, it expects one linked container called `consul-agent` and will automatically join to that ip. [Read here](https://github.com/smebberson/docker-alpine/tree/master/alpine-consul-base) for more information.
 
 Latest version is `1.0.0`, or `latest` ([VERSIONS.md](https://github.com/smebberson/docker-alpine/blob/master/alpine-consul-base/VERSIONS.md)).
+
+### alpine-consul-apache
+
+This image inherits from alpine-consul-base and is perfect if you're looking to run Apache within a Docker setup and wanting to benefit from Consul for service registration and discovery. [Read here](https://github.com/smebberson/docker-alpine/tree/master/alpine-consul-apache) for more information. An example of inheriting from this container and running apache [can be found here](https://github.com/smebberson/docker-alpine/tree/master/examples/user-consul-apache).
+
+Latest version is `1.0.0`, or `latest` ([VERSIONS.md](https://github.com/smebberson/docker-alpine/blob/master/alpine-consul-apache/VERSIONS.md)).
 
 ### alpine-consul-nodejs
 
