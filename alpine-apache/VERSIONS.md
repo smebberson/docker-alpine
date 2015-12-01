@@ -12,9 +12,9 @@ Usage: `smebberson/alpine-apache` or `smebberson/alpine-apache:latest`.
 ## v1.0.0
 
 - [smebberson/alpine-base: v1.2.0][smebbersonalpinebase120]
-- [apache][apache]: latest at the time of build
+- [apache: v2.4.16][apache]
 
 Usage: `smebberson/alpine-apache:1.0.0`.
 
-[nginx]: httsp://httpd.apache.org/
-[smebbersonalpinebase110]: https://github.com/smebberson/docker-alpine/blob/1f0d03677e8ebbcd59ff8209730089bcac79d23d/alpine-base/Dockerfile
+[apache]: httsp://httpd.apache.org/
+[smebbersonalpinebase120]: https://github.com/smebberson/docker-alpine/tree/e630bad2eebad48231cb61b6139a0aa7603a5910/alpine-base
