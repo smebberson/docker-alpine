@@ -51,9 +51,9 @@ This container comes setup as follows:
 - if Consul dies, it will automatically be restarted
 - [consul-template][consul-template] is provided and automatically started if templates are provided.
 
-All configuration has been defined in the `root/etc/consul.d/bootstrap/config.json` file (relative to this directory).
+All configuration has been defined in the `root/etc/consul/conf.d/bootstrap/config.json` file (relative to this directory).
 
-To customise configuration for `consul`, replace the file at `root/etc/consul.d/bootstrap/config.json` with your own configuration.
+To customise configuration for `consul`, replace the file at `root/etc/consul/conf.d/bootstrap/config.json` with your own configuration.
 
 To customise the start script for `consul`, replace the file at `root/etc/services.d/consul/run` with your own start script.
 

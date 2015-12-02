@@ -3,4 +3,4 @@
 # Bind to the external (LAN) IP
 BIND=`getent hosts ${HOSTNAME} | awk '{print $1}'`
 
-exec s6-setuidgid consul consul agent -config-dir /etc/consul.d/bootstrap -bind ${BIND};
+exec s6-setuidgid consul consul agent -config-dir /etc/consul/conf.d/bootstrap -bind ${BIND};

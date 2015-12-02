@@ -3,4 +3,4 @@
 # Bind to the external (LAN) IP
 JOIN=`getent hosts consul-agent | awk '{print $1}'`
 
-exec s6-setuidgid consul consul agent -config-dir /etc/consul.d -retry-join ${JOIN} -retry-interval 15s;
+exec s6-setuidgid consul consul agent -config-dir /etc/consul/conf.d -retry-join ${JOIN} -retry-interval 15s;
