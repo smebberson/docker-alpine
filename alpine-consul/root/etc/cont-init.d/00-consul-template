@@ -4,3 +4,8 @@
 if [ ! -e "/etc/services.d/consul-template/down" ]; then
   touch /etc/services.d/consul-template/down
 fi
+
+# add symlink for consul watch
+if [ ! -e "/etc/consul/conf.d/_watch-node.conf" ]; then
+  ln -s /etc/consul/watches/_watch-node.conf /etc/consul/conf.d/_watch-node.conf
+fi
