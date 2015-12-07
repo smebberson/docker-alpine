@@ -3,13 +3,16 @@ docker-alpine
 
 A vagrant image with an environment to build Docker containers running [Alpine linux][alpinelinux] and [s6][s6] process management (via [s6-overlay][s6overlay]).
 
+Read more about the [design of the Docker images][dockeralpinedesign] and how they help to make process management within Docker containers quick and simple.
+
 ## Containers
 
-The following describes the containers that are available and there inheritance chain:
+The following describes the containers that are available and the inheritance chain:
 
 ```
 | alpine-base
 ├─ alpine-apache
+├─ alpine-confd
 ├─ alpine-consul
 |  ├─ alpine-consul-ui
 |  ├─ alpine-consul-base
@@ -37,6 +40,12 @@ Latest version is `1.2.0`, or `latest` ([VERSIONS.md](https://github.com/smebber
 This image inherits from alpine-base, and includes apache with a very basic configuration. You can [read about using this image and customising it here](https://github.com/smebberson/docker-alpine/tree/master/alpine-apache). An example of inheriting from this container and running Apache [can be found here](https://github.com/smebberson/docker-alpine/tree/master/examples/user-apache).
 
 Latest version is `1.0.0`, or `latest` ([VERSIONS.md](https://github.com/smebberson/docker-alpine/blob/master/alpine-apache/VERSIONS.md)).
+
+### alpine-confd
+
+This image inherits from alpine-base and adds [confd][confd] into the mix. This image should be seen as a base image which should be used for heavy customisation. It's quite lean featuring only Alpine Linux, s6 and confd. [Read here](https://github.com/smebberson/docker-alpine/tree/master/alpine-confd) for more information. An example of inheriting from this container and running Consul [can be found here](https://github.com/smebberson/docker-alpine/tree/master/examples/user-confd).
+
+Latest version is `1.1.0`, or `latest` ([VERSIONS.md](https://github.com/smebberson/docker-alpine/blob/master/alpine-confd/VERSIONS.md)).
 
 ### alpine-consul
 
@@ -122,3 +131,5 @@ Setup the vagrant machine by running `vagrant up --provider=vmware_fusion`. This
 [s6overlay]: https://github.com/just-containers/s6-overlay
 [consul]: https://consul.io/
 [semver]: http://semver.org/
+[confd]: https://github.com/kelseyhightower/confd
+[dockeralpinedesign]: https://github.com/smebberson/docker-alpine/blob/master/DESIGN.md
