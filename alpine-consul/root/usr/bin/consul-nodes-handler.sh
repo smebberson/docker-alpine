@@ -15,7 +15,7 @@ if [ $num_child -gt 0 ]; then
   fi
   
   # 3) Execute `s6-svc -u` to notify supervisor that service should start
-  s6-svc -u /var/run/s6/services.d/consul-template
+  s6-svc -u /var/run/s6/services/consul-template
   
   # 4) rm symlink
   rm /etc/consul/conf.d/_watch-node.conf
