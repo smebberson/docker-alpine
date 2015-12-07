@@ -10,8 +10,8 @@ num_child=`ls -l /etc/consul-template/templates/ | grep -c ^d`
 # 1) check if templates exist
 if [ $num_child -gt 0 ]; then
   # 2) remove `down` to enable service
-  if [ -e "/etc/services.d/consul-template/down" ]; then
-    rm /etc/services.d/consul-template/down
+  if [ -e "/var/run/s6/services/consul-template/down" ]; then
+    rm /var/run/s6/services/consul-template/down
   fi
   
   # 3) Execute `s6-svc -u` to notify supervisor that service should start
