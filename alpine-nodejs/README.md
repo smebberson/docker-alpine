@@ -5,6 +5,13 @@ An image for using Node.js within containers, bundled with [Alpine Linux][alpine
 
 [It's built from my Alpine linux based Docker image (with s6)][alpinebase].
 
+Versions
+--------
+
+- `1.0.0`, `latest` [(Dockerfile)](https://github.com/smebberson/docker-alpine/tree/master/alpine-nodejs/Dockerfile)
+
+[See VERSIONS.md for image contents.](https://github.com/smebberson/docker-alpine/blob/master/alpine-nodejs/VERSIONS.md)
+
 Usage
 -----
 
