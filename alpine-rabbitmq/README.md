@@ -14,33 +14,28 @@ When you run this container, s6 will automatically start your RabbitMQ server an
 
 ### Configurations
 
-You can configure the following settings in your Dockerfile:
+Basic configuration via a few environment variables have been baked into this image.
 
-```
-# set username and password for default user login to access RabbitMQ
-ENV RABBITMQ_USER={username} RABBITMQ_PASS={password}
-
-# set paths for RabbitMQ data file if you would like to persist the data
-ENV RABBITMQ_LOG_BASE="/data/log" RABBITMQ_MNESIA_BASE="/data/mnesia"
-
-# create data directory and set permission for the /data (The server is set up to run as system user `rabbitmq`)
-RUN mkdir -p /data/log /data/mnesia && \
-    chown -R rabbitmq:rabbitmq /data
-
-# Define mount points.
-VOLUME ["/data/log", "/data/mnesia"]
-
-```
-
-**Please note:** If ```RABBITMQ_USER``` and ```RABBITMQ_PASS``` environment variables are not set, it will use the default RabbitMQ user logins which is ```guest``` as the username and as the password.
+- `RABBITMQ_TCP_LISTENERS` to configure the `tcp_listeners` configuration.
+- `RABBITMQ_SSL_LISTENERS` to configure the `ssl_listeners` configuration.
+- `RABBITMQ_SSL_CERT_FILE`, `RABBITMQ_SSL_KEY_FILE` and `RABBITMQ_SSL_CA_FILE` to configure via the `ssl_options` configuration.
+- `RABBITMQ_SSL_VERIFY` to customise the `ssl_verify` configuration; defaults to `verify`.
+- `RABBITMQ_SSL_FAIL` to customise the `ssl_fail` configuration; defaults to `true`.
+- `RABBITMQ_DEFAULT_VHOST` to configure the `default_vhost` configuration.
+- `RABBITMQ_USER` and `RABBITMQ_PASS` to configure the `default_user` and `default_pass` configurations.
+- `RABBITMQ_LOOPBACK_USERS` to configure the `loopback_users` configuration.
 
 You can also provide a custom [RabbitMQ configuration][RabbitMQConfig] file by adding the file at `/etc/rabbitmq/rabbitmq.config`.
 
-Only ports 5672/tcp 15672/tcp are exposed. If you require SSL configuration, expose the required ports in your local `Dockerfile`.
+Only ports 5672/tcp 15672/tcp are exposed.
 
-### RabbitMQ Management Plugin
+#### RabbitMQ Management Plugin
 
-You can access the mangement UI admin via http://server-name:15672. See above for login details.
+The RabbitMQ management plugin is disabled by default, however, it's quite simple to enable. Add an environment of `RABBITMQ_ENABLE_MANAGEMENT_PLUGIN` (set to anything). This will enable the management plugin, with the default configuration.
+
+If the `RABBITMQ_SSL_CERT_FILE`, `RABBITMQ_SSL_KEY_FILE` and `RABBITMQ_SSL_CA_FILE` environment variables are defined, they'll be used to automatically enable SSL for the management plugin UI. If you'd like to have a different set of SSL certificates for the management plugin, you can do so by setting the following environment variables `RABBITMQ_MGMT_SSL_CERT_FILE`, `RABBITMQ_MGMT_SSL_KEY_FILE` and `RABBITMQ_MGMT_SSL_CA_FILE`.
+
+You can access the mangement UI admin via http(s)://server-name:15672. See above for login details.
 For more info see [RabbitMQ documentations][RabbitMQManagement].
 
 ### Run RabbitMQ server
