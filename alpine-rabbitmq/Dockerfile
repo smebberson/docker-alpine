@@ -14,7 +14,6 @@ RUN apk add --update curl tar gzip bash && \
         erlang-asn1=${ERLANG_PKG_VERSION} erlang-inets=${ERLANG_PKG_VERSION} \
         erlang-os-mon=${ERLANG_PKG_VERSION} erlang-xmerl=${ERLANG_PKG_VERSION} erlang-eldap=${ERLANG_PKG_VERSION} && \
     curl -sSL https://www.rabbitmq.com/releases/rabbitmq-server/v${RABBITMQ_VERSION}/rabbitmq-server-generic-unix-${RABBITMQ_VERSION}.tar.gz | tar -xz -C / --strip-components 1 && \
-    rabbitmq-plugins enable --offline rabbitmq_management && \
     rm -rf /share/**/rabbitmq*.gz && \
     apk del --purge tar gzip curl && \
     rm -rf /var/cache/apk/* && \

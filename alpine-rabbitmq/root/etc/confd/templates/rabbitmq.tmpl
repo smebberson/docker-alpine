@@ -14,5 +14,17 @@
         {default_pass, <<"{{getenv "RABBITMQ_PASS"}}">>},{{end}}
         {{if (getenv "RABBITMQ_LOOPBACK_USERS")}}{loopback_users, {{getenv "RABBITMQ_LOOPBACK_USERS"}}},{{end}}
         {trace_vhosts, []}
+    ]}{{if (getenv "RABBITMQ_ENABLE_MANAGEMENT_PLUGIN")}},
+    {rabbitmq_management, [
+        {listener, [
+            {{if or (and (getenv "RABBITMQ_MGMT_SSL_CERT_FILE") (getenv "RABBITMQ_MGMT_SSL_KEY_FILE") (getenv "RABBITMQ_MGMT_SSL_CA_FILE")) (and (getenv "RABBITMQ_SSL_CERT_FILE") (getenv "RABBITMQ_SSL_KEY_FILE") (getenv "RABBITMQ_SSL_CA_FILE"))}}{ssl_opts, [
+                {certfile, {{if (getenv "RABBITMQ_MGMT_SSL_CERT_FILE")}}"{{getenv "RABBITMQ_MGMT_SSL_CERT_FILE"}}"{{else}}"{{getenv "RABBITMQ_SSL_CERT_FILE"}}"{{end}}},
+                {keyfile, {{if (getenv "RABBITMQ_MGMT_SSL_KEY_FILE")}}"{{getenv "RABBITMQ_MGMT_SSL_KEY_FILE"}}"{{else}}"{{getenv "RABBITMQ_SSL_KEY_FILE"}}"{{end}}},
+                {cacertfile, {{if (getenv "RABBITMQ_MGMT_SSL_CA_FILE")}}"{{getenv "RABBITMQ_MGMT_SSL_CA_FILE"}}"{{else}}"{{getenv "RABBITMQ_SSL_CA_FILE"}}"{{end}}}
+            ]},{{end}}
+            {port, {{if (getenv "RABBITMQ_MGMT_PORT")}}{{getenv "RABBITMQ_MGMT_PORT"}}{{else}}15672{{end}}},
+            {ssl, {{if or (and (getenv "RABBITMQ_MGMT_SSL_CERT_FILE") (getenv "RABBITMQ_MGMT_SSL_KEY_FILE") (getenv "RABBITMQ_MGMT_SSL_CA_FILE")) (and (getenv "RABBITMQ_SSL_CERT_FILE") (getenv "RABBITMQ_SSL_KEY_FILE") (getenv "RABBITMQ_SSL_CA_FILE"))}}true{{else}}false{{end}}}
+        ]}
     ]}
+    {{end}}
 ].
