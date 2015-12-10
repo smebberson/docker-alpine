@@ -1,3 +1,0 @@
-[
-    {rabbit, [{loopback_users, []}]}
-].

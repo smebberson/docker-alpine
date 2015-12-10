@@ -1,7 +1,0 @@
-[
-    {rabbit, [
-        {default_user, <<"GUEST_USER">>},
-        {default_pass, <<"GUEST_PASS">>},
-        {tcp_listeners, [{"0.0.0.0", 5672}]}
-    ]}
-].

@@ -1,7 +1,7 @@
 [
     {rabbit, [
         {{if (getenv "RABBITMQ_TCP_LISTENERS")}}{tcp_listeners, {{getenv "RABBITMQ_TCP_LISTENERS"}}},{{else if and (getenv "RABBITMQ_SSL_CERT_FILE") (getenv "RABBITMQ_SSL_KEY_FILE") (getenv "RABBITMQ_SSL_CA_FILE")}}{tcp_listeners, []},{{end}}
-        {{if (getenv "RABBITMQ_SSL_LISTENERS")}}{ssl_listeners, {{getenv "RABBITMQ_SSL_LISTENERS"}}},{{else if and (getenv "RABBITMQ_SSL_CERT_FILE") (getenv "RABBITMQ_SSL_KEY_FILE") (getenv "RABBITMQ_SSL_CA_FILE")}}{ssl_listeners, [5671]},{{end}}
+        {{if (getenv "RABBITMQ_SSL_LISTENERS")}}{ssl_listeners, {{getenv "RABBITMQ_SSL_LISTENERS"}}},{{else if and (getenv "RABBITMQ_SSL_CERT_FILE") (getenv "RABBITMQ_SSL_KEY_FILE") (getenv "RABBITMQ_SSL_CA_FILE")}}{ssl_listeners, [5672]},{{end}}
         {{if and (getenv "RABBITMQ_SSL_CERT_FILE") (getenv "RABBITMQ_SSL_KEY_FILE") (getenv "RABBITMQ_SSL_CA_FILE")}}{ssl_options, [
             {certfile, "{{getenv "RABBITMQ_SSL_CERT_FILE"}}"},
             {keyfile, "{{getenv "RABBITMQ_SSL_KEY_FILE"}}"},
