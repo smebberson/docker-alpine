@@ -1,7 +1,17 @@
-FROM smebberson/alpine-base:1.0.0
+FROM smebberson/alpine-base:1.2.0
 MAINTAINER Scott Mebberson <scott@scottmebberson.com>
 
-# Install Node.js, and the latest version of npm (and Python in case any npm modules require building)
-RUN apk add --update nodejs=0.12.9-r0 git python make && \
-    rm -rf /var/cache/apk/* && \
-    npm install -g npm
+ENV NODE_VERSION=v4.2.3 NPM_VERSION=3
+
+RUN apk add --update git curl make gcc g++ python linux-headers libgcc libstdc++ && \
+    curl -sSL https://nodejs.org/dist/${NODE_VERSION}/node-${NODE_VERSION}.tar.gz | tar -xz && \
+    cd /node-${NODE_VERSION} && \
+    ./configure --prefix=/usr && \
+    make -j$(grep -c ^processor /proc/cpuinfo 2>/dev/null || 1) && \
+    make install && \
+    cd / && \
+    npm install -g npm@${NPM_VERSION} && \
+    apk del gcc g++ linux-headers && \
+    rm -rf /etc/ssl /node-${NODE_VERSION} \
+    /usr/share/man /tmp/* /var/cache/apk/* /root/.npm /root/.node-gyp \
+    /usr/lib/node_modules/npm/man /usr/lib/node_modules/npm/doc /usr/lib/node_modules/npm/html
