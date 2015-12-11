@@ -6,7 +6,7 @@
             {certfile, "{{getenv "RABBITMQ_SSL_CERT_FILE"}}"},
             {keyfile, "{{getenv "RABBITMQ_SSL_KEY_FILE"}}"},
             {cacertfile, "{{getenv "RABBITMQ_SSL_CA_FILE"}}"},
-            {verify, {{if (getenv "RABBITMQ_SSL_VERIFY")}}{{getenv "RABBITMQ_SSL_VERIFY"}}{{else}}verify{{end}}},
+            {verify, {{if (getenv "RABBITMQ_SSL_VERIFY")}}{{getenv "RABBITMQ_SSL_VERIFY"}}{{else}}verify_peer{{end}}},
             {fail_if_no_peer_cert, {{if (getenv "RABBITMQ_SSL_FAIL")}}{{getenv "RABBITMQ_SSL_FAIL"}}{{else}}true{{end}}}
         ]},{{end}}
         {{if (getenv "RABBITMQ_DEFAULT_VHOST")}}{default_vhost, <<"{{getenv "RABBITMQ_DEFAULT_VHOST"}}">>},{{end}}
