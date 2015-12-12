@@ -8,7 +8,8 @@ An image for using Node.js within containers, bundled with [Alpine Linux][alpine
 Versions
 --------
 
-- `2.0.0`, `latest` [(Dockerfile)](https://github.com/smebberson/docker-alpine/tree/master/alpine-nodejs/Dockerfile)
+- `3.0.0`, `latest` [(Dockerfile)](https://github.com/smebberson/docker-alpine/tree/master/alpine-nodejs/Dockerfile)
+- `2.0.0` [(Dockerfile)](https://github.com/smebberson/docker-alpine/tree/9202662d6628b64ab456b3ec11a35721f5459a22/alpine-nodejs)
 - `1.0.0` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/cd0d6cdaf2be905e21acf1b99d19d1fbe3c1f0fb/alpine-nodejs/Dockerfile)
 
 [See VERSIONS.md for image contents.](https://github.com/smebberson/docker-alpine/blob/master/alpine-nodejs/VERSIONS.md)
