@@ -6,7 +6,7 @@ A base image for running just about anything within a container, based on Alpine
 Process management
 ------------------
 
-This image includes [s6](s6) (via [s6-overlay][s6-overlay]), to make it super simple to start multiple process and manage them correctly.
+This image includes [s6][s6] (via [s6-overlay][s6-overlay]), to make it super simple to start multiple process and manage them correctly.
 
 _**Aren't you only supposed to run one process per container?**_ Well yes and no... the following are good examples of when multiple processes within one container might be necessary:
 
