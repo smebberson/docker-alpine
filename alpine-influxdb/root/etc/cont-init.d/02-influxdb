@@ -1,0 +1,4 @@
+#!/usr/bin/with-contenv sh
+
+mkdir -p `dirname $INFLUXDB_LOG_FILE`
+chown influxdb:influxdb `dirname $INFLUXDB_LOG_FILE`
