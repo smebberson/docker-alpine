@@ -1,0 +1,6 @@
+#!/usr/bin/with-contenv sh
+
+# unless this has already been defined, set
+if [ -z "$TELEGRAF_LOG_FILE" ]; then
+    printf "/var/log/telegraf/telegraf.log" > /var/run/s6/container_environment/TELEGRAF_LOG_FILE
+fi

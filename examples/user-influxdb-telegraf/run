@@ -1,0 +1,3 @@
+
+# run the user-alpine image
+docker run --rm --name user-influxdb-telegraf -p 8083:8083 -p 8086:8086 smebberson/user-influxdb-telegraf

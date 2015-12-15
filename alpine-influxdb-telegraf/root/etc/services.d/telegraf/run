@@ -1,0 +1,7 @@
+#!/usr/bin/with-contenv sh
+
+until [ `curl --silent --output /dev/stderr --write-out "%{http_code}" localhost:8086/ping` = "204"  ]; do
+    sleep 1
+done
+
+exec s6-setuidgid influxdb telegraf -config /etc/telegraf/telegraf.toml &>$TELEGRAF_LOG_FILE;

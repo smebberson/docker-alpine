@@ -1,0 +1,4 @@
+#!/usr/bin/with-contenv sh
+
+mkdir -p `dirname $TELEGRAF_LOG_FILE`
+chown influxdb:influxdb `dirname $TELEGRAF_LOG_FILE`
