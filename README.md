@@ -23,6 +23,7 @@ The following describes the containers that are available and the inheritance ch
 |  |  ├─ alpine-consul-nginx
 |  |  |  └─ alpine-consul-nginx-nodejs
 |  |  └─ alpine-consul-redis
+├─ alpine-influxdb
 ├─ alpine-nginx
 |  └─ alpine-nginx-nodejs
 ├─ alpine-nodejs
@@ -90,6 +91,10 @@ This image inherits from alpine-consul-base and provides a Redis container benef
 The image inherits from alpine-consul, and is geared up to run the Consul Web UI.
 
 There are some configuration options which can be [read here](https://github.com/smebberson/docker-alpine/tree/master/alpine-consul-ui). An example of inheriting from this container and running Consul [can be found here](https://github.com/smebberson/docker-alpine/tree/master/examples/user-consul-ui).
+
+### alpine-influxdb
+
+This image inherits from alpine-base, and includes InfluxDB with a very basic configuration. You can [read about using this image and customising it here](https://github.com/smebberson/docker-alpine/tree/alpine-influxdb/alpine-influxdb). An example of inheriting from this container and running InfluxDB [can be found here](https://github.com/smebberson/docker-alpine/tree/alpine-influxdb/examples/user-influxdb).
 
 ### alpine-nginx
 
