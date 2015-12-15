@@ -1,4 +1,4 @@
-FROM smebberson/alpine-influxdb
+FROM smebberson/alpine-influxdb:dev
 MAINTAINER Scott Mebberson <scott@scottmebberson.com>
 
 ENV TELEGRAF_VERSION=0.2.4 GOMAXPROCS=2

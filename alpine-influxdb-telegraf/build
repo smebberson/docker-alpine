@@ -1,1 +1,1 @@
-docker build -t smebberson/alpine-influxdb-telegraf /vagrant/alpine-influxdb-telegraf
+docker build -t smebberson/alpine-influxdb-telegraf:dev /vagrant/alpine-influxdb-telegraf
