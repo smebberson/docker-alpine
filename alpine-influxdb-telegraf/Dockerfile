@@ -20,4 +20,4 @@ RUN export GOPATH=/go && \
 # Add the files
 ADD root /
 
-EXPOSE 8125
+EXPOSE 8125/udp
