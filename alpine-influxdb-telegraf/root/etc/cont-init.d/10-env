@@ -1,0 +1,46 @@
+#!/usr/bin/with-contenv sh
+
+if [ -z "$TELEGRAF_OUTPUTS_INFLUXDB_DATABASE" ]; then
+    printf "telegraf" > /var/run/s6/container_environment/TELEGRAF_OUTPUTS_INFLUXDB_DATABASE
+fi
+
+if [ -z "$TELEGRAF_OUTPUTS_INFLUXDB_URLS" ]; then
+    printf "\"http://localhost:8086\"" > /var/run/s6/container_environment/TELEGRAF_OUTPUTS_INFLUXDB_URLS
+fi
+
+if [ -z "$TELEGRAF_OUTPUTS_INFLUXDB_PRECISION" ]; then
+    printf "s" > /var/run/s6/container_environment/TELEGRAF_OUTPUTS_INFLUXDB_PRECISION
+fi
+
+if [ -z "$TELEGRAF_OUTPUTS_INFLUXDB_TIMEOUT" ]; then
+    printf "0s" > /var/run/s6/container_environment/TELEGRAF_OUTPUTS_INFLUXDB_TIMEOUT
+fi
+
+if [ -z "$TELEGRAF_PLUGINS_STATSD_SERVICE_ADDRESS" ]; then
+    printf ":8125" > /var/run/s6/container_environment/TELEGRAF_PLUGINS_STATSD_SERVICE_ADDRESS
+fi
+
+if [ -z "$TELEGRAF_PLUGINS_STATSD_DELETE_GAUGES" ]; then
+    printf "false" > /var/run/s6/container_environment/TELEGRAF_PLUGINS_STATSD_DELETE_GAUGES
+fi
+
+if [ -z "$TELEGRAF_PLUGINS_STATSD_DELETE_COUNTERS" ]; then
+    printf "false" > /var/run/s6/container_environment/TELEGRAF_PLUGINS_STATSD_DELETE_COUNTERS
+fi
+
+if [ -z "$TELEGRAF_PLUGINS_STATSD_DELETE_SETS" ]; then
+    printf "false" > /var/run/s6/container_environment/TELEGRAF_PLUGINS_STATSD_DELETE_SETS
+fi
+
+if [ -z "$TELEGRAF_PLUGINS_STATSD_DELETE_TIMINGS" ]; then
+    printf "false" > /var/run/s6/container_environment/TELEGRAF_PLUGINS_STATSD_DELETE_TIMINGS
+fi
+
+# Because this inherits from alpine-influxdb; support the INFLUXDB_ADMIN_USERNAME and INFLUXDB_ADMIN_PASSWORD env variables
+if [ -z "$TELEGRAF_OUTPUTS_INFLUXDB_USERNAME" -a -n "$INFLUXDB_HTTP_ADMIN_USERNAME" ]; then
+    printf "$INFLUXDB_HTTP_ADMIN_USERNAME" > /var/run/s6/container_environment/TELEGRAF_OUTPUTS_INFLUXDB_USERNAME
+fi
+
+if [ -z "$TELEGRAF_OUTPUTS_INFLUXDB_PASSWORD" -a -n "$INFLUXDB_HTTP_ADMIN_PASSWORD" ]; then
+    printf "$INFLUXDB_HTTP_ADMIN_PASSWORD" > /var/run/s6/container_environment/TELEGRAF_OUTPUTS_INFLUXDB_PASSWORD
+fi

@@ -5,7 +5,7 @@ ENV INFLUXDB_VERSION=0.9.6.1 GOMAXPROCS=2
 
 RUN export GOPATH=/go && \
     echo "http://dl-2.alpinelinux.org/alpine/edge/community" >> /etc/apk/repositories && \
-    apk add --update go=1.5.2-r0 git musl-dev && \
+    apk add --update go=1.5.2-r0 git musl-dev curl && \
     go get github.com/influxdb/influxdb && \
     cd $GOPATH/src/github.com/influxdb/influxdb && \
     git checkout -q --detach "v${INFLUXDB_VERSION}" && \

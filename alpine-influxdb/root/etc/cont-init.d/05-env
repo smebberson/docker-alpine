@@ -1,0 +1,13 @@
+#!/usr/bin/with-contenv sh
+
+if [ -z "$INFLUXDB_ADMIN_BIND_ADDRESS" ]; then
+    printf ":8083" > /var/run/s6/container_environment/INFLUXDB_ADMIN_BIND_ADDRESS
+fi
+
+if [ -z "$INFLUXDB_HTTP_AUTH_ENABLED" ]; then
+    printf "false" > /var/run/s6/container_environment/INFLUXDB_HTTP_AUTH_ENABLED
+fi
+
+if [ -z "$INFLUXDB_HTTP_BIND_ADDRESS" ]; then
+    printf ":8086" > /var/run/s6/container_environment/INFLUXDB_HTTP_BIND_ADDRESS
+fi

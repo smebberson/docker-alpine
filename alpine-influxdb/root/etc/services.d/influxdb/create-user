@@ -1,0 +1,17 @@
+#!/usr/bin/with-contenv sh
+
+# if we're provided with the correct environment variables, let's setup a username and password for HTTP
+if [ "$INFLUXDB_ADMIN_ENABLED" = "true" -a "$INFLUXDB_HTTP_AUTH_ENABLED" = "true" -a -n "$INFLUXDB_HTTP_ADMIN_USERNAME" -a -n "$INFLUXDB_HTTP_ADMIN_PASSWORD" ]; then
+
+    # grab the url
+    PING_URL="localhost${INFLUXDB_HTTP_BIND_ADDRESS}"
+
+    # wait until InfluxDB is ready to recieve requests
+    until [ `curl --silent --output /dev/stderr --write-out "%{http_code}" $PING_URL/ping` = "204"  ]; do
+        sleep 1
+    done
+
+    # create the HTTP admin user
+    curl --silent -G "http://localhost${INFLUXDB_HTTP_BIND_ADDRESS}/query" --data-urlencode "q=CREATE USER ${INFLUXDB_HTTP_ADMIN_USERNAME} WITH PASSWORD '${INFLUXDB_HTTP_ADMIN_PASSWORD}' WITH ALL PRIVILEGES"
+
+fi

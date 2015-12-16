@@ -1,3 +1,7 @@
 #!/usr/bin/with-contenv sh
 
-exec s6-setuidgid influxdb influxd -config /etc/influxdb/influxdb.toml 2>$INFLUXDB_LOG_FILE;
+# try and create the user after everything is up and running
+/var/run/s6/services/influxdb/create-user &
+
+# start
+exec s6-setuidgid influxdb influxd -config /etc/influxdb/influxdb.toml 2>$INFLUXDB_LOG_FILE

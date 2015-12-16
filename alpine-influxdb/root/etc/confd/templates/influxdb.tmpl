@@ -8,3 +8,8 @@
 
 [admin]
   enabled = {{if (getenv "INFLUXDB_ADMIN_ENABLED")}}{{getenv "INFLUXDB_ADMIN_ENABLED"}}{{else}}false{{end}}
+  bind-address = "{{getenv "INFLUXDB_ADMIN_BIND_ADDRESS"}}"
+
+[http]
+  auth-enabled = {{getenv "INFLUXDB_HTTP_AUTH_ENABLED"}}
+  bind-address = "{{getenv "INFLUXDB_HTTP_BIND_ADDRESS"}}"

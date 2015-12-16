@@ -10,12 +10,13 @@ RUN export GOPATH=/go && \
     go get github.com/influxdb/telegraf && \
     cd $GOPATH/src/github.com/influxdb/telegraf && \
     git checkout -q --detach "v${TELEGRAF_VERSION}" && \
-    go get ./... && \
-    go install ./... && \
+    go get -v ./... && \
+    go install -v ./... && \
     chmod +x $GOPATH/bin/* && \
     mv $GOPATH/bin/* /bin/ && \
     apk del go git musl-dev && \
-    rm -rf /var/cache/apk/* $GOPATH
+    rm -rf /var/cache/apk/* $GOPATH && \
+    mkdir -p /etc/telegraf
 
 # Add the files
 ADD root /

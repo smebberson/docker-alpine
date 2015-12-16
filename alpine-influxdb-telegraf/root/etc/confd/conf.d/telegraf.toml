@@ -1,0 +1,3 @@
+[template]
+src = "telegraf.tmpl"
+dest = "/etc/telegraf/telegraf.toml"
