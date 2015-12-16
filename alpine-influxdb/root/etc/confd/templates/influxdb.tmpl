@@ -1,0 +1,10 @@
+[meta]
+  dir = "{{if (getenv "INFLUXDB_META_DIR")}}{{getenv "INFLUXDB_META_DIR"}}{{else}}/data/influxdb/meta{{end}}"
+
+[data]
+  dir = "{{if (getenv "INFLUXDB_DATA_DIR")}}{{getenv "INFLUXDB_DATA_DIR"}}{{else}}/data/influxdb/data{{end}}"
+  wal-dir = "{{if (getenv "INFLUXDB_DATA_WAL_DIR")}}{{getenv "INFLUXDB_DATA_WAL_DIR"}}{{else}}/var/tmp/influxdb/wal{{end}}"
+  wal-logging-enabled = {{if (getenv "INFLUXDB_DATA_WAL_LOGGING_ENABLED")}}{{getenv "INFLUXDB_DATA_WAL_LOGGING_ENABLED"}}{{else}}false{{end}}
+
+[admin]
+  enabled = {{if (getenv "INFLUXDB_ADMIN_ENABLED")}}{{getenv "INFLUXDB_ADMIN_ENABLED"}}{{else}}false{{end}}

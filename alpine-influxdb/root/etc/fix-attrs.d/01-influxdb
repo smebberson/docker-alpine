@@ -1,0 +1,3 @@
+/data/influxdb true influxdb 0600 0700
+/var/tmp/influxdb true influxdb 0600 0700
+/var/log/influxdb true influxdb 0600 0700

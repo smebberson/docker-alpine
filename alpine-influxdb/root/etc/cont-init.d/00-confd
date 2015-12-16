@@ -1,0 +1,4 @@
+#!/usr/bin/with-contenv sh
+
+# setup the template
+confd -onetime -backend env

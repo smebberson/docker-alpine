@@ -27,7 +27,7 @@ docker exec -i nginx tail -f /var/log/influxdb/influxd.log
 or, in your `Dockerfile` symlink the Nginx logs to `stderr`:
 
 ```
-RUN ln -sf /dev/stderr /var/log/influxdb/influxd.log
+RUN ln -sf /dev/stderr /var/log/influxdb/influxdb.log
 ```
 
 ## Customisation
@@ -49,11 +49,22 @@ The InfluxDB configuration file that comes with this image is:
   dir = "/data/influxdb/data"
   wal-dir = "/var/tmp/influxdb/wal"
   wal-logging-enabled = false
+
+[admin]
+  enabled = false
 ```
+
+The following environment variables can be set to alter the default configuration values (as above):
+
+- `INFLUXDB_META_DIR`
+- `INFLUXDB_DATA_DIR`
+- `INFLUXDB_DATA_WAL_DIR`
+- `INFLUXDB_DATA_WAL_LOGGING_ENABLED`
+- `INFLUXDB_ADMIN_ENABLED`
 
 ### InfluxDB configuration
 
-To customise configuration for InfluxDB, replace the file at `root/etc/influxdb/influxdb.conf` with your own configuration.
+To customise configuration for InfluxDB, further than the environment variables allow, replace the file at `root/etc/confd/templates/influxdb.tmpl` with your own configuration. This file will be output to `/etc/influxdb/influxdb.toml` after being run through `confd` (so it is possible to maintain the use of environment variables here, and even extend them).
 
 ### InfluxDB log file
 

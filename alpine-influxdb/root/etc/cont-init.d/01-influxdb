@@ -2,5 +2,5 @@
 
 # unless this has already been defined, set
 if [ -z "$INFLUXDB_LOG_FILE" ]; then
-    printf "/var/log/influxdb/influxd.log" > /var/run/s6/container_environment/INFLUXDB_LOG_FILE
+    printf "/var/log/influxdb/influxdb.log" > /var/run/s6/container_environment/INFLUXDB_LOG_FILE
 fi
