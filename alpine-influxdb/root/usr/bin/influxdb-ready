@@ -1,0 +1,7 @@
+#!/usr/bin/with-contenv sh
+
+# what until InfluxDB is ready to receive requests
+until influxdb-query -u "/ping" -e 204
+do
+    sleep 1
+done

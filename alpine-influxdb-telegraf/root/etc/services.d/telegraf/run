@@ -1,16 +1,12 @@
 #!/usr/bin/with-contenv sh
 
-PING_URL=`echo $TELEGRAF_OUTPUTS_INFLUXDB_URLS | cut -d'/' -f1,2,3 | cut -c 2- | rev | cut -c 2- | rev`
+# wait until influxdb service is 'up'
+s6-svwait -u -t 10000 /var/run/s6/services/influxdb
 
-until [ `curl --silent --output /dev/stderr --write-out "%{http_code}" $PING_URL/ping` = "204"  ]; do
-    sleep 1
-done
+# wait until influxdb is ready
+influxdb-ready
 
-# if we're using a username and password, wait to make sure that has been created
-if [ -n "$TELEGRAF_OUTPUTS_INFLUXDB_USERNAME" -a -n "$TELEGRAF_OUTPUTS_INFLUXDB_PASSWORD" ]; then
-    until [ `curl --silent --output /dev/stderr --write-out "%{http_code}" -G "$PING_URL/query" -u ${TELEGRAF_OUTPUTS_INFLUXDB_USERNAME}:${TELEGRAF_OUTPUTS_INFLUXDB_PASSWORD} --data-urlencode "q=SHOW DATABASES"` = "200" ]; do
-        sleep 1
-    done
-fi
+# wait until authentication has been setup
+influxdb-protected
 
 exec s6-setuidgid influxdb telegraf -config /etc/telegraf/telegraf.toml &>$TELEGRAF_LOG_FILE;

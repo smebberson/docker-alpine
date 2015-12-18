@@ -1,0 +1,10 @@
+#!/usr/bin/with-contenv sh
+
+# wait until influxdb service is 'up'
+s6-svwait -u -t 10000 /var/run/s6/services/influxdb
+
+# what until InfluxDB is ready to receive requests
+influxdb-ready
+
+# Create an Admin account
+influxdb-query -q "CREATE USER ${INFLUXDB_HTTP_ADMIN_USERNAME} WITH PASSWORD '${INFLUXDB_HTTP_ADMIN_PASSWORD}' WITH ALL PRIVILEGES" -e 200

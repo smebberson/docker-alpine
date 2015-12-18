@@ -1,0 +1,63 @@
+#!/usr/bin/env sh
+
+# This is a simple and portable (POSIX) shell script
+#
+# -a username:password -u "/ping" -q "SHOW DATABASE" -e 204
+#
+
+COMMAND="curl --silent --output /dev/null --write-out \"%{http_code}\""
+AUTH=""
+URL=""
+QUERY=""
+DOMAIN=`influxdb-domain`
+EXPECTING=""
+
+while getopts "a:u:q:e:d:" OPTION
+do
+    case $OPTION in
+        a)
+            AUTH=$OPTARG
+            ;;
+
+        u)
+            URL=$OPTARG
+            ;;
+
+        q)
+            QUERY=$OPTARG
+            ;;
+
+        e)
+            EXPECTING=$OPTARG
+            ;;
+
+        d)
+            DOMAIN=$OPTARG
+            ;;
+    esac
+done
+
+# append the auth if provided
+if [ -n "$AUTH" ]; then
+    COMMAND="$COMMAND -u $AUTH"
+fi
+
+if [ -n "$QUERY" ]; then
+    COMMAND="$COMMAND -G \"$DOMAIN/query\" --data-urlencode \"q=$QUERY\""
+elif [ -n "$URL" ]; then
+    COMMAND="$COMMAND -G \"$DOMAIN$URL\""
+fi
+
+RESULT=`eval $COMMAND`
+
+if [ -n "$EXPECTING" ]; then
+    if [ "$RESULT" = "$EXPECTING" ]; then
+        exit 0
+    fi
+fi
+
+if [ "$RESULT" = "000" ]; then
+    exit 500
+fi
+
+exit $RESULT

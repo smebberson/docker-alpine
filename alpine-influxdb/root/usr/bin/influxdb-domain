@@ -1,0 +1,4 @@
+#!/usr/bin/with-contenv sh
+
+# setup the domain
+echo "http://localhost${INFLUXDB_HTTP_BIND_ADDRESS}"

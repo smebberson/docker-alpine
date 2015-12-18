@@ -1,0 +1,12 @@
+#!/usr/bin/with-contenv sh
+
+# if we're using a username and password, wait to make sure that has been created
+if [ -n "$TELEGRAF_OUTPUTS_INFLUXDB_USERNAME" -a -n "$TELEGRAF_OUTPUTS_INFLUXDB_PASSWORD" ]; then
+
+    # what until InfluxDB is ready to receive requests
+    until influxdb-query -a "${TELEGRAF_OUTPUTS_INFLUXDB_USERNAME}:${TELEGRAF_OUTPUTS_INFLUXDB_PASSWORD}" -q "SHOW DATABASES" -e 200
+    do
+        sleep 1
+    done
+
+fi
