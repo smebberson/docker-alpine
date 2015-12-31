@@ -1,5 +1,33 @@
 #!/usr/bin/with-contenv sh
 
+if [ -z "$INFLUXDB_META_DIR" ]; then
+    printf "/data/influxdb/meta" > /var/run/s6/container_environment/INFLUXDB_META_DIR
+fi
+
+if [ -z "$INFLUXDB_META_HOSTNAME" ]; then
+    printf "localhost" > /var/run/s6/container_environment/INFLUXDB_META_HOSTNAME
+fi
+
+if [ -z "$INFLUXDB_META_BIND_ADDRESS" ]; then
+    printf ":8088" > /var/run/s6/container_environment/INFLUXDB_META_BIND_ADDRESS
+fi
+
+if [ -z "$INFLUXDB_DATA_DIR" ]; then
+    printf "/data/influxdb/data" > /var/run/s6/container_environment/INFLUXDB_DATA_DIR
+fi
+
+if [ -z "$INFLUXDB_DATA_WAL_DIR" ]; then
+    printf "/var/tmp/influxdb/wal" > /var/run/s6/container_environment/INFLUXDB_DATA_WAL_DIR
+fi
+
+if [ -z "$INFLUXDB_DATA_WAL_LOGGING_ENABLED" ]; then
+    printf "false" > /var/run/s6/container_environment/INFLUXDB_DATA_WAL_LOGGING_ENABLED
+fi
+
+if [ -z "$INFLUXDB_ADMIN_ENABLED" ]; then
+    printf "false" > /var/run/s6/container_environment/INFLUXDB_ADMIN_ENABLED
+fi
+
 if [ -z "$INFLUXDB_ADMIN_BIND_ADDRESS" ]; then
     printf ":8083" > /var/run/s6/container_environment/INFLUXDB_ADMIN_BIND_ADDRESS
 fi

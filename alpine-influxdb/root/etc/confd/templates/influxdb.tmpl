@@ -1,13 +1,15 @@
 [meta]
-  dir = "{{if (getenv "INFLUXDB_META_DIR")}}{{getenv "INFLUXDB_META_DIR"}}{{else}}/data/influxdb/meta{{end}}"
+  dir = "{{getenv "INFLUXDB_META_DIR"}}"
+  hostname = "{{getenv "INFLUXDB_META_HOSTNAME"}}"
+  bind-address = "{{getenv "INFLUXDB_META_BIND_ADDRESS"}}"
 
 [data]
-  dir = "{{if (getenv "INFLUXDB_DATA_DIR")}}{{getenv "INFLUXDB_DATA_DIR"}}{{else}}/data/influxdb/data{{end}}"
-  wal-dir = "{{if (getenv "INFLUXDB_DATA_WAL_DIR")}}{{getenv "INFLUXDB_DATA_WAL_DIR"}}{{else}}/var/tmp/influxdb/wal{{end}}"
-  wal-logging-enabled = {{if (getenv "INFLUXDB_DATA_WAL_LOGGING_ENABLED")}}{{getenv "INFLUXDB_DATA_WAL_LOGGING_ENABLED"}}{{else}}false{{end}}
+  dir = "{{getenv "INFLUXDB_DATA_DIR"}}"
+  wal-dir = "{{getenv "INFLUXDB_DATA_WAL_DIR"}}"
+  wal-logging-enabled = {{getenv "INFLUXDB_DATA_WAL_LOGGING_ENABLED"}}
 
 [admin]
-  enabled = {{if (getenv "INFLUXDB_ADMIN_ENABLED")}}{{getenv "INFLUXDB_ADMIN_ENABLED"}}{{else}}false{{end}}
+  enabled = {{getenv "INFLUXDB_ADMIN_ENABLED"}}
   bind-address = "{{getenv "INFLUXDB_ADMIN_BIND_ADDRESS"}}"
 
 [http]
