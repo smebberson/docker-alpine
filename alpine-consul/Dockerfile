@@ -18,7 +18,7 @@ RUN export GOPATH=/go && \
     addgroup consul && \
     adduser -D -G consul consul && \
     mkdir -p /data/consul && \
-    chown -R consul:consul /data/consul    
+    chown -R consul:consul /data/consul
 
 # Add the files
 ADD root /
