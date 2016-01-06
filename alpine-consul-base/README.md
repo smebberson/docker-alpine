@@ -20,3 +20,13 @@ It's very import to include a link to a container running a Consul agent (regard
 [s6]: http://www.skarnet.org/software/s6/
 [consul]: https://www.consul.io/
 [alpineconsul]: https://registry.hub.docker.com/u/smebberson/alpine-consul/
+
+## Customisation
+
+This container comes setup as follows:
+
+- [consul-template][consul-template] is provided and automatically started if templates are provided.
+
+To use [consul-template][consul-template] simply add your templates to `root/etc/consul-template/templates/my-service/` and then make `consul-template` configuration aware of your templates by adding a configuration file in `root/etc/consul-template/conf.d/my-service` (use sub folders to make `VOLUME /etc/consul-template/templates/my-service` possible).
+
+[consul-template]: https://github.com/hashicorp/consul-template

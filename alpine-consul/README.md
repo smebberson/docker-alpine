@@ -49,15 +49,12 @@ This container comes setup as follows:
 
 - s6 will automatically start Consul for you
 - if Consul dies, it will automatically be restarted
-- [consul-template][consul-template] is provided and automatically started if templates are provided.
 
 All configuration has been defined in the `root/etc/consul/conf.d/bootstrap/config.json` file (relative to this directory).
 
 To customise configuration for `consul`, replace the file at `root/etc/consul/conf.d/bootstrap/config.json` with your own configuration.
 
 To customise the start script for `consul`, replace the file at `root/etc/services.d/consul/run` with your own start script.
-
-To use [consul-template][consul-template] simply add your templates to `root/etc/consul-template/templates/my-service/` and then make `consul-template` configuration aware of your templates by adding a configuration file in `root/etc/consul-template/conf.d/my-service` (use sub folders to make `VOLUME /etc/consul-template/templates/my-service` possible).
 
 [s6]: http://www.skarnet.org/software/s6/
 [logentries]: https://logentries.com/
@@ -70,4 +67,3 @@ To use [consul-template][consul-template] simply add your templates to `root/etc
 [alpinebase]: https://registry.hub.docker.com/u/smebberson/alpine-base/
 [consului]: https://github.com/smebberson/docker-ubuntu-base/tree/master/consul-ui
 [consulagent]: https://github.com/smebberson/docker-ubuntu-base/tree/master/consul-agent
-[consul-template]: https://github.com/hashicorp/consul-template
