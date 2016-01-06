@@ -1,0 +1,1 @@
+docker build -t smebberson/alpine-grafana:dev /vagrant/alpine-grafana

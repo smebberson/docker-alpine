@@ -1,0 +1,3 @@
+
+# run the user-grafana image
+docker run --rm --name user-grafana -p 3000:3000 -e GF_LOG_LEVEL=warn smebberson/user-grafana

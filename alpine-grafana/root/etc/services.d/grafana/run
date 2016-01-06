@@ -1,0 +1,3 @@
+#!/usr/bin/with-contenv sh
+
+exec s6-setuidgid grafana grafana-server --homepath /usr/share/grafana --config /etc/grafana/grafana.ini

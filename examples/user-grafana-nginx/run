@@ -1,0 +1,3 @@
+
+# run the user-grafana-nginx image
+docker run --rm --name user-grafana-nginx -p 80:80 -e GF_LOG_LEVEL=warn smebberson/user-grafana-nginx

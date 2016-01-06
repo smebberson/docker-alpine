@@ -1,0 +1,17 @@
+#!/usr/bin/with-contenv sh
+
+if [ -z "$CUSTOM_GF_PATHS_DATA" ]; then
+    printf "/data/grafana" > /var/run/s6/container_environment/CUSTOM_GF_PATHS_DATA
+fi
+
+if [ -z "$CUSTOM_GF_PATHS_LOGS" ]; then
+    printf "/data/grafana/logs" > /var/run/s6/container_environment/CUSTOM_GF_PATHS_LOGS
+fi
+
+if [ -z "$CUSTOM_GF_LOG_LEVEL" ]; then
+    printf "warn" > /var/run/s6/container_environment/CUSTOM_GF_LOG_LEVEL
+fi
+
+if [ -z "$CUSTOM_GF_LOG_LOG_CONSOLE" ]; then
+    printf "warn" > /var/run/s6/container_environment/CUSTOM_GF_LOG_LOG_CONSOLE
+fi
