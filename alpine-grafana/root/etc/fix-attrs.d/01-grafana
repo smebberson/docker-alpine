@@ -1,0 +1,3 @@
+/usr/share/grafana true grafana 0600 0700
+/data/grafana true grafana 0600 0700
+/etc/grafana true grafana 0600 0700

@@ -15,3 +15,11 @@ fi
 if [ -z "$CUSTOM_GF_LOG_LOG_CONSOLE" ]; then
     printf "warn" > /var/run/s6/container_environment/CUSTOM_GF_LOG_LOG_CONSOLE
 fi
+
+if [ -z "$CUSTOM_GF_DASHBOARDS_JSON_ENABLED" ]; then
+    printf "false" > /var/run/s6/container_environment/CUSTOM_GF_DASHBOARDS_JSON_ENABLED
+fi
+
+if [ -z "$CUSTOM_CF_DASHBOARDS_JSON_PATH" ]; then
+    printf "/etc/grafana/dashboards" > /var/run/s6/container_environment/CUSTOM_CF_DASHBOARDS_JSON_PATH
+fi

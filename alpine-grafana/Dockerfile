@@ -16,7 +16,7 @@ RUN export GOPATH=/go && \
     npm install -g grunt-cli && \
     npm install && \
     grunt && \
-    mkdir -p /usr/share/grafana/data/log && \
+    mkdir -p /usr/share/grafana/data/log /data/grafana/logs /etc/grafana && \
     chmod +x ./grafana && \
     mv ./grafana /bin/grafana-server && \
     cp -ra ./public_gen /usr/share/grafana/public && \
@@ -25,9 +25,7 @@ RUN export GOPATH=/go && \
     apk del go git musl-dev curl nodejs gcc && \
     rm -rf /var/cache/apk/* $GOPATH /tmp/* /root/.n* && \
     addgroup grafana && \
-    adduser -D -G grafana grafana && \
-    mkdir -p /data/grafana/logs /etc/grafana && \
-    chown -R grafana:grafana /data/grafana /usr/share/grafana/data
+    adduser -D -G grafana grafana
 
 # Add the files
 ADD root /
