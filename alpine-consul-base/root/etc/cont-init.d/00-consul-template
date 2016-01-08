@@ -3,9 +3,13 @@
 # add s6 specific down file to tell not to start service
 if [ ! -e "/etc/services.d/consul-template/down" ]; then
   touch /etc/services.d/consul-template/down
+  chown consul:consul /etc/services.d/consul-template/down
 fi
 
-# add symlink for consul watch
-if [ ! -e "/etc/consul/conf.d/_watch-node.conf" ]; then
-  ln -s /etc/consul/watches/_watch-node.conf /etc/consul/conf.d/_watch-node.conf
+# check if `consul-template` templates exist
+if [ `ls -l /etc/consul-template/templates/ | grep -c ^d` -gt 0 ]; then
+  # add symlink for consul watch
+  if [ ! -e "/etc/consul/conf.d/watch-node.json" ]; then
+    ln -s /etc/consul/watches/watch-node.json /etc/consul/conf.d/watch-node.json
+  fi
 fi

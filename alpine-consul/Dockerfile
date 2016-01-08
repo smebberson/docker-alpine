@@ -1,4 +1,4 @@
-FROM smebberson/alpine-base:1.2.0
+FROM smebberson/alpine-base
 MAINTAINER Scott Mebberson <scott@scottmebberson.com>
 
 ENV CONSUL_VERSION=0.5.2 GOMAXPROCS=2

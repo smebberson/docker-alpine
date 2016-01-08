@@ -1,4 +1,4 @@
-FROM smebberson/alpine-consul:1.1.0
+FROM smebberson/alpine-consul
 MAINTAINER Scott Mebberson <scott@scottmebberson.com>
 
 ENV CONSUL_TEMPLATE_VERSION=0.12.0
