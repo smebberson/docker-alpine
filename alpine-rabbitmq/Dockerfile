@@ -17,7 +17,7 @@ RUN apk add --update curl tar gzip bash && \
     apk del --purge tar gzip && \
     rm -rf /var/cache/apk/* && \
     addgroup rabbitmq && \
-    adduser -D -G rabbitmq rabbitmq
+    adduser -D -s /bin/sh -G rabbitmq rabbitmq
 
 ADD root /
 

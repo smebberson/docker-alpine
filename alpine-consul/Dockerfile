@@ -16,7 +16,7 @@ RUN export GOPATH=/go && \
     apk del go git gcc musl-dev make bash && \
     rm -rf /var/cache/apk/* && \
     addgroup consul && \
-    adduser -D -G consul consul && \
+    adduser -D -s /bin/sh -G consul consul && \
     mkdir -p /data/consul && \
     chown -R consul:consul /data/consul
 
