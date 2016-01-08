@@ -1,7 +1,5 @@
 #!/bin/sh
 
-read cat > /dev/null
-
 # count child directories
 # see: http://stackoverflow.com/a/6781464
 # see: https://github.com/smebberson/docker-alpine/pull/13#issuecomment-161005924
