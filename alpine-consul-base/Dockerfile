@@ -1,4 +1,4 @@
-FROM smebberson/alpine-consul
+FROM smebberson/alpine-consul:1.1.0
 MAINTAINER Scott Mebberson <scott@scottmebberson.com>
 
 ENV CONSUL_TEMPLATE_VERSION=0.12.0
@@ -9,7 +9,9 @@ RUN apk add --update openssl && \
     unzip -d /usr/sbin/ /tmp/consul-template.zip && \
     rm /tmp/consul-template.zip && \
     apk del openssl && \
-    rm -rf /var/cache/apk/*
+    rm -rf /var/cache/apk/* && \
+    addgroup consul-template && \
+    adduser -D -g "" -s /bin/sh -G consul-template consul-template
 
 # Add the files
 ADD root /

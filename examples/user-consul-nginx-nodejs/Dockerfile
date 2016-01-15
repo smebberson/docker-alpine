@@ -5,7 +5,8 @@ ENV NODE_ENV=development NODE_PORT=4000
 
 # Build the Node.js modules on the container itself
 ADD root/app/package.json /tmp/package.json
-RUN cd /tmp && npm install --production
+RUN cd /tmp && npm install --production && \
+    sed -i 's/":nginx"/:nginx,consul-template/g' /etc/group
 
 # Add image source
 ADD root /

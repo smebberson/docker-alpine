@@ -1,5 +1,7 @@
 #!/usr/bin/with-contenv sh
 
+chown -R consul:consul /var/run/s6/services/consul-template
+
 # Bind to the external (LAN) IP
 JOIN=`getent hosts consul-agent | awk '{print $1}'`
 
