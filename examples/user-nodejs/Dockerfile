@@ -1,4 +1,4 @@
-FROM smebberson/alpine-nodejs
+FROM smebberson/alpine-nodejs:dev
 MAINTAINER Scott Mebberson <scott@scottmebberson.com>
 
 # Add the files

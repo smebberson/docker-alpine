@@ -1,0 +1,3 @@
+#!/usr/bin/with-contenv sh
+
+mkdir -p `dirname $GO_DNSMASQ_LOG_FILE`
