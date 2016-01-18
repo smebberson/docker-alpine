@@ -1,7 +1,7 @@
-FROM smebberson/alpine-confd:1.0.0
+FROM smebberson/alpine-confd:1.0.1
 MAINTAINER Scott Mebberson <scott@scottmebberson.com>
 
-ENV RABBITMQ_VERSION=3.5.6 ERLANG_PKG_VERSION=18.1-r5
+ENV RABBITMQ_VERSION=3.5.7 ERLANG_PKG_VERSION=18.1-r5
 
 # Setup Erlang, download RabbitMQ and setup the management plugin
 RUN apk add --update curl tar gzip bash && \

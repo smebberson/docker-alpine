@@ -12,21 +12,22 @@ Support for the DNS `search` keyword has also been added such that although all 
 The following describes the containers that are available and the inheritance chain:
 
 ```
-| alpine-base
-├─ alpine-apache
-├─ alpine-confd
-├─ alpine-consul
-|  ├─ alpine-consul-ui
-|  ├─ alpine-consul-base
-|  |  ├─ alpine-consul-apache
-|  |  ├─ alpine-consul-nodejs
-|  |  ├─ alpine-consul-nginx
-|  |  |  └─ alpine-consul-nginx-nodejs
-|  |  └─ alpine-consul-redis
-├─ alpine-nginx
-|  └─ alpine-nginx-nodejs
-├─ alpine-nodejs
-├─ alpine-redis
+├─ alpine-base
+|  ├─ alpine-apache
+|  ├─ alpine-confd
+|  |  └─ alpine-rabbitmq
+|  ├─ alpine-consul
+|  |  ├─ alpine-consul-ui
+|  |  ├─ alpine-consul-base
+|  |  |  ├─ alpine-consul-apache
+|  |  |  ├─ alpine-consul-nodejs
+|  |  |  ├─ alpine-consul-nginx
+|  |  |  |  └─ alpine-consul-nginx-nodejs
+|  |  |  └─ alpine-consul-redis
+|  ├─ alpine-nginx
+|  |  └─ alpine-nginx-nodejs
+|  ├─ alpine-nodejs
+|  └─ alpine-redis
 ```
 
 ### alpine-base
@@ -111,6 +112,12 @@ This image inherits from alpine-base, and includes Node.js. You can [read about 
 
 Latest version is `3.0.1`, or `latest` ([VERSIONS.md](https://github.com/smebberson/docker-alpine/blob/master/alpine-nodejs/VERSIONS.md)).
 
+### alpine-rabbitmq
+
+This image inherits from alpine-confd, and includes [RabbitMQ][rabbitmq]. You can [read about using this image and customising it here](https://github.com/smebberson/docker-alpine/tree/master/alpine-rabbitmq).
+
+Latest version is `1.0.0`, or `latest` ([VERSIONS.md](https://github.com/smebberson/docker-alpine/blob/master/alpine-rabbitmq/VERSIONS.md)).
+
 ### alpine-redis
 
 This image inherits from alpine-base, and includes Redis. You can [read about using this image and customising it here](https://github.com/smebberson/docker-alpine/tree/master/alpine-redis).
@@ -138,3 +145,4 @@ Setup the vagrant machine by running `vagrant up --provider=vmware_fusion`. This
 [confd]: https://github.com/kelseyhightower/confd
 [dockeralpinedesign]: https://github.com/smebberson/docker-alpine/blob/master/DESIGN.md
 [alpinebasedns]: https://github.com/smebberson/docker-alpine/tree/master/alpine-base#dns
+[rabbitmq]: http://www.rabbitmq.com/
