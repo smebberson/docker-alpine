@@ -14,7 +14,8 @@ This image features:
 
 ## Versions
 
-- `1.0.0`, `latest` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/master/alpine-confd/Dockerfile)
+- `1.0.1`, `latest` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/master/alpine-confd/Dockerfile)
+- `1.0.0` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/e9c249f956d2ac3da74ad1cb0ee0e619d5395c2a/alpine-confd/Dockerfile)
 
 [See VERSIONS.md for image contents.](https://github.com/smebberson/docker-alpine/blob/master/alpine-confd/VERSIONS.md)
 

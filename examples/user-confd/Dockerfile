@@ -1,4 +1,4 @@
-FROM smebberson/alpine-confd:1.0.0
+FROM smebberson/alpine-confd
 MAINTAINER Scott Mebberson <scott@scottmebberson.com>
 
 # Set a test variable

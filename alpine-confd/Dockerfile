@@ -1,4 +1,4 @@
-FROM smebberson/alpine-base:1.2.0
+FROM smebberson/alpine-base:1.2.1
 MAINTAINER Scott Mebberson <scott@scottmebberson.com>
 
 ENV CONFD_VERSION=0.11.0 GOMAXPROCS=2

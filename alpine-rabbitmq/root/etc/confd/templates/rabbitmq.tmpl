@@ -1,0 +1,31 @@
+[
+    {rabbit, [
+        {{if (getenv "RABBITMQ_TCP_LISTENERS")}}{tcp_listeners, {{getenv "RABBITMQ_TCP_LISTENERS"}}},{{else if and (getenv "RABBITMQ_SSL_CERT_FILE") (getenv "RABBITMQ_SSL_KEY_FILE") (getenv "RABBITMQ_SSL_CA_FILE")}}{tcp_listeners, []},{{end}}
+        {{if (getenv "RABBITMQ_SSL_LISTENERS")}}{ssl_listeners, {{getenv "RABBITMQ_SSL_LISTENERS"}}},{{else if and (getenv "RABBITMQ_SSL_CERT_FILE") (getenv "RABBITMQ_SSL_KEY_FILE") (getenv "RABBITMQ_SSL_CA_FILE")}}{ssl_listeners, [5672]},{{end}}
+        {{if and (getenv "RABBITMQ_SSL_CERT_FILE") (getenv "RABBITMQ_SSL_KEY_FILE") (getenv "RABBITMQ_SSL_CA_FILE")}}{ssl_options, [
+            {certfile, "{{getenv "RABBITMQ_SSL_CERT_FILE"}}"},
+            {keyfile, "{{getenv "RABBITMQ_SSL_KEY_FILE"}}"},
+            {cacertfile, "{{getenv "RABBITMQ_SSL_CA_FILE"}}"},
+            {{if (getenv "RABBITMQ_SSL_DEPTH")}}{depth, {{getenv "RABBITMQ_SSL_DEPTH"}}},{{end}}
+            {verify, {{if (getenv "RABBITMQ_SSL_VERIFY")}}{{getenv "RABBITMQ_SSL_VERIFY"}}{{else}}verify_peer{{end}}},
+            {fail_if_no_peer_cert, {{if (getenv "RABBITMQ_SSL_FAIL")}}{{getenv "RABBITMQ_SSL_FAIL"}}{{else}}true{{end}}}
+        ]},{{end}}
+        {{if (getenv "RABBITMQ_DEFAULT_VHOST")}}{default_vhost, <<"{{getenv "RABBITMQ_DEFAULT_VHOST"}}">>},{{end}}
+        {{if and (getenv "RABBITMQ_USER") (getenv "RABBITMQ_PASS")}}{default_user, <<"{{getenv "RABBITMQ_USER"}}">>},
+        {default_pass, <<"{{getenv "RABBITMQ_PASS"}}">>},{{end}}
+        {{if (getenv "RABBITMQ_LOOPBACK_USERS")}}{loopback_users, {{getenv "RABBITMQ_LOOPBACK_USERS"}}},{{end}}
+        {trace_vhosts, []}
+    ]}{{if (getenv "RABBITMQ_ENABLE_MANAGEMENT_PLUGIN")}},
+    {rabbitmq_management, [
+        {listener, [
+            {{if or (and (getenv "RABBITMQ_MGMT_SSL_CERT_FILE") (getenv "RABBITMQ_MGMT_SSL_KEY_FILE") (getenv "RABBITMQ_MGMT_SSL_CA_FILE")) (and (getenv "RABBITMQ_SSL_CERT_FILE") (getenv "RABBITMQ_SSL_KEY_FILE") (getenv "RABBITMQ_SSL_CA_FILE"))}}{ssl_opts, [
+                {certfile, {{if (getenv "RABBITMQ_MGMT_SSL_CERT_FILE")}}"{{getenv "RABBITMQ_MGMT_SSL_CERT_FILE"}}"{{else}}"{{getenv "RABBITMQ_SSL_CERT_FILE"}}"{{end}}},
+                {keyfile, {{if (getenv "RABBITMQ_MGMT_SSL_KEY_FILE")}}"{{getenv "RABBITMQ_MGMT_SSL_KEY_FILE"}}"{{else}}"{{getenv "RABBITMQ_SSL_KEY_FILE"}}"{{end}}},
+                {cacertfile, {{if (getenv "RABBITMQ_MGMT_SSL_CA_FILE")}}"{{getenv "RABBITMQ_MGMT_SSL_CA_FILE"}}"{{else}}"{{getenv "RABBITMQ_SSL_CA_FILE"}}"{{end}}}
+            ]},{{end}}
+            {port, {{if (getenv "RABBITMQ_MGMT_PORT")}}{{getenv "RABBITMQ_MGMT_PORT"}}{{else}}15672{{end}}},
+            {ssl, {{if or (and (getenv "RABBITMQ_MGMT_SSL_CERT_FILE") (getenv "RABBITMQ_MGMT_SSL_KEY_FILE") (getenv "RABBITMQ_MGMT_SSL_CA_FILE")) (and (getenv "RABBITMQ_SSL_CERT_FILE") (getenv "RABBITMQ_SSL_KEY_FILE") (getenv "RABBITMQ_SSL_CA_FILE"))}}true{{else}}false{{end}}}
+        ]}
+    ]}
+    {{end}}
+].
