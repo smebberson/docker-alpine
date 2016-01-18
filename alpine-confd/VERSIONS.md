@@ -5,9 +5,16 @@ This file contains all software versions, that correspond to a version of this i
 
 ## Latest
 
-Same as v1.0.0.
+Same as v1.0.1.
 
 Usage: `smebberson/alpine-confd` or `smebberson/alpine-confd:latest`.
+
+## v1.0.1
+
+- [smebberson/alpine-base: v1.2.1][smebbersonalpinebase120]
+- [confd v0.11.0][confd]
+
+Usage: `smebberson/alpine-confd:1.0.1`.
 
 ## v1.0.0
 
