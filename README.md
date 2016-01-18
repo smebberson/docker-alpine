@@ -5,6 +5,8 @@ A vagrant image with an environment to build Docker containers running [Alpine l
 
 Read more about the [design of the Docker images][dockeralpinedesign] and how they help to make process management within Docker containers quick and simple.
 
+Support for the DNS `search` keyword has also been added such that although all images within this repository use Alpine Linux, they also [all support the DNS `search` keyword][alpinebasedns].
+
 ## Containers
 
 The following describes the containers that are available and the inheritance chain:
@@ -29,11 +31,11 @@ The following describes the containers that are available and the inheritance ch
 
 ### alpine-base
 
-This image is the base for all containers. It contains Alpine Linux and s6 via s6-overlay. It is super small and does nothing else. It clocks in at a tiny 11.5 MB.
+This image is the base for all containers. It contains Alpine Linux (with DNS `search` support) and s6 via s6-overlay. It is super small and does nothing else. It clocks in at a tiny 12.7 MB.
 
 An example of inheriting from this container and running it [can be found here](https://github.com/smebberson/docker-alpine/tree/master/examples/user-alpine).
 
-Latest version is `1.2.0`, or `latest` ([VERSIONS.md](https://github.com/smebberson/docker-alpine/blob/master/alpine-base/VERSIONS.md)).
+Latest version is `1.2.1`, or `latest` ([VERSIONS.md](https://github.com/smebberson/docker-alpine/blob/master/alpine-base/VERSIONS.md)).
 
 ### alpine-apache
 
@@ -107,7 +109,7 @@ Latest version is `2.1.1`, or `latest` ([VERSIONS.md](https://github.com/smebber
 
 This image inherits from alpine-base, and includes Node.js. You can [read about using this image and customising it here](https://github.com/smebberson/docker-alpine/tree/master/alpine-nodejs). An example of inheriting from this container and running a Node.js script [can be found here](https://github.com/smebberson/docker-alpine/tree/master/examples/user-nodejs).
 
-Latest version is `3.0.0`, or `latest` ([VERSIONS.md](https://github.com/smebberson/docker-alpine/blob/master/alpine-nodejs/VERSIONS.md)).
+Latest version is `3.0.1`, or `latest` ([VERSIONS.md](https://github.com/smebberson/docker-alpine/blob/master/alpine-nodejs/VERSIONS.md)).
 
 ### alpine-redis
 
@@ -135,3 +137,4 @@ Setup the vagrant machine by running `vagrant up --provider=vmware_fusion`. This
 [semver]: http://semver.org/
 [confd]: https://github.com/kelseyhightower/confd
 [dockeralpinedesign]: https://github.com/smebberson/docker-alpine/blob/master/DESIGN.md
+[alpinebasedns]: https://github.com/smebberson/docker-alpine/tree/master/alpine-base#dns

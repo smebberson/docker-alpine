@@ -5,9 +5,17 @@ This file contains all software versions, that correspond to a version of this i
 
 ## Latest
 
-Same as v3.0.0.
+Same as v3.0.1.
 
 Usage: `smebberson/alpine-nodejs` or `smebberson/alpine-nodejs:latest`.
+
+## v3.0.1
+
+- [smebberson/alpine-base: v1.2.1][smebbersonalpinebase120]
+- [Node.js: v5.2.0][nodejs]
+- [npm: v3.5.1][nodejs]
+
+Usage: `smebberson/alpine-nodejs:3.0.1`.
 
 ## v3.0.0
 
