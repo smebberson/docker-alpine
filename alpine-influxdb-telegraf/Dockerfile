@@ -4,7 +4,7 @@ MAINTAINER Scott Mebberson <scott@scottmebberson.com>
 ENV TELEGRAF_VERSION=0.2.4 GOMAXPROCS=2
 
 RUN export GOPATH=/go && \
-    echo "http://dl-2.alpinelinux.org/alpine/edge/community" >> /etc/apk/repositories && \
+    echo "http://dl-2.alpinelinux.org/alpine/latest-stable/community" >> /etc/apk/repositories && \
     apk add --update go=1.5.2-r0 git musl-dev curl && \
     export GOPATH=/go && \
     go get github.com/influxdb/telegraf && \
