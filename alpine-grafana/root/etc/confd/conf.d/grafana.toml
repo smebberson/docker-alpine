@@ -1,3 +1,4 @@
 [template]
 src = "grafana.ini"
 dest = "/etc/grafana/grafana.ini"
+mode = "0644"

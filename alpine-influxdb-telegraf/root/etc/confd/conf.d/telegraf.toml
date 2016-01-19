@@ -1,3 +1,4 @@
 [template]
 src = "telegraf.tmpl"
 dest = "/etc/telegraf/telegraf.toml"
+mode = "0644"

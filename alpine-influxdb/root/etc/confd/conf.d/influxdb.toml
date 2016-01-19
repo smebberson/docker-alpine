@@ -1,3 +1,4 @@
 [template]
 src = "influxdb.tmpl"
 dest = "/etc/influxdb/influxdb.toml"
+mode = "0644"

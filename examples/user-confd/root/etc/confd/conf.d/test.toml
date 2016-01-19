@@ -1,3 +1,4 @@
 [template]
 src = "test.conf.tmpl"
 dest = "/tmp/test.conf"
+mode = "0644"
