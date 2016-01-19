@@ -1,15 +1,15 @@
-FROM smebberson/alpine-confd:1.0.0
+FROM smebberson/alpine-confd:1.0.1
 MAINTAINER Scott Mebberson <scott@scottmebberson.com>
 
-ENV INFLUXDB_VERSION=0.9.6.1 GOMAXPROCS=2
+ENV INFLUXDB_VERSION=0.9.6.1
 
 RUN export GOPATH=/go && \
     echo "http://dl-2.alpinelinux.org/alpine/edge/community" >> /etc/apk/repositories && \
-    apk add --update go=1.5.2-r0 git musl-dev curl && \
+    apk add --update go=1.5.3-r0 git musl-dev curl && \
     go get github.com/influxdb/influxdb && \
     cd $GOPATH/src/github.com/influxdb/influxdb && \
-    git checkout -q --detach "v${INFLUXDB_VERSION}" && \
     go get -v -u -f -t ./... && \
+    git checkout -q --detach "v${INFLUXDB_VERSION}" && \
     go clean -v ./... && \
     go install -v ./... && \
     chmod +x $GOPATH/bin/* && \

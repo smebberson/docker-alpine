@@ -21,10 +21,10 @@ InfluxDB logs aren't automatically streamed to `stderr` (which is the default). 
 Run the following in another terminal window:
 
 ```
-docker exec -i nginx tail -f /var/log/influxdb/influxd.log
+docker exec -i nginx tail -f /var/log/influxdb/influxdb.log
 ```
 
-or, in your `Dockerfile` symlink the Nginx logs to `stderr`:
+or, in your `Dockerfile` symlink the InfluxDB logs to `stderr`:
 
 ```
 RUN ln -sf /dev/stderr /var/log/influxdb/influxdb.log
@@ -39,32 +39,26 @@ This container comes setup as follows:
 - InfluxDB logs will not automatically stream to `stdout`.
 - InfluxDB will run as the unprivileged `influxdb` user.
 
-The InfluxDB configuration file that comes with this image is:
+The InfluxDB configuration file is generated from `confd` (making use of environment variables) and is located at `/root/etc/confd/templates/influxdb.tmpl`. Defaults for the values used to generate the configuration can be found at `/root/etc/cont-init.d/05-env`.
 
-```
-[meta]
-  dir = "/data/influxdb/meta"
+It can be customised with the following environment variables:
 
-[data]
-  dir = "/data/influxdb/data"
-  wal-dir = "/var/tmp/influxdb/wal"
-  wal-logging-enabled = false
+- `INFLUXDB_META_DIR`, defaults to `/data/influxdb/meta`.
+- `INFLUXDB_META_HOSTNAME`, defaults to `localhost`.
+- `INFLUXDB_META_BIND_ADDRESS`, defaults to `:8088`.
+- `INFLUXDB_DATA_DIR`, defaults to `/data/influxdb/data`.
+- `INFLUXDB_DATA_WAL_DIR`, defaults to `/var/tmp/influxdb/wal`.
+- `INFLUXDB_DATA_WAL_LOGGING_ENABLED`, defaults to `false`.
+- `INFLUXDB_ADMIN_ENABLED`, defaults to `false`.
+- `INFLUXDB_ADMIN_BIND_ADDRESS`, defaults to `:8083`.
+- `INFLUXDB_HTTP_AUTH_ENABLED`, defaults to `false`.
+- `INFLUXDB_HTTP_BIND_ADDRESS`, defaults to `:8086`.
 
-[admin]
-  enabled = false
-```
-
-The following environment variables can be set to alter the default configuration values (as above):
-
-- `INFLUXDB_META_DIR`
-- `INFLUXDB_DATA_DIR`
-- `INFLUXDB_DATA_WAL_DIR`
-- `INFLUXDB_DATA_WAL_LOGGING_ENABLED`
-- `INFLUXDB_ADMIN_ENABLED`
+If you've set `INFLUXDB_HTTP_AUTH_ENABLED` to `true`, also set `INFLUXDB_HTTP_USERNAME` and `INFLUXDB_HTTP_PASSWORD` and a new user with all privileges will automatically be created.
 
 ### InfluxDB configuration
 
-To customise configuration for InfluxDB, further than the environment variables allow, replace the file at `root/etc/confd/templates/influxdb.tmpl` with your own configuration. This file will be output to `/etc/influxdb/influxdb.toml` after being run through `confd` (so it is possible to maintain the use of environment variables here, and even extend them).
+To customise configuration for InfluxDB, further than the environment variables allow, replace the file at `root/etc/confd/templates/influxdb.tmpl` with your own configuration. This file will be output to `/etc/influxdb/influxdb.toml` after being run through `confd` (so it is possible to maintain the use of environment variables here, and even extend them to use your own).
 
 ### InfluxDB log file
 

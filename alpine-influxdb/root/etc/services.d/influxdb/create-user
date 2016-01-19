@@ -1,5 +1,5 @@
 #!/usr/bin/with-contenv sh
 
-if test "$INFLUXDB_ADMIN_ENABLED" = "true" -a "$INFLUXDB_HTTP_AUTH_ENABLED" = "true" -a -n "$INFLUXDB_HTTP_ADMIN_USERNAME" -a -n "$INFLUXDB_HTTP_ADMIN_PASSWORD"; then
+if test "$INFLUXDB_HTTP_AUTH_ENABLED" = "true" -a -n "$INFLUXDB_HTTP_USERNAME" -a -n "$INFLUXDB_HTTP_PASSWORD"; then
     influxdb-create-user &
 fi

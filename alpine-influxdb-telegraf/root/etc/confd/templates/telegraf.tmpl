@@ -70,7 +70,7 @@
   {{if (getenv "TELEGRAF_OUTPUTS_INFLUXDB_USERNAME")}}username = "{{getenv "TELEGRAF_OUTPUTS_INFLUXDB_USERNAME"}}"{{end}}
   {{if (getenv "TELEGRAF_OUTPUTS_INFLUXDB_PASSWORD")}}password = "{{getenv "TELEGRAF_OUTPUTS_INFLUXDB_PASSWORD"}}"{{end}}
   # Set the user agent for HTTP POSTs (can be useful for log differentiation)
-  {{if (getenv "TELEGRAF_OUTPUTS_INFLUXDB_USER_AGENT")}}password = "{{getenv "TELEGRAF_OUTPUTS_INFLUXDB_USER_AGENT"}}"{{end}}
+  {{if (getenv "TELEGRAF_OUTPUTS_INFLUXDB_USER_AGENT")}}user_agent = "{{getenv "TELEGRAF_OUTPUTS_INFLUXDB_USER_AGENT"}}"{{end}}
   # user_agent = "telegraf"
   # Set UDP payload size, defaults to InfluxDB UDP Client default (512 bytes)
   # udp_payload = 512

@@ -1,16 +1,16 @@
 FROM smebberson/alpine-influxdb:dev
 MAINTAINER Scott Mebberson <scott@scottmebberson.com>
 
-ENV TELEGRAF_VERSION=0.2.4 GOMAXPROCS=2
+ENV TELEGRAF_VERSION=0.2.4
 
 RUN export GOPATH=/go && \
-    echo "http://dl-2.alpinelinux.org/alpine/latest-stable/community" >> /etc/apk/repositories && \
-    apk add --update go=1.5.2-r0 git musl-dev curl && \
+    echo "http://dl-2.alpinelinux.org/alpine/edge/community" >> /etc/apk/repositories && \
+    apk add --update go=1.5.3-r0 git musl-dev curl && \
     export GOPATH=/go && \
     go get github.com/influxdb/telegraf && \
     cd $GOPATH/src/github.com/influxdb/telegraf && \
-    git checkout -q --detach "v${TELEGRAF_VERSION}" && \
     go get -v ./... && \
+    git checkout -q --detach "v${TELEGRAF_VERSION}" && \
     go install -v ./... && \
     chmod +x $GOPATH/bin/* && \
     mv $GOPATH/bin/* /bin/ && \

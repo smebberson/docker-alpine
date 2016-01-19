@@ -7,4 +7,4 @@ s6-svwait -u -t 10000 /var/run/s6/services/influxdb
 influxdb-ready
 
 # Create an Admin account
-influxdb-query -q "CREATE USER ${INFLUXDB_HTTP_ADMIN_USERNAME} WITH PASSWORD '${INFLUXDB_HTTP_ADMIN_PASSWORD}' WITH ALL PRIVILEGES" -e 200
+influxdb-query -q "CREATE USER ${INFLUXDB_HTTP_USERNAME} WITH PASSWORD '${INFLUXDB_HTTP_PASSWORD}' WITH ALL PRIVILEGES" -e 200
