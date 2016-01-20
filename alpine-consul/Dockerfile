@@ -6,7 +6,7 @@ ENV CONSUL_VERSION=0.5.2 GOMAXPROCS=2
 # Download and install Consul
 # We are building it ourselves, because Alpine Linux doesn't use glibc
 RUN export GOPATH=/go && \
-    apk add --update go git gcc musl-dev make bash && \
+    apk --no-cache add go git gcc musl-dev make bash && \
     go get github.com/hashicorp/consul && \
     cd $GOPATH/src/github.com/hashicorp/consul && \
     git checkout -q --detach "v$CONSUL_VERSION" && \
@@ -14,7 +14,6 @@ RUN export GOPATH=/go && \
     mv bin/consul /bin && \
     rm -rf $GOPATH && \
     apk del go git gcc musl-dev make bash && \
-    rm -rf /var/cache/apk/* && \
     addgroup consul && \
     adduser -D -G consul consul && \
     mkdir -p /data/consul && \
