@@ -1,4 +1,4 @@
-FROM smebberson/alpine-confd:1.0.1
+FROM smebberson/alpine-confd:1.0.2
 MAINTAINER Scott Mebberson <scott@scottmebberson.com>
 
 ENV INFLUXDB_VERSION=0.9.6.1

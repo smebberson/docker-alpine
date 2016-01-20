@@ -1,11 +1,11 @@
-FROM smebberson/alpine-confd:1.0.1
+FROM smebberson/alpine-confd:1.0.2
 MAINTAINER Scott Mebberson <scott@scottmebberson.com>
 
-ENV GRAFANA_VERSION=2.6.0 GOMAXPROCS=2
+ENV GRAFANA_VERSION=2.6.0
 
 RUN export GOPATH=/go && \
     echo "http://dl-2.alpinelinux.org/alpine/latest-stable/community" >> /etc/apk/repositories && \
-    apk add --update go=1.5.2-r0 git musl-dev curl nodejs gcc && \
+    apk add --update go=1.5.3-r0 git musl-dev curl nodejs gcc && \
     go get github.com/grafana/grafana && \
     cd $GOPATH/src/github.com/grafana/grafana && \
     git checkout -q --detach "v${GRAFANA_VERSION}" && \
