@@ -5,9 +5,23 @@ This file contains all software versions, that correspond to a version of this i
 
 ## Latest
 
-Same as v1.2.1.
+Same as v1.3.0.
 
 Usage: `smebberson/alpine-base` or `smebberson/alpine-base:latest`.
+
+## v1.3.0
+
+- [alpinelinux](Alpine linux): v3.3
+- [s6-overlay][s6-overlay]: v1.17.1.1
+- [go-dnsmasq][godnsmasq]: v0.9.8
+
+Improvements:
+
+- [alpinelinux](Alpine linux): v3.3
+- [s6-overlay][s6-overlay]: v1.17.7.1
+
+Usage: `smebberson/alpine-base:1.3.0`.
+
 
 ## v1.2.1
 
