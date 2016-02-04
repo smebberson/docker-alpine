@@ -32,11 +32,11 @@ The following describes the containers that are available and the inheritance ch
 
 ### alpine-base
 
-This image is the base for all containers. It contains Alpine Linux (with DNS `search` support) and s6 via s6-overlay. It is super small and does nothing else. It clocks in at a tiny 12.7 MB.
+This image is the base for all containers. It contains Alpine Linux (with DNS `search` support) and s6 via s6-overlay. It is super small and does nothing else. It clocks in at a tiny 14.3 MB.
 
 An example of inheriting from this container and running it [can be found here](https://github.com/smebberson/docker-alpine/tree/master/examples/user-alpine).
 
-Latest version is `1.2.1`, or `latest` ([VERSIONS.md](https://github.com/smebberson/docker-alpine/blob/master/alpine-base/VERSIONS.md)).
+Latest version is `1.3.0`, or `latest` ([VERSIONS.md](https://github.com/smebberson/docker-alpine/blob/master/alpine-base/VERSIONS.md)).
 
 ### alpine-apache
 

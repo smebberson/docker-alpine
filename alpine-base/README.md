@@ -23,7 +23,8 @@ That means that Alpine Linux and all containers within this repository will now 
 
 ## Versions
 
-- `1.2.1`, `latest` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/master/alpine-base/Dockerfile)
+- `1.3.0`, `latest` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/master/alpine-base/Dockerfile)
+- `1.2.1` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/75cab08d781a9bfc681d6c8d6c45ba13a7d8a765/alpine-base/Dockerfile)
 - `1.2.0` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/e630bad2eebad48231cb61b6139a0aa7603a5910/alpine-base/Dockerfile)
 - `1.1.0` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/1f0d03677e8ebbcd59ff8209730089bcac79d23d/alpine-base/Dockerfile)
 - `1.0.0` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/fdb9fca74d03ee1b21e47e3edd54f01cb4bf5ab6/alpine-base/Dockerfile)
