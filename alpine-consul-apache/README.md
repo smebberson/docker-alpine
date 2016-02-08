@@ -1,7 +1,7 @@
 alpine-consul-apache
-===================
+====================
 
-An image for using [apache][apache], bundled with [Alpine Linux][alpinelinux] and [s6][s6] and [Consul][consul].
+An image for using [Apache][apache], bundled with [Alpine Linux][alpinelinux] and [s6][s6] and [Consul][consul].
 
 This image is perfect if you're looking to run [apache] within a Docker setup and wanting to benefit from [Consul][consul] for service registration and discovery. It's also very small clocking in at only ~34.5MB.
 
@@ -13,28 +13,47 @@ _**Aren't you only supposed to run one process per container?**_
 
 Hell no! The following are good examples of when multiple processes within one container might be necessary:
 
-- Automatically updating [apache][apache] proxy settings when a down-stream application server (nodejs, php, etc) restarts (and the IP changes).
+- Automatically updating [Apache][apache] proxy settings when a down-stream application server (nodejs, php, etc) restarts (and the IP changes).
 - Automatically updating [HAProxy][haproxy] configuration to load balance to a group of down-stream application servers.
 - Running a logging daemon to centralize log management (i.e. [logentries][logentries], [loggly][loggly], [logstash][logstash]).
 - When you need to run a script on application server crash (to tidy something up), as the standard [Docker container restart policies][drsp] won't provide this.
 
 In all of these instances, there is one primary services and secondary support services. When the secondary support services fail, they should be automatically restarted. When the primary service fails, the container itself should restart.
 
-Usage
------
+## Versions
+
+- `1.0.0` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/master/alpine-consul-apache/Dockerfile)
+
+[See VERSIONS.md for image contents.](https://github.com/smebberson/docker-alpine/blob/master/alpine-consul-apache/VERSIONS.md)
+
+## Usage
 
 To use this image include `FROM smebberson/alpine-consul-apache` at the top of your `Dockerfile`, or simply `docker run -p 80:80 -p 443:443 --name apache smebberson/alpine-consul-apache`.
 
-Customisation
--------------
+Apache logs (access and error logs) aren't automatically streamed to `stdout` and `stderr`. To review the logs, you can do one of two things:
+
+Run the following in another terminal window:
+
+```
+docker exec -i apache tail -f /var/log/apache2/access.log -f /var/log/apache2/error.log
+```
+
+or, in your `Dockerfile` symlink the Apaache logs to `stdout` and `stderr`:
+
+```
+RUN ln -sf /dev/stdout /var/log/apache2/access.log && \
+    ln -sf /dev/stderr /var/log/apache2/error.log
+```
+
+## Customisation
 
 This container comes setup as follows:
 
-- [s6][s6] will automatically start [apache][apache] for you.
+- [s6][s6] will automatically start [Apache][apache] for you.
 - If apache dies, so will the container.
-- [Consul][consul] service registration, and health check of the apache service.
+- [Consul][consul] service registration, and health check of the Apache service.
 
-apache logs (access and error logs) are automatically streamed to stdout. A service of name `apache` is automatically setup within Consul, and a health check define to report availability of the service to Consul.
+A service of name `apache` is automatically setup within Consul, and a health check define to report availability of the service to Consul.
 
 ### HTML content
 
@@ -46,9 +65,9 @@ ADD /path/to/content /var/www/localhost/
 
 htdocs folder with index.html is the default, but that's easily changed (see below).
 
-### apache configuration
+### Apache configuration
 
-A basic apache configuration is supplied with this image. But it's easy to overwrite:
+A basic Apache configuration is supplied with this image. But it's easy to overwrite:
 
 - Create your own `httpd.conf`.
 - In your `Dockerfile`, make sure your `httpd.conf` file is copied to `/etc/apache/httpd.conf`.

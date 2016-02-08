@@ -3,7 +3,17 @@ alpine-nodejs
 
 An image for using Node.js within containers, bundled with [Alpine Linux][alpinelinux] and [s6][s6].
 
-[It's built from my Alpine linux based Docker image (with s6)][alpinebase].
+[It's built from my Alpine Linux based Docker image (with s6, and DNS `search` support)][alpinebase].
+
+Versions
+--------
+
+- `3.0.1`, `latest` [(Dockerfile)](https://github.com/smebberson/docker-alpine/tree/master/alpine-nodejs/Dockerfile)
+- `3.0.0` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/0897f9e089a338ca92643daf76e3c6d8e2ac5dd1/alpine-nodejs/Dockerfile)
+- `2.0.0` [(Dockerfile)](https://github.com/smebberson/docker-alpine/tree/9202662d6628b64ab456b3ec11a35721f5459a22/alpine-nodejs)
+- `1.0.0` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/cd0d6cdaf2be905e21acf1b99d19d1fbe3c1f0fb/alpine-nodejs/Dockerfile)
+
+[See VERSIONS.md for image contents.](https://github.com/smebberson/docker-alpine/blob/master/alpine-nodejs/VERSIONS.md)
 
 Usage
 -----

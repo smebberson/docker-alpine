@@ -4,7 +4,7 @@
         "port": 80,
         "checks": [
             {
-                "script": "wget -s http://localhost:80 > /dev/null 2>&1 || exit 2",
+                "script": "wget -s http://localhost:80/ping.html > /dev/null 2>&1 || exit 2",
                 "interval": "5s"
             }
         ]

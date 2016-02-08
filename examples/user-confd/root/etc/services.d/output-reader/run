@@ -1,0 +1,9 @@
+#!/usr/bin/with-contenv sh
+
+touch /var/run/s6/services/output-reader/down
+
+echo "Outputting /tmp/test.conf to verify the confd setup has worked:"
+
+cat /tmp/test.conf
+
+s6-svc -d /var/run/s6/services/output-reader
