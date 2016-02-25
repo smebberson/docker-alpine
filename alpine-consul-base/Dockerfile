@@ -1,7 +1,7 @@
 FROM smebberson/alpine-consul:1.1.0
 MAINTAINER Scott Mebberson <scott@scottmebberson.com>
 
-ENV CONSUL_TEMPLATE_VERSION=0.12.0
+ENV CONSUL_TEMPLATE_VERSION=0.13.0
 
 # Download and install Consul Template
 RUN apk add --update openssl && \
@@ -11,7 +11,18 @@ RUN apk add --update openssl && \
     apk del openssl && \
     rm -rf /var/cache/apk/* && \
     addgroup consul-template && \
-    adduser -D -g "" -s /bin/sh -G consul-template consul-template
+    adduser -D -g "" -s /bin/sh -G consul-template consul-template && \
+    addgroup s6 && \
+    addgroup consul s6 && addgroup consul-template s6
 
 # Add the files
 ADD root /
+
+# For `s6-svc -h` to work properly we want to set proper group permissions
+# see: https://github.com/just-containers/s6-overlay/issues/130#issuecomment-181956795
+# Also fix permissions
+RUN mkdir /etc/services.d/consul-template/supervise/ && \
+    mkfifo /etc/services.d/consul-template/supervise/control && \
+    chown -R root:s6 /etc/services.d/consul-template/ && \
+    chmod g+w /etc/services.d/consul-template/supervise/control && \
+    chmod o-w /etc/services.d/consul-template/down

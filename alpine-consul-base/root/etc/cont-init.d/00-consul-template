@@ -1,11 +1,5 @@
 #!/usr/bin/with-contenv sh
 
-# add s6 specific down file to tell not to start service
-if [ ! -e "/etc/services.d/consul-template/down" ]; then
-  touch /etc/services.d/consul-template/down
-  chown consul:consul /etc/services.d/consul-template/down
-fi
-
 # check if `consul-template` templates exist
 if [ `ls -l /etc/consul-template/templates/ | grep -c ^d` -gt 0 ]; then
   # add symlink for consul watch
