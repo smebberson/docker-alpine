@@ -28,5 +28,6 @@ This container comes setup as follows:
 - [consul-template][consul-template] is provided and automatically started if templates are provided.
 
 To use [consul-template][consul-template] simply add your templates to `root/etc/consul-template/templates/my-service/` and then make `consul-template` configuration aware of your templates by adding a configuration file in `root/etc/consul-template/conf.d/my-service` (use sub folders to make `VOLUME /etc/consul-template/templates/my-service` possible).
+In your `Dockerfile` be sure to run `mkfifo /etc/services.d/my-service/supervise/control` and `chmod g+w /etc/services.d/my-service/supervise/control` in order to make it possible for [consul-template] to command `s6-svc` if needed. Otherwise [consul-template] will be unable to restart your service.
 
 [consul-template]: https://github.com/hashicorp/consul-template
