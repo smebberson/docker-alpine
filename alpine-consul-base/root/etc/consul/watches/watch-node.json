@@ -2,7 +2,7 @@
     "watches": [
       {
           "type": "nodes",
-          "handler": "/usr/bin/consul-nodes-handler.sh"
+          "handler": "/usr/bin/consul-nodes-handler"
       }
     ]
 }

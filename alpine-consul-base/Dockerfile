@@ -1,19 +1,20 @@
 FROM smebberson/alpine-consul:1.1.0
 MAINTAINER Scott Mebberson <scott@scottmebberson.com>
 
-ENV CONSUL_TEMPLATE_VERSION=0.13.0
+ENV CONSUL_TEMPLATE_VERSION=0.14.0
 
 # Download and install Consul Template
-RUN apk add --update openssl && \
-    wget -q -O /tmp/consul-template.zip https://releases.hashicorp.com/consul-template/${CONSUL_TEMPLATE_VERSION}/consul-template_${CONSUL_TEMPLATE_VERSION}_linux_amd64.zip && \
+RUN apk add --update curl && \
+    curl -sLo /tmp/consul-template.zip https://releases.hashicorp.com/consul-template/${CONSUL_TEMPLATE_VERSION}/consul-template_${CONSUL_TEMPLATE_VERSION}_linux_amd64.zip && \
     unzip -d /usr/sbin/ /tmp/consul-template.zip && \
     rm /tmp/consul-template.zip && \
-    apk del openssl && \
+    apk del curl && \
     rm -rf /var/cache/apk/* && \
     addgroup consul-template && \
     adduser -D -g "" -s /bin/sh -G consul-template consul-template && \
     addgroup s6 && \
-    addgroup consul s6 && addgroup consul-template s6
+    addgroup consul s6 && \
+    addgroup consul-template s6
 
 # Add the files
 ADD root /
@@ -23,6 +24,5 @@ ADD root /
 # Also fix permissions
 RUN mkdir /etc/services.d/consul-template/supervise/ && \
     mkfifo /etc/services.d/consul-template/supervise/control && \
-    chown -R root:s6 /etc/services.d/consul-template/ && \
-    chmod g+w /etc/services.d/consul-template/supervise/control && \
-    chmod o-w /etc/services.d/consul-template/down
+    chown -R root:s6 /etc/services.d/consul-template && \
+    chmod g+w /etc/services.d/consul-template/supervise/control /etc/services.d/consul-template

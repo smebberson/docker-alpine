@@ -1,0 +1,4 @@
+#!/bin/sh
+
+# count child directories
+ls -l /etc/consul-template/templates/ | grep -c ^d
