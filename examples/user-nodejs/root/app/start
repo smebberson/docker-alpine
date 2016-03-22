@@ -2,4 +2,4 @@
 
 cd /app
 
-node server.js
+NODE_VERSION=`node --version` NPM_VERSION=`npm --version` node server.js

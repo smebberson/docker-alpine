@@ -1,0 +1,9 @@
+#!/usr/bin/with-contenv sh
+
+# do we need to enable the management plugin?
+if test -n "$RABBITMQ_ENABLE_MANAGEMENT_PLUGIN"; then
+    rabbitmq-plugins enable --offline rabbitmq_management
+fi
+
+# setup the template
+confd -onetime -backend env
