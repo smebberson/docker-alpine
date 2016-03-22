@@ -1,8 +1,9 @@
-FROM smebberson/alpine-consul-base:dev
+FROM smebberson/alpine-consul-base:1.2.0
 MAINTAINER Scott Mebberson <scott@scottmebberson.com>
 
 # Install nginx
-RUN apk add --update nginx && \
+RUN echo "http://dl-4.alpinelinux.org/alpine/v3.2/main" >> /etc/apk/repositories && \
+    apk add --update nginx=1.8.1-r0 && \
     rm -rf /var/cache/apk/* && \
     chown -R nginx:www-data /var/lib/nginx && \
     ln -sf /dev/stdout /var/log/nginx/access.log && \

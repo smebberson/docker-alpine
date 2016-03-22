@@ -1,5 +1,4 @@
-alpine-consul-nginx
-===================
+# alpine-consul-nginx
 
 An image for using [nginx][nginx], bundled with [Alpine Linux][alpinelinux] and [s6][s6] and [Consul][consul].
 
@@ -22,12 +21,12 @@ In all of these instances, there is one primary services and secondary support s
 
 ## Versions
 
-- `1.0.0`, `latest` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/master/alpine-consul-nginx/Dockerfile)
+- `1.1.0`, `latest` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/master/alpine-consul-nginx/Dockerfile)
+- `1.0.0` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/b81d842e38a3c2c6e1a54ce9ac510af26643622c/alpine-consul-nginx/Dockerfile)
 
 [See VERSIONS.md for image contents.](https://github.com/smebberson/docker-alpine/blob/master/alpine-consul-nginx/VERSIONS.md)
 
-Usage
------
+## Usage
 
 To use this image include `FROM smebberson/alpine-consul-nginx` at the top of your `Dockerfile`, or simply `docker run -p 80:80 -p 443:443 --name nginx smebberson/alpine-consul-nginx`.
 
