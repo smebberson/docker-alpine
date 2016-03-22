@@ -6,7 +6,8 @@ This image is perfect if you're looking to run nginx to proxy to a Node.js appli
 
 ## Versions
 
-- `1.0.0`, `latest` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/master/alpine-consul-nginx-nodejs/Dockerfile)
+- `1.1.0`, `latest` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/master/alpine-consul-nginx-nodejs/Dockerfile)
+- `1.0.0` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/17ca85a1d427fc7441bf120bc96ce61741d2fa20/alpine-consul-nginx-nodejs/Dockerfile)
 
 [See VERSIONS.md for image contents.](https://github.com/smebberson/docker-alpine/blob/master/alpine-consul-nginx-nodejs/VERSIONS.md)
 
