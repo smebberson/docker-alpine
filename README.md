@@ -58,9 +58,9 @@ Latest version is `1.1.0`, or `latest` ([VERSIONS.md](https://github.com/smebber
 
 ### alpine-consul-base
 
-This image inherits from alpine-consul and is designed specifically to be inherited from, to create other images which require a work Consul setup. Consul is setup to run in agent mode, it expects one linked container called `consul-agent` and will automatically join to that ip. [Read here](https://github.com/smebberson/docker-alpine/tree/master/alpine-consul-base) for more information.
+This image inherits from alpine-consul and is designed specifically to be inherited from, to create other images which require a working Consul setup. Consul is setup to run in agent mode, it expects one linked container called `consul-agent` and will automatically join to that ip. It also contains [consul-template][consultemplate] to allow configuration files to be easily generated based on service discovery. [Read here](https://github.com/smebberson/docker-alpine/tree/master/alpine-consul-base) for more information.
 
-Latest version is `1.0.0`, or `latest` ([VERSIONS.md](https://github.com/smebberson/docker-alpine/blob/master/alpine-consul-base/VERSIONS.md)).
+Latest version is `1.2.0`, or `latest` ([VERSIONS.md](https://github.com/smebberson/docker-alpine/blob/master/alpine-consul-base/VERSIONS.md)).
 
 ### alpine-consul-apache
 
@@ -148,3 +148,4 @@ Setup the vagrant machine by running `vagrant up --provider=vmware_fusion`. This
 [dockeralpinedesign]: https://github.com/smebberson/docker-alpine/blob/master/DESIGN.md
 [alpinebasedns]: https://github.com/smebberson/docker-alpine/tree/master/alpine-base#dns
 [rabbitmq]: http://www.rabbitmq.com/
+[consultemplate]: https://github.com/hashicorp/consul-template
