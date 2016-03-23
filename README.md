@@ -149,3 +149,12 @@ Setup the vagrant machine by running `vagrant up --provider=vmware_fusion`. This
 [alpinebasedns]: https://github.com/smebberson/docker-alpine/tree/master/alpine-base#dns
 [rabbitmq]: http://www.rabbitmq.com/
 [consultemplate]: https://github.com/hashicorp/consul-template
+
+## Contributors
+
+- [smebberson](https://github.com/smebberson)
+- [matthewvalimaki](https://github.com/matthewvalimaki)
+- [sandytrinh](https://github.com/sandytrinh)
+- [gaff](https://github.com/Gaff)
+
+You can view [more information about the contributors here](https://github.com/smebberson/docker-alpine/graphs/contributors).
