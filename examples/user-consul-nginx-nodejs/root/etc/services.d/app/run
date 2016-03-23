@@ -2,4 +2,4 @@
 
 cd /app
 
-exec node server.js;
+exec s6-setuidgid nodejs node server.js;
