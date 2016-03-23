@@ -2,7 +2,7 @@ FROM smebberson/alpine-consul-base:2.0.0
 MAINTAINER Scott Mebberson <scott@scottmebberson.com>
 
 ENV NODE_VERSION=v4.4.1 \
-	NPM_VERSION=3
+    NPM_VERSION=3
 
 RUN apk add --update git curl make gcc g++ python linux-headers libgcc libstdc++ binutils-gold && \
     curl -sSL https://nodejs.org/dist/${NODE_VERSION}/node-${NODE_VERSION}.tar.gz | tar -xz && \
