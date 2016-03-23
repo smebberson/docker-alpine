@@ -7,5 +7,9 @@ ENV NODE_ENV=development \
 # Add image source
 ADD root /
 
+USER nodejs
+
 RUN cd /app && \
     npm install --production
+
+USER root
