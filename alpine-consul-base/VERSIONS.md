@@ -12,7 +12,7 @@ Usage: `smebberson/alpine-consul-base` or `smebberson/alpine-consul-base:latest`
 
 - [smebberson/alpine-consul: v1.1.0][alpineconsul]
 - [consul-template: v0.14.0][consultemplate]
-- *breaking change*: consul configuration directory is now located at `/etc/consul/conf.d/`
+- **_breaking change_**: consul configuration directory is now located at `/etc/consul/conf.d/`
 
 Usage: `smebberson/alpine-consul-base:2.0.0`.
 

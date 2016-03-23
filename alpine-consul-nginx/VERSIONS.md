@@ -12,9 +12,9 @@ Usage: `smebberson/alpine-consul-nginx` or `smebberson/alpine-consul-nginx:lates
 
 - [smebberson/alpine-consul-base: v2.0.0][smebbersonalpineconsulbase200]
 - [nginx][nginx]: v1.8.1
-- *breaking change*: consul configuration directory is now located at `/etc/consul/conf.d/`
+- **_breaking change_**: consul configuration directory is now located at `/etc/consul/conf.d/`
 
-Usage: `smebberson/alpine-consul-nginx:1.1.0`.
+Usage: `smebberson/alpine-consul-nginx:2.0.0`.
 
 ## v1.0.0
 
