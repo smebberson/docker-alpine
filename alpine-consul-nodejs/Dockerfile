@@ -15,6 +15,6 @@ RUN apk add --update git curl make gcc g++ python linux-headers libgcc libstdc++
     apk del gcc g++ linux-headers libgcc libstdc++ binutils-gold && \
     rm -rf /etc/ssl /node-${NODE_VERSION} /usr/include \
     /usr/share/man /tmp/* /var/cache/apk/* /root/.npm /root/.node-gyp \
-    /usr/lib/node_modules/npm/man /usr/lib/node_modules/npm/doc /usr/lib/node_modules/npm/html
+    /usr/lib/node_modules/npm/man /usr/lib/node_modules/npm/doc /usr/lib/node_modules/npm/html && \
     addgroup nodejs && \
     adduser -g '' -DS -G nodejs -s /bin/sh nodejs
