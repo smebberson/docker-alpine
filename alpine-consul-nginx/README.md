@@ -21,8 +21,8 @@ In all of these instances, there is one primary services and secondary support s
 
 ## Versions
 
-- `1.1.0`, `latest` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/master/alpine-consul-nginx/Dockerfile)
-- `1.0.0` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/b81d842e38a3c2c6e1a54ce9ac510af26643622c/alpine-consul-nginx/Dockerfile)
+- `2.0.0`, `latest` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/alpine-consul-nginx-v2.0.0/alpine-consul-nginx/Dockerfile)
+- `1.0.0` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/alpine-consul-nginx-v1.0.0/alpine-consul-nginx/Dockerfile)
 
 [See VERSIONS.md for image contents.](https://github.com/smebberson/docker-alpine/blob/master/alpine-consul-nginx/VERSIONS.md)
 
