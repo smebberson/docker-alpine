@@ -114,6 +114,8 @@ This image inherits from alpine-base, and includes Node.js. You can [read about 
 
 Latest version is `3.0.1`, or `latest` ([VERSIONS.md](https://github.com/smebberson/docker-alpine/blob/master/alpine-nodejs/VERSIONS.md)).
 
+`3.x` versions of `alpine-nodejs` contain Node.js `v5.x` and `2.x` versions of `alpine-nodejs` container `v4.x LTS` versions of Node.js.
+
 ### alpine-rabbitmq
 
 This image inherits from alpine-confd, and includes [RabbitMQ][rabbitmq]. You can [read about using this image and customising it here](https://github.com/smebberson/docker-alpine/tree/master/alpine-rabbitmq).
