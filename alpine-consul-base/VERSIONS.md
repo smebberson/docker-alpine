@@ -4,16 +4,17 @@ This file contains all software versions, that correspond to a version of this i
 
 ## Latest
 
-Same as v1.2.0.
+Same as v2.0.0.
 
 Usage: `smebberson/alpine-consul-base` or `smebberson/alpine-consul-base:latest`.
 
-## v1.2.0
+## v2.0.0
 
 - [smebberson/alpine-consul: v1.1.0][alpineconsul]
 - [consul-template: v0.14.0][consultemplate]
+- *breaking change*: consul configuration directory is now located at `/etc/consul/conf.d/`
 
-Usage: `smebberson/alpine-consul-base:1.1.0`.
+Usage: `smebberson/alpine-consul-base:2.0.0`.
 
 ## v1.1.0
 

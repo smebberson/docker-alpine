@@ -8,9 +8,9 @@ This image is designed to be extended from, with specific services added to it v
 
 ## Versions
 
-- `1.2.0`, `latest` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/master/alpine-consul-base/Dockerfile)
-- `1.1.0` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/0cb63b4702b5e3c684e9c2e6c90dca454e29bb79/alpine-consul-base/Dockerfile)
-- `1.0.0` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/03d6d010c86aae573cd9671014fb2e7bee60f8cd/alpine-consul-base/Dockerfile)
+- `2.0.0`, `latest` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/alpine-consul-base-v2.0.0/alpine-consul-base/Dockerfile)
+- `1.1.0` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/alpine-consul-base-v1.1.0/alpine-consul-base/Dockerfile)
+- `1.0.0` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/alpine-consul-base-v1.0.0/alpine-consul-base/Dockerfile)
 
 [See VERSIONS.md for image contents.](https://github.com/smebberson/docker-alpine/blob/master/alpine-consul-base/VERSIONS.md)
 
