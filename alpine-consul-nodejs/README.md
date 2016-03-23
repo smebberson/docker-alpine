@@ -6,10 +6,12 @@ This image is perfect if you're looking to run a Node.js application within a Do
 
 ## Versions
 
-- `2.0.0`, `latest` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/alpine-consul-nodejs-v2.0.0/alpine-consul-nodejs/Dockerfile)
+- `3.0.0`, `latest` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/alpine-consul-nodejs-v3.0.0/alpine-consul-nodejs/Dockerfile)
+- `2.0.0` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/alpine-consul-nodejs-v2.0.0/alpine-consul-nodejs/Dockerfile)
 - `1.0.0` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/alpine-consul-nodejs-v1.0.0/alpine-consul-nodejs/Dockerfile)
 
 [See VERSIONS.md for image contents.](https://github.com/smebberson/docker-alpine/blob/master/alpine-consul-nodejs/VERSIONS.md)
+[Looking for a particular version of Node.js? See NODEJS.md for more information.](https://github.com/smebberson/docker-alpine/blob/master/alpine-consul-nodejs/VERSIONS.md)
 
 ## Usage
 
