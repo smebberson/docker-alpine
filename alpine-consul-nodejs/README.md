@@ -1,12 +1,16 @@
-alpine-consul-nodejs
-====================
+# alpine-consul-nodejs
 
 An image for using Node.js within containers, bundled with [Alpine Linux][alpinelinux] and [s6][s6] and [Consul][consul].
 
 This image is perfect if you're looking to run a Node.js application within a Docker setup and wanting to benefit from Consul for service registration and discovery. It's also very small clocking in at only ~60MB.
 
-Usage
------
+## Versions
+
+- `1.0.0`, `latest` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/alpine-consul-nodejs-v1.0.0/alpine-consul-nodejs/Dockerfile)
+
+[See VERSIONS.md for image contents.](https://github.com/smebberson/docker-alpine/blob/master/alpine-consul-nodejs/VERSIONS.md)
+
+## Usage
 
 To use this image include `FROM smebberson/alpine-consul-nodejs` at the top of your `Dockerfile`. Inheriting from `smebberson/alpine-consul-nodejs` provides you with the ability to easily start your Node.js application using [s6][s6]. You have two options for process management:
 
