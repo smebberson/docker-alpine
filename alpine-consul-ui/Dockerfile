@@ -1,7 +1,8 @@
-FROM smebberson/alpine-consul
+FROM smebberson/alpine-consul:1.3.0
+
 MAINTAINER Scott Mebberson <scott@scottmebberson.com>
 
-ENV CONSUL_VERSION=0.5.2
+ENV CONSUL_VERSION=0.6.3
 
 # Download and install Consul-ui
 ADD https://dl.bintray.com/mitchellh/consul/${CONSUL_VERSION}_web_ui.zip /tmp/consul_web_ui.zip
