@@ -92,6 +92,8 @@ Latest version is `2.0.0`, or `latest` ([VERSIONS.md](https://github.com/smebber
 
 This image inherits from alpine-consul-base and provides a Redis container benefiting from Consul for service registration and discovery. [Read here](https://github.com/smebberson/docker-alpine/tree/master/alpine-consul-redis) for more information. An example of inheriting from this container [can be found here](https://github.com/smebberson/docker-alpine/tree/master/examples/user-consul-redis).
 
+Latest version is `1.0.0`, or `latest` ([VERSIONS.md](https://github.com/smebberson/docker-alpine/blob/master/alpine-consul-redis/VERSIONS.md)).
+
 ### alpine-consul-ui
 
 The image inherits from alpine-consul, and is geared up to run the Consul Web UI.
