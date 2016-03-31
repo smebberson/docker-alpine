@@ -100,6 +100,8 @@ The image inherits from alpine-consul, and is geared up to run the Consul Web UI
 
 There are some configuration options which can be [read here](https://github.com/smebberson/docker-alpine/tree/master/alpine-consul-ui). An example of inheriting from this container and running Consul [can be found here](https://github.com/smebberson/docker-alpine/tree/master/examples/user-consul-ui).
 
+Latest version is `1.0.0`, or `latest` ([VERSIONS.md](https://github.com/smebberson/docker-alpine/blob/master/alpine-consul-ui/VERSIONS.md)).
+
 ### alpine-nginx
 
 This image inherits from alpine-base, and includes nginx with a very basic configuration. You can [read about using this image and customising it here](https://github.com/smebberson/docker-alpine/tree/master/alpine-nginx). An example of inheriting from this container and running Nginx [can be found here](https://github.com/smebberson/docker-alpine/tree/master/examples/user-nginx).
