@@ -1,5 +1,4 @@
-alpine-redis
-============
+# alpine-redis
 
 An image for using [redis][redis], bundled with Alpine Linux and s6.
 
@@ -18,15 +17,19 @@ Hell no! The following are good examples of when multiple processes within one c
 
 In all of these instances, there is one primary services and secondary support services. When the secondary support services fail, they should be automatically restarted. When the primary service fails, the container itself should restart.
 
-Usage
------
+## Versions
+
+- `1.0.0`, `latest` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/alpine-redis-v1.0.0/alpine-redis/Dockerfile)
+
+[See VERSIONS.md for image contents.](https://github.com/smebberson/docker-alpine/blob/master/alpine-redis/VERSIONS.md)
+
+## Usage
 
 To use this image include `FROM smebberson/alpine-redis` at the top of your `Dockerfile`, or simply `docker run --name redis smebberson/alpine-redis`.
 
 Redis logs (access and error logs) are automatically streamed to stdout.
 
-Customisation
--------------
+## Customisation
 
 This container comes setup as follows:
 
