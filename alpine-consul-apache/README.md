@@ -99,7 +99,7 @@ exec /usr/sbin/apachectl -DFOREGROUND;
 
 ### Consul service registration
 
-By default the file at `/etc/consul.d/apache.json` will register an `apache` service, on port `80` with [Consul][consul]. It also registers a 5s health check that reports on the availability of the service. If you'd like to configure perhaps more ports, or change the health check simply create a new file that meets the requirements of a [Consul service definition][consulservicedef] and add it (in your Dockerfile) to your image, replacing the already existing `apache.json`.
+By default the file at `/etc/consul/conf.d/apache.json` will register an `apache` service, on port `80` with [Consul][consul]. It also registers a 5s health check that reports on the availability of the service. If you'd like to configure perhaps more ports, or change the health check simply create a new file that meets the requirements of a [Consul service definition][consulservicedef] and add it (in your Dockerfile) to your image, replacing the already existing `apache.json`.
 
 [alpinelinux]: https://www.alpinelinux.org/
 [consul]: https://consul.io/

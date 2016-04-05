@@ -1,0 +1,6 @@
+#!/usr/bin/with-contenv sh
+
+# wait 5s for `consul agent` to become available
+s6-svwait -u -t 5000 /var/run/s6/services/consul
+
+s6-setuidgid consul-template consul-template -config /etc/consul-template/conf.d/;

@@ -63,9 +63,9 @@ Latest version is `1.1.0`, or `latest` ([VERSIONS.md](https://github.com/smebber
 
 ### alpine-consul-base
 
-This image inherits from alpine-consul and is designed specifically to be inherited from, to create other images which require a work Consul setup. Consul is setup to run in agent mode, it expects one linked container called `consul-agent` and will automatically join to that ip. [Read here](https://github.com/smebberson/docker-alpine/tree/master/alpine-consul-base) for more information.
+This image inherits from alpine-consul and is designed specifically to be inherited from, to create other images which require a working Consul setup. Consul is setup to run in agent mode, it expects one linked container called `consul-agent` and will automatically join to that ip. It also contains [consul-template][consultemplate] to allow configuration files to be easily generated based on service discovery. [Read here](https://github.com/smebberson/docker-alpine/tree/master/alpine-consul-base) for more information.
 
-Latest version is `1.0.0`, or `latest` ([VERSIONS.md](https://github.com/smebberson/docker-alpine/blob/master/alpine-consul-base/VERSIONS.md)).
+Latest version is `2.0.0`, or `latest` ([VERSIONS.md](https://github.com/smebberson/docker-alpine/blob/master/alpine-consul-base/VERSIONS.md)).
 
 ### alpine-consul-apache
 
@@ -79,6 +79,9 @@ Latest version is `1.0.0`, or `latest` ([VERSIONS.md](https://github.com/smebber
 
 This image inherits from alpine-consul-base and is perfect if you're looking to run a Node.js application within a Docker setup and wanting to benefit from Consul for service registration and discovery. [Read here](https://github.com/smebberson/docker-alpine/tree/master/alpine-consul-nodejs) for more information.
 
+Latest version is `3.0.0`, or `latest` ([VERSIONS.md](https://github.com/smebberson/docker-alpine/blob/master/alpine-consul-nodejs/VERSIONS.md)).
+
+Looking for a particular version of Node.js? [See NODEJS.md for more information.](https://github.com/smebberson/docker-alpine/blob/master/alpine-consul-nodejs/NODEJS.md)
 An example of inheriting from this container and running a Node.js website [can be found here](https://github.com/smebberson/docker-alpine/tree/master/examples/user-consul-nodejs).
 
 ### alpine-consul-nginx
@@ -87,25 +90,28 @@ This image inherits from alpine-consul-base and is perfect if you're looking to 
 
 An example of inheriting from this container and running nginx [can be found here](https://github.com/smebberson/docker-alpine/tree/master/examples/user-consul-nginx).
 
-Latest version is `1.0.0`, or `latest` ([VERSIONS.md](https://github.com/smebberson/docker-alpine/blob/master/alpine-consul-nginx/VERSIONS.md)).
+Latest version is `2.0.0`, or `latest` ([VERSIONS.md](https://github.com/smebberson/docker-alpine/blob/master/alpine-consul-nginx/VERSIONS.md)).
 
 ### alpine-consul-nginx-nodejs
 
 This image inherits from alpine-consul-nginx and is perfect if you're looking to run nginx to proxy to a Node.js application, or if you're wanting to run nginx as a load balancer (proxying to external containers) and using Node.js for nginx configuration. [Read here](https://github.com/smebberson/docker-alpine/tree/master/alpine-consul-nginx-nodejs) for more information.
 
 An example of inheriting from this container and running nginx with Node.js [can be found here](https://github.com/smebberson/docker-alpine/tree/master/examples/user-consul-nginx-nodejs).
+Latest version is `2.0.0`, or `latest` ([VERSIONS.md](https://github.com/smebberson/docker-alpine/blob/master/alpine-consul-nginx-nodejs/VERSIONS.md)).
 
 ### alpine-consul-redis
 
 This image inherits from alpine-consul-base and provides a Redis container benefiting from Consul for service registration and discovery. [Read here](https://github.com/smebberson/docker-alpine/tree/master/alpine-consul-redis) for more information.
 
 An example of inheriting from this container [can be found here](https://github.com/smebberson/docker-alpine/tree/master/examples/user-consul-redis).
+Latest version is `1.0.0`, or `latest` ([VERSIONS.md](https://github.com/smebberson/docker-alpine/blob/master/alpine-consul-redis/VERSIONS.md)).
 
 ### alpine-consul-ui
 
 The image inherits from alpine-consul, and is geared up to run the Consul Web UI. There are some configuration options which can be [read here](https://github.com/smebberson/docker-alpine/tree/master/alpine-consul-ui).
 
 An example of inheriting from this container and running Consul [can be found here](https://github.com/smebberson/docker-alpine/tree/master/examples/user-consul-ui).
+Latest version is `1.0.0`, or `latest` ([VERSIONS.md](https://github.com/smebberson/docker-alpine/blob/master/alpine-consul-ui/VERSIONS.md)).
 
 ### alpine-nginx
 
@@ -128,8 +134,9 @@ Latest version is `2.1.1`, or `latest` ([VERSIONS.md](https://github.com/smebber
 This image inherits from alpine-base, and includes Node.js. You can [read about using this image and customising it here](https://github.com/smebberson/docker-alpine/tree/master/alpine-nodejs).
 
 An example of inheriting from this container and running a Node.js script [can be found here](https://github.com/smebberson/docker-alpine/tree/master/examples/user-nodejs).
+Latest version is `3.1.0`, or `latest` ([VERSIONS.md](https://github.com/smebberson/docker-alpine/blob/alpine-nodejs-v3.1.0/alpine-nodejs/VERSIONS.md)).
 
-Latest version is `3.0.1`, or `latest` ([VERSIONS.md](https://github.com/smebberson/docker-alpine/blob/master/alpine-nodejs/VERSIONS.md)).
+`3.x` versions of `alpine-nodejs` contain Node.js `v5.x` and `2.x` versions of `alpine-nodejs` container `v4.x LTS` versions of Node.js.
 
 ### alpine-rabbitmq
 
@@ -139,7 +146,9 @@ Latest version is `1.0.0`, or `latest` ([VERSIONS.md](https://github.com/smebber
 
 ### alpine-redis
 
-This image inherits from alpine-base, and includes Redis. You can [read about using this image and customising it here](https://github.com/smebberson/docker-alpine/tree/master/alpine-redis).
+This image inherits from alpine-base, and includes Redis. You can [read about using this image and customising it here](https://github.com/smebberson/docker-alpine/tree/master/alpine-redis). An example of inheriting from this container and running Redis [can be found here](https://github.com/smebberson/docker-alpine/tree/master/examples/user-redis).
+
+Latest version is `1.0.0`, or `latest` ([VERSIONS.md](https://github.com/smebberson/docker-alpine/blob/master/alpine-redis/VERSIONS.md)).
 
 ## Versioning
 
@@ -165,3 +174,13 @@ Setup the vagrant machine by running `vagrant up --provider=vmware_fusion`. This
 [dockeralpinedesign]: https://github.com/smebberson/docker-alpine/blob/master/DESIGN.md
 [alpinebasedns]: https://github.com/smebberson/docker-alpine/tree/master/alpine-base#dns
 [rabbitmq]: http://www.rabbitmq.com/
+[consultemplate]: https://github.com/hashicorp/consul-template
+
+## Contributors
+
+- [smebberson](https://github.com/smebberson)
+- [matthewvalimaki](https://github.com/matthewvalimaki)
+- [sandytrinh](https://github.com/sandytrinh)
+- [gaff](https://github.com/Gaff)
+
+You can view [more information about the contributors here](https://github.com/smebberson/docker-alpine/graphs/contributors).

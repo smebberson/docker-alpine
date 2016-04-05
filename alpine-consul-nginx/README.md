@@ -1,5 +1,4 @@
-alpine-consul-nginx
-===================
+# alpine-consul-nginx
 
 An image for using [nginx][nginx], bundled with [Alpine Linux][alpinelinux] and [s6][s6] and [Consul][consul].
 
@@ -22,12 +21,12 @@ In all of these instances, there is one primary services and secondary support s
 
 ## Versions
 
-- `1.0.0`, `latest` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/master/alpine-consul-nginx/Dockerfile)
+- `2.0.0`, `latest` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/alpine-consul-nginx-v2.0.0/alpine-consul-nginx/Dockerfile)
+- `1.0.0` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/alpine-consul-nginx-v1.0.0/alpine-consul-nginx/Dockerfile)
 
 [See VERSIONS.md for image contents.](https://github.com/smebberson/docker-alpine/blob/master/alpine-consul-nginx/VERSIONS.md)
 
-Usage
------
+## Usage
 
 To use this image include `FROM smebberson/alpine-consul-nginx` at the top of your `Dockerfile`, or simply `docker run -p 80:80 -p 443:443 --name nginx smebberson/alpine-consul-nginx`.
 
@@ -89,7 +88,7 @@ exec nginx;
 
 ### Consul service registration
 
-By default the file at `/etc/consul.d/nginx.json` will register an `nginx` service, on port `80` with Consul. It also registers a 5s health check that reports on the availability of the service. If you'd like to configure perhaps more ports, or change the health check simply create a new file that meets the requirements of a [Consul service definition][consulservicedef] and add it (in your Dockerfile) to your image, replacing the already existing `nginx.json`.
+By default the file at `/etc/consul/conf.d/nginx.json` will register an `nginx` service, on port `80` with Consul. It also registers a 5s health check that reports on the availability of the service. If you'd like to configure perhaps more ports, or change the health check simply create a new file that meets the requirements of a [Consul service definition][consulservicedef] and add it (in your Dockerfile) to your image, replacing the already existing `nginx.json`.
 
 [s6]: http://www.skarnet.org/software/s6/
 [s6-built-statically]: https://github.com/smebberson/docker-ubuntu-base/blob/master/s6/s6-build

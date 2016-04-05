@@ -1,12 +1,17 @@
-alpine-consul-nodejs
-====================
+# alpine-consul-nginx-nodejs
 
 An image for using Node.js within containers, bundled with [Alpine Linux][alpinelinux] and [s6][s6] and [Consul][consul].
 
 This image is perfect if you're looking to run nginx to proxy to a Node.js application, or if you're wanting to run nginx as a load balancer (proxying to external containers) and using Node.js for nginx configuration.
 
-Usage
------
+## Versions
+
+- `2.0.0`, `latest` [(Dockerfile)](https://github.com/smebberson/docker-alpine/tree/alpine-consul-nginx-v2.0.0/alpine-consul-nginx-nodejs/Dockerfile)
+- `1.0.0` [(Dockerfile)](https://github.com/smebberson/docker-alpine/tree/alpine-consul-nginx-v1.0.0/alpine-consul-nginx-nodejs/Dockerfile)
+
+[See VERSIONS.md for image contents.](https://github.com/smebberson/docker-alpine/blob/master/alpine-consul-nginx-nodejs/VERSIONS.md)
+
+## Usage
 
 This is really just a combination of the [smebberson/alpine-consul-nginx][alpineconsulnginx] and [smebberson/alpine-consul-nodejs][alpineconsulnodejs] containers. Read their individual documentation for more information.
 
