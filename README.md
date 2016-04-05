@@ -43,7 +43,7 @@ This image inherits from alpine-base, and includes apache with a very basic conf
 
 An example of inheriting from this container and running Apache [can be found here](https://github.com/smebberson/docker-alpine/tree/master/examples/user-apache).
 
-Latest version is `1.0.0`, or `latest` ([VERSIONS.md](https://github.com/smebberson/docker-alpine/blob/master/alpine-apache/VERSIONS.md)).
+Latest version is `2.0.0`, or `latest` ([VERSIONS.md](https://github.com/smebberson/docker-alpine/blob/master/alpine-apache/VERSIONS.md)).
 
 ### alpine-confd
 
