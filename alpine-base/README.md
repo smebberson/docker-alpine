@@ -1,6 +1,9 @@
 # alpine-base
 
-A base image for running just about anything within a container, based on Alpine Linux 3.2.
+A base image for running just about anything within a container, based on Alpine Linux 3.3.
+
+[![ImageLayers Layers](https://img.shields.io/imagelayers/layers/smebberson/alpine-base/latest.svg)]()
+[![ImageLayers Size](https://img.shields.io/imagelayers/image-size/smebberson/alpine-base/latest.svg)]()
 
 ## Process management
 
@@ -23,11 +26,11 @@ That means that Alpine Linux and all containers within this repository will now 
 
 ## Versions
 
-- `1.3.0`, `latest` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/master/alpine-base/Dockerfile)
-- `1.2.1` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/75cab08d781a9bfc681d6c8d6c45ba13a7d8a765/alpine-base/Dockerfile)
-- `1.2.0` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/e630bad2eebad48231cb61b6139a0aa7603a5910/alpine-base/Dockerfile)
-- `1.1.0` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/1f0d03677e8ebbcd59ff8209730089bcac79d23d/alpine-base/Dockerfile)
-- `1.0.0` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/fdb9fca74d03ee1b21e47e3edd54f01cb4bf5ab6/alpine-base/Dockerfile)
+- `2.0.0`, `latest` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/alpine-base-v2.0.0/alpine-base/Dockerfile)
+- `1.2.1` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/alpine-base-v1.2.1/alpine-base/Dockerfile)
+- `1.2.0` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/alpine-base-v1.2.0/alpine-base/Dockerfile)
+- `1.1.0` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/alpine-base-v1.1.0/alpine-base/Dockerfile)
+- `1.0.0` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/alpine-base-v1.0.0/alpine-base/Dockerfile)
 
 [See VERSIONS.md for image contents.](https://github.com/smebberson/docker-alpine/blob/master/alpine-base/VERSIONS.md)
 

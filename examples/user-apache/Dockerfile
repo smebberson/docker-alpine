@@ -1,4 +1,4 @@
-FROM smebberson/alpine-apache:1.0.0
+FROM smebberson/alpine-apache
 MAINTAINER Scott Mebberson <scott@scottmebberson.com>
 
 # Add the files

@@ -1,20 +1,38 @@
-alpine-apache
-============
+# alpine-apache
 
-This file contains all software versions, that correspond to a version of this image itself.
+This file contains all software versions, that correspond to a version of this image itself. Read more about the [alpine-apache image here][alpineapache].
 
 ## Latest
 
-Same as v1.0.0.
+Same as v2.0.0.
 
 Usage: `smebberson/alpine-apache` or `smebberson/alpine-apache:latest`.
 
+## v2.0.0
+
+[![ImageLayers Layers](https://img.shields.io/imagelayers/layers/smebberson/alpine-apache/2.0.0.svg)]()
+[![ImageLayers Size](https://img.shields.io/imagelayers/image-size/smebberson/alpine-apache/2.0.0.svg)]()
+
+- [smebberson/alpine-base: v2.0.0][smebbersonalpinebase200]
+- [apache: v2.4.17][Apache]
+
+Improvements:
+
+- Updates to Apache and alpine-base (Alpine Linux).
+
+Usage: `smebberson/alpine-apache:2.0.0`.
+
 ## v1.0.0
 
+[![ImageLayers Layers](https://img.shields.io/imagelayers/layers/smebberson/alpine-apache/1.0.0.svg)]()
+[![ImageLayers Size](https://img.shields.io/imagelayers/image-size/smebberson/alpine-apache/1.0.0.svg)]()
+
 - [smebberson/alpine-base: v1.2.0][smebbersonalpinebase120]
-- [apache: v2.4.16][apache]
+- [apache: v2.4.16][Apache]
 
 Usage: `smebberson/alpine-apache:1.0.0`.
 
-[apache]: httsp://httpd.apache.org/
-[smebbersonalpinebase120]: https://github.com/smebberson/docker-alpine/tree/e630bad2eebad48231cb61b6139a0aa7603a5910/alpine-base
+[Apache]: httsp://httpd.apache.org/
+[alpineapache]: https://github.com/smebberson/docker-alpine/tree/master/alpine-apache
+[smebbersonalpinebase200]: https://github.com/smebberson/docker-alpine/tree/alpine-base-v2.0.0/alpine-base
+[smebbersonalpinebase120]: https://github.com/smebberson/docker-alpine/tree/alpine-base-v1.2.0/alpine-base
