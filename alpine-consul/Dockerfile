@@ -1,7 +1,7 @@
-FROM smebberson/alpine-base:1.3.0
+FROM smebberson/alpine-base:1.2.0
 MAINTAINER Scott Mebberson <scott@scottmebberson.com>
 
-ENV CONSUL_VERSION=0.6.3 GOMAXPROCS=2
+ENV CONSUL_VERSION=0.5.2 GOMAXPROCS=2
 
 # Download and install Consul
 # We are building it ourselves, because Alpine Linux doesn't use glibc

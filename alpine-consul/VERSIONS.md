@@ -8,14 +8,6 @@ Same as v1.1.0.
 
 Usage: `smebberson/alpine-consul` or `smebberson/alpine-consul:latest`.
 
-## v1.3.0
-
-- [smebberson/alpine-base: v1.3.0][smebbersonalpinebase120]
-- [consul v0.6.3][consul]
-
-Usage: `smebberson/alpine-consul:1.1.0`.
-
-
 ## v1.1.0
 
 - [smebberson/alpine-base: v1.2.0][smebbersonalpinebase120]
