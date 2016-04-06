@@ -51,7 +51,7 @@ This image inherits from alpine-base and adds [confd][confd] into the mix. This 
 
 An example of inheriting from this container and running Consul [can be found here](https://github.com/smebberson/docker-alpine/tree/master/examples/user-confd).
 
-Latest version is `1.0.2`, or `latest` ([VERSIONS.md](https://github.com/smebberson/docker-alpine/blob/master/alpine-confd/VERSIONS.md)).
+Latest version is `2.0.0`, or `latest` ([VERSIONS.md](https://github.com/smebberson/docker-alpine/blob/master/alpine-confd/VERSIONS.md)).
 
 ### alpine-consul
 

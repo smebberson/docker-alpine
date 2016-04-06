@@ -2,6 +2,8 @@
 
 touch /var/run/s6/services/output-reader/down
 
+confd --version
+
 echo "Outputting /tmp/test.conf to verify the confd setup has worked:"
 
 cat /tmp/test.conf
