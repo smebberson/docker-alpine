@@ -13,6 +13,9 @@ Usage: `smebberson/alpine-consul` or `smebberson/alpine-consul:latest`.
 
 ## v2.0.0
 
+[![ImageLayers Layers](https://img.shields.io/imagelayers/layers/smebberson/alpine-consul/2.0.0.svg)]()
+[![ImageLayers Size](https://img.shields.io/imagelayers/image-size/smebberson/alpine-consul/2.0.0.svg)]()
+
 - [smebberson/alpine-base: v2.0.0][smebbersonalpinebase200]
 - [consul v0.6.4][consul]
 
@@ -31,12 +34,18 @@ Usage: `smebberson/alpine-consul:2.0.0`.
 
 ## v1.1.0
 
+[![ImageLayers Layers](https://img.shields.io/imagelayers/layers/smebberson/alpine-consul/1.1.0.svg)]()
+[![ImageLayers Size](https://img.shields.io/imagelayers/image-size/smebberson/alpine-consul/1.1.0.svg)]()
+
 - [smebberson/alpine-base: v1.2.0][smebbersonalpinebase120]
 - [consul v0.5.2][consul]
 
 Usage: `smebberson/alpine-consul:1.1.0`.
 
 ## v1.0.0
+
+[![ImageLayers Layers](https://img.shields.io/imagelayers/layers/smebberson/alpine-consul/1.0.0.svg)]()
+[![ImageLayers Size](https://img.shields.io/imagelayers/image-size/smebberson/alpine-consul/1.0.0.svg)]()
 
 - [smebberson/alpine-base: v1.0.0][smebbersonalpinebase100]
 - [consul v0.5.2][consul]
