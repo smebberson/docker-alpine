@@ -1,22 +1,17 @@
-FROM smebberson/alpine-base:1.2.0
+FROM smebberson/alpine-base:2.0.0
 MAINTAINER Scott Mebberson <scott@scottmebberson.com>
 
-ENV CONSUL_VERSION=0.5.2 GOMAXPROCS=2
+ENV CONSUL_VERSION=0.6.4 \
+    CONSUL_DOMAIN=consul
 
 # Download and install Consul
-# We are building it ourselves, because Alpine Linux doesn't use glibc
-RUN export GOPATH=/go && \
-    apk add --update go git gcc musl-dev make bash && \
-    go get github.com/hashicorp/consul && \
-    cd $GOPATH/src/github.com/hashicorp/consul && \
-    git checkout -q --detach "v$CONSUL_VERSION" && \
-    make && \
-    mv bin/consul /bin && \
-    rm -rf $GOPATH && \
-    apk del go git gcc musl-dev make bash && \
-    rm -rf /var/cache/apk/* && \
+RUN apk add --no-cache curl && \
+    curl -sSLo /tmp/consul.zip https://releases.hashicorp.com/consul/{$CONSUL_VERSION}/consul_${CONSUL_VERSION}_linux_amd64.zip && \
+    unzip -d /bin /tmp/consul.zip && \
+    rm /tmp/consul.zip && \
+    apk del curl && \
     addgroup consul && \
-    adduser -D -G consul consul && \
+    adduser -D -g "" -s /bin/sh -G consul consul && \
     mkdir -p /data/consul && \
     chown -R consul:consul /data/consul
 
@@ -25,4 +20,4 @@ ADD root /
 
 VOLUME ["/data/consul"]
 
-EXPOSE 8300 8301 8301/udp 8302 8302/udp 8400 53 53/udp
+EXPOSE 8300 8301 8301/udp 8302 8302/udp 8400 8500 53 53/udp
