@@ -1,7 +1,7 @@
 FROM smebberson/alpine-confd:2.0.0
 MAINTAINER Scott Mebberson <scott@scottmebberson.com>
 
-ENV RABBITMQ_VERSION=3.6.0 \
+ENV RABBITMQ_VERSION=3.6.1 \
     ERLANG_PKG_VERSION=18.1-r5
 
 # Setup Erlang, download RabbitMQ and setup the management plugin
