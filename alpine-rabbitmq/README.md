@@ -14,8 +14,9 @@ This image features:
 
 ## Versions
 
-- `2.0.0`, `latest` [(Dockerfile)](https://github.com/smebberson/docker-alpine/tree/alpine-rabbitmq-v2.0.0/alpine-rabbitmq)
-- `1.0.0` [(Dockerfile)](https://github.com/smebberson/docker-alpine/tree/alpine-rabbitmq-v2.0.0/alpine-rabbitmq)
+- `2.1.0`, `latest` [(Dockerfile)](https://github.com/smebberson/docker-alpine/tree/alpine-rabbitmq-v2.1.0/alpine-rabbitmq)
+- `2.0.0` [(Dockerfile)](https://github.com/smebberson/docker-alpine/tree/alpine-rabbitmq-v2.0.0/alpine-rabbitmq)
+- `1.0.0` [(Dockerfile)](https://github.com/smebberson/docker-alpine/tree/alpine-rabbitmq-v1.0.0/alpine-rabbitmq)
 
 [See VERSIONS.md for image contents.](https://github.com/smebberson/docker-alpine/blob/master/alpine-rabbitmq/VERSIONS.md)
 

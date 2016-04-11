@@ -4,11 +4,32 @@ This file contains all software versions, that correspond to a version of this i
 
 ## Latest
 
-Same as v2.0.0.
+[![ImageLayers Layers](https://img.shields.io/imagelayers/layers/smebberson/alpine-rabbitmq/latest.svg)]()
+[![ImageLayers Size](https://img.shields.io/imagelayers/image-size/smebberson/alpine-rabbitmq/latest.svg)]()
+
+Same as v2.1.0.
 
 Usage: `smebberson/alpine-rabbitmq` or `smebberson/alpine-rabbitmq:latest`.
 
+## v2.1.0
+
+[![ImageLayers Layers](https://img.shields.io/imagelayers/layers/smebberson/alpine-rabbitmq/2.1.0.svg)]()
+[![ImageLayers Size](https://img.shields.io/imagelayers/image-size/smebberson/alpine-rabbitmq/2.1.0.svg)]()
+
+- [smebberson/alpine-base: v2.0.0][smebbersonalpinebase200]
+- [RabbitMQ: v3.6.0][rabbitmq]
+- [confd: v0.11.0][confd]
+
+Improvements:
+
+- Upgraded RabbitMQ to v3.6.0.
+
+Usage: `smebberson/alpine-rabbitmq:2.1.0`.
+
 ## v2.0.0
+
+[![ImageLayers Layers](https://img.shields.io/imagelayers/layers/smebberson/alpine-rabbitmq/2.0.0.svg)]()
+[![ImageLayers Size](https://img.shields.io/imagelayers/image-size/smebberson/alpine-rabbitmq/2.0.0.svg)]()
 
 - [smebberson/alpine-base: v2.0.0][smebbersonalpinebase200]
 - [RabbitMQ: v3.5.7][rabbitmq]
@@ -21,6 +42,9 @@ Improvements:
 Usage: `smebberson/alpine-rabbitmq:2.0.0`.
 
 ## v1.0.0
+
+[![ImageLayers Layers](https://img.shields.io/imagelayers/layers/smebberson/alpine-rabbitmq/1.0.0.svg)]()
+[![ImageLayers Size](https://img.shields.io/imagelayers/image-size/smebberson/alpine-rabbitmq/1.0.0.svg)]()
 
 - [smebberson/alpine-base: v1.2.1][smebbersonalpinebase121]
 - [RabbitMQ: v3.5.7][rabbitmq]
