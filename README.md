@@ -147,7 +147,7 @@ Latest version is `3.1.0`, or `latest` ([VERSIONS.md](https://github.com/smebber
 
 This image inherits from alpine-confd, and includes [RabbitMQ][rabbitmq]. You can [read about using this image and customising it here](https://github.com/smebberson/docker-alpine/tree/master/alpine-rabbitmq).
 
-Latest version is `1.0.0`, or `latest` ([VERSIONS.md](https://github.com/smebberson/docker-alpine/blob/master/alpine-rabbitmq/VERSIONS.md)).
+Latest version is `2.0.0`, or `latest` ([VERSIONS.md](https://github.com/smebberson/docker-alpine/blob/master/alpine-rabbitmq/VERSIONS.md)).
 
 ### alpine-redis
 
