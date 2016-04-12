@@ -1,4 +1,4 @@
-FROM smebberson/alpine-consul-apache:1.0.0
+FROM smebberson/alpine-consul-apache
 MAINTAINER Scott Mebberson <scott@scottmebberson.com>
 
 ADD root /
