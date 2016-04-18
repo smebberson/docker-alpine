@@ -1,5 +1,4 @@
-alpine-consul-redis
-===================
+# alpine-consul-redis
 
 An image for using [redis][redis], bundled with [Alpine Linux][alpinelinux] and [s6][s6] and [Consul][consul].
 
@@ -20,15 +19,19 @@ Hell no! The following are good examples of when multiple processes within one c
 
 In all of these instances, there is one primary services and secondary support services. When the secondary support services fail, they should be automatically restarted. When the primary service fails, the container itself should restart.
 
-Usage
------
+## Versions
 
-To use this image include `FROM smebberson/alpine-consul-redis` at the top of your `Dockerfile`, or simply `docker run --name redis --link alpine-consul:consul-agent smebberson/alpine-consul-redis`.
+- `1.0.0`, `latest` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/alpine-consul-redis-v1.0.0/alpine-consul-redis/Dockerfile)
+
+[See VERSIONS.md for image contents.](https://github.com/smebberson/docker-alpine/blob/master/alpine-consul-redis/VERSIONS.md)
+
+## Usage
 
 You need to a link to another container running Consul, so this container can join the cluster. It should have a link name of `consul-agent`.
 
-Customisation
--------------
+To use this image include `FROM smebberson/alpine-consul-redis` at the top of your `Dockerfile`, or simply `docker run --name redis --link alpine-consul:consul-agent smebberson/alpine-consul-redis`.
+
+## Customisation
 
 This container comes setup as follows:
 

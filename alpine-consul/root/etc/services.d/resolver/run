@@ -1,0 +1,3 @@
+#!/usr/bin/with-contenv sh
+
+exec go-dnsmasq --default-resolver --append-search-domains --hostsfile=/etc/hosts --stubzones=.$CONSUL_DOMAIN/127.0.0.1:8600 >> $GO_DNSMASQ_LOG_FILE 2>&1

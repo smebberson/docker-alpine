@@ -1,7 +1,9 @@
-alpine-apache
-=============
+# alpine-apache
 
 An image for using [Apache][apache], bundled with Alpine Linux and s6.
+
+[![ImageLayers Layers](https://img.shields.io/imagelayers/layers/smebberson/alpine-apache/latest.svg)]()
+[![ImageLayers Size](https://img.shields.io/imagelayers/image-size/smebberson/alpine-apache/latest.svg)]()
 
 **_Yet another container for running apache?_**
 
@@ -20,12 +22,12 @@ In all of these instances, there is one primary services and secondary support s
 
 ## Versions
 
-- `1.0.0` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/master/alpine-apache/Dockerfile)
+- `2.0.0`, `latest` [(Dockerfile)](https://github.com/smebberson/docker-alpine/tree/alpine-apache-v2.0.0/alpine-apache)
+- `1.0.0` [(Dockerfile)](https://github.com/smebberson/docker-alpine/tree/alpine-apache-v1.0.0/alpine-apache)
 
 [See VERSIONS.md for image contents.](https://github.com/smebberson/docker-alpine/blob/master/alpine-apache/VERSIONS.md)
 
-Usage
------
+## Usage
 
 To use this image include `FROM smebberson/alpine-apache` at the top of your `Dockerfile`, or simply `docker run -p 80:80 -p 443:443 --name apache smebberson/alpine-apache`.
 

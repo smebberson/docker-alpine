@@ -19,8 +19,9 @@ In all of these instances, there is one primary services and secondary support s
 
 ## Versions
 
-- `1.1.0`, `latest` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/master/alpine-consul/Dockerfile)
-- `1.0.0` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/df6ba86de86a325fd3544bedfbdf932829feb9d8/alpine-consul/Dockerfile)
+- `2.0.0`, `latest` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/master/alpine-consul/Dockerfile)
+- `1.1.0` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/alpine-consul-v1.1.0/alpine-consul/Dockerfile)
+- `1.0.0` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/alpine-consul-v1.0.0/alpine-consul/Dockerfile)
 
 [See VERSIONS.md for image contents.](https://github.com/smebberson/docker-alpine/blob/master/alpine-consul/VERSIONS.md)
 
@@ -56,6 +57,14 @@ To customise configuration for `consul`, replace the file at `root/etc/consul/co
 
 To customise the start script for `consul`, replace the file at `root/etc/services.d/consul/run` with your own start script.
 
+### Consul DNS domain
+
+By default, Consul's DNS domain is `consul.`. This allows you to make DNS queries such as `nginx.service.consul` to find all IPs relating to the `nginx` service (for example). Through customizing the environment variable `CONSUL_DOMAIN` you can alter Consul's DNS domain.
+
+For example, add `ENV CONSUL_DOMAIN=dockeralpine` to your `Dockerfile` and you'll be able to make a DNS query for `nginx.service.dockeralpine` rather than the default.
+
+You can read more about [Consul's DNS interface here][consuldnsinterface].
+
 [s6]: http://www.skarnet.org/software/s6/
 [logentries]: https://logentries.com/
 [loggly]: https://www.loggly.com/
@@ -67,3 +76,4 @@ To customise the start script for `consul`, replace the file at `root/etc/servic
 [alpinebase]: https://registry.hub.docker.com/u/smebberson/alpine-base/
 [consului]: https://github.com/smebberson/docker-ubuntu-base/tree/master/consul-ui
 [consulagent]: https://github.com/smebberson/docker-ubuntu-base/tree/master/consul-agent
+[consuldnsinterface]: https://www.consul.io/docs/agent/dns.html

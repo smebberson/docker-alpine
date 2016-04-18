@@ -1,6 +1,9 @@
 # alpine-confd
 
-An image for using [confd][confd] within Docker containers.
+An image for using [confd][confd], bundled with Alpine Linux and s6.
+
+[![ImageLayers Layers](https://img.shields.io/imagelayers/layers/smebberson/alpine-confd/latest.svg)]()
+[![ImageLayers Size](https://img.shields.io/imagelayers/image-size/smebberson/alpine-confd/latest.svg)]()
 
 This image is one of many Docker images designed to run multiple services per container (grouped sparingly and logically of course). You can read more about the philosophy of these images [here][dockeralpinedesign].
 
@@ -14,9 +17,10 @@ This image features:
 
 ## Versions
 
-- `1.0.2`, `latest` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/master/alpine-confd/Dockerfile)
-- `1.0.1` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/b271a701b9beb019e667307072baa604d0383410/alpine-confd/Dockerfile)
-- `1.0.0` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/e9c249f956d2ac3da74ad1cb0ee0e619d5395c2a/alpine-confd/Dockerfile)
+- `2.0.0`, `latest` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/alpine-confd-v2.0.0/alpine-confd/Dockerfile)
+- `1.0.2` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/alpine-confd-v1.0.2/alpine-confd/Dockerfile)
+- `1.0.1` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/alpine-confd-v1.0.1/alpine-confd/Dockerfile)
+- `1.0.0` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/alpine-confd-v1.0.0/alpine-confd/Dockerfile)
 
 [See VERSIONS.md for image contents.](https://github.com/smebberson/docker-alpine/blob/master/alpine-confd/VERSIONS.md)
 
