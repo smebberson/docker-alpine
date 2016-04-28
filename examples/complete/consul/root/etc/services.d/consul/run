@@ -1,0 +1,10 @@
+#!/usr/bin/with-contenv sh
+#
+## Bind to the external (LAN) IP.
+JOIN=`getent hosts consul-server | awk '{print $1}'`
+
+# Bind to the external (LAN) IP.
+BIND=`getent hosts $HOSTNAME | awk '{print $1}'`
+
+# Start Consul in Server mode (see /etc/consul/conf.d/bootstrap/config.json).
+s6-setuidgid consul consul agent -config-dir /etc/consul/conf.d/bootstrap -bind $BIND -client $BIND -domain $CONSUL_DOMAIN -retry-join $JOIN -retry-interval 15s

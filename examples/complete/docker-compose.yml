@@ -1,0 +1,22 @@
+conductor:
+    build: ./conductor
+consul:
+    build: ./consul
+    links:
+        - conductor:consul-server
+consul2:
+    build: ./consul
+    links:
+        - consul:consul-server
+consului:
+    build: ./consul-ui
+    links:
+        - consul:consul-agent
+    ports:
+        - 8500:8500
+static:
+    build: ./static
+    links:
+        - consul:consul-agent
+    ports:
+        - 80:80
