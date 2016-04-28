@@ -54,6 +54,15 @@ Containers running Consul in agent mode:
 
 We've found this to be the most consistent way to effectively run Consul in production. This also supports the development workflow in which you `CTRL+C` to stop a container from running.
 
+## Usage
+
+To run this example:
+
+- Change into this directory `cd /vagrant/examples/complete`.
+- Start the containers using Docker Compose `dc up -d && dc logs`. This will start the containers in background mode, but will show the logs so you can see what is happening.
+
+You can view http://192.168.89.10:8500/ui/ to see the Consul UI showing everything setup and communicating.
+
 ### Testing
 
 There are two workflows to test (as far as the containers running Consul in server mode are concerned):
@@ -65,13 +74,13 @@ To test services crashing:
 
 - Gain access to a container (via `docker exec -it complete_consul2_1 with-contenv sh`), find the pid of Consul (via `ps aux`), and then kill it (via `kill -9 <pid>`). This will kill the Consul process without a signal, simulating a crash.
 
-Using this method if the container is one with Consul running in server mode, the container should completely exit (in this instance other containers running Consul in server mode will attempt to rejoin the exited container which is normal). If the container is one with Consul running in agent mode (i.e. static), Consul should be restarted and immediately rejoin the cluster.
+Using this method (if the container is one with Consul running in server mode), the container should completely exit (in this instance other containers running Consul in server mode will attempt to rejoin the exited container which is normal). If the container is one with Consul running in agent mode (i.e. static), Consul should be restarted and immediately rejoin the cluster.
 
 To test stopping services:
 
 - Issue `dc stop consul2 && dc rm --force consul2`.
 
-Using this method the container should be completely exit, with a proper leave from the Consul cluster (check for a deregistered in the logs of another container running Consul in server mode).
+Using this method the container should completely exit, with a proper leave from the Consul cluster (check for a deregistered event in the logs of another container running Consul in server mode).
 
 [s6]: http://www.skarnet.org/software/s6/
 [consul]: https://www.consul.io/
