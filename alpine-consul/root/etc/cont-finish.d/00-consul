@@ -1,3 +1,4 @@
 #!/usr/bin/with-contenv sh
 
-exec s6-setuidgid consul consul force-leave ${HOSTNAME};
+# Tell Consul to leave the cluster.
+exec s6-setuidgid consul consul leave -rpc-addr="$HOSTNAME:8400";

@@ -1,4 +1,3 @@
 {
-    "data_dir": "/data/consul",
-    "leave_on_terminate": true
+    "data_dir": "/data/consul"
 }

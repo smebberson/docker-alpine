@@ -1,9 +1,10 @@
 #!/usr/bin/with-contenv sh
 
-# Bind to the external (LAN) IP
+# Bind to the external (LAN) IP.
 JOIN=`getent hosts consul-agent | awk '{print $1}'`
 
-# Bind to the external (LAN) IP
-BIND=`getent hosts ${HOSTNAME} | awk '{print $1}'`
+# Bind to the external (LAN) IP.
+BIND=`getent hosts $HOSTNAME | awk '{print $1}'`
 
-exec s6-setuidgid consul consul agent -config-dir /etc/consul.d -retry-join ${JOIN} -client ${BIND} -retry-interval 15s -ui;
+# Start Consul.
+s6-setuidgid consul consul agent -config-dir /etc/consul.d -client $BIND -retry-join $JOIN -retry-interval 15s -ui;

@@ -1,4 +1,4 @@
-FROM smebberson/alpine-consul:2.0.0
+FROM smebberson/alpine-consul
 MAINTAINER Scott Mebberson <scott@scottmebberson.com>
 
 # Add the files
