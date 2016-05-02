@@ -1,22 +1,15 @@
-conductor:
-    build: ./conductor
-consul:
-    build: ./consul
-    links:
-        - conductor:consul-server
-consul2:
-    build: ./consul
-    links:
-        - consul:consul-server
-consului:
-    build: ./consul-ui
-    links:
-        - consul:consul-agent
-    ports:
-        - 8500:8500
-static:
-    build: ./static
-    links:
-        - consul:consul-agent
-    ports:
-        - 80:80
+version: '2'
+
+services:
+    consul:
+        build: ./consul
+        volumes:
+            - ./consul/root/usr/bin/consul-available:/usr/bin/consul-available
+    consului:
+        build: ./consul-ui
+        ports:
+            - 8500:8500
+    static:
+        build: ./static
+        ports:
+            - 80:80

@@ -1,6 +1,11 @@
 
 # Changelog for the Consul-based image upgrades
 
+## 2016.05.02
+
+- General: Docker Engine has been updated to 1.11 (run (on host) `vagrant destroy && vagrant reload --provision`).
+- Consul-related: `examples/complete/consul`, `examples/complete/consul-ui`, `examples/complete/static` were all updated to enable zero-conf Consul bootstrapping.
+
 ## 2016.04.28
 
 - Consul-related: `alpine-consul-base` no longer restarts the container if Consul fails. s6 simply restarts Consul.

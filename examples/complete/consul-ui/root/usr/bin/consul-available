@@ -1,0 +1,10 @@
+#!/usr/bin/with-contenv sh
+
+# Wait until consul-join finds another Consul server.
+until consul-join
+do
+    sleep 1
+done
+
+# We have another Consul server available. Exit 0!
+exit 0
