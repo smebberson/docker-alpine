@@ -1,0 +1,16 @@
+#!/usr/bin/with-contenv sh
+
+#
+# This script will determine the network IP of the container.
+#
+
+# Default to using the value of the $HOSTNAME ENV variable.
+NAME="$HOSTNAME"
+
+# Has another name to query been passed in?
+if test ! -z "$@"; then
+    NAME="$@"
+fi
+
+# Find the IP address.
+echo "`dig +short $NAME`"

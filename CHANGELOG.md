@@ -1,6 +1,14 @@
 
 # Changelog for the Consul-based image upgrades
 
+## 2016.05.04
+
+- General: Create a `container-ip` script that will be used in all other scripts when the IP of the container is required. This will make it easy to overide this function in just one place (https://github.com/smebberson/docker-alpine/issues/41). Lives here in `alpine-base`.
+- `alpine-base`: `go-dnsmasq` has been updated to `1.0.4`.
+- `alpine-base`: `--append-search-domains` flag has been removed from `go-dnsmasq` start. This was because Docker 1.10+ seems to add `localdomain` as a search domain to `/etc/resolv.conf` and makes queries longer.
+- `alpine-base`: `--ndots "1" --fwd-ndots "0"` flags have been added to `go-dnsmasq` start. These have been added because Docker 1.10+ adds `options ndots:0` to `/etc/resolv.conf` and `go-dnsmasq` requires a setting of 1. And `--fwd-ndots "0"` instructs `go-dnsmasq` to forward queries to domains without dots (i.e. `consul` as we do now) to upstream DNS servers.
+- Consul-related: `-retry-interval` has been reduced from `15s` to `5s`.
+
 ## 2016.05.02
 
 - General: Docker Engine has been updated to 1.11 (run (on host) `vagrant destroy && vagrant reload --provision`).
