@@ -5,12 +5,4 @@
 #
 
 # Default to using the value of the $HOSTNAME ENV variable.
-NAME="$HOSTNAME"
-
-# Has another name to query been passed in?
-if test ! -z "$@"; then
-    NAME="$@"
-fi
-
-# Find the IP address.
-echo "`dig +short $NAME`"
+dig +short ${1:-$HOSTNAME}
