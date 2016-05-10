@@ -1,7 +1,12 @@
 
 # Changelog for the Consul-based image upgrades
 
-## 2016.05.04
+## 2016.05.11
+
+- `alpine-consul`: customised `/etc/services.d/consul/run` removing `-client $BIND` in favour of `-advertise $BIND -client 0.0.0.0` so that Consul works in more environments (such as overlay networks or environments with multiple IPs).
+- `alpine-consul-base`: customer `/etc/services.d/consul/run` removing `-client $BIND` in favour of `-advertise $BIND -client 0.0.0.0` so that Consul works in more environments (such as overlay networks or environments with multiple IPs).
+
+## 2016.05.10
 
 - General: moved all temporary scripts created in the images in `examples/complete` back into their respective `docker-alpine` containers (for example `container-ip`, `consul-join`, `consul-available` and all run scripts).
 - `alpine-consul-nginx`: fixed issues in which the container assumed an incorrect default root.

@@ -14,4 +14,4 @@ consul-available
 JOIN=`consul-join`
 
 # Start Consul in agent mode (see /etc/consul/conf.d/bootstrap/_base.json).
-s6-setuidgid consul consul agent -config-dir /etc/consul/conf.d -bind $BIND -client $BIND -retry-join $JOIN -retry-interval 5s -domain $CONSUL_DOMAIN
+s6-setuidgid consul consul agent -config-dir /etc/consul/conf.d -bind $BIND -advertise $BIND -client 0.0.0.0 -retry-join $JOIN -retry-interval 5s -domain $CONSUL_DOMAIN
