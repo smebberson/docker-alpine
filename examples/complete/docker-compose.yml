@@ -2,7 +2,7 @@ version: '2'
 
 services:
     consul:
-        build: ./consul
+        image: smebberson/alpine-consul
     consului:
         image: smebberson/alpine-consul-ui
         ports:

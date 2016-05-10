@@ -1,6 +1,0 @@
-{
-    "bootstrap_expect": 3,
-    "server": true,
-    "data_dir": "/data/consul",
-    "disable_update_check": true
-}
