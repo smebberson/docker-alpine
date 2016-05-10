@@ -1,7 +1,7 @@
 #!/usr/bin/with-contenv sh
 
 # Wait until consul-join finds another Consul server.
-until consul-join
+until consul-join > /dev/null 2>&1
 do
     sleep 1
 done
