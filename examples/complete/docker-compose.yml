@@ -4,7 +4,7 @@ services:
     consul:
         build: ./consul
     consului:
-        build: ./consul-ui
+        image: smebberson/alpine-consul-ui
         ports:
             - 8500:8500
     static:
