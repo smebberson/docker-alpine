@@ -3,7 +3,18 @@
 
 ## 2016.05.04
 
-- General: Create a `container-ip` script that will be used in all other scripts when the IP of the container is required. This will make it easy to overide this function in just one place (https://github.com/smebberson/docker-alpine/issues/41). Lives here in `alpine-base`.
+- General: moved all temporary scripts created in the images in `examples/complete` back into their respective `docker-alpine` containers (for example `container-ip`, `consul-join`, `consul-available` and all run scripts).
+- `alpine-consul-nginx`: fixed issues in which the container assumed an incorrect default root.
+- `alpine-consul-nginx`: moved to the built-in `http` Consul check replacing the shell script based version we had.
+- General: reduced output from `consul-available` script. It would unnecessarily print an IP to `stdout`.
+- `alpine-consul`: now expects to be bootstrapped with three other nodes as the default.
+- `alpine-consul-base`: all images extending `alpine-consul-base` will now automatically join a Consul cluster.
+- General: removed the `examples/complete/consul` container as it can now be done in just a few lines in the `docker-compose.yml`. Bootstrapping a multi-node Consul cluster is so simple now! FTW!
+- General: removed the `examples/complete/consului` container as it can now be done in just a few lines in the `docker-compose.yml` (an entire container just for the UI is no longer required).
+
+## 2016.05.04
+
+- General: Create a `container-ip` script that will be used in all other scripts when the IP of the container is required. This will make it easy to override this function in just one place (https://github.com/smebberson/docker-alpine/issues/41). Lives here in `alpine-base`.
 - `alpine-base`: `go-dnsmasq` has been updated to `1.0.4`.
 - `alpine-base`: `--append-search-domains` flag has been removed from `go-dnsmasq` start. This was because Docker 1.10+ seems to add `localdomain` as a search domain to `/etc/resolv.conf` and makes queries longer.
 - `alpine-base`: `--ndots "1" --fwd-ndots "0"` flags have been added to `go-dnsmasq` start. These have been added because Docker 1.10+ adds `options ndots:0` to `/etc/resolv.conf` and `go-dnsmasq` requires a setting of 1. And `--fwd-ndots "0"` instructs `go-dnsmasq` to forward queries to domains without dots (i.e. `consul` as we do now) to upstream DNS servers.
