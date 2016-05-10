@@ -11,3 +11,5 @@ services:
         build: ./static
         ports:
             - 80:80
+    app:
+        build: ./app

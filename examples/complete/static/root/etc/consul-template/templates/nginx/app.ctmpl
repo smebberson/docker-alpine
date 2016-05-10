@@ -1,0 +1,37 @@
+{{if service "app"}}
+
+    upstream app {
+        least_conn;
+        {{range service "app"}}
+        server {{.Address}}:{{.Port}};
+        {{end}}
+    }
+
+    server {
+        listen 80;
+        server_name "";
+
+        expires -1;
+
+        location /ping {
+            return 200;
+            access_log off;
+        }
+
+        location /favicon.ico {
+            log_not_found off;
+        }
+
+        location / {
+            proxy_set_header X-Real-IP $remote_addr;
+            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+            proxy_set_header Host $http_host;
+            proxy_set_header X-Nginx-Proxy true;
+
+            proxy_pass http://app;
+            proxy_redirect off;
+            proxy_intercept_errors on;
+        }
+    }
+
+{{end}}

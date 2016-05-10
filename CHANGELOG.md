@@ -5,6 +5,7 @@
 
 - `alpine-consul`: customised `/etc/services.d/consul/run` removing `-client $BIND` in favour of `-advertise $BIND -client 0.0.0.0` so that Consul works in more environments (such as overlay networks or environments with multiple IPs).
 - `alpine-consul-base`: customer `/etc/services.d/consul/run` removing `-client $BIND` in favour of `-advertise $BIND -client 0.0.0.0` so that Consul works in more environments (such as overlay networks or environments with multiple IPs).
+- General: updated the example to demonstrate Nginx load balancing to multiple Node.js containers.
 
 ## 2016.05.10
 

@@ -25,7 +25,7 @@ This allows the Nginx container to query Consul for the IP address of the Node.j
 
 Setting up your infrastructure using microservices makes scalability a breeze.
 
-An example: load balancing the Node.js web application using Nginx. To do so, start two Node.js containers. Then, when the Nginx container queries Consul for the IP address of the Node.js container it will actually receive two IP addresses. It can then round robin (or any other [type of load balancing method][nginxloadbalancing]) requests to the two different Node.js services.
+This example is setup so that Nginx load balance and proxy to multiple Node.js containers.
 
 ### Okay, so what is s6?
 
@@ -67,9 +67,10 @@ At the moment, the files necessary to achieve this are found within the containe
 To run this example:
 
 - Change into this directory `cd /vagrant/examples/complete`.
-- Start the containers using Docker Compose `dc up -d && dc scale consul=3 && dc logs`. This will start the containers in background mode, but will show the logs so you can see what is happening.
+- Start the containers using Docker Compose `dc up -d && dc scale consul=3 app=3 && dc logs`. This will start the containers in background mode, but will show the logs so you can see what is happening.
 
 You can view http://192.168.89.10:8500/ui/ to see the Consul UI showing everything setup and communicating.
+You can view http://192.168.89.10/ to see the requests being served to and responded by different Node.js containers.
 
 ### Testing
 
