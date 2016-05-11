@@ -6,6 +6,10 @@
 - `alpine-consul`: customised `/etc/services.d/consul/run` removing `-client $BIND` in favour of `-advertise $BIND -client 0.0.0.0` so that Consul works in more environments (such as overlay networks or environments with multiple IPs).
 - `alpine-consul-base`: customer `/etc/services.d/consul/run` removing `-client $BIND` in favour of `-advertise $BIND -client 0.0.0.0` so that Consul works in more environments (such as overlay networks or environments with multiple IPs).
 - General: updated the example to demonstrate Nginx load balancing to multiple Node.js containers.
+- `alpine-consul`: `/usr/bin/consul-join` will now output all consul IPs (excluding itself) with the `-retry-join` argument (for example `-retry-join 172.19.0.7 -retry-join 172.19.0.6`) so that Consul can try mutliple IPs.
+- `alpine-consul`: `/etc/services.d/consul/run` now accepts the `CONSUL_CONFIG_DIR` ENV variable for the location of the Consul configuration directory. Set `CONSUL_CONFIG_DIR` in `alpine-consul/Dockerfile`.
+- `alpine-consul-base`: removed `/etc/services.d/consul/run` and set `CONSUL_CONFIG_DIR` in `alpine-consul-base/Dockerfile`.
+- `alpine-consul-ui`: updated `/etc/services.d/consul/run` to take advantage of improvements listed above and set `CONSUL_CONFIG_DIR` in `alpine-consul-ui/Dockerfile`.
 
 ## 2016.05.10
 

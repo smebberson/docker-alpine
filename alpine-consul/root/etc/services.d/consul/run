@@ -11,7 +11,7 @@ BIND=`container-ip`
 consul-available
 
 # We have another Consul server available. Join it.
-JOIN=`consul-join`
+RETRY_JOIN=`consul-join`
 
-# Start Consul in Server mode (see /etc/consul/conf.d/bootstrap/config.json).
-s6-setuidgid consul consul agent -config-dir /etc/consul/conf.d/bootstrap -bind $BIND -advertise $BIND -client 0.0.0.0 -domain $CONSUL_DOMAIN -retry-join $JOIN -retry-interval 5s
+# Start Consul.
+s6-setuidgid consul consul agent -config-dir $CONSUL_CONFIG_DIR -bind $BIND -advertise $BIND -client 0.0.0.0 $RETRY_JOIN -retry-interval 5s -domain $CONSUL_DOMAIN

@@ -4,13 +4,13 @@
 HOST_IP=`container-ip`
 
 # Look for an IP that doesn't match that of this container.
-UNIQUE=`container-ip consul | grep -v "$HOST_IP" | head -1`
+JOIN=`container-ip consul | grep -v "$HOST_IP" | awk '{ printf " -retry-join " $0}'`
 
 # If we didn't find another IP, exit 1.
-if test -z "$UNIQUE"; then
+if test -z "$JOIN"; then
     exit 1;
 fi
 
-# We found one. Exit 0!
-echo "$UNIQUE"
+# We found at least one. Exit 0!
+echo "$JOIN"
 exit 0

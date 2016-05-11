@@ -2,7 +2,8 @@ FROM smebberson/alpine-base
 MAINTAINER Scott Mebberson <scott@scottmebberson.com>
 
 ENV CONSUL_VERSION=0.6.4 \
-    CONSUL_DOMAIN=consul
+    CONSUL_DOMAIN=consul \
+    CONSUL_CONFIG_DIR=/etc/consul/conf.d/bootstrap
 
 # Download and install Consul
 RUN apk add --no-cache curl && \

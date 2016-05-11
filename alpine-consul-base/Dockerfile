@@ -1,7 +1,8 @@
 FROM smebberson/alpine-consul
 MAINTAINER Scott Mebberson <scott@scottmebberson.com>
 
-ENV CONSUL_TEMPLATE_VERSION=0.14.0
+ENV CONSUL_TEMPLATE_VERSION=0.14.0 \
+    CONSUL_CONFIG_DIR=/etc/consul/conf.d
 
 # Download and install Consul Template
 RUN apk add --no-cache curl && \
