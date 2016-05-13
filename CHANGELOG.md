@@ -6,6 +6,7 @@
 - General: tagged all builds with `:dev` and will release these on Docker hub now. Final testing before release.
 - `alpine-redis`: now inherits from the latest version of `alpine-consul-base`.
 - `alpine-redis`: updated to the latest version of Redis 3.2.0. Redis runs with protected mode off assuming that we're running Redis with container-only access and therefore protected mode is not required.
+- General: update the example to add session management via Redis (demonstrating load balancing with sticky sessions).
 
 ## 2016.05.11
 

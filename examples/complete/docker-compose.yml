@@ -11,5 +11,7 @@ services:
         build: ./static
         ports:
             - 80:80
+    cache:
+        image: smebberson/alpine-consul-redis:dev
     app:
         build: ./app

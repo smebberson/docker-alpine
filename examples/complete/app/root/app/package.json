@@ -18,6 +18,8 @@
   },
   "homepage": "https://github.com/smebberson/docker-alpine#readme",
   "dependencies": {
-    "express": "^4.13.4"
+    "connect-redis": "^3.0.2",
+    "express": "^4.13.4",
+    "express-session": "^1.13.0"
   }
 }

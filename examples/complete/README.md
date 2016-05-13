@@ -70,7 +70,7 @@ To run this example:
 - Start the containers using Docker Compose `dc up -d && dc scale consul=3 app=3 && dc logs`. This will start the containers in background mode, but will show the logs so you can see what is happening.
 
 You can view http://192.168.89.10:8500/ui/ to see the Consul UI showing everything setup and communicating.
-You can view http://192.168.89.10/ to see the requests being served to and responded by different Node.js containers.
+You can view http://192.168.89.10/ to see the requests being served to and responded by different Node.js containers, maintaining stick sessions.
 
 ### Testing
 
