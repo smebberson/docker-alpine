@@ -2,9 +2,9 @@ version: '2'
 
 services:
     consul:
-        image: smebberson/alpine-consul
+        image: smebberson/alpine-consul:dev
     consului:
-        image: smebberson/alpine-consul-ui
+        image: smebberson/alpine-consul-ui:dev
         ports:
             - 8500:8500
     static:

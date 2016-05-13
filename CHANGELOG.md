@@ -1,6 +1,10 @@
 
 # Changelog for the Consul-based image upgrades
 
+## 2016.05.13
+
+- General: tagged all builds with `:dev` and will release these on Docker hub now. Final testing before release.
+
 ## 2016.05.11
 
 - `alpine-consul`: customised `/etc/services.d/consul/run` removing `-client $BIND` in favour of `-advertise $BIND -client 0.0.0.0` so that Consul works in more environments (such as overlay networks or environments with multiple IPs).

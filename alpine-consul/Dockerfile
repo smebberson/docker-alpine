@@ -1,4 +1,4 @@
-FROM smebberson/alpine-base
+FROM smebberson/alpine-base:dev
 MAINTAINER Scott Mebberson <scott@scottmebberson.com>
 
 ENV CONSUL_VERSION=0.6.4 \

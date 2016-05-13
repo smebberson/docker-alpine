@@ -1,1 +1,1 @@
-docker build -t smebberson/alpine-consul /vagrant/alpine-consul
+docker build -t smebberson/alpine-consul:dev /vagrant/alpine-consul
