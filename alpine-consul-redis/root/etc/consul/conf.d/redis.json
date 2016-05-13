@@ -2,11 +2,11 @@
     "service": {
         "name": "redis",
         "port": 6379,
-        "checks": [
-            {
-                "script": "redis-check",
-                "interval": "5s"
-            }
-        ]
+        "check": {
+            "id": "redis",
+            "name": "redis",
+            "script": "redis-check",
+            "interval": "10s"
+        }
     }
 }
