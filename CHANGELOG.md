@@ -1,6 +1,10 @@
 
 # Changelog for the Consul-based image upgrades
 
+## 2016.05.17
+
+- `alpine-base`: reverted `container-ip` to use `getent hosts` rather than `dig` to determine the container ip. After testing with Docker 1.9 `getent hosts` is much more stable (essentially until `go-dnsmasq` is up and running).
+
 ## 2016.05.13
 
 - General: tagged all builds with `:dev` and will release these on Docker hub now. Final testing before release.

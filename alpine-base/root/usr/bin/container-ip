@@ -5,4 +5,4 @@
 #
 
 # Default to using the value of the $HOSTNAME ENV variable.
-dig +short ${1:-$HOSTNAME}
+getent hosts ${1:-$HOSTNAME} | awk '{print $1}'
