@@ -1,6 +1,10 @@
 
 # Changelog for the Consul-based image upgrades
 
+## 2016.05.18
+
+- `alpine-consul`: reverted `consul-join` to use `dig` rather than `getent hosts` so that `-retry-join` flag will use all available consul IPs to attempt to join. This means `container-ip` uses `getent hosts` and `consul-join` uses `dig`. This has proven to be the most stable setup across Docker 1.9 and Docker 1.11.
+
 ## 2016.05.17
 
 - `alpine-base`: reverted `container-ip` to use `getent hosts` rather than `dig` to determine the container ip. After testing with Docker 1.9 `getent hosts` is much more stable (essentially until `go-dnsmasq` is up and running).
