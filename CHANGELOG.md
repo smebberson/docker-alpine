@@ -1,6 +1,11 @@
 
 # Changelog for the Consul-based image upgrades
 
+## 2016.05.19
+
+- `alpine-consul-base`: `/etc/services.d/consul-template/finish` no longer attempts to bring down the entire container. It is a secondary process and therefore should simply restart.
+- `alpine-consul-base`: introduced the `exec` keyword in `/etc/services.d/consul-template/run` when starting `consul-template`. It seems to play nicer and can now receive signals such as `s6-svc -h /var/run/s6/services/consul-template`.
+
 ## 2016.05.18
 
 - `alpine-consul`: reverted `consul-join` to use `dig` rather than `getent hosts` so that `-retry-join` flag will use all available consul IPs to attempt to join. This means `container-ip` uses `getent hosts` and `consul-join` uses `dig`. This has proven to be the most stable setup across Docker 1.9 and Docker 1.11.
