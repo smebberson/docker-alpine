@@ -6,7 +6,8 @@ An image for using Node.js within containers, bundled with [Alpine Linux][alpine
 
 ## Versions
 
-- `3.1.0`, `latest` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/alpine-nodejs-v3.1.0/alpine-nodejs/Dockerfile)
+- `4.0.0`, `latest` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/<alpine-nodejs-v4 class="0"></alpine-nodejs-v4>.0/alpine-nodejs/Dockerfile)
+- `3.1.0` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/alpine-nodejs-v3.1.0/alpine-nodejs/Dockerfile)
 - `3.0.1` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/alpine-nodejs-v3.0.1/alpine-nodejs/Dockerfile)
 - `3.0.0` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/alpine-nodejs-v3.0.0/alpine-nodejs/Dockerfile)
 - `2.1.0` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/alpine-nodejs-v2.1.0/alpine-nodejs/Dockerfile)
@@ -15,7 +16,7 @@ An image for using Node.js within containers, bundled with [Alpine Linux][alpine
 
 [See VERSIONS.md for image contents.](https://github.com/smebberson/docker-alpine/blob/master/alpine-nodejs/VERSIONS.md)
 
-`3.x` versions of `alpine-nodejs` contain Node.js `v5.x` and `2.x` versions of `alpine-nodejs` container `v4.x LTS` versions of Node.js.
+`4.x` versions of `alpine-nodejs` contain Node.js `v6.x` and `3.x` versions of `alpine-nodejs` contain Node.js `v5.x` and `2.x` versions of `alpine-nodejs` container `v4.x LTS` versions of Node.js.
 
 ## Usage
 
