@@ -1,6 +1,14 @@
 
 # Changelog for the Consul-based image upgrades
 
+## 2016.05.27
+
+- `alpine-consul-base`: renamed `/usr/bin/container-ip` to `/usr/bin/host-ip` to be more explicit about what it does.
+- `alpine-consul-consul`: added `/usr/bin/container-find` which is used to find container IP addresses matching a specific DNS name (by default). This script is used within `consul-join`. Through adding this script, it is now quite easy to customise `host-ip` and `container-find` so that these containers can work in non-standard scenarios (such as Rancher and Docker Cloud). It's easier to overwrite these files which are logic, as opposed to `consul-join` in which you'd need to recreate the logic.
+- `alpine-consul-ui`: has been updated to use `host-ip` rather than `container-ip`.
+- `alpine-consul`: now sets `CONSUL_SERVER_NAME` environment variable and this is used within the container as the name for DNS queries. By default `alpine-consul` nodes have been setup to use `consul` as their service name, however, with `CONSUL_SERVER_NAME` you can now customise this as required.
+
+
 ## 2016.05.19
 
 - `alpine-consul-base`: `/etc/services.d/consul-template/finish` no longer attempts to bring down the entire container. It is a secondary process and therefore should simply restart.

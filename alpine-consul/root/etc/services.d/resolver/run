@@ -1,7 +1,7 @@
 #!/usr/bin/with-contenv sh
 
 # Retrieve the external (LAN) IP, as this is what Consul's :8600 port has been bound too.
-BIND=`container-ip`
+BIND=`host-ip`
 
 # Start go-dnsmasq.
 go-dnsmasq --default-resolver --ndots "1" --fwd-ndots "0" --stubzones=".$CONSUL_DOMAIN/$BIND:8600" --hostsfile=/etc/hosts >> $GO_DNSMASQ_LOG_FILE 2>&1

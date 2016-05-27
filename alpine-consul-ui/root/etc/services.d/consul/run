@@ -5,7 +5,7 @@
 #
 
 # Bind to the external (LAN) IP.
-BIND=`container-ip`
+BIND=`host-ip`
 
 # Wait until another Consul server is available.
 consul-available
