@@ -2,15 +2,13 @@
 
 Highly configurable Docker images running [Alpine linux][alpinelinux] and [s6][s6] process management.
 
-[Jump to the list of images in this repository](#images).
-
 **Table of contents**
 
 - [Goals](#goals)
 - [Docker and microservices](#docker-and-microservices)
 - [Image design](#image-design)
 - [Consul and service discovery](#consul-and-service-discovery)
-- [Examples](#example)
+- [Examples](#examples)
 - [Images](#images)
 - [Customization](#customization)
 - [FAQ](#faq)
@@ -343,7 +341,11 @@ By default, it uses `dig` to DNS query for the IP address of a container by name
 
 ## FAQ
 
-These containers are a little different from your standard Docker image. The following should explain most of the differences.
+These images are a little different from your standard Docker images. The following should explain most of the differences.
+
+### DNS search
+
+By default, Alpine Linux doesn't support DNS `search`. This has been enabled through the use of `go-dnsmasq`.
 
 ### Where is Bash?
 
@@ -391,5 +393,6 @@ We love contributors. Read [CONTRIBUTING.md](CONTRIBUTING.md) for more informati
 - [matthewvalimaki](https://github.com/matthewvalimaki)
 - [sandytrinh](https://github.com/sandytrinh)
 - [gaff](https://github.com/Gaff)
+- [ncornag](https://github.com/ncornag)
 
 You can view [more information about the contributors here](https://github.com/smebberson/docker-alpine/graphs/contributors).
