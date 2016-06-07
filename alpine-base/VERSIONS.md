@@ -17,8 +17,12 @@ Usage: `smebberson/alpine-base` or `smebberson/alpine-base:latest`.
 Improvements:
 
 - Updates to Alpine Linux and go-dnsmasq.
-- Added the `host-ip` script.
+- Renamed `container-ip` to `host-ip` script.
 - Tested go-dnsmasq DNS settings against Docker v1.10 and Docker v1.11+.
+
+__*Breaking changes*__:
+
+- Any scripts referencing `container-ip` need to be updated to reference `host-ip` instead.
 
 Usage: `smebberson/alpine-base:2.0.0`.
 
