@@ -1,6 +1,10 @@
 
 # Changelog for the Consul-based image upgrades
 
+## 2016.06.07
+
+- `alpine-consul`: upgraded to Alpine Linux 3.4 (https://hub.docker.com/_/alpine/).
+
 ## 2016.05.27
 
 - `alpine-consul-base`: renamed `/usr/bin/container-ip` to `/usr/bin/host-ip` to be more explicit about what it does.
