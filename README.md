@@ -10,9 +10,11 @@ Highly configurable Docker images running [Alpine linux][alpinelinux] and [s6][s
 - [Consul and service discovery](#consul-and-service-discovery)
 - [Examples](#examples)
 - [Images](#images)
+- [Usage](#usage)
 - [Customization](#customization)
-- [FAQ](#faq)
 - [Versioning](#versioning)
+- [FAQ](#faq)
+- [Further reading](#further-reading)
 - [Contributing](#contributing)
 - [Contributors](#contributors)
 
@@ -24,6 +26,11 @@ This project has the following goals:
 - To provide Docker images that are easily configurable.
 - To provide Docker images that are highly stable.
 - To quickly enable a microservices architecture using Docker.
+
+To meet these goals, we're using:
+
+- [Alpine linux][alpinelinux] (very small but capable Linux distribution).
+- [s6][s6] for process management for both easily configurable, and highly stable images.
 
 ## Docker and microservices
 
@@ -313,6 +320,94 @@ Latest version is `1.0.0`, or `latest`.
 - [README.md](https://github.com/smebberson/docker-alpine/blob/master/alpine-redis/README.md)
 - [VERSIONS.md](https://github.com/smebberson/docker-alpine/blob/master/alpine-redis/VERSIONS.md)
 
+## Usage
+
+All containers come with the following features (most of them come from [s6-overlay][s6overlay]):
+
+- User hooks for container initialization, ownership and permissions management, and finalization tasks.
+- Easily drop privileges before starting a service.
+- Start and finish scripts for service management.
+- Environment management.
+
+### Using `CMD`
+
+As a general rule, these images eschew the `CMD` option that Dockerfile provides. These images are oriented towards running multiple services.
+
+However, `alpine-base` is a minimalist image that can be used with `CMD`. Your command can be provided in the Dockerfile or at runtime and it will be run under the s6 supervisor. When the command fails or exits, the container will also exit (falling back to Docker restart rules or other platform controls to manage container availability).
+
+For example:
+
+```
+vagrant@ubuntu-14:/vagrant$ docker run -it smebberson/alpine-base with-contenv sh
+[s6-init] making user provided files available at /var/run/s6/etc...exited 0.
+[s6-init] ensuring user provided files have correct perms...exited 0.
+[fix-attrs.d] applying ownership & permissions fixes...
+[fix-attrs.d] done.
+[cont-init.d] executing container initialization scripts...
+[cont-init.d] 30-resolver: executing...
+[cont-init.d] 30-resolver: exited 0.
+[cont-init.d] 40-resolver: executing...
+[cont-init.d] 40-resolver: exited 0.
+[cont-init.d] done.
+[services.d] starting services
+[services.d] done.
+/ # env
+HOSTNAME=63d07768fdc5
+SHLVL=1
+HOME=/root
+GO_DNSMASQ_LOG_FILE=/var/log/go-dnsmasq/go-dnsmasq.log
+GODNSMASQ_VERSION=1.0.5
+TERM=xterm
+S6_OVERLAY_VERSION=v1.17.2.0
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+PWD=/
+/ # exit
+with-contenv exited 0
+[cont-finish.d] executing container finish scripts...
+[cont-finish.d] done.
+[s6-finish] syncing disks.
+[s6-finish] sending all processes the TERM signal.
+[s6-finish] sending all processes the KILL signal and exiting.
+vagrant@ubuntu-14:/vagrant$
+```
+
+### Using services
+
+s6 provides us a clean and simple way to run services within these images. For example alpine-consul runs both go-dnsmasq and Consul via services, and alpine-consul-nginx adds Nginx, also via services.
+
+To write a service script, create a directory with the name of your service in the `/etc/services.d/` directory. In that directory create an executable script named `run`. In your run script, start your service (be sure to make sure it doesn't background as s6 will attempt to start it again). For example:
+
+```
+# /etc/services.d/nginx/run
+
+#!/usr/bin/with-contenv sh
+
+nginx -g "daemon off;"
+```
+
+s6 will start your service and monitor it. Should your service exit or fail, s6 will execute your run script again to restart the service.
+
+#### Finish hooks
+
+s6 also provides you a hook to run tasks in between a service exiting or failing, and it being restarted. Simple create an executable script named `finish` next to your `run` script.
+
+This script should execute fast. It has about 3 seconds to do what it needs to before it will be killed by s6, and the `run` script executed. You can also do any tasks as required in your `run` before you start your long running process.
+
+#### Bringing down a container
+
+If you'd like to bring down a container if a particular service restarts, use this as the contents of a `finish` script:
+
+```
+#!/usr/bin/execlineb -S1
+
+# only tell s6 to bring down the entire container, if it isn't already doing so
+# http://skarnet.org/software/s6/s6-supervise.html
+if { s6-test ${1} -ne 0 }
+if { s6-test ${1} -ne 256 }
+
+s6-svscanctl -t /var/run/s6/services
+```
+
 ## Customization
 
 The docker-alpine images are highly customizable. You can customize them with the following:
@@ -327,7 +422,7 @@ The following cover customization that is common to all images. Review the docum
 
 ### `/usr/bin/host-ip`
 
-This file is used in other scripts to determine the IP of the container in which a script is running.
+[This file](alpine-base/root/usr/bin/host-ip) is used in other scripts to determine the IP of the container in which a script is running.
 
 Overwrite it as required to produce a correct value for your environment. Review the file itself for output requirements.
 
@@ -335,9 +430,17 @@ If your environment uses an overlay network (Docker Cloud, Rancher), you should 
 
 ### `/usr/bin/container-find`
 
-This file is used within other scripts to determine the IP address(es) of other containers by name.
+[This file](alpine-consul/root/usr/bin/container-find) (Consul-only containers) is used within other scripts to determine the IP address(es) of other containers by name.
 
 By default, it uses `dig` to DNS query for the IP address of a container by name. `container-find` will DNS query for `consul` (the default). `container-find static` will DNS query for `static`. `container-find static.service.consul` will hand-off the DNS query to Consul.
+
+## Versioning
+
+Each image has it's own version and will be updated independently. All versions follow [semver](semver). If a software package or the operating system the image uses is updated, the level of update will be reflected in the new version number, for example:
+
+- if Alpine Linux is upgraded from 3.2 to 3.3, then the image version will receive a minor increment
+- if Alpine Linux is upgraded from 3.3 to 4, then the image version will receive a major increment
+- if s6-overlay is upgraded to the latest patch upgrade, and nginx is upgraded to the latest minor upgrade, then the image version will will receive a minor increment
 
 ## FAQ
 
@@ -364,24 +467,13 @@ By default, `sh` has no environment. If you need access to environment variables
 
 There are two ways to set environment variables. In your `Dockerfile` like any other containers or from within a custom script using `set-contenv` for example `set-contenv VAR_NAME var_value`.
 
-## Versioning
+## Further reading
 
-Each image has it's own version and will be updated independently. All versions follow [semver](semver). If a software package or the operating system the image uses is updated, the level of update will be reflected in the new version number, for example:
+If you'd like to read more about operating environment of these images, start here:
 
-- if Alpine Linux is upgraded from 3.2 to 3.3, then the image version will receive a minor increment
-- if Alpine Linux is upgraded from 3.3 to 4, then the image version will receive a major increment
-- if s6-overlay is upgraded to the latest patch upgrade, and nginx is upgraded to the latest minor upgrade, then the image version will will receive a minor increment
-
-[alpinelinux]: https://www.alpinelinux.org/
-[s6]: http://skarnet.org/software/s6/
-[s6overlay]: https://github.com/just-containers/s6-overlay
-[consul]: https://consul.io/
-[semver]: http://semver.org/
-[confd]: https://github.com/kelseyhightower/confd
-[dockeralpinedesign]: https://github.com/smebberson/docker-alpine/blob/master/DESIGN.md
-[alpinebasedns]: https://github.com/smebberson/docker-alpine/tree/master/alpine-base#dns
-[rabbitmq]: http://www.rabbitmq.com/
-[consultemplate]: https://github.com/hashicorp/consul-template
+- [s6-overlay][s6overlay]
+- [s6][s6]
+- [Alpine Linux][alpinelinux]
 
 ## Contributing
 
@@ -396,3 +488,14 @@ We love contributors. Read [CONTRIBUTING.md](CONTRIBUTING.md) for more informati
 - [ncornag](https://github.com/ncornag)
 
 You can view [more information about the contributors here](https://github.com/smebberson/docker-alpine/graphs/contributors).
+
+[alpinelinux]: https://www.alpinelinux.org/
+[s6]: http://skarnet.org/software/s6/
+[s6overlay]: https://github.com/just-containers/s6-overlay
+[consul]: https://consul.io/
+[semver]: http://semver.org/
+[confd]: https://github.com/kelseyhightower/confd
+[dockeralpinedesign]: https://github.com/smebberson/docker-alpine/blob/master/DESIGN.md
+[alpinebasedns]: https://github.com/smebberson/docker-alpine/tree/master/alpine-base#dns
+[rabbitmq]: http://www.rabbitmq.com/
+[consultemplate]: https://github.com/hashicorp/consul-template
