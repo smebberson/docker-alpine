@@ -1,8 +1,17 @@
 # alpine-consul-nginx-nodejs
 
-An image for using Node.js within containers, bundled with [Alpine Linux][alpinelinux] and [s6][s6] and [Consul][consul].
+A Docker image for running [nginx][nginx] with [Node.js][nodejs] and [Consul][consul], based on Alpine Linux.
+This image belongs to a suite of images [documented here][dockeralpine].
 
-This image is perfect if you're looking to run nginx to proxy to a Node.js application, or if you're wanting to run nginx as a load balancer (proxying to external containers) and using Node.js for nginx configuration.
+## Features
+
+This image features:
+
+- [Alpine Linux][alpinelinux]
+- [s6][s6] and [s6-overlay][s6overlay]
+- [nginx][nginx]
+- [Node.js][nodejs]
+- [consul][consul]
 
 ## Versions
 
@@ -13,13 +22,21 @@ This image is perfect if you're looking to run nginx to proxy to a Node.js appli
 
 ## Usage
 
-This is really just a combination of the [smebberson/alpine-consul-nginx][alpineconsulnginx] and [smebberson/alpine-consul-nodejs][alpineconsulnodejs] containers. Read their individual documentation for more information.
+This container has been setup to automatically connect to a Consul cluster, created with a service name of `consul`. [Read more about it here](https://github.com/smebberson/docker-alpine/tree/alpine-consul-ui-upgrades/alpine-consul).
 
-There is [an example however, showing how to combine the two][demo] to have nginx serve a dynamic Node.js website.
+This is just a combination of [smebberson/alpine-consul-nginx][alpineconsulnginx] and [smebberson/alpine-consul-nodejs][alpineconsulnodejs] containers. Read their individual documentation for usage guidelines.
 
+## Example
+
+An example of using this image can be found in [examples/user-consul-nginx-nodejs][example].
+
+[dockeralpine]: https://github.com/smebberson/docker-alpine
 [s6]: http://www.skarnet.org/software/s6/
+[s6overlay]: https://github.com/just-containers/s6-overlay
 [alpinelinux]: https://www.alpinelinux.org/
 [consul]: https://consul.io/
 [alpineconsulnginx]: https://github.com/smebberson/docker-alpine/tree/master/alpine-consul-nginx
 [alpineconsulnodejs]: https://github.com/smebberson/docker-alpine/tree/master/alpine-consul-nodejs
-[demo]: https://github.com/smebberson/docker-alpine/tree/master/examples/alpine-consul-nginx-nodejs
+[example]: https://github.com/smebberson/docker-alpine/tree/master/examples/alpine-consul-nginx-nodejs
+[nodejs]: https://nodejs.org/
+[nginx]: http://nginx.org/

@@ -4,17 +4,11 @@ This file contains all software versions, that correspond to a version of this i
 
 ## Latest
 
-[![ImageLayers Layers](https://img.shields.io/imagelayers/layers/smebberson/alpine-consul-base/latest.svg)]()
-[![ImageLayers Size](https://img.shields.io/imagelayers/image-size/smebberson/alpine-consul-base/latest.svg)]()
-
 Same as v3.0.0.
 
 Usage: `smebberson/alpine-consul-base` or `smebberson/alpine-consul-base:latest`.
 
 ## v3.0.0
-
-[![ImageLayers Layers](https://img.shields.io/imagelayers/layers/smebberson/alpine-consul-base/3.0.0.svg)]()
-[![ImageLayers Size](https://img.shields.io/imagelayers/image-size/smebberson/alpine-consul-base/3.0.0.svg)]()
 
 - [smebberson/alpine-consul: v2.0.0][alpineconsul200]
 - [consul-template: v0.14.0][consultemplate]
@@ -26,9 +20,6 @@ Improvements:
 Usage: `smebberson/alpine-consul-base:3.0.0`.
 
 ## v2.0.0
-
-[![ImageLayers Layers](https://img.shields.io/imagelayers/layers/smebberson/alpine-consul-base/2.0.0.svg)]()
-[![ImageLayers Size](https://img.shields.io/imagelayers/image-size/smebberson/alpine-consul-base/2.0.0.svg)]()
 
 - [smebberson/alpine-consul: v1.1.0][alpineconsul110]
 - [consul-template: v0.14.0][consultemplate]
@@ -45,17 +36,11 @@ Usage: `smebberson/alpine-consul-base:2.0.0`.
 
 ## v1.1.0
 
-[![ImageLayers Layers](https://img.shields.io/imagelayers/layers/smebberson/alpine-consul-base/1.1.0.svg)]()
-[![ImageLayers Size](https://img.shields.io/imagelayers/image-size/smebberson/alpine-consul-base/1.1.0.svg)]()
-
 - [smebberson/alpine-consul: v1.1.0][alpineconsul110]
 
 Usage: `smebberson/alpine-consul-base:1.1.0`.
 
 ## v1.0.0
-
-[![ImageLayers Layers](https://img.shields.io/imagelayers/layers/smebberson/alpine-consul-base/1.0.0.svg)]()
-[![ImageLayers Size](https://img.shields.io/imagelayers/image-size/smebberson/alpine-consul-base/1.0.0.svg)]()
 
 - [smebberson/alpine-consul: v1.0.0][alpineconsul100]
 

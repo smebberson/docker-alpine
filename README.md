@@ -101,7 +101,7 @@ All non-Consul-based images come with `confd`.
 
 All Consul-related containers have been design for use in production and development.
 
-These containers have been configured for zero-conf Consul bootstrapping. To achieve this, `docker-engine` v1.10+ is required. along with a `docker-compose.yml` file written in the version `2` format.
+These containers have been configured for zero-conf Consul bootstrapping. To achieve this, `docker-engine` v1.10+ is required. along with a `docker-compose.yml` file written in the version `2` format ([see the example](examples/complete/docker-compose.yml)).
 
 To achieve zero-conf Consul bootstrapping, Docker's new embedded DNS server is used within each container to find the IP of a consul container (**note**: there is a requirement that all Consul server services in `docker-compose.yml` are called `consul` for this to work).
 

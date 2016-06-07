@@ -1,11 +1,7 @@
 # alpine-confd
 
-An image for using [confd][confd], bundled with Alpine Linux and s6.
-
-[![ImageLayers Layers](https://img.shields.io/imagelayers/layers/smebberson/alpine-confd/latest.svg)]()
-[![ImageLayers Size](https://img.shields.io/imagelayers/image-size/smebberson/alpine-confd/latest.svg)]()
-
-This image is one of many Docker images designed to run multiple services per container (grouped sparingly and logically of course). You can read more about the philosophy of these images [here][dockeralpinedesign].
+A Docker image for running [confd][confd], based on Alpine Linux.
+This image belongs to a suite of images [documented here][dockeralpine].
 
 ## Features
 
@@ -30,16 +26,44 @@ To use this image include `FROM smebberson/alpine-confd` at the top of your `Doc
 
 By default, this container doesn't actually do anything other than provide the building blocks for a Docker container that includes configuration management via confd.
 
-## Customisation
+A good pattern to running confd is to take advantage of container initialization hooks, and run confd before any service starts, creating the necessary configuration files.
 
-This container is highly customisable and is built with customisation in mind. Take a look at [an example][alpineconfdexample] of using this image to configure a container at initialization stage.
+```
+#!/usr/bin/with-contenv sh
 
-For information about using s6 to start services, refer to [smebberson/alpine-base][alpinebase].
+# Setup the templates.
+confd -onetime -backend env
+```
+
+### Template resource configs
+
+Add your template resource config files in `/etc/confd/conf.d/`. For example:
+
+```
+# /etc/confd/conf.d/test.toml
+
+[template]
+src = "test.conf.tmpl"
+dest = "/tmp/test.conf"
+
+```
+
+### Source templates
+
+Add your source templates in `/etc/confd/templates`. For example:
+
+```
+# this is a test only
+test_variable = "{{getenv "test_variable"}}"
+```
+
+## Example
+
+An example of using this image can be found in [examples/user-confd][alpineconfdexample].
 
 [s6]: http://www.skarnet.org/software/s6/
 [s6overlay]: https://github.com/just-containers/s6-overlay
 [confd]: https://github.com/kelseyhightower/confd
 [alpinelinux]: http://www.alpinelinux.org/
-[dockeralpinedesign]: https://github.com/smebberson/docker-alpine/blob/master/DESIGN.md
 [alpineconfdexample]: https://github.com/smebberson/docker-alpine/blob/master/examples/user-confd/Dockerfile
-[alpinebase]: https://github.com/smebberson/docker-alpine/tree/master/alpine-base
+[dockeralpine]: https://github.com/smebberson/docker-alpine
