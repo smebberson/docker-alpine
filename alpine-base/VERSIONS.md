@@ -4,9 +4,23 @@ This file contains all software versions, that correspond to a version of this i
 
 ## Latest
 
-Same as v2.0.0.
+Same as v3.0.0.
 
 Usage: `smebberson/alpine-base` or `smebberson/alpine-base:latest`.
+
+## v3.0.0
+
+- [alpinelinux](Alpine Linux): v3.4
+- [s6-overlay][s6-overlay]: v1.17.2.0
+- [go-dnsmasq][godnsmasq]: v1.0.6
+
+Improvements:
+
+- Updates to Alpine Linux and go-dnsmasq.
+- Added the `host-ip` script.
+- Tested go-dnsmasq DNS settings against Docker v1.10 and Docker v1.11+.
+
+Usage: `smebberson/alpine-base:2.0.0`.
 
 ## v2.0.0
 
