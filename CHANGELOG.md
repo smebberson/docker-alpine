@@ -1,5 +1,26 @@
 
-# Changelog for the Consul-based image upgrades
+# Changelog
+
+## 2016.06.08
+
+- Updated the `examples/user-consul-nodejs` to use Docker Compose and zero-conf bootstrapped Consul.
+- Updated the `examples/user-consul-nginx` to use Docker Compose and zero-conf bootstrapped Consul.
+- Updated the `examples/user-consul-nodejs` to use Docker Compose and zero-conf bootstrapped Consul.
+- Removed the `:dev` tags from `examples/complete`.
+
+### Releases
+
+- [Released `v3.0.0` of `alpine-base`](https://github.com/smebberson/docker-alpine/tree/alpine-base-v3.0.0/alpine-base).
+- [Released `v3.0.0` of `alpine-consul`](https://github.com/smebberson/docker-alpine/tree/alpine-consul-v3.0.0/alpine-consul)
+- [Released `v2.0.0` of `alpine-consul-ui`](https://github.com/smebberson/docker-alpine/tree/alpine-consul-ui-v2.0.0/alpine-consul-ui)
+- [Released `v4.0.0` of `alpine-consul-base`](https://github.com/smebberson/docker-alpine/tree/alpine-consul-base-v4.0.0/alpine-consul-base)
+- [Released `v4.0.0` of `alpine-consul-nodejs`](https://github.com/smebberson/docker-alpine/tree/alpine-consul-nodejs-v4.0.0/alpine-consul-nodejs)
+- [Released `v5.0.0` of `alpine-consul-nodejs`](https://github.com/smebberson/docker-alpine/tree/alpine-consul-nodejs-v5.0.0/alpine-consul-nodejs)
+- [Released `v5.1.0` of `alpine-consul-nodejs`](https://github.com/smebberson/docker-alpine/tree/alpine-consul-nodejs-v5.1.0/alpine-consul-nodejs)
+- [Released `v5.2.0` of `alpine-consul-nodejs`](https://github.com/smebberson/docker-alpine/tree/alpine-consul-nodejs-v5.2.0/alpine-consul-nodejs)
+- [Released `v5.2.1` of `alpine-consul-nodejs`](https://github.com/smebberson/docker-alpine/tree/alpine-consul-nodejs-v5.2.1/alpine-consul-nodejs)
+- [Released `v3.0.0` of `alpine-consul-nginx`](https://github.com/smebberson/docker-alpine/tree/alpine-consul-nginx-v3.0.0/alpine-consul-nginx)
+- [Released `v2.0.0` of `alpine-consul-redis`](https://github.com/smebberson/docker-alpine/tree/alpine-consul-redis-v2.0.0/alpine-consul-redis)
 
 ## 2016.06.07
 
