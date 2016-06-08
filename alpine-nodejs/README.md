@@ -13,16 +13,16 @@ This image features:
 
 ## Versions
 
-- `3.1.0`, `latest` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/alpine-nodejs-v3.1.0/alpine-nodejs/Dockerfile)
+- `4.0.0`, `latest` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/alpine-nodejs-v4.0.0/alpine-nodejs/Dockerfile)
+- `3.1.0` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/alpine-nodejs-v3.1.0/alpine-nodejs/Dockerfile)
 - `3.0.1` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/alpine-nodejs-v3.0.1/alpine-nodejs/Dockerfile)
 - `3.0.0` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/alpine-nodejs-v3.0.0/alpine-nodejs/Dockerfile)
 - `2.1.0` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/alpine-nodejs-v2.1.0/alpine-nodejs/Dockerfile)
 - `2.0.0` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/alpine-nodejs-v2.0.0/alpine-nodejs/Dockerfile)
 - `1.0.0` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/alpine-nodejs-v1.0.0/alpine-nodejs/Dockerfile)
 
-[See VERSIONS.md for image contents.](https://github.com/smebberson/docker-alpine/blob/master/alpine-nodejs/VERSIONS.md)
-
-`3.x` versions of `alpine-nodejs` contain Node.js `v5.x` and `2.x` versions of `alpine-nodejs` container `v4.x LTS` versions of Node.js.
+[See VERSIONS.md for image contents.](VERSIONS.md)
+[See NODEJS.md to find specific Node.js versions.](README.md)
 
 ## Usage
 
