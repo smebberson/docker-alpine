@@ -4,6 +4,10 @@ This file contains a map between [Node.js][nodejs] versions and the version of [
 
 You can [read more about how these images are versioned here](https://github.com/smebberson/docker-alpine#versioning).
 
+## 6.x Current branch of Node.js
+
+- Node v6.0.0: [v5.0.0](VERSIONS.md#v500)
+
 ## 4.x LTS branch of Node.js
 
 - Node v4.4.1: [v2.1.0](VERSIONS.md#v210)
