@@ -3,7 +3,7 @@
 
 ## 2016.06.07
 
-- `alpine-consul`: upgraded to Alpine Linux 3.4 (https://hub.docker.com/_/alpine/).
+- `alpine-base`: upgraded to Alpine Linux 3.4 (https://hub.docker.com/_/alpine/).
 - `alpine-consul-ui`: disabled Consul version check.
 
 ## 2016.05.27
