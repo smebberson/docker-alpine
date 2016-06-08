@@ -201,7 +201,7 @@ This image adds [Consul][consul].
 
 If you want to create a Docker image to run as a Consul agent in server mode (i.e. part of a cluster) start with this image.
 
-Latest version is `2.0.0`, or `latest`.
+Latest version is `3.0.0`, or `latest`.
 
 - [README.md](https://github.com/smebberson/docker-alpine/blob/master/alpine-consul/README.md)
 - [VERSIONS.md](https://github.com/smebberson/docker-alpine/blob/master/alpine-consul/VERSIONS.md)
