@@ -6,6 +6,7 @@ You can [read more about how these images are versioned here](https://github.com
 
 ## 5.x Latest stable branch of Node.js
 
+- Node v5.9.1: [v4.0.0](https://github.com/smebberson/docker-alpine/blob/master/alpine-consul-nodejs/VERSIONS.md#v400)
 - Node v5.9.0: [v3.0.0](https://github.com/smebberson/docker-alpine/blob/master/alpine-consul-nodejs/VERSIONS.md#v300)
 
 ## 4.x LTS branch of Node.js
