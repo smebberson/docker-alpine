@@ -1,4 +1,4 @@
-FROM smebberson/alpine-consul-base:dev
+FROM smebberson/alpine-consul-base:4.0.0
 MAINTAINER Scott Mebberson <scott@scottmebberson.com>
 
 # Install redis.
