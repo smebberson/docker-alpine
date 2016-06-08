@@ -232,7 +232,7 @@ Latest version is `1.0.0`, or `latest`.
 
 This image is designed to run a Node.js application within the context of service discovery (via Consul).
 
-Latest version is `5.1.0`, or `latest`.
+Latest version is `5.2.0`, or `latest`.
 
 - [README.md](https://github.com/smebberson/docker-alpine/blob/master/alpine-consul-nodejs/README.md)
 - [VERSIONS.md](https://github.com/smebberson/docker-alpine/blob/master/alpine-consul-nodejs/VERSIONS.md)
