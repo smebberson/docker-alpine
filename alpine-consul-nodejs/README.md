@@ -3,6 +3,8 @@
 A Docker image for running [Node.js][nodejs] with [Consul][consul], based on Alpine Linux.
 This image belongs to a suite of images [documented here][dockeralpine].
 
+Image size is ~144.4 MB.
+
 ## Features
 
 This image features:
