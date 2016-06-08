@@ -15,6 +15,7 @@ Highly configurable Docker images running [Alpine linux][alpinelinux] and [s6][s
 - [Versioning](#versioning)
 - [FAQ](#faq)
 - [Further reading](#further-reading)
+- [Changelog](#changelog)
 - [Contributing](#contributing)
 - [Contributors](#contributors)
 
@@ -474,6 +475,10 @@ If you'd like to read more about operating environment of these images, start he
 - [s6-overlay][s6overlay]
 - [s6][s6]
 - [Alpine Linux][alpinelinux]
+
+## Changelog
+
+Read the [CHANGELOG.md](CHANGELOG.md) for a chronological record of events. Each image also has it's own CHANGELOG.
 
 ## Contributing
 

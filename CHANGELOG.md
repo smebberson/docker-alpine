@@ -1,6 +1,10 @@
 
 # Changelog
 
+Due to the nature of versioning and the fact this repository houses multiple Docker images, the change log is more of a chronological record of events. Including improvements that are made over time without a specific release, and the actual releases.
+
+Each release records it's own specific changes in a VERSIONS.md file.
+
 ## 2016.06.08
 
 - Updated the `examples/user-consul-nodejs` to use Docker Compose and zero-conf bootstrapped Consul.
@@ -51,8 +55,8 @@
 ## 2016.05.13
 
 - General: tagged all builds with `:dev` and will release these on Docker hub now. Final testing before release.
-- `alpine-redis`: now inherits from the latest version of `alpine-consul-base`.
-- `alpine-redis`: updated to the latest version of Redis 3.2.0. Redis runs with protected mode off assuming that we're running Redis with container-only access and therefore protected mode is not required.
+- `alpine-consul-redis`: now inherits from the latest version of `alpine-consul-base`.
+- `alpine-consul-redis`: updated to the latest version of Redis 3.2.0. Redis runs with protected mode off assuming that we're running Redis with container-only access and therefore protected mode is not required.
 - General: update the example to add session management via Redis (demonstrating load balancing with sticky sessions).
 
 ## 2016.05.11
@@ -91,13 +95,13 @@
 
 ## 2016.04.28
 
-- Consul-related: `alpine-consul-base` no longer restarts the container if Consul fails. s6 simply restarts Consul.
+- `alpine-consul-base`: no longer restarts the container if Consul fails. s6 simply restarts Consul.
 - Consul-related: `leave_on_terminate` has been removed from Consul configuration files.
 - Consul-related: remove `exec` from start scripts as this was interfering with signals and proper shutdown order.
-- Consul-related: `alpine-consul-base` now issues `-bind` and `-client` when starting Consul such that all Consul interfaces are being bound to the IP of the container not `localhost` (this change means that a query to any Consul interface originating externally from the container itself can be used).
-- Consul-related: `alpine-consul-ui` now issues `-client` when starting Consul.
-- Consul-related: the `cont-finish.d/00-consul` script in `alpine-consul` now issues the `consul leave` command rather than `consul force-leave` and provides the `-rpc-addr` flag because we've moved away from the default of `localhost`. Removing `exec` from the Consul start scripts has made this possible as the scripts in `cont-finish.d` are run prior to the service directory `finish` scripts. This has made leaving the Consul cluster much, much, much more consistent.
-- Consul-related: `alpine-consul` now distinguishes between exiting because of `CTRL+C` (while developing) and a crash of the Consul process (you can simulate with `kill -9 <pid>`). When exiting because of `CTRL+C` the attempt to bring down the container is not made as this is already happening. This has tidied up the `s6-svscanctl: fatal: unable to control /var/run/s6/services: supervisor not listening` error.
+- `alpine-consul-base`: now issues `-bind` and `-client` when starting Consul such that all Consul interfaces are being bound to the IP of the container not `localhost` (this change means that a query to any Consul interface originating externally from the container itself can be used).
+- `alpine-consul-ui`: now issues `-client` when starting Consul.
+- `alpine-consul`: the `cont-finish.d/00-consul` script in `alpine-consul` now issues the `consul leave` command rather than `consul force-leave` and provides the `-rpc-addr` flag because we've moved away from the default of `localhost`. Removing `exec` from the Consul start scripts has made this possible as the scripts in `cont-finish.d` are run prior to the service directory `finish` scripts. This has made leaving the Consul cluster much, much, much more consistent.
+- `alpine-consul`: now distinguishes between exiting because of `CTRL+C` (while developing) and a crash of the Consul process (you can simulate with `kill -9 <pid>`). When exiting because of `CTRL+C` the attempt to bring down the container is not made as this is already happening. This has tidied up the `s6-svscanctl: fatal: unable to control /var/run/s6/services: supervisor not listening` error.
 - go-dnsmasq-related: go-dnsmasq has been updated as the Consul DNS service is no longer bound to `localhost` but the IP of the container instead.
 - General: preferring `$VARNAME` syntax over `${VARNAME}` in shell scripts.
-- General: Docker Compose was updated to 1.7.0 (run (on guest) `sudo rm /etc/vagrant/compose` and then (on host) `vagrant reload --provision`) to upgrade.
+- Development: Docker Compose was updated to 1.7.0 (run (on guest) `sudo rm /etc/vagrant/compose` and then (on host) `vagrant reload --provision`) to upgrade.
