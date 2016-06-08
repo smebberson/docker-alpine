@@ -29,7 +29,7 @@ __*Breaking changes*__:
 - This release updates to [alpine-base v3.0.0 which contains breaking changes](https://github.com/smebberson/docker-alpine/blob/master/alpine-base/VERSIONS.md#v300). You should review them as required.
 - Provides zero-conf Consul bootstrap which assumes a specific setup and Docker 1.10+. You should [review the usage guide](https://github.com/smebberson/docker-alpine/tree/master/alpine-consul#usage) for more information.
 
-Usage: `smebberson/alpine-consul:2.0.0`.
+Usage: `smebberson/alpine-consul:3.0.0`.
 
 ## v2.0.0
 

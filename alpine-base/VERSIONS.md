@@ -24,7 +24,7 @@ __*Breaking changes*__:
 
 - Any scripts referencing `container-ip` need to be updated to reference `host-ip` instead.
 
-Usage: `smebberson/alpine-base:2.0.0`.
+Usage: `smebberson/alpine-base:3.0.0`.
 
 ## v2.0.0
 
