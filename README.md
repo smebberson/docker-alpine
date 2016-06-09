@@ -298,10 +298,10 @@ Latest version is `2.1.1`, or `latest`.
 
 This includes Node.js.
 
-Latest version is `5.0.0`, or `latest`.
+Latest version is `5.1.0`, or `latest`.
 
-- [README.md](https://github.com/smebberson/docker-alpine/blob/alpine-nodejs-v5.0.0/alpine-nodejs/README.md)
-- [VERSIONS.md](https://github.com/smebberson/docker-alpine/blob/alpine-nodejs-v5.0.0/alpine-nodejs/VERSIONS.md)
+- [README.md](https://github.com/smebberson/docker-alpine/blob/alpine-nodejs-v5.1.0/alpine-nodejs/README.md)
+- [VERSIONS.md](https://github.com/smebberson/docker-alpine/blob/alpine-nodejs-v5.1.0/alpine-nodejs/VERSIONS.md)
 
 ### alpine-rabbitmq
 
