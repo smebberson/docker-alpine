@@ -22,7 +22,7 @@ This image features:
 
 To use this image include `FROM smebberson/alpine-consul-apache` at the top of your `Dockerfile`, or simply `docker run -p 80:80 -p 443:443 --name apache smebberson/alpine-consul-apache`.
 
-Aside from Consul, this image is the same as alpine-apache. Please [refer to usage documentation here](https://github.com/smebberson/docker-alpine/tree/alpine-consul-ui-upgrades/alpine-apache#usage).
+Aside from Consul, this image is the same as alpine-apache. Please [refer to usage documentation here](https://github.com/smebberson/docker-alpine/tree/master//alpine-apache#usage).
 
 ### Consul service registration
 

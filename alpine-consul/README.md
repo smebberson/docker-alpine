@@ -26,7 +26,7 @@ This image features:
 
 To use this image include `FROM smebberson/alpine-consul` at the top of your `Dockerfile`, or simply `docker run --name consul smebberson/alpine-consul`.
 
-By default, Consul has been configured with [zero-conf Consul bootstrapping](https://github.com/smebberson/docker-alpine/tree/alpine-consul-ui-upgrades#consul-and-service-discovery) (to take advantage of zero-conf Consul bootstrapping, Docker 1.10+ is required).
+By default, Consul has been configured with [zero-conf Consul bootstrapping](https://github.com/smebberson/docker-alpine/tree/master/#consul-and-service-discovery) (to take advantage of zero-conf Consul bootstrapping, Docker 1.10+ is required).
 
 To use this image to setup a Consul cluster with 3 nodes via Docker Compose, add the following to your `docker-compose.yml` file:
 

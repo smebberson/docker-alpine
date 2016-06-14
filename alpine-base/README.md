@@ -28,7 +28,7 @@ This image features:
 
 To use this image include `FROM smebberson/alpine-base` at the top of your `Dockerfile`. Starting from `smebberson/alpine-base` provides you with the ability to easily start any service using s6. s6 will also keep it running for you, restarting it when it crashes.
 
-[Read more about extending this image with your own services](https://github.com/smebberson/docker-alpine/tree/alpine-consul-ui-upgrades#using-services).
+[Read more about extending this image with your own services](https://github.com/smebberson/docker-alpine/tree/master/#using-services).
 
 ### DNS
 
@@ -42,9 +42,8 @@ That means that any image extending this image will now work with [Docker Cloud 
 
 ## Example
 
-An example of using this image can be found in the [smebberson/nodejs][smebbersonnodejs] [Dockerfile][smebbersonnodejsdockerfile].
+An example of using this image can be found in [examples/user-alpine](alpinebaseexample).
 
-[smebbersonnodejs]: https://registry.hub.docker.com/u/smebberson/nodejs/
-[smebbersonnodejsdockerfile]: https://github.com/smebberson/docker-ubuntu-base/blob/master/nodejs/Dockerfile
+[alpinebaseexample]: https://github.com/smebberson/docker-alpine/tree/master/examples/user-alpine
 [godnsmasq]: https://github.com/janeczku/go-dnsmasq
 [dockeralpine]: https://github.com/smebberson/docker-alpine

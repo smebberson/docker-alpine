@@ -22,7 +22,7 @@ This image features:
 
 ## Usage
 
-This container has been setup to automatically connect to a Consul cluster, created with a service name of `consul`. [Read more about it here](https://github.com/smebberson/docker-alpine/tree/alpine-consul-ui-upgrades/alpine-consul).
+This container has been setup to automatically connect to a Consul cluster, created with a service name of `consul`. [Read more about it here](https://github.com/smebberson/docker-alpine/tree/master//alpine-consul).
 
 This is just a combination of [smebberson/alpine-consul-nginx][alpineconsulnginx] and [smebberson/alpine-consul-nodejs][alpineconsulnodejs] containers. Read their individual documentation for usage guidelines.
 
@@ -37,6 +37,6 @@ An example of using this image can be found in [examples/user-consul-nginx-nodej
 [consul]: https://consul.io/
 [alpineconsulnginx]: https://github.com/smebberson/docker-alpine/tree/master/alpine-consul-nginx
 [alpineconsulnodejs]: https://github.com/smebberson/docker-alpine/tree/master/alpine-consul-nodejs
-[example]: https://github.com/smebberson/docker-alpine/tree/master/examples/alpine-consul-nginx-nodejs
+[example]: https://github.com/smebberson/docker-alpine/tree/master/examples/user-consul-nginx-nodejs
 [nodejs]: https://nodejs.org/
 [nginx]: http://nginx.org/
