@@ -5,6 +5,10 @@ Due to the nature of versioning and the fact this repository houses multiple Doc
 
 Each release records it's own specific changes in a VERSIONS.md file.
 
+## 2016.06.15
+
+- `alpine-nodejs`: Removing the `--fully-static` flag when compiling Node.js so that it works in more situations (https://github.com/smebberson/docker-alpine/issues/52). Releasing on Docker Hub as `alpine-nodejs:dl` for test purposes.
+
 ## 2016.06.08
 
 - Updated the `examples/user-consul-nodejs` to use Docker Compose and zero-conf bootstrapped Consul.

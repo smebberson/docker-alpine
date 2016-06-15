@@ -6,7 +6,7 @@ ENV NODE_VERSION=v6.2.1 NPM_VERSION=3
 RUN apk add --update git curl make gcc g++ python linux-headers libgcc libstdc++ binutils-gold && \
     curl -sSL https://nodejs.org/dist/${NODE_VERSION}/node-${NODE_VERSION}.tar.gz | tar -xz && \
     cd /node-${NODE_VERSION} && \
-    ./configure --prefix=/usr --without-snapshot --fully-static && \
+    ./configure --prefix=/usr --without-snapshot && \
     make -j$(grep -c ^processor /proc/cpuinfo 2>/dev/null || 1) && \
     make install && \
     cd / && \
