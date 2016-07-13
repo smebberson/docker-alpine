@@ -13,5 +13,15 @@ consul-available
 # We have another Consul server available. Join it.
 RETRY_JOIN=`consul-join`
 
+EXTRA=""
+
+if [ "$CONSUL_JOIN_WAN" ]; then
+EXTRA=$EXTRA" -retry-join-wan $CONSUL_JOIN_WAN"
+fi
+
+if [ "$CONSUL_ADVERTISE_WAN" ]; then
+EXTRA=$EXTRA" -advertise-wan $CONSUL_ADVERTISE_WAN"
+fi
+
 # Start Consul.
-s6-setuidgid consul consul agent -config-dir $CONSUL_CONFIG_DIR -bind $BIND -advertise $BIND -client 0.0.0.0 $RETRY_JOIN -retry-interval 5s -domain $CONSUL_DOMAIN
+s6-setuidgid consul consul agent -config-dir $CONSUL_CONFIG_DIR -bind $BIND -advertise $BIND -client 0.0.0.0 $RETRY_JOIN -retry-interval 5s -domain $CONSUL_DOMAIN -dc $CONSUL_DC $EXTRA

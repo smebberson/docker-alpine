@@ -61,6 +61,16 @@ For example, add `ENV CONSUL_DOMAIN=dockeralpine` to your `Dockerfile` and you'l
 
 You can read more about [Consul's DNS interface here][consuldnsinterface].
 
+### Consul DC
+
+By default, Consul runs itself in data center `dc1`. Through customizing the environment variable `CONSUL_DC` you can alter Consul's data center configuration.
+
+For example, ADD `ENV CONSUL_DC=dc2` to your `Dockerfile` and you'll be able to make a DNS query for `nginx.service.dc2.dockeralpine` rather than the default.
+
+### Consul Advertise WAN
+
+By default, Consul advertises 
+
 ## Example
 
 An example of using this image can be found in [examples/user-confd][example].
