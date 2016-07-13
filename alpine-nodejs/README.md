@@ -1,21 +1,32 @@
 # alpine-nodejs
 
-An image for using Node.js within containers, bundled with [Alpine Linux][alpinelinux] and [s6][s6].
+A Docker image for running [Node.js][nodejs], based on Alpine Linux.
+This image belongs to a suite of images [documented here][dockeralpine].
 
-[It's built from my Alpine Linux based Docker image (with s6, and DNS `search` support)][alpinebase].
+## Features
+
+This image features:
+
+- [Alpine Linux][alpinelinux]
+- [s6][s6] and [s6-overlay][s6overlay]
+- [Node.js][nodejs]
 
 ## Versions
 
-- `3.1.0`, `latest` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/alpine-nodejs-v3.1.0/alpine-nodejs/Dockerfile)
+- `5.2.1`, `latest` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/alpine-nodejs-v5.2.1/alpine-nodejs/Dockerfile)
+- `5.2.0` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/alpine-nodejs-v5.2.0/alpine-nodejs/Dockerfile)
+- `5.1.0` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/alpine-nodejs-v5.1.0/alpine-nodejs/Dockerfile)
+- `5.0.0` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/alpine-nodejs-v5.0.0/alpine-nodejs/Dockerfile)
+- `4.0.0` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/alpine-nodejs-v4.0.0/alpine-nodejs/Dockerfile)
+- `3.1.0` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/alpine-nodejs-v3.1.0/alpine-nodejs/Dockerfile)
 - `3.0.1` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/alpine-nodejs-v3.0.1/alpine-nodejs/Dockerfile)
 - `3.0.0` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/alpine-nodejs-v3.0.0/alpine-nodejs/Dockerfile)
 - `2.1.0` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/alpine-nodejs-v2.1.0/alpine-nodejs/Dockerfile)
 - `2.0.0` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/alpine-nodejs-v2.0.0/alpine-nodejs/Dockerfile)
 - `1.0.0` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/alpine-nodejs-v1.0.0/alpine-nodejs/Dockerfile)
 
-[See VERSIONS.md for image contents.](https://github.com/smebberson/docker-alpine/blob/master/alpine-nodejs/VERSIONS.md)
-
-`3.x` versions of `alpine-nodejs` contain Node.js `v5.x` and `2.x` versions of `alpine-nodejs` container `v4.x LTS` versions of Node.js.
+[See VERSIONS.md for image contents.](VERSIONS.md)
+[See NODEJS.md to find specific Node.js versions.](README.md)
 
 ## Usage
 
@@ -33,13 +44,13 @@ To start your app, with automatic restarts:
 - inside that file start start your node.js application, for example:
 
 ```
-#!/usr/bin/env sh
+#!/usr/bin/with-contenv sh
 
 # cd into our directory
 cd /app
 
 # start our node.js application
-exec node server.js;
+node server.js;
 ```
 
 When you run this container, s6 will automatically start your application and make sure it stays running for you.
@@ -63,7 +74,7 @@ The above method has the benefit of exiting the container when your Node.js app 
 Now, create an executable file named `finish` at `/etc/services.d/app`. In this file do any clean up you need to, and then use s6 to kill the container, for example:
 
 ```
-#!/usr/bin/env sh
+#!/usr/bin/with-contenv sh
 
 # perform clean-up here
 
@@ -97,7 +108,15 @@ process.on('uncaughtException', function (e) {
 });
 ```
 
+## Example
+
+An example of using this image can be found in [examples/user-nodejs][example].
+
+[dockeralpine]: https://github.com/smebberson/docker-alpine
 [s6]: http://www.skarnet.org/software/s6/
+[s6overlay]: https://github.com/just-containers/s6-overlay
 [dockerlogs]: https://docs.docker.com/reference/commandline/cli/#logs
 [alpinelinux]: https://www.alpinelinux.org/
 [alpinebase]: (https://registry.hub.docker.com/u/smebberson/alpine-base/)
+[example]: https://github.com/smebberson/docker-alpine/tree/master/examples/user-nodejs
+[nodejs]: https://nodejs.org/

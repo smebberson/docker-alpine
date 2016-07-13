@@ -1,0 +1,14 @@
+{
+    "service": {
+        "name": "app",
+        "tags": ["app","nodejs"],
+        "port": 4000,
+        "check": {
+            "id": "app",
+            "name": "app on port 4000",
+            "http": "http://localhost:4000/ping",
+            "interval": "10s",
+            "timeout": "1s"
+        }
+    }
+}

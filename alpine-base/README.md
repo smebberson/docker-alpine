@@ -1,32 +1,22 @@
 # alpine-base
 
-A base image for running just about anything within a container, based on Alpine Linux 3.3.
+A Docker image for running just about anything within a container, based on Alpine Linux.
+This image belongs to a suite of images [documented here][dockeralpine].
 
-[![ImageLayers Layers](https://img.shields.io/imagelayers/layers/smebberson/alpine-base/latest.svg)]()
-[![ImageLayers Size](https://img.shields.io/imagelayers/image-size/smebberson/alpine-base/latest.svg)]()
+Image size is ~13.8 MB.
 
-## Process management
+## Features
 
-This image includes [s6][s6] (via [s6-overlay][s6-overlay]), to make it super simple to start multiple process and manage them correctly.
+This image features:
 
-_**Aren't you only supposed to run one process per container?**_ Well yes and no... the following are good examples of when multiple processes within one container might be necessary:
-
-- automatically updating [nginx][nginx] proxy settings when a down-stream application server (nodejs, php, etc) restarts (and the IP changes)
-- automatically updating [HAProxy][haproxy] configuration to load balance to a group of down-stream application servers
-- running a logging daemon to centralize log management (i.e. [logentries][logentries], [loggly][loggly], [logstash][logstash])
-- when you need to run a script on application server crash (to tidy something up), as the standard [Docker container restart policies][drsp] won't provide this
-
-## DNS
-
-Unfortunately, Alpine Linux does not support the `search` keyword in `resolv.conf`. This breaks many tools that rely on DNS service discovery, in particular, Kubernetes, Tutum.co, Consul.
-
-To overcome these issues, `alpine-base` includes the lightweight container-only DNS server [go-dnsmasq][godnsmasq] to resolve these issues.
-
-That means that Alpine Linux and all containers within this repository will now work with [Tutum service discovery and links](https://support.tutum.co/support/solutions/articles/5000012181-service-discovery-and-links) and [Kubernetes service discovery](https://github.com/kubernetes/kubernetes/blob/master/docs/user-guide/services.md#dns).
+- [Alpine Linux][alpinelinux]
+- [s6][s6] and [s6-overlay][s6overlay]
+- [go-dnsmasq][godnsmasq]
 
 ## Versions
 
-- `2.0.0`, `latest` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/alpine-base-v2.0.0/alpine-base/Dockerfile)
+- `3.0.0`, `latest` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/alpine-base-v3.0.0/alpine-base/Dockerfile)
+- `2.0.0` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/alpine-base-v2.0.0/alpine-base/Dockerfile)
 - `1.2.1` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/alpine-base-v1.2.1/alpine-base/Dockerfile)
 - `1.2.0` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/alpine-base-v1.2.0/alpine-base/Dockerfile)
 - `1.1.0` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/alpine-base-v1.1.0/alpine-base/Dockerfile)
@@ -38,48 +28,22 @@ That means that Alpine Linux and all containers within this repository will now 
 
 To use this image include `FROM smebberson/alpine-base` at the top of your `Dockerfile`. Starting from `smebberson/alpine-base` provides you with the ability to easily start any service using s6. s6 will also keep it running for you, restarting it when it crashes.
 
-To start your service using s6:
+[Read more about extending this image with your own services](https://github.com/smebberson/docker-alpine/tree/master/#using-services).
 
-- create a folder at `/etc/services.d/service-name`
-- create a file in your new folder called `run` and give it execute permissions
-- inside that file start your service, for example:
+### DNS
 
-```
-#!/usr/bin/env bash
+Prior to v4.4, Alpine Linux did not support the `search` keyword in `resolv.conf`. This breaks many tools that rely on DNS service discovery, in particular, Kubernetes, Docker Cloud, Consul, Rancher.
 
-# start nginx
-exec nginx;
-```
+To overcome these issues, `alpine-base` includes the lightweight container-only DNS server [go-dnsmasq][godnsmasq] to resolve these issues.
 
-### Finish scripts
+That means that any image extending this image will now work with [Docker Cloud service discovery and links](https://docs.docker.com/docker-cloud/apps/service-links/) and [Kubernetes service discovery](https://github.com/kubernetes/kubernetes/blob/master/docs/user-guide/services.md#dns).
 
-If you want to run a script when your application stops, simply:
+**Note**: despite Alpine Linux v4.4 adding support for the `search` keyword, `go-dnsmasq` has been retained for compatibility. It may or may not be included in future versions.
 
-- create a file in your `/etc/services.d/service-name` folder called `finish` and give it execute permissions
+## Example
 
-In this file, do whatever you need to, but keep it quick and simple (anything over 3 seconds and s6 will force quit it). Once this script has run, s6 will call `/etc/services.d/service-name/run` again to restart your service.
+An example of using this image can be found in [examples/user-alpine](alpinebaseexample).
 
-There is also further [information about how to use CMD][s6-overlay-cmd] with s6-overlay.
-
-### Crashes, logs, no-restarts?
-
-[s6 has a number of other options][s6-servicedir] that you can use to customise what happens when your process suddenly dies. [s6-overlay][s6-overlay] also has a guide to [customising s6][customising-s6-overlay] (when using [s6-overlay][s6-overlay]).
-
-## Examples
-
-An example of using this image can be found in the [smebberson/nodejs][smebbersonnodejs] [Dockerfile][smebbersonnodejsdockerfile].
-
-[s6]: http://www.skarnet.org/software/s6/
-[s6-servicedir]: http://www.skarnet.org/software/s6/servicedir.html
-[s6-overlay]: https://github.com/just-containers/s6-overlay
-[customising-s6-overlay]: https://github.com/just-containers/s6-overlay#customizing-s6-behaviour
-[s6-overlay-cmd]: https://github.com/just-containers/s6-overlay#usage
-[logentries]: https://logentries.com/
-[loggly]: https://www.loggly.com/
-[logstash]: http://logstash.net/
-[drsp]: https://docs.docker.com/reference/commandline/cli/#restart-policies
-[nginx]: http://nginx.org/
-[haproxy]: http://www.haproxy.org/
-[smebbersonnodejs]: https://registry.hub.docker.com/u/smebberson/nodejs/
-[smebbersonnodejsdockerfile]: https://github.com/smebberson/docker-ubuntu-base/blob/master/nodejs/Dockerfile
+[alpinebaseexample]: https://github.com/smebberson/docker-alpine/tree/master/examples/user-alpine
 [godnsmasq]: https://github.com/janeczku/go-dnsmasq
+[dockeralpine]: https://github.com/smebberson/docker-alpine

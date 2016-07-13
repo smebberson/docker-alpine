@@ -1,0 +1,14 @@
+#!/usr/bin/with-contenv sh
+
+#
+# This script is responsible for returning multiple IP addresses for the specific
+# container name (defaulting to $CONSUL_SERVER_NAME (consul)).
+#
+# Return format should be one IP address per line:
+#
+# 192.168.0.8
+# 192.168.0.10
+# 192.168.0.19
+#
+
+dig +short ${1:-$CONSUL_SERVER_NAME}

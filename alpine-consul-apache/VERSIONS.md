@@ -1,5 +1,4 @@
-alpine-consul-apache
-====================
+# alpine-consul-apache
 
 This file contains all software versions, that correspond to a version of this image itself.
 

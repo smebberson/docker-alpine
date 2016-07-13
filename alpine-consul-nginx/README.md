@@ -1,27 +1,23 @@
 # alpine-consul-nginx
 
-An image for using [nginx][nginx], bundled with [Alpine Linux][alpinelinux] and [s6][s6] and [Consul][consul].
+A Docker image for running [nginx][nginx] with [Consul][consul], based on Alpine Linux.
+This image belongs to a suite of images [documented here][dockeralpine].
 
-This image is perfect if you're looking to run a Node.js application within a Docker setup and wanting to benefit from Consul for service registration and discovery. It's also very small clocking in at only ~31MB.
+Image size is ~50.9 MB.
 
-**_Yet another container for running nginx?_**
+## Features
 
-Yes, but this one is built from [smebberson/alpine-consul-base][alpinebase] that contains [s6][s6] for process management, and Consul for service registration and discovery. Small, fast and flexible.
+This image features:
 
-_**Aren't you only supposed to run one process per container?**_
-
-Hell no! The following are good examples of when multiple processes within one container might be necessary:
-
-- Automatically updating [nginx][nginx] proxy settings when a down-stream application server (nodejs, php, etc) restarts (and the IP changes).
-- Automatically updating [HAProxy][haproxy] configuration to load balance to a group of down-stream application servers.
-- Running a logging daemon to centralize log management (i.e. [logentries][logentries], [loggly][loggly], [logstash][logstash]).
-- When you need to run a script on application server crash (to tidy something up), as the standard [Docker container restart policies][drsp] won't provide this.
-
-In all of these instances, there is one primary services and secondary support services. When the secondary support services fail, they should be automatically restarted. When the primary service fails, the container itself should restart.
+- [Alpine Linux][alpinelinux]
+- [s6][s6] and [s6-overlay][s6overlay]
+- [Nginx][nginx]
+- [consul][consul]
 
 ## Versions
 
-- `2.0.0`, `latest` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/alpine-consul-nginx-v2.0.0/alpine-consul-nginx/Dockerfile)
+- `3.0.0`, `latest` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/alpine-consul-nginx-v3.0.0/alpine-consul-nginx/Dockerfile)
+- `2.0.0` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/alpine-consul-nginx-v2.0.0/alpine-consul-nginx/Dockerfile)
 - `1.0.0` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/alpine-consul-nginx-v1.0.0/alpine-consul-nginx/Dockerfile)
 
 [See VERSIONS.md for image contents.](https://github.com/smebberson/docker-alpine/blob/master/alpine-consul-nginx/VERSIONS.md)
@@ -30,17 +26,18 @@ In all of these instances, there is one primary services and secondary support s
 
 To use this image include `FROM smebberson/alpine-consul-nginx` at the top of your `Dockerfile`, or simply `docker run -p 80:80 -p 443:443 --name nginx smebberson/alpine-consul-nginx`.
 
-Customisation
--------------
+This container has been setup to automatically connect to a Consul cluster, created with a service name of `consul`. [Read more about it here](https://github.com/smebberson/docker-alpine/tree/master//alpine-consul).
+
+## Customisation
 
 This container comes setup as follows:
 
-- s6 will automatically start nginx for you.
+- nginx is automatically started for you.
 - If nginx dies, so will the container.
 - A basic nginx configuration and a simple default HTML file.
 - Consul service registration, and health check of the nginx service.
 
-Nginx logs (access and error logs) are automatically streamed to stdout. A service of name `nginx` is automatically setup within Consul, and a health check define to report availability of the service to Consul.
+nginx logs (access and error logs) are automatically streamed to `stdout`. A service of name `nginx` is automatically setup within Consul, and a health check defined to report availability of the service to Consul.
 
 ### HTML content
 
@@ -52,7 +49,7 @@ ADD /path/to/content /usr/html/
 
 index.html is the default, but that's easily changed (see below).
 
-### Nginx configuration
+### nginx configuration
 
 A basic nginx configuration is supplied with this image. But it's easy to overwrite:
 
@@ -71,34 +68,35 @@ By default, if nginx crashes, the container will stop. This has been configured 
 
 If you don't want this to happen, simply replace the `root/etc/services.d/nginx/finish` with a different file in your image. I like to `ln -s /bin/true /root/etc/services.d/nginx/finish` in those instances.
 
-### Nginx pre-start configuration
+### nginx pre-start configuration
 
 If you need to, you can run a setup script before starting nginx. During your `Dockerfile` build process, copy across a file to `/etc/services.d/nginx/run` with the following (or customise it as required):
 
 ```
-#!/usr/bin/env sh
+#!/usr/bin/with-contenv sh
 
 if [ -e ./setup ]; then
 ./setup
 fi
 
-# start nginx
-exec nginx;
+# Start nginx.
+nginx -g "daemon off;"
 ```
 
 ### Consul service registration
 
-By default the file at `/etc/consul/conf.d/nginx.json` will register an `nginx` service, on port `80` with Consul. It also registers a 5s health check that reports on the availability of the service. If you'd like to configure perhaps more ports, or change the health check simply create a new file that meets the requirements of a [Consul service definition][consulservicedef] and add it (in your Dockerfile) to your image, replacing the already existing `nginx.json`.
+By default the file at `/etc/consul/conf.d/nginx.json` will register an `nginx` service, on port `80` with Consul. It also registers a 5s health check that reports on the availability of the service. If you'd like to configure perhaps more ports, or change the health check another way, create a new file that meets the requirements of a [Consul service definition][consulservicedef] and add it (in your Dockerfile) to your image, replacing the already existing `nginx.json`.
 
+## Example
+
+An example of using this image can be found in [examples/user-consul-nginx][example].
+
+[alpinelinux]: https://www.alpinelinux.org/
+[consul]: https://consul.io/
 [s6]: http://www.skarnet.org/software/s6/
-[s6-built-statically]: https://github.com/smebberson/docker-ubuntu-base/blob/master/s6/s6-build
-[logentries]: https://logentries.com/
-[loggly]: https://www.loggly.com/
-[logstash]: http://logstash.net/
-[drsp]: https://docs.docker.com/reference/commandline/cli/#restart-policies
+[s6overlay]: https://github.com/just-containers/s6-overlay
+[apache]: https://httpd.apache.org/
+[dockeralpine]: https://github.com/smebberson/docker-alpine
 [nginx]: http://nginx.org/
-[haproxy]: http://www.haproxy.org/
-[alpinebase]: https://registry.hub.docker.com/u/smebberson/alpine-base/
-[s6]: http://www.skarnet.org/software/s6/
-[dockerlogs]: https://docs.docker.com/reference/commandline/cli/#logs
 [consulservicedef]: https://www.consul.io/docs/agent/services.html
+[example]: https://github.com/smebberson/docker-alpine/blob/master/examples/user-consul-nginx/Dockerfile

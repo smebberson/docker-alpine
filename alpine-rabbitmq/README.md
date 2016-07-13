@@ -2,7 +2,8 @@
 
 __Please note__ this image is using Alpine's Erlang packages which are in its [community](https://pkgs.alpinelinux.org/packages?name=%25erlang%25&repo=community&arch=x86_64&maintainer=all) repo.
 
-An image for using [RabbitMQ][RabbitMQ], bundled with [Alpine Linux][alpinelinux] and [s6][s6].
+A Docker image for running [RabbitMQ][rabbitmq], based on Alpine Linux.
+This image belongs to a suite of images [documented here][dockeralpine].
 
 ## Features
 
@@ -27,7 +28,7 @@ To use this image include `FROM smebberson/alpine-rabbitmq` at the top of your `
 
 ### Configuration
 
-This comes with `confd` and is used to provide easy configuration. Please not, not all RabbitMQ configuration options are supported. Please submit a pull request if you require an option.
+This comes with `confd` and is used to provide easy configuration. Please note, not all RabbitMQ configuration options are supported. Please submit a pull request if you require an option, or copy the template from here to your container and alter as necessary.
 
 Basic configuration via a few environment variables have been baked into this image.
 
@@ -72,9 +73,17 @@ docker run -d -p 5672:5672 -p 15672:15672 -v <log-dir>:/data/log -v <data-dir>:/
 
 **Please note:** To utilise the persistent shared directories, please make sure you have included the `VOLUME` command in your `Dockerfile` and environment variables as defined in the configurations outlined above.
 
+## Example
 
-[s6]: http://www.skarnet.org/software/s6
-[alpinelinux]: http://www.alpinelinux.org/about
+An example of using this image can be found in [examples/user-rabbitmq][example].
+
+[alpinelinux]: https://www.alpinelinux.org/
+[consul]: https://consul.io/
+[s6]: http://www.skarnet.org/software/s6/
+[s6overlay]: https://github.com/just-containers/s6-overlay
+[dockeralpine]: https://github.com/smebberson/docker-alpine
+[confd]: https://github.com/kelseyhightower/confd
 [RabbitMQ]: https://www.rabbitmq.com
 [RabbitMQManagement]: https://www.rabbitmq.com/management.html
 [RabbitMQConfig]: https://www.rabbitmq.com/configure.html
+[example]: https://github.com/smebberson/docker-alpine/tree/master/examples/user-rabbitmq

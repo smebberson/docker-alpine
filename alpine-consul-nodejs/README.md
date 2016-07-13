@@ -1,12 +1,27 @@
 # alpine-consul-nodejs
 
-An image for using Node.js within containers, bundled with [Alpine Linux][alpinelinux] and [s6][s6] and [Consul][consul].
+A Docker image for running [Node.js][nodejs] with [Consul][consul], based on Alpine Linux.
+This image belongs to a suite of images [documented here][dockeralpine].
 
-This image is perfect if you're looking to run a Node.js application within a Docker setup and wanting to benefit from Consul for service registration and discovery. It's also very small clocking in at only ~43MB.
+Image size is ~144.4 MB.
+
+## Features
+
+This image features:
+
+- [Alpine Linux][alpinelinux]
+- [s6][s6] and [s6-overlay][s6overlay]
+- [Node.js][nodejs]
+- [consul][consul]
 
 ## Versions
 
-- `3.0.0`, `latest` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/alpine-consul-nodejs-v3.0.0/alpine-consul-nodejs/Dockerfile)
+- `5.2.1`, `latest` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/alpine-consul-nodejs-v5.2.1/alpine-consul-nodejs/Dockerfile)
+- `5.2.0` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/alpine-consul-nodejs-v5.2.0/alpine-consul-nodejs/Dockerfile)
+- `5.1.0` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/alpine-consul-nodejs-v5.1.0/alpine-consul-nodejs/Dockerfile)
+- `5.0.0` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/alpine-consul-nodejs-v5.0.0/alpine-consul-nodejs/Dockerfile)
+- `4.0.0` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/alpine-consul-nodejs-v4.0.0/alpine-consul-nodejs/Dockerfile)
+- `3.0.0` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/alpine-consul-nodejs-v3.0.0/alpine-consul-nodejs/Dockerfile)
 - `2.0.0` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/alpine-consul-nodejs-v2.0.0/alpine-consul-nodejs/Dockerfile)
 - `1.0.0` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/alpine-consul-nodejs-v1.0.0/alpine-consul-nodejs/Dockerfile)
 
@@ -15,7 +30,11 @@ This image is perfect if you're looking to run a Node.js application within a Do
 
 ## Usage
 
-To use this image include `FROM smebberson/alpine-consul-nodejs` at the top of your `Dockerfile`. Inheriting from `smebberson/alpine-consul-nodejs` provides you with the ability to easily start your Node.js application using [s6][s6]. You have two options for process management:
+To use this image include `FROM smebberson/alpine-consul-nodejs` at the top of your `Dockerfile`. Inheriting from `smebberson/alpine-consul-nodejs` provides you with the ability to easily start your Node.js application using [s6][s6].
+
+This container has been setup to automatically connect to a Consul cluster, created with a service name of `consul`. [Read more about it here](https://github.com/smebberson/docker-alpine/tree/master//alpine-consul).
+
+You have two options for process management:
 
 - s6 can keep it running for you, restarting it when it crashes.
 - The entire container can exit allowing the host machine to kick in and restart it.
@@ -33,7 +52,7 @@ To start your app, with automatic restarts:
 cd /app
 
 # start our node.js application
-exec node server.js;
+node server.js;
 ```
 
 When you run this container, s6 will automatically restart your application and make sure it stays running for you.
@@ -52,20 +71,19 @@ To do, create a file at `/etc/consul/conf.d/app.json` (or call it whatever you w
         "name": "app",
         "tags": ["app","nodejs"],
         "port": 4000,
-        "checks": [
-            {
-                "script": "curl localhost:4000/ >/dev/null 2>&1",
-                "interval": "5s"
-            }
-        ]
+        "check": {
+            "id": "app",
+            "name": "Node.js app on port 4000"
+            "http": "http://localhost/ping",
+            "interval": "10s",
+            "timeout": "1s"
+        }
     }
 }
 
 ```
 
 This file registers your Node.js app with Consul, giving it a service name of `app`. It also defines a health check that will respond to a `GET / HTTP/1.1 Host: localhost:4000` request. Consul will use this health check to broadcast the status of your Node.js application.
-
-[A complete and working example of this can be reviewed here](https://github.com/smebberson/docker-alpine/tree/master/examples/user-consul-nodejs).
 
 ### Configuration generation with consul-template
 
@@ -122,8 +140,15 @@ process.on('uncaughtException', function (e) {
 });
 ```
 
+## Example
+
+An example of using this image can be found in [examples/user-consul-nodejs][example].
+
+[dockeralpine]: https://github.com/smebberson/docker-alpine
 [s6]: http://www.skarnet.org/software/s6/
-[dockerlogs]: https://docs.docker.com/reference/commandline/cli/#logs
+[s6overlay]: https://github.com/just-containers/s6-overlay
 [alpinelinux]: https://www.alpinelinux.org/
-[alpinebase]: https://registry.hub.docker.com/u/smebberson/alpine-base/
 [consul]: https://consul.io/
+[nodejs]: https://nodejs.org/
+[dockerlogs]: https://docs.docker.com/reference/commandline/cli/#logs
+[example]: https://github.com/smebberson/docker-alpine/tree/master/examples/user-consul-nodejs

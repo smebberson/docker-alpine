@@ -1,5 +1,4 @@
 {
     "data_dir": "/data/consul",
-    "leave_on_terminate": true,
     "disable_update_check": true
 }

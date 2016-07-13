@@ -1,0 +1,24 @@
+#!/usr/bin/with-contenv sh
+
+#
+# This script will return a list of IP addresses (that resolved from a DNS query for `consul`
+# or $CONSUL_SERVER_NAME) prefixed with -retry-join. If none can be found the script will exit 1.
+#
+# For example:
+# -retry-join 192.168.0.8 -retry-join 192.168.0.10 -retry-join 192.168.0.19
+#
+
+# Get the IP of the current container. We don't want this container to match itself.
+HOST_IP=`host-ip`
+
+# Look for an IP that doesn't match that of this container.
+JOIN=`container-find | grep -v "$HOST_IP" | awk '{ printf " -retry-join " $0}'`
+
+# If we didn't find another IP, exit 1.
+if test -z "$JOIN"; then
+    exit 1;
+fi
+
+# We found at least one. Exit 0!
+echo "$JOIN"
+exit 0

@@ -45,7 +45,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.provision "shell", path: "vagrant/apt-get.sh"
 
   # configuration step 3: install docker
-  config.vm.provision "docker"
+  config.vm.provision "shell", path: "vagrant/docker.sh"
 
   # configuration step 4: install compose
   config.vm.provision "shell", path: "vagrant/compose.sh"

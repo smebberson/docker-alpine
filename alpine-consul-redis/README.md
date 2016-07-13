@@ -1,43 +1,39 @@
 # alpine-consul-redis
 
-An image for using [redis][redis], bundled with [Alpine Linux][alpinelinux] and [s6][s6] and [Consul][consul].
+A Docker image for running [Redis][redis] with [Consul][consul], based on Alpine Linux.
+This image belongs to a suite of images [documented here][dockeralpine].
 
-This image is perfect if you're looking to run redis within a Docker setup and wanting to benefit from Consul for service registration and discovery.
+Image size is ~51.3 MB.
 
-**_Yet another container for running redis?_**
+## Features
 
-Yes, but this one is built from [smebberson/alpine-consul-base][alpineconsulbase] that contains [s6][s6] for process management, and Consul for service registration and discovery. Small, fast and flexible.
+This image features:
 
-_**Aren't you only supposed to run one process per container?**_
-
-Hell no! The following are good examples of when multiple processes within one container might be necessary:
-
-- Automatically updating [nginx][nginx] proxy settings when a down-stream application server (nodejs, php, etc) restarts (and the IP changes).
-- Automatically updating [HAProxy][haproxy] configuration to load balance to a group of down-stream application servers.
-- Running a logging daemon to centralize log management (i.e. [logentries][logentries], [loggly][loggly], [logstash][logstash]).
-- When you need to run a script on application server crash (to tidy something up), as the standard [Docker container restart policies][drsp] won't provide this.
-
-In all of these instances, there is one primary services and secondary support services. When the secondary support services fail, they should be automatically restarted. When the primary service fails, the container itself should restart.
+- [Alpine Linux][alpinelinux]
+- [s6][s6] and [s6-overlay][s6overlay]
+- [Redis][redis]
+- [consul][consul]
 
 ## Versions
 
-- `1.0.0`, `latest` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/alpine-consul-redis-v1.0.0/alpine-consul-redis/Dockerfile)
+- `2.0.0`, `latest` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/alpine-consul-redis-v2.0.0/alpine-consul-redis/Dockerfile)
+- `1.0.0` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/alpine-consul-redis-v1.0.0/alpine-consul-redis/Dockerfile)
 
 [See VERSIONS.md for image contents.](https://github.com/smebberson/docker-alpine/blob/master/alpine-consul-redis/VERSIONS.md)
 
 ## Usage
 
-You need to a link to another container running Consul, so this container can join the cluster. It should have a link name of `consul-agent`.
+To use this image include `FROM smebberson/alpine-consul-redis` at the top of your `Dockerfile`, or simply `docker run --name redis smebberson/alpine-consul-redis`.
 
-To use this image include `FROM smebberson/alpine-consul-redis` at the top of your `Dockerfile`, or simply `docker run --name redis --link alpine-consul:consul-agent smebberson/alpine-consul-redis`.
+This container has been setup to automatically connect to a Consul cluster, created with a service name of `consul`. [Read more about it here](https://github.com/smebberson/docker-alpine/tree/master//alpine-consul).
 
 ## Customisation
 
 This container comes setup as follows:
 
-- s6 will automatically start redis for you.
-- If redis dies, so will the container.
-- A basic redis configuration which you can [review and customise][redisconfig].
+- Redis will be automatically started for you.
+- If Redis dies, so will the container.
+- A basic Redis configuration which you can [review and customise][redisconfig].
 
 To update the configuration:
 
@@ -52,13 +48,15 @@ This container is automatically configured to register itself with Consul, as th
 
 Any of these files can be changed in your image, as required to customise the setup.
 
+## Example
+
+An example of using this image can be found in [examples/user-consul-redis][example].
+
+[dockeralpine]: https://github.com/smebberson/docker-alpine
 [s6]: http://www.skarnet.org/software/s6/
-[logentries]: https://logentries.com/
-[loggly]: https://www.loggly.com/
-[logstash]: http://logstash.net/
-[drsp]: https://docs.docker.com/reference/commandline/cli/#restart-policies
-[redis]: http://redis.io/
-[haproxy]: http://www.haproxy.org/
-[alpineconsulbase]: https://registry.hub.docker.com/u/smebberson/alpine-consul-base/
-[s6]: http://www.skarnet.org/software/s6/
+[s6overlay]: https://github.com/just-containers/s6-overlay
+[alpinelinux]: https://www.alpinelinux.org/
+[consul]: https://consul.io/
 [redisconfig]: https://github.com/smebberson/docker-alpine/blob/master/alpine-consul-redis/root/etc/redis.conf
+[redis]: http://redis.io/
+[example]: https://github.com/smebberson/docker-alpine/tree/master/examples/user-consul-redis

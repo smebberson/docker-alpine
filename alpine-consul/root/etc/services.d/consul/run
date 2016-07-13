@@ -1,6 +1,17 @@
 #!/usr/bin/with-contenv sh
 
-# Bind to the external (LAN) IP
-BIND=`getent hosts ${HOSTNAME} | awk '{print $1}'`
+#
+# This script will wait until another Consul server is available before starting Consul.
+#
 
-exec s6-setuidgid consul consul agent -config-dir /etc/consul/conf.d/bootstrap -bind $BIND -domain $CONSUL_DOMAIN;
+# Bind to the external (LAN) IP.
+BIND=`host-ip`
+
+# Wait until another Consul server is available.
+consul-available
+
+# We have another Consul server available. Join it.
+RETRY_JOIN=`consul-join`
+
+# Start Consul.
+s6-setuidgid consul consul agent -config-dir $CONSUL_CONFIG_DIR -bind $BIND -advertise $BIND -client 0.0.0.0 $RETRY_JOIN -retry-interval 5s -domain $CONSUL_DOMAIN

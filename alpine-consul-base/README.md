@@ -1,14 +1,24 @@
 # alpine-consul-base
 
-An image that contains [Consul][consul] within a Docker container, bundled with Alpine Linux and [s6][s6]. This image is designed to work hand-in-hand with [smebberson/alpine-consul][alpineconsul].
-
-This image also comes with [consul-template][consultemplate] which can be used to generate configuration files based on service discovery via Consul.
+A Docker image designed for extending from when you need to run [Consul][consul], based on Alpine Linux.
+This image belongs to a suite of images [documented here][dockeralpine].
 
 This image is designed to be extended from, with specific services added to it via Consul, along with appropriate health checks.
 
+Image size is ~49.4 MB.
+
+## Features
+
+This image features:
+
+- [Alpine Linux][alpinelinux]
+- [s6][s6] and [s6-overlay][s6overlay]
+- [Consul][consul] and [consul-template][consultemplate]
+
 ## Versions
 
-- `3.0.0`, `latest` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/alpine-consul-base-v3.0.0/alpine-consul-base/Dockerfile)
+- `4.0.0`, `latest` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/alpine-consul-base-v4.0.0/alpine-consul-base/Dockerfile)
+- `3.0.0` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/alpine-consul-base-v3.0.0/alpine-consul-base/Dockerfile)
 - `2.0.0` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/alpine-consul-base-v2.0.0/alpine-consul-base/Dockerfile)
 - `1.1.0` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/alpine-consul-base-v1.1.0/alpine-consul-base/Dockerfile)
 - `1.0.0` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/alpine-consul-base-v1.0.0/alpine-consul-base/Dockerfile)
@@ -17,23 +27,30 @@ This image is designed to be extended from, with specific services added to it v
 
 ## Usage
 
-To use this image include `FROM smebberson/alpine-consul-base` at the top of your `Dockerfile`, or simply `docker run --name consul-base --link "alpine-consul:consul-agent" smebberson/alpine-consul-base`.
+To use this image include `FROM smebberson/alpine-consul-base` at the top of your `Dockerfile`, or simply `docker run --name consul-base smebberson/alpine-consul-base`.
 
-It's very import to include a link to a container running a Consul agent (regardless if that Consul agent is running in server mode or not). The link within the container must be `consul-agent` which is used within `/etc/services.d/consul/run` to provide an IP that the Consul agent should join. Without this, the container will error and quit.
+This container has been setup to automatically connect to a Consul cluster, created with a service name of `consul`. [Read more about it here](https://github.com/smebberson/docker-alpine/tree/master//alpine-consul).
+
+[consul-template][consultemplate] is automatically started if templates are available.
 
 ## Customisation
 
-This container comes setup as follows:
+To use [consul-template][consultemplate]:
 
-- [consul-template][consultemplate] is provided and automatically started if templates are available.
+1. Add your templates to `root/etc/consul-template/templates/my-service/`.
+1. Make `consul-template` configuration aware of your templates by adding a configuration file in `root/etc/consul-template/conf.d/my-service` (use sub folders to make `VOLUME /etc/consul-template/templates/my-service` possible).
+1. In your `Dockerfile` be sure to run `mkfifo /etc/services.d/my-service/supervise/control` and `chmod g+w /etc/services.d/my-service/supervise/control` in order to make it possible for `consul-template` to restart the service if needed.
 
-To use [consul-template][consultemplate] simply add your templates to `root/etc/consul-template/templates/my-service/` and then make `consul-template` configuration aware of your templates by adding a configuration file in `root/etc/consul-template/conf.d/my-service` (use sub folders to make `VOLUME /etc/consul-template/templates/my-service` possible).
-In your `Dockerfile` be sure to run `mkfifo /etc/services.d/my-service/supervise/control` and `chmod g+w /etc/services.d/my-service/supervise/control` in order to make it possible for consul-template to restart the service if needed.
+## Example
 
-A complete example showing [configuration via consul-template can be found here][example].
+An example of using this image can be found in [examples/user-consul-nginx-nodejs][example].
 
+[alpinelinux]: https://www.alpinelinux.org/
+[consul]: https://consul.io/
 [s6]: http://www.skarnet.org/software/s6/
-[consul]: https://www.consul.io/
-[alpineconsul]: https://registry.hub.docker.com/u/smebberson/alpine-consul/
+[s6overlay]: https://github.com/just-containers/s6-overlay
+[apache]: https://httpd.apache.org/
+[consulservicedef]: https://www.consul.io/docs/agent/services.html
+[dockeralpine]: https://github.com/smebberson/docker-alpine
 [consultemplate]: https://github.com/hashicorp/consul-template
 [example]: https://github.com/smebberson/docker-alpine/tree/master/examples/user-consul-nginx-nodejs

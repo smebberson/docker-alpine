@@ -2,11 +2,12 @@
     "service": {
         "name": "nginx",
         "port": 80,
-        "checks": [
-            {
-                "script": "wget -s http://localhost:80/ping > /dev/null 2>&1 || exit 2",
-                "interval": "5s"
-            }
-        ]
+        "check": {
+            "id": "nginx",
+            "name": "nginx on port 80",
+            "http": "http://localhost/ping",
+            "interval": "10s",
+            "timeout": "1s"
+        }
     }
 }

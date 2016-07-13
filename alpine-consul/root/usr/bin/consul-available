@@ -1,0 +1,16 @@
+#!/usr/bin/with-contenv sh
+
+#
+# This script will wait indenfinitely until a DNS query for `consul` (or $CONSUL_SERVER_NAME) can be resolved.
+#
+# The script will exit 0 once a DNS query has resolved.
+#
+
+# Wait until consul-join finds another Consul server.
+until consul-join > /dev/null 2>&1
+do
+    sleep 1
+done
+
+# We have another Consul server available. Exit 0!
+exit 0

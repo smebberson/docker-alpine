@@ -1,7 +1,6 @@
-alpine-nginx
-============
+# alpine-nginx
 
-This file contains all software versions, that correspond to a version of this image itself.
+This file contains all software versions, that correspond to a version of this image itself. Read more about the [alpine-nginx image here][alpinenginx].
 
 ## Latest
 
@@ -43,6 +42,7 @@ Usage: `smebberson/alpine-nginx:2.0.0`.
 Usage: `smebberson/alpine-nginx:1.0.0`.
 
 [nginx]: http://nginx.org/
+[alpinenginx]: https://github.com/smebberson/docker-alpine/tree/master/alpine-nginx
 [smebbersonalpinebase100]: https://github.com/smebberson/docker-alpine/blob/fdb9fca74d03ee1b21e47e3edd54f01cb4bf5ab6/alpine-base/Dockerfile
 [smebbersonalpinebase110]: https://github.com/smebberson/docker-alpine/blob/1f0d03677e8ebbcd59ff8209730089bcac79d23d/alpine-base/Dockerfile
 [smebbersonalpinebase120]: https://github.com/smebberson/docker-alpine/blob/1f0d03677e8ebbcd59ff8209730089bcac79d23d/alpine-base/Dockerfile

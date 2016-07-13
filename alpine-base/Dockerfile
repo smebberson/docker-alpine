@@ -1,4 +1,4 @@
-FROM alpine:3.3
+FROM alpine:3.4
 MAINTAINER Scott Mebberson <scott@scottmebberson.com>
 
 # Add commonly used packages
@@ -6,7 +6,7 @@ RUN apk add --no-cache bind-tools
 
 # Add s6-overlay
 ENV S6_OVERLAY_VERSION=v1.17.2.0 \
-    GODNSMASQ_VERSION=1.0.4
+    GODNSMASQ_VERSION=1.0.6
 
 RUN apk add --no-cache curl && \
     curl -sSL https://github.com/just-containers/s6-overlay/releases/download/${S6_OVERLAY_VERSION}/s6-overlay-amd64.tar.gz \

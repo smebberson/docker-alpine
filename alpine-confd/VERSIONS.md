@@ -4,17 +4,11 @@ This file contains all software versions, that correspond to a version of this i
 
 ## Latest
 
-[![ImageLayers Layers](https://img.shields.io/imagelayers/layers/smebberson/alpine-confd/latest.svg)]()
-[![ImageLayers Size](https://img.shields.io/imagelayers/image-size/smebberson/alpine-confd/latest.svg)]()
-
 Same as v2.0.0.
 
 Usage: `smebberson/alpine-confd` or `smebberson/alpine-confd:latest`.
 
 ## v2.0.0
-
-[![ImageLayers Layers](https://img.shields.io/imagelayers/layers/smebberson/alpine-confd/2.0.0.svg)]()
-[![ImageLayers Size](https://img.shields.io/imagelayers/image-size/smebberson/alpine-confd/2.0.0.svg)]()
 
 - [smebberson/alpine-base: v2.0.0][smebbersonalpinebase200]
 - [confd v0.11.0][confd]
@@ -27,9 +21,6 @@ Usage: `smebberson/alpine-confd:2.0.0`.
 
 ## v1.0.2
 
-[![ImageLayers Layers](https://img.shields.io/imagelayers/layers/smebberson/alpine-confd/1.0.2.svg)]()
-[![ImageLayers Size](https://img.shields.io/imagelayers/image-size/smebberson/alpine-confd/1.0.2.svg)]()
-
 - [smebberson/alpine-base: v1.2.1][smebbersonalpinebase120]
 - [confd v0.11.0][confd]
 
@@ -41,18 +32,12 @@ Usage: `smebberson/alpine-confd:1.0.2`.
 
 ## v1.0.1
 
-[![ImageLayers Layers](https://img.shields.io/imagelayers/layers/smebberson/alpine-confd/1.0.1.svg)]()
-[![ImageLayers Size](https://img.shields.io/imagelayers/image-size/smebberson/alpine-confd/1.0.1.svg)]()
-
 - [smebberson/alpine-base: v1.2.1][smebbersonalpinebase120]
 - [confd v0.11.0][confd]
 
 Usage: `smebberson/alpine-confd:1.0.1`.
 
 ## v1.0.0
-
-[![ImageLayers Layers](https://img.shields.io/imagelayers/layers/smebberson/alpine-confd/1.0.0.svg)]()
-[![ImageLayers Size](https://img.shields.io/imagelayers/image-size/smebberson/alpine-confd/1.0.0.svg)]()
 
 - [smebberson/alpine-base: v1.2.0][smebbersonalpinebase120]
 - [confd v0.11.0][confd]

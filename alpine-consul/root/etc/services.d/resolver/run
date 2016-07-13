@@ -1,3 +1,7 @@
 #!/usr/bin/with-contenv sh
 
-exec go-dnsmasq --default-resolver --append-search-domains --hostsfile=/etc/hosts --stubzones=.$CONSUL_DOMAIN/127.0.0.1:8600 >> $GO_DNSMASQ_LOG_FILE 2>&1
+# Retrieve the external (LAN) IP, as this is what Consul's :8600 port has been bound too.
+BIND=`host-ip`
+
+# Start go-dnsmasq.
+go-dnsmasq --default-resolver --ndots "1" --fwd-ndots "0" --stubzones=".$CONSUL_DOMAIN/$BIND:8600" --hostsfile=/etc/hosts >> $GO_DNSMASQ_LOG_FILE 2>&1
