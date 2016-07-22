@@ -11,6 +11,9 @@ then
 	# Required for add-apt-repository
 	apt-get install -y software-properties-common build-essential
 
+	# Required for latest git
+	add-apt-repository ppa:git-core/ppa
+
 	# update apt-get
 	apt-get update
 
