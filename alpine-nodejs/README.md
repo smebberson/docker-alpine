@@ -13,7 +13,8 @@ This image features:
 
 ## Versions
 
-- `5.2.1`, `latest` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/alpine-nodejs-v5.2.1/alpine-nodejs/Dockerfile)
+- `5.2.2`, `latest` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/alpine-nodejs-v5.2.2/alpine-nodejs/Dockerfile)
+- `5.2.1` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/alpine-nodejs-v5.2.1/alpine-nodejs/Dockerfile)
 - `5.2.0` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/alpine-nodejs-v5.2.0/alpine-nodejs/Dockerfile)
 - `5.1.0` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/alpine-nodejs-v5.1.0/alpine-nodejs/Dockerfile)
 - `5.0.0` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/alpine-nodejs-v5.0.0/alpine-nodejs/Dockerfile)
@@ -25,8 +26,8 @@ This image features:
 - `2.0.0` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/alpine-nodejs-v2.0.0/alpine-nodejs/Dockerfile)
 - `1.0.0` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/alpine-nodejs-v1.0.0/alpine-nodejs/Dockerfile)
 
-[See VERSIONS.md for image contents.](VERSIONS.md)
-[See NODEJS.md to find specific Node.js versions.](README.md)
+[See VERSIONS.md for image contents.](VERSIONS.md)  
+[See NODEJS.md to find specific Node.js versions.](NODEJS.md)
 
 ## Usage
 
