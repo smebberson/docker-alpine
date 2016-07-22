@@ -1,0 +1,14 @@
+#!/usr/bin/with-contenv sh
+
+EXTRA=""
+
+if [ "$CONSUL_JOIN_WAN" ]; then
+EXTRA=$EXTRA" -retry-join-wan $CONSUL_JOIN_WAN"
+fi
+
+if [ "$CONSUL_ADVERTISE_WAN" ]; then
+EXTRA=$EXTRA" -advertise-wan $CONSUL_ADVERTISE_WAN"
+fi
+
+echo "$EXTRA"
+exit 0
