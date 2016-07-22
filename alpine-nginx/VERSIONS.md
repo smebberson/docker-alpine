@@ -4,9 +4,20 @@ This file contains all software versions, that correspond to a version of this i
 
 ## Latest
 
-Same as v2.1.1.
+Same as v3.0.0.
 
 Usage: `smebberson/alpine-nginx` or `smebberson/alpine-nginx:latest`.
+
+## v3.0.0
+
+- [smebberson/alpine-base: v3.0.0][smebbersonalpinebase300]
+- [nginx][nginx]: v1.8.1
+
+Improvements:
+
+- Updates to alpine-base `v3.0.0`.
+
+Usage: `smebberson/alpine-nginx:3.0.0`.
 
 ## v2.1.1
 
@@ -43,6 +54,7 @@ Usage: `smebberson/alpine-nginx:1.0.0`.
 
 [nginx]: http://nginx.org/
 [alpinenginx]: https://github.com/smebberson/docker-alpine/tree/master/alpine-nginx
-[smebbersonalpinebase100]: https://github.com/smebberson/docker-alpine/blob/fdb9fca74d03ee1b21e47e3edd54f01cb4bf5ab6/alpine-base/Dockerfile
-[smebbersonalpinebase110]: https://github.com/smebberson/docker-alpine/blob/1f0d03677e8ebbcd59ff8209730089bcac79d23d/alpine-base/Dockerfile
-[smebbersonalpinebase120]: https://github.com/smebberson/docker-alpine/blob/1f0d03677e8ebbcd59ff8209730089bcac79d23d/alpine-base/Dockerfile
+[smebbersonalpinebase100]: https://github.com/smebberson/docker-alpine/tree/alpine-base-v1.0.0/alpine-base
+[smebbersonalpinebase110]: https://github.com/smebberson/docker-alpine/tree/alpine-base-v1.1.0/alpine-base
+[smebbersonalpinebase120]: https://github.com/smebberson/docker-alpine/tree/alpine-base-v1.2.0/alpine-base
+[smebbersonalpinebase300]: https://github.com/smebberson/docker-alpine/tree/alpine-base-v3.0.0/alpine-base

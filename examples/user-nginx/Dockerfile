@@ -1,4 +1,4 @@
-FROM smebberson/alpine-nginx:2.0.0
+FROM smebberson/alpine-nginx
 MAINTAINER Scott Mebberson <scott@scottmebberson.com>
 
 # Add the files

@@ -280,7 +280,7 @@ Latest version is `2.0.0`, or `latest`.
 
 This image includes Nginx with a very basic setup.
 
-Latest version is `2.1.1`, or `latest`.
+Latest version is `3.0.0`, or `latest`.
 
 - [README.md](https://github.com/smebberson/docker-alpine/blob/master/alpine-nginx/README.md)
 - [VERSIONS.md](https://github.com/smebberson/docker-alpine/blob/master/alpine-nginx/VERSIONS.md)
