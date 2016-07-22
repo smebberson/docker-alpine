@@ -5,6 +5,14 @@ Due to the nature of versioning and the fact this repository houses multiple Doc
 
 Each release records it's own specific changes in a VERSIONS.md file.
 
+## 2016.07.22
+
+- Now using `http://dl-4.alpinelinux.org/alpine/v3.3/main` APK repository to source v1.8.1 of Nginx.
+
+### Releases
+
+- [Released `v3.0.1` of `alpine-consul-nginx`](https://github.com/smebberson/docker-alpine/tree/alpine-consul-nginx-v3.0.1/alpine-consul-nginx)
+
 ## 2016.06.08
 
 - Updated the `examples/user-consul-nodejs` to use Docker Compose and zero-conf bootstrapped Consul.
