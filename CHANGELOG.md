@@ -9,11 +9,13 @@ Each release records it's own specific changes in a VERSIONS.md file.
 
 - `alpine-nginx-nodejs`: upgrade to the latest version of `alpine-nginx`.
 - `alpine-nginx-nodejs`: upgraded Node.js to v5.9.0.
+- `alpine-nginx-nodejs`: upgraded Node.js to v5.9.1.
 
 ### Releases
 
 - [Released `v3.0.0` of `alpine-nginx-nodejs`](https://github.com/smebberson/docker-alpine/tree/alpine-nginx-nodejs-v3.0.0/alpine-nginx-nodejs)
 - [Released `v3.1.0` of `alpine-nginx-nodejs`](https://github.com/smebberson/docker-alpine/tree/alpine-nginx-nodejs-v3.1.0/alpine-nginx-nodejs)
+- [Released `v3.1.1` of `alpine-nginx-nodejs`](https://github.com/smebberson/docker-alpine/tree/alpine-nginx-nodejs-v3.1.1/alpine-nginx-nodejs)
 
 ## 2016.07.22
 
