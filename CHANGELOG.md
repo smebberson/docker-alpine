@@ -5,13 +5,24 @@ Due to the nature of versioning and the fact this repository houses multiple Doc
 
 Each release records it's own specific changes in a VERSIONS.md file.
 
+## 2016.07.26
+
+- `alpine-nginx-nodejs`: upgrade to the latest version of `alpine-nginx`.
+
+### Releases
+
+- [Released `v3.0.0` of `alpine-nginx-nodejs`](https://github.com/smebberson/docker-alpine/tree/alpine-nginx-nodejs-v3.0.0/alpine-nginx-nodejs)
+
 ## 2016.07.22
 
-- Now using `http://dl-4.alpinelinux.org/alpine/v3.3/main` APK repository to source v1.8.1 of Nginx.
+- Now using `http://dl-4.alpinelinux.org/alpine/v3.3/main` APK repository to source v1.8.1 of Nginx in alpine-consul-nginx.
 
 ### Releases
 
 - [Released `v3.0.1` of `alpine-consul-nginx`](https://github.com/smebberson/docker-alpine/tree/alpine-consul-nginx-v3.0.1/alpine-consul-nginx)
+- [Released `v5.2.2` of `alpine-nodejs`](https://github.com/smebberson/docker-alpine/tree/alpine-nodejs-v5.2.2/alpine-nodejs)
+- [Released `v5.2.2` of `alpine-consul-nodejs`](https://github.com/smebberson/docker-alpine/tree/alpine-consul-nodejs-v5.2.2/alpine-consul-nodejs)
+- [Released `v3.0.0` of `alpine-nginx`](https://github.com/smebberson/docker-alpine/tree/alpine-nginx-v3.0.0/alpine-nginx)
 
 ## 2016.06.08
 
