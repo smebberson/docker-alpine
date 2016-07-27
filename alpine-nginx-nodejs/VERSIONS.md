@@ -12,7 +12,7 @@ Usage: `smebberson/alpine-nginx-nodejs` or `smebberson/alpine-nginx-nodejs:lates
 
 - [smebberson/alpine-nginx: v3.0.0][smebbersonalpinenginx300]
 - [nginx][nginx]: v1.8.1
-- [Node.js][nodejs]: v6.0.0
+- [Node.js][nodejs]: v6.1.0
 - [NPM][npm]: 3.10.5
 
 Usage: `smebberson/alpine-nginx-nodejs:4.1.0`.
@@ -21,7 +21,7 @@ Usage: `smebberson/alpine-nginx-nodejs:4.1.0`.
 
 - [smebberson/alpine-nginx: v3.0.0][smebbersonalpinenginx300]
 - [nginx][nginx]: v1.8.1
-- [Node.js][nodejs]: v6.1.0
+- [Node.js][nodejs]: v6.0.0
 - [NPM][npm]: 3.10.5
 
 Usage: `smebberson/alpine-nginx-nodejs:4.0.0`.
