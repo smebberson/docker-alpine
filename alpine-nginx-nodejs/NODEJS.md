@@ -6,6 +6,7 @@ You can [read more about how these images are versioned here](https://github.com
 
 ## 6.x branch of Node.js
 
+- Node v6.1.0: [v4.1.0](VERSIONS.md#v410)
 - Node v6.0.0: [v4.0.0](VERSIONS.md#v400)
 
 ## 4.x LTS branch of Node.js
