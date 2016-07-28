@@ -291,7 +291,7 @@ Latest version is `3.0.0`, or `latest`.
 
 This image includes both Nginx and Node.js. It's suitable if you want to have Node.js perform configuration for Nginx.
 
-Latest version is `4.2.1`, or `latest`.
+Latest version is `4.2.2`, or `latest`.
 
 - [README.md](https://github.com/smebberson/docker-alpine/blob/master/alpine-nginx-nodejs/README.md)
 - [VERSIONS.md](https://github.com/smebberson/docker-alpine/blob/master/alpine-nginx-nodejs/VERSIONS.md)

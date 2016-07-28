@@ -8,10 +8,12 @@ Each release records it's own specific changes in a VERSIONS.md file.
 ## 2016.07.28
 
 - `alpine-nginx-nodejs`: upgraded Node.js to v6.2.1.
+- `alpine-nginx-nodejs`: upgraded Node.js to v6.2.2.
 
 ### Releases
 
-- [Released `v4.2.1` of `alpine-nginx-nodejs`](https://github.com/smebberson/docker-alpine/tree/alpine-nginx-nodejs-v4.0.0/alpine-nginx-nodejs)
+- [Released `v4.2.1` of `alpine-nginx-nodejs`](https://github.com/smebberson/docker-alpine/tree/alpine-nginx-nodejs-v4.2.1/alpine-nginx-nodejs)
+- [Released `v4.2.2` of `alpine-nginx-nodejs`](https://github.com/smebberson/docker-alpine/tree/alpine-nginx-nodejs-v4.2.2/alpine-nginx-nodejs)
 
 ## 2016.07.27
 

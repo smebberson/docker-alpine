@@ -12,7 +12,8 @@ This image features:
 
 ## Versions
 
-- `4.2.1`, `latest` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/alpine-nginx-nodejs-v4.2.1/alpine-nginx-nodejs/Dockerfile)
+- `4.2.2`, `latest` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/alpine-nginx-nodejs-v4.2.2/alpine-nginx-nodejs/Dockerfile)
+- `4.2.1` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/alpine-nginx-nodejs-v4.2.1/alpine-nginx-nodejs/Dockerfile)
 - `4.2.0` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/alpine-nginx-nodejs-v4.2.0/alpine-nginx-nodejs/Dockerfile)
 - `4.1.0` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/alpine-nginx-nodejs-v4.1.0/alpine-nginx-nodejs/Dockerfile)
 - `4.0.0` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/alpine-nginx-nodejs-v4.0.0/alpine-nginx-nodejs/Dockerfile)

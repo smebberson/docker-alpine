@@ -6,8 +6,9 @@ You can [read more about how these images are versioned here](https://github.com
 
 ## 6.x branch of Node.js
 
-- Node v6.1.1: [v4.2.1](VERSIONS.md#v421)
-- Node v6.1.0: [v4.2.0](VERSIONS.md#v420)
+- Node v6.2.2: [v4.2.2](VERSIONS.md#v422)
+- Node v6.2.1: [v4.2.1](VERSIONS.md#v421)
+- Node v6.2.0: [v4.2.0](VERSIONS.md#v420)
 - Node v6.1.0: [v4.1.0](VERSIONS.md#v410)
 - Node v6.0.0: [v4.0.0](VERSIONS.md#v400)
 
