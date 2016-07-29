@@ -9,11 +9,14 @@ Each release records it's own specific changes in a VERSIONS.md file.
 
 - `alpine-nginx-nodejs`: upgraded Node.js to v6.2.1.
 - `alpine-nginx-nodejs`: upgraded Node.js to v6.2.2.
+- `alpine-nodejs`: upgraded Node.js to v6.3.0. Node.js is now compiled without the `--fully-static` flag allowing dynamic loading.
+- `alpine-nodejs`: Add `apk upgrade --update` to the Dockerfile so that APK packages are now updated when the image is built.
 
 ### Releases
 
 - [Released `v4.2.1` of `alpine-nginx-nodejs`](https://github.com/smebberson/docker-alpine/tree/alpine-nginx-nodejs-v4.2.1/alpine-nginx-nodejs)
 - [Released `v4.2.2` of `alpine-nginx-nodejs`](https://github.com/smebberson/docker-alpine/tree/alpine-nginx-nodejs-v4.2.2/alpine-nginx-nodejs)
+- [Released `v6.0.0` of `alpine-nodejs`](https://github.com/smebberson/docker-alpine/tree/alpine-nodejs-v6.0.0/alpine-nginx-nodejs)
 
 ## 2016.07.27
 

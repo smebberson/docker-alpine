@@ -4,9 +4,25 @@ This file contains all software versions, that correspond to a version of this i
 
 ## Latest
 
-Same as v5.2.2.
+Same as v6.0.0.
 
 Usage: `smebberson/alpine-nodejs` or `smebberson/alpine-nodejs:latest`.
+
+## v6.0.0
+
+- [smebberson/alpine-base: v3.0.0][smebbersonalpinebase300]
+- [Node.js: v6.3.0][nodejs]
+- [npm: v3.10.5][npm]
+
+__*Changes*__:
+
+- All APK packages are now updated when the image is built.
+
+__*Breaking changes*__:
+
+- Node.js is no longer built with the `--fully-static` flag.
+
+Usage: `smebberson/alpine-nodejs:6.0.0`.
 
 ## v5.2.2
 
