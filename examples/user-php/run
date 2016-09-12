@@ -1,0 +1,3 @@
+
+# Run the user-php example.
+dc up -d
