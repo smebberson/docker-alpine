@@ -57,6 +57,7 @@ Usage: `smebberson/alpine-confd:1.0.0`.
 
 [smebbersonalpinebase120]: https://github.com/smebberson/docker-alpine/tree/alpine-base-v1.2.0/alpine-base
 [smebbersonalpinebase200]: https://github.com/smebberson/docker-alpine/tree/alpine-base-v2.0.0/alpine-base
+[smebbersonalpinebase300]: https://github.com/smebberson/docker-alpine/tree/alpine-base-v3.0.0/alpine-base
 [confd]: https://github.com/kelseyhightower/confd
 [alpineconfd]: https://github.com/smebberson/docker-alpine/tree/master/alpine-confd
 [go15]: https://golang.org/doc/go1.5
