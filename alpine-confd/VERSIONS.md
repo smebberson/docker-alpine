@@ -4,9 +4,20 @@ This file contains all software versions, that correspond to a version of this i
 
 ## Latest
 
-Same as v2.0.0.
+Same as v3.0.0.
 
 Usage: `smebberson/alpine-confd` or `smebberson/alpine-confd:latest`.
+
+## v3.0.0
+
+- [smebberson/alpine-base: v3.0.0][smebbersonalpinebase300]
+- [confd v0.11.0][confd]
+
+Improvements:
+
+- Updates to alpine-base (Alpine Linux).
+
+Usage: `smebberson/alpine-confd:3.0.0`.
 
 ## v2.0.0
 

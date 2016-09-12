@@ -193,7 +193,7 @@ Latest version is `2.0.0`, or `latest`.
 
 This image adds [confd][confd]. It should be seen as a base image suitable for heavy customisation.
 
-Latest version is `2.0.0`, or `latest`.
+Latest version is `3.0.0`, or `latest`.
 
 - [VERSIONS.md](https://github.com/smebberson/docker-alpine/blob/master/alpine-confd/VERSIONS.md)
 - [README.md](https://github.com/smebberson/docker-alpine/blob/master/alpine-confd/README.md)

@@ -5,6 +5,14 @@ Due to the nature of versioning and the fact this repository houses multiple Doc
 
 Each release records it's own specific changes in a VERSIONS.md file.
 
+## 2016.09.12
+
+- `alpine-confd`: upgraded to `alpine-base v3.0.0`.
+
+### Releases
+
+- [Release `v3.0.0` of `alpine-confd`](https://github.com/smebberson/docker-alpine/tree/alpine-confd-v3.0.0/alpine-confd)
+
 ## 2016.07.28
 
 - `alpine-nginx-nodejs`: upgraded Node.js to v6.2.1.
