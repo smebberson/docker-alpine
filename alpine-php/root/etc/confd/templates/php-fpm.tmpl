@@ -21,7 +21,7 @@
 ; in a local file.
 ; Note: the default prefix is /usr/local/var
 ; Default Value: log/php-fpm.log
-error_log = /proc/self/fd/2
+error_log = {{getenv "PHP_FPM_ERROR_LOG"}}
 
 ; syslog_facility is used to specify what type of program is logging the
 ; message. This lets syslogd specify that messages from different facilities
