@@ -1,46 +1,53 @@
 #!/usr/bin/with-contenv sh
 
+# Determine if an ENV variable already exists or not (based
+# on the existence of a file of the same name - s6 style).
+check() {
+    # `return 0` is `true`, `return 1` is `false`.
+    if [ ! -e "/var/run/s6/container_environment/$1" ]; then return 0; else return 1; fi
+}
+
 #
 # Setup ENV variables, unless they already exist.
 # Allows users to easily override these in their Dockerfiles.
 #
 
-if [ -z "$PHP_FPM_ACCESS_LOG" ]; then
+if check "PHP_FPM_ACCESS_LOG"; then
     printf "/var/log/php-fpm/access.log" > /var/run/s6/container_environment/PHP_FPM_ACCESS_LOG
 fi
 
-if [ -z "$PHP_FPM_ERROR_LOG" ]; then
+if check "PHP_FPM_ERROR_LOG"; then
     printf "/var/log/php-fpm/error.log" > /var/run/s6/container_environment/PHP_FPM_ERROR_LOG
 fi
 
-if [ -z "$PHP_FPM_USER" ]; then
+if check "PHP_FPM_USER"; then
     printf "www-data" > /var/run/s6/container_environment/PHP_FPM_USER
 fi
 
-if [ -z "$PHP_FPM_GROUP" ]; then
+if check "PHP_FPM_GROUP"; then
     printf "www-data" > /var/run/s6/container_environment/PHP_FPM_GROUP
 fi
 
-if [ -z "$PHP_FPM_LISTEN_IP" ]; then
+if check "PHP_FPM_LISTEN_IP"; then
     printf "[::]" > /var/run/s6/container_environment/PHP_FPM_LISTEN_IP
 fi
 
-if [ -z "$PHP_FPM_LISTEN_PORT" ]; then
+if check "PHP_FPM_LISTEN_PORT"; then
     printf "9000" > /var/run/s6/container_environment/PHP_FPM_LISTEN_PORT
 fi
 
-if [ -z "$PHP_FPM_CATCH_WORKERS_OUTPUT" ]; then
+if check "PHP_FPM_CATCH_WORKERS_OUTPUT"; then
     printf "yes" > /var/run/s6/container_environment/PHP_FPM_CATCH_WORKERS_OUTPUT
 fi
 
-if [ -z "$PHP_FPM_CLEAR_ENV" ]; then
+if check "PHP_FPM_CLEAR_ENV"; then
     printf "no" > /var/run/s6/container_environment/PHP_FPM_CLEAR_ENV
 fi
 
-if [ -z "$PHP_FPM_MEMORY_LIMIT" ]; then
+if check "PHP_FPM_MEMORY_LIMIT"; then
     printf "32M" > /var/run/s6/container_environment/PHP_FPM_MEMORY_LIMIT
 fi
 
-if [ -z "$PHP_FPM_SECURITY_LIMIT_EXTENSIONS" ]; then
+if check "PHP_FPM_SECURITY_LIMIT_EXTENSIONS"; then
     printf ".php .php3 .php4 .php5 .php7" > /var/run/s6/container_environment/PHP_FPM_SECURITY_LIMIT_EXTENSIONS
 fi
