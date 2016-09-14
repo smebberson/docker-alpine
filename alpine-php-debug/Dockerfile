@@ -26,6 +26,8 @@ RUN set -xe && \
     adduser -u 82 -D -S -G www-data www-data && \
     mkdir -p $PHP_INI_DIR/conf.d && \
     mkdir -p /usr/src && \
+    mkdir -p /var/log/php-fpm && \
+    chown -Rf www-data:www-data /var/log/php-fpm && \
     cd /usr/src && \
     curl -fSL "https://secure.php.net/get/php-$PHP_VERSION.tar.xz/from/this/mirror" -o php.tar.xz && \
     echo "$PHP_SHA256 *php.tar.xz" | sha256sum -c - && \
