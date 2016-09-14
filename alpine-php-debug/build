@@ -1,0 +1,1 @@
+docker build -t smebberson/alpine-php-debug /vagrant/alpine-php-debug

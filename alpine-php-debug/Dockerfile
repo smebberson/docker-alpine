@@ -19,7 +19,7 @@ COPY ./root/usr/bin/docker-php-* /usr/bin/
 RUN set -xe && \
     apk add --update --no-cache --virtual .persistent-deps ca-certificates curl tar xz && \
     # Use the following to determine the php-rundeps: scanelf --needed --nobanner --recursive /usr/local | awk '{ gsub(/,/, "\nso:", $2); print "so:" $2 }' | sort -u | xargs -r apk info --installed | sort -u
-    apk add --no-cache --virtual .php-rundeps libcrypto1.0 libcurl libedit libssl1.0 libxml2 musl ncurses-libs zlib && \
+    apk add --no-cache --virtual .php-rundeps libcrypto1.0 libcurl libedit libssl1.0 libxml2 musl ncurses-libs zlib gdb && \
     apk add --no-cache --virtual .build-deps autoconf file g++ gcc libc-dev make pkgconf re2c curl-dev libedit-dev libxml2-dev openssl-dev sqlite-dev && \
     apk add --no-cache --virtual .fetch-deps gnupg && \
     addgroup -g 82 -S www-data && \

@@ -1,10 +1,1 @@
-
-NAME="alpine-php"
-EXT=""
-
-if [[ $@ == "debug" ]]; then
-    NAME="alpine-php-debug"
-    EXT=".debug"
-fi
-
-docker build -t "smebberson/$NAME" -f "/vagrant/alpine-php/Dockerfile$EXT" /vagrant/alpine-php
+docker build -t smebberson/alpine-php /vagrant/alpine-php

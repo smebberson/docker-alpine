@@ -1,0 +1,4 @@
+#!/usr/bin/with-contenv sh
+
+# start php-fpm;
+php-fpm;
