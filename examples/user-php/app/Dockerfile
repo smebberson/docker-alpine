@@ -1,4 +1,4 @@
-FROM smebberson/alpine-php
+FROM smebberson/alpine-php-debug
 MAINTAINER Scott Mebberson <scott@scottmebberson.com>
 
 ENV PHP_FPM_MEMORY_LIMIT 64M
