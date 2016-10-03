@@ -1,0 +1,1 @@
+docker build -t smebberson/alpine-openjdk /vagrant/alpine-openjdk
