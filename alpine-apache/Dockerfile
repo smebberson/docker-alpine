@@ -4,6 +4,8 @@ MAINTAINER Scott Mebberson <scott@scottmebberson.com>
 # Install apache
 RUN apk add --no-cache apache2=2.4.17-r4 apache2-utils=2.4.17-r4
 
+RUN mkdir -p /run/apache2/
+
 # Add the files
 ADD root /
 
