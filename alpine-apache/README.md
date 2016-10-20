@@ -52,7 +52,7 @@ To alter the HTML content that Apache serves up, add the following to your Docke
 ADD /path/to/content /var/www/localhost/
 ```
 
-`htdocs` folder with `index.html` is the default document, but that's easily changed (see below).
+The `/var/www/localhost/htdocs` directory is the default document root, and `index.html` is set as the directory index (so `index.html` will get served if you don't ask for a file in the url), but these are easily changed by using your own `httpd.conf` (see below).
 
 ### Apache configuration
 
