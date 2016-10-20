@@ -184,7 +184,7 @@ Latest version is `3.0.0`, or `latest`.
 
 This image includes Apache HTTPD with a very basic configuration.
 
-Latest version is `2.0.0`, or `latest`.
+Latest version is `2.0.1`, or `latest`.
 
 - [README.md](https://github.com/smebberson/docker-alpine/blob/master/alpine-apache/README.md)
 - [VERSIONS.md](https://github.com/smebberson/docker-alpine/blob/master/alpine-apache/VERSIONS.md)
@@ -493,6 +493,7 @@ We love contributors. Read [CONTRIBUTING.md](CONTRIBUTING.md) for more informati
 - [sandytrinh](https://github.com/sandytrinh)
 - [gaff](https://github.com/Gaff)
 - [ncornag](https://github.com/ncornag)
+- [emmetog](https://github.com/emmetog)
 
 You can view [more information about the contributors here](https://github.com/smebberson/docker-alpine/graphs/contributors).
 

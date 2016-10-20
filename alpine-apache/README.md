@@ -13,7 +13,8 @@ This image features:
 
 ## Versions
 
-- `2.0.0`, `latest` [(Dockerfile)](https://github.com/smebberson/docker-alpine/tree/alpine-apache-v2.0.0/alpine-apache)
+- `2.0.1`, `latest` [(Dockerfile)](https://github.com/smebberson/docker-alpine/tree/alpine-apache-v2.0.1/alpine-apache)
+- `2.0.0` [(Dockerfile)](https://github.com/smebberson/docker-alpine/tree/alpine-apache-v2.0.0/alpine-apache)
 - `1.0.0` [(Dockerfile)](https://github.com/smebberson/docker-alpine/tree/alpine-apache-v1.0.0/alpine-apache)
 
 [See VERSIONS.md for image contents.](https://github.com/smebberson/docker-alpine/blob/master/alpine-apache/VERSIONS.md)

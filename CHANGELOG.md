@@ -5,6 +5,15 @@ Due to the nature of versioning and the fact this repository houses multiple Doc
 
 Each release records it's own specific changes in a VERSIONS.md file.
 
+## 2016.10.21
+
+- `alpine-apache`: merged in changes to resolve an issue with Apache quitting.
+- `alpine-apache`: upgraded to Apache `v2.4.23`.
+
+### Releases
+
+- [Release `v2.0.1` of `alpine-apache`](https://github.com/smebberson/docker-alpine/tree/alpine-apache-v2.0.1/alpine-apache)
+
 ## 2016.09.12
 
 - `alpine-confd`: upgraded to `alpine-base v3.0.0`.
