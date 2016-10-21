@@ -4,9 +4,24 @@ This file contains all software versions, that correspond to a version of this i
 
 ## Latest
 
-Same as v3.0.0.
+Same as v3.1.0.
 
 Usage: `smebberson/alpine-consul` or `smebberson/alpine-consul:latest`.
+
+## v3.1.0
+
+- [smebberson/alpine-base: v3.1.0][smebbersonalpinebase310]
+- [consul v0.7.0][consul]
+
+Improvements:
+
+- Consul was upgraded to `v0.7.0`.
+- Containers no longer exit if Consul dies. Consul is simply restarted.
+- `CONSUL_ADVERTISE_WAN` environment variable can be set to alter the IP Consul reports to WAN.
+- `CONSUL_JOIN_WAN` environment variable can be set to make Consul communicate over WAN.
+- `CONSUL_DC` environment variable can be set to alter the name of the data center that Consul reports.
+
+Usage: `smebberson/alpine-consul:3.1.0`.
 
 ## v3.0.0
 
@@ -66,6 +81,7 @@ Usage: `smebberson/alpine-consul:1.0.0`.
 [consul]: https://consul.io/
 [consulupgrade]: https://www.consul.io/docs/upgrade-specific.html
 [alpineconsul]: https://github.com/smebberson/docker-alpine/tree/master/alpine-consul
+[smebbersonalpinebase310]: https://github.com/smebberson/docker-alpine/blob/alpine-base-v3.1.0/alpine-base
 [smebbersonalpinebase300]: https://github.com/smebberson/docker-alpine/blob/alpine-base-v3.0.0/alpine-base
 [smebbersonalpinebase200]: https://github.com/smebberson/docker-alpine/blob/alpine-base-v2.0.0/alpine-base
 [smebbersonalpinebase120]: https://github.com/smebberson/docker-alpine/blob/alpine-base-v1.2.0/alpine-base

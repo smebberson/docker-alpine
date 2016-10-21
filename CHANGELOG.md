@@ -29,6 +29,7 @@ Each release records it's own specific changes in a VERSIONS.md file.
 - [Release `v2.0.1` of `alpine-apache`](https://github.com/smebberson/docker-alpine/tree/alpine-apache-v2.0.1/alpine-apache)
 - [Release `v3.1.0` of `alpine-base`](https://github.com/smebberson/docker-alpine/tree/alpine-apache-v3.1.0/alpine-base)
 - [Release `v3.1.0` of `alpine-confd`](https://github.com/smebberson/docker-alpine/tree/alpine-apache-v3.1.0/alpine-confd)
+- [Release `v3.1.0` of `alpine-consul`](https://github.com/smebberson/docker-alpine/tree/alpine-apache-v3.1.0/alpine-consul)
 
 ## 2016.09.12
 
