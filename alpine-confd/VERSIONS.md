@@ -4,9 +4,20 @@ This file contains all software versions, that correspond to a version of this i
 
 ## Latest
 
-Same as v3.0.0.
+Same as v3.1.0.
 
 Usage: `smebberson/alpine-confd` or `smebberson/alpine-confd:latest`.
+
+## v3.1.0
+
+- [smebberson/alpine-base: v3.1.0][smebbersonalpinebase310]
+- [confd v0.11.0][confd]
+
+Improvements:
+
+- Updates to alpine-base (go-dnsmasq and s6-overlay).
+
+Usage: `smebberson/alpine-confd:3.1.0`.
 
 ## v3.0.0
 
