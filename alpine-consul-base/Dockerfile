@@ -1,4 +1,4 @@
-FROM smebberson/alpine-consul
+FROM smebberson/alpine-consul:3.1.0
 MAINTAINER Scott Mebberson <scott@scottmebberson.com>
 
 ENV CONSUL_TEMPLATE_VERSION=0.16.0 \
@@ -15,8 +15,7 @@ RUN apk upgrade --update --no-cache && \
     adduser -D -g "" -s /bin/sh -G consul-template consul-template && \
     addgroup s6 && \
     addgroup consul s6 && \
-    addgroup consul-template s6 && \
-    rm /etc/services.d/consul/finish
+    addgroup consul-template s6
 
 # Add the files
 ADD root /
