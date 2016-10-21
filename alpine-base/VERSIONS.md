@@ -4,9 +4,21 @@ This file contains all software versions, that correspond to a version of this i
 
 ## Latest
 
-Same as v3.0.0.
+Same as v3.1.0.
 
 Usage: `smebberson/alpine-base` or `smebberson/alpine-base:latest`.
+
+## v3.1.0
+
+- [alpinelinux](Alpine Linux): v3.4
+- [s6-overlay][s6-overlay]: v1.18.1.5
+- [go-dnsmasq][godnsmasq]: v1.0.7
+
+Improvements:
+
+- Updates to go-dnsmasq (resolves issue on container restarts) and s6-overlay.
+
+Usage: `smebberson/alpine-base:3.1.0`.
 
 ## v3.0.0
 

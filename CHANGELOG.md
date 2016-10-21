@@ -9,11 +9,14 @@ Each release records it's own specific changes in a VERSIONS.md file.
 
 - `alpine-apache`: merged in changes to resolve an issue with Apache quitting.
 - `alpine-apache`: upgraded to Apache `v2.4.23`.
+- `alpine-base`: upgraded go-dnsmasq to `v1.0.7` (resolves DNS issues on container restarts https://github.com/janeczku/go-dnsmasq/issues/18).
+- `alpine-base`: upgraded s6-overlay to `v1.18.1.5` (resolves DNS issues on container restarts https://github.com/janeczku/go-dnsmasq/issues/18).
 - Upgraded the Vagrant VM to a new box (based on Ubuntu 16.04). I was running into issues building images which issue `setcap` (after Docker 1.10, https://github.com/docker/docker/issues/20658). This upgrade has resolved those issues. If you're contributing to docker-alpine, you should destroy your VM and set it up again (after a `git pull`).
 
 ### Releases
 
 - [Release `v2.0.1` of `alpine-apache`](https://github.com/smebberson/docker-alpine/tree/alpine-apache-v2.0.1/alpine-apache)
+- [Release `v3.1.0` of `alpine-base`](https://github.com/smebberson/docker-alpine/tree/alpine-apache-v3.1.0/alpine-base)
 
 ## 2016.09.12
 
