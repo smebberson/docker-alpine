@@ -13,7 +13,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   host_ip = "192.168.89.10"
 
   # Every Vagrant virtual environment requires a box to build off of.
-  config.vm.box = "phusion/ubuntu-14.04-amd64"
+  config.vm.box = "boxcutter/ubuntu1604"
 
   # Create a forwarded port mapping which allows access to a specific port
   # within the machine from a port on the host machine. In the example below,
@@ -34,6 +34,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # If true, then any SSH connections made will enable agent forwarding.
   # Default value: false
   config.ssh.forward_agent = true
+
+  # Fixes "stdin: is not a tty" and "mesg: ttyname failed : Inappropriate ioctl for device" messages --> mitchellh/vagrant#1673
+  config.vm.provision :shell , inline: "(grep -q 'mesg n' /root/.profile && sed -i '/mesg n/d' /root/.profile && echo 'Ignore the previous error, fixing this now...') || exit 0;"
 
   # configuration step 0: set the host ip as an environment variable within the VM itself
   config.vm.provision "shell", inline: "echo ""export HOST_IP=#{host_ip}"" > /etc/profile.d/hostip.sh"

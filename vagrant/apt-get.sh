@@ -6,7 +6,7 @@ then
 	echo ">>> setting up apt-get"
 
 	# Required for nodejs
-	curl -sL https://deb.nodesource.com/setup | sudo bash -
+	curl -sL https://deb.nodesource.com/setup_6.x | sudo bash -
 
 	# Required for add-apt-repository
 	apt-get install -y software-properties-common build-essential

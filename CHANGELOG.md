@@ -9,6 +9,7 @@ Each release records it's own specific changes in a VERSIONS.md file.
 
 - `alpine-apache`: merged in changes to resolve an issue with Apache quitting.
 - `alpine-apache`: upgraded to Apache `v2.4.23`.
+- Upgraded the Vagrant VM to a new box (based on Ubuntu 16.04). I was running into issues building images which issue `setcap` (after Docker 1.10, https://github.com/docker/docker/issues/20658). This upgrade has resolved those issues. If you're contributing to docker-alpine, you should destroy your VM and set it up again (after a `git pull`).
 
 ### Releases
 
