@@ -4,9 +4,14 @@ This file contains all software versions, that correspond to a version of this i
 
 ## Latest
 
-Same as v3.0.0.
+Same as v3.0.1.
 
 Usage: `smebberson/alpine-consul-nginx` or `smebberson/alpine-consul-nginx:latest`.
+
+## v3.0.1
+
+- [smebberson/alpine-consul-base: v4.0.0][smebbersonalpineconsulbase400]
+- [nginx][nginx]: v1.8.1 (now uses v3.3/main repo to build nginx)
 
 ## v3.0.0
 

@@ -13,10 +13,11 @@ This image features:
 
 ## Versions
 
-- `2.1.1`, `latest` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/master/alpine-nginx/Dockerfile)
-- `2.1.0` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/40f6de779f5d2ea0ea3f5f36a8942aa49f238304/alpine-nginx/Dockerfile)
-- `2.0.0` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/d40c123d03bcf6d658ba003dcff78a062f0a3ba0/alpine-nginx/Dockerfile)
-- `1.0.0` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/faf86102b13d00784b9ae4c11727c5366d0e7907/alpine-nginx/Dockerfile)
+- `3.0.0`, `latest` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/alpine-nginx-v3.0.0/alpine-nginx/Dockerfile)
+- `2.1.1` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/alpine-nginx-v2.1.1/alpine-nginx/Dockerfile)
+- `2.1.0` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/alpine-nginx-v2.1.0/alpine-nginx/Dockerfile)
+- `2.0.0` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/alpine-nginx-v2.0.0/alpine-nginx/Dockerfile)
+- `1.0.0` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/alpine-nginx-v1.0.0/alpine-nginx/Dockerfile)
 
 [See VERSIONS.md for image contents.](https://github.com/smebberson/docker-alpine/blob/master/alpine-nginx/VERSIONS.md)
 

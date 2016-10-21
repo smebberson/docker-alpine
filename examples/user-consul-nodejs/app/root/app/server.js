@@ -33,4 +33,4 @@ require('http').createServer(function (request, response) {
 
 }).listen(process.env.NODE_PORT);
 
-console.log("> node-static is listening on port %s", process.env.NODE_PORT);
+console.log("> node-static is listening on port %s running Node.js %s", process.env.NODE_PORT, process.version);

@@ -5,6 +5,77 @@ Due to the nature of versioning and the fact this repository houses multiple Doc
 
 Each release records it's own specific changes in a VERSIONS.md file.
 
+## 2016.10.21
+
+- `alpine-apache`: merged in changes to resolve an issue with Apache quitting.
+- `alpine-apache`: upgraded to Apache `v2.4.23`.
+- `alpine-base`: upgraded go-dnsmasq to `v1.0.7` (resolves DNS issues on container restarts https://github.com/janeczku/go-dnsmasq/issues/18).
+- `alpine-base`: upgraded s6-overlay to `v1.18.1.5`.
+- `alpine-confd`: upgraded FROM to `alpine-base:3.1.0`.
+- Upgraded the Vagrant VM to a new box (based on Ubuntu 16.04). I was running into issues building images which issue `setcap` (after Docker 1.10, https://github.com/docker/docker/issues/20658). This upgrade has resolved those issues. If you're contributing to docker-alpine, you should destroy your VM and set it up again (after a `git pull`).
+
+### Releases
+
+- [Release `v2.0.1` of `alpine-apache`](https://github.com/smebberson/docker-alpine/tree/alpine-apache-v2.0.1/alpine-apache)
+- [Release `v3.1.0` of `alpine-base`](https://github.com/smebberson/docker-alpine/tree/alpine-apache-v3.1.0/alpine-base)
+- [Release `v3.1.0` of `alpine-confd`](https://github.com/smebberson/docker-alpine/tree/alpine-apache-v3.1.0/alpine-confd)
+
+## 2016.09.12
+
+- `alpine-confd`: upgraded to `alpine-base v3.0.0`.
+
+### Releases
+
+- [Release `v3.0.0` of `alpine-confd`](https://github.com/smebberson/docker-alpine/tree/alpine-confd-v3.0.0/alpine-confd)
+
+## 2016.07.28
+
+- `alpine-nginx-nodejs`: upgraded Node.js to v6.2.1.
+- `alpine-nginx-nodejs`: upgraded Node.js to v6.2.2.
+- `alpine-nodejs`: upgraded Node.js to v6.3.0. Node.js is now compiled without the `--fully-static` flag allowing dynamic loading.
+- `alpine-nodejs`: Add `apk upgrade --update` to the Dockerfile so that APK packages are now updated when the image is built.
+
+### Releases
+
+- [Released `v4.2.1` of `alpine-nginx-nodejs`](https://github.com/smebberson/docker-alpine/tree/alpine-nginx-nodejs-v4.2.1/alpine-nginx-nodejs)
+- [Released `v4.2.2` of `alpine-nginx-nodejs`](https://github.com/smebberson/docker-alpine/tree/alpine-nginx-nodejs-v4.2.2/alpine-nginx-nodejs)
+- [Released `v6.0.0` of `alpine-nodejs`](https://github.com/smebberson/docker-alpine/tree/alpine-nodejs-v6.0.0/alpine-nginx-nodejs)
+
+## 2016.07.27
+
+- `alpine-nginx-nodejs`: upgraded Node.js to v6.0.0.
+- `alpine-nginx-nodejs`: upgraded Node.js to v6.1.0.
+- `alpine-nginx-nodejs`: upgraded Node.js to v6.2.0.
+
+### Releases
+
+- [Released `v4.0.0` of `alpine-nginx-nodejs`](https://github.com/smebberson/docker-alpine/tree/alpine-nginx-nodejs-v4.0.0/alpine-nginx-nodejs)
+- [Released `v4.1.0` of `alpine-nginx-nodejs`](https://github.com/smebberson/docker-alpine/tree/alpine-nginx-nodejs-v4.1.0/alpine-nginx-nodejs)
+- [Released `v4.2.0` of `alpine-nginx-nodejs`](https://github.com/smebberson/docker-alpine/tree/alpine-nginx-nodejs-v4.2.0/alpine-nginx-nodejs)
+
+## 2016.07.26
+
+- `alpine-nginx-nodejs`: upgrade to the latest version of `alpine-nginx`.
+- `alpine-nginx-nodejs`: upgraded Node.js to v5.9.0.
+- `alpine-nginx-nodejs`: upgraded Node.js to v5.9.1.
+
+### Releases
+
+- [Released `v3.0.0` of `alpine-nginx-nodejs`](https://github.com/smebberson/docker-alpine/tree/alpine-nginx-nodejs-v3.0.0/alpine-nginx-nodejs)
+- [Released `v3.1.0` of `alpine-nginx-nodejs`](https://github.com/smebberson/docker-alpine/tree/alpine-nginx-nodejs-v3.1.0/alpine-nginx-nodejs)
+- [Released `v3.1.1` of `alpine-nginx-nodejs`](https://github.com/smebberson/docker-alpine/tree/alpine-nginx-nodejs-v3.1.1/alpine-nginx-nodejs)
+
+## 2016.07.22
+
+- Now using `http://dl-4.alpinelinux.org/alpine/v3.3/main` APK repository to source v1.8.1 of Nginx in alpine-consul-nginx.
+
+### Releases
+
+- [Released `v3.0.1` of `alpine-consul-nginx`](https://github.com/smebberson/docker-alpine/tree/alpine-consul-nginx-v3.0.1/alpine-consul-nginx)
+- [Released `v5.2.2` of `alpine-nodejs`](https://github.com/smebberson/docker-alpine/tree/alpine-nodejs-v5.2.2/alpine-nodejs)
+- [Released `v5.2.2` of `alpine-consul-nodejs`](https://github.com/smebberson/docker-alpine/tree/alpine-consul-nodejs-v5.2.2/alpine-consul-nodejs)
+- [Released `v3.0.0` of `alpine-nginx`](https://github.com/smebberson/docker-alpine/tree/alpine-nginx-v3.0.0/alpine-nginx)
+
 ## 2016.06.08
 
 - Updated the `examples/user-consul-nodejs` to use Docker Compose and zero-conf bootstrapped Consul.

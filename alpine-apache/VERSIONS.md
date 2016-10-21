@@ -4,9 +4,21 @@ This file contains all software versions, that correspond to a version of this i
 
 ## Latest
 
-Same as v2.0.0.
+Same as v2.0.1.
 
 Usage: `smebberson/alpine-apache` or `smebberson/alpine-apache:latest`.
+
+## v2.0.1
+
+- [smebberson/alpine-base: v2.0.0][smebbersonalpinebase200]
+- [apache: v2.4.23][Apache]
+
+Improvements:
+
+- Fixes an issue that was causing Apache to die.
+- Upgraded to Apache v2.4.23.
+
+Usage: `smebberson/alpine-apache:2.0.1`.
 
 ## v2.0.0
 

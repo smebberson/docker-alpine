@@ -13,7 +13,9 @@ This image features:
 
 ## Versions
 
-- `2.0.0`, `latest` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/alpine-confd-v2.0.0/alpine-confd/Dockerfile)
+- `3.1.0`, `latest` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/alpine-confd-v3.1.0/alpine-confd/Dockerfile)
+- `3.0.0` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/alpine-confd-v3.0.0/alpine-confd/Dockerfile)
+- `2.0.0` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/alpine-confd-v2.0.0/alpine-confd/Dockerfile)
 - `1.0.2` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/alpine-confd-v1.0.2/alpine-confd/Dockerfile)
 - `1.0.1` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/alpine-confd-v1.0.1/alpine-confd/Dockerfile)
 - `1.0.0` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/alpine-confd-v1.0.0/alpine-confd/Dockerfile)
