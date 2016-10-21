@@ -12,6 +12,16 @@ Each release records it's own specific changes in a VERSIONS.md file.
 - `alpine-base`: upgraded go-dnsmasq to `v1.0.7` (resolves DNS issues on container restarts https://github.com/janeczku/go-dnsmasq/issues/18).
 - `alpine-base`: upgraded s6-overlay to `v1.18.1.5`.
 - `alpine-confd`: upgraded FROM to `alpine-base:3.1.0`.
+- `alpine-consul`: upgraded FROM to `alpine-base:3.1.0`.
+- `alpine-consul`: upgraded Consul to `v0.7.0`.
+- `alpine-consul-base`: added `apk upgrade`.
+- `alpine-consul-base`: upgraded consul-template to v0.16.0.
+- `alpine-consul-nodejs`: added `apk upgrade`.
+- `alpine-consul-nginx`: added `apk upgrade`.
+- `alpine-consul-redis`: added `apk upgrade`.
+- `alpine-consul`: removed the `finish` file. This was bringing down the container unnecessarily. If Consul dies, no need to bring down the container. Restart Consul, let it reload the configuration files and attempt to re-join the cluster.
+- `alpine-consul`: update `-dc` to `-datacenter`.
+- `examples/complete`: adding `NODEJS_EXIT` to the environment variables for the `app` service will cause Node.js to exit between 1 minute and 1.5 minutes. This is to simulate nodes going down, to test them rejoining the Consul cluster.
 - Upgraded the Vagrant VM to a new box (based on Ubuntu 16.04). I was running into issues building images which issue `setcap` (after Docker 1.10, https://github.com/docker/docker/issues/20658). This upgrade has resolved those issues. If you're contributing to docker-alpine, you should destroy your VM and set it up again (after a `git pull`).
 
 ### Releases

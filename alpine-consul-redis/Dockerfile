@@ -1,9 +1,10 @@
-FROM smebberson/alpine-consul-base:4.0.0
+FROM smebberson/alpine-consul-base
 MAINTAINER Scott Mebberson <scott@scottmebberson.com>
 
 # Install redis.
 RUN echo "http://dl-4.alpinelinux.org/alpine/edge/main" >> /etc/apk/repositories && \
-    apk add --no-cache redis=3.2.0-r0 && \
+    apk upgrade --update --no-cache redis=3.2.0-r0 && \
+    apk add --update --no-cache redis=3.2.0-r0 && \
     rm -rf /var/cache/apk/* && \
     mkdir -p /data/redis && \
     chown -R redis:redis /data/redis && \

@@ -3,15 +3,20 @@ version: '2'
 services:
     consul:
         image: smebberson/alpine-consul
+        restart: always
     consului:
         image: smebberson/alpine-consul-ui
         ports:
             - 8500:8500
+        restart: always
     static:
         build: ./static
         ports:
             - 80:80
+        restart: always
     cache:
         image: smebberson/alpine-consul-redis
+        restart: always
     app:
         build: ./app
+        restart: always

@@ -1,8 +1,0 @@
-#!/usr/bin/with-contenv sh
-
-# If this script is running in response to a signal (i.e. CTRL+C) then the container is already
-# coming down. If not (i.e. Consul crashed), restart the entire container and start from scratch.
-# http://skarnet.org/software/s6/s6-supervise.html
-if test ! $1 -eq 256; then
-    s6-svscanctl -t /var/run/s6/services
-fi
