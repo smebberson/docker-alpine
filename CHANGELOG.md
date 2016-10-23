@@ -8,10 +8,12 @@ Each release records it's own specific changes in a VERSIONS.md file.
 ## 2016.10.23
 
 - `alpine-consul-nodejs`: upgraded to `alpine-consul-base:4.1.0`.
+- `alpine-consul-nginx`: upgraded to `alpine-consul-base:4.1.0`.
 
 ### Releases
 
 - [Release `v5.3.0` of `alpine-consul-nodejs`](https://github.com/smebberson/docker-alpine/tree/alpine-consul-nodejs-v5.3.0/alpine-consul-nodejs)
+- [Release `v3.1.0` of `alpine-consul-nginx`](https://github.com/smebberson/docker-alpine/tree/alpine-consul-nginx-v3.1.0/alpine-consul-nginx)
 
 ## 2016.10.21
 
