@@ -5,6 +5,14 @@ Due to the nature of versioning and the fact this repository houses multiple Doc
 
 Each release records it's own specific changes in a VERSIONS.md file.
 
+## 2016.10.23
+
+- `alpine-consul-nodejs`: upgraded to `alpine-consul-base:4.1.0`.
+
+### Releases
+
+- [Release `v5.3.0` of `alpine-consul-nodejs`](https://github.com/smebberson/docker-alpine/tree/alpine-consul-nodejs-v5.3.0/alpine-consul-nodejs)
+
 ## 2016.10.21
 
 - `alpine-apache`: merged in changes to resolve an issue with Apache quitting.

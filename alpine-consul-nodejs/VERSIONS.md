@@ -6,9 +6,20 @@ Looking for a particular version of Node.js? [See NODEJS.md for more information
 
 ## Latest
 
-Same as v5.2.2.
+Same as v5.3.0.
 
 Usage: `smebberson/alpine-consul-nodejs` or `smebberson/alpine-consul-nodejs:latest`.
+
+## v5.3.0
+
+- [Node.js: v6.3.0][nodejs]
+- [npm: v3.10.9][npm]
+
+Improvements:
+
+- Upgraded to [docker-alpine-base 4.1.0][smebbersonalpineconsulbase410].
+
+Usage: `smebberson/alpine-consul-nodejs:5.3.0`.
 
 ## v5.2.2
 
@@ -85,6 +96,7 @@ Usage: `smebberson/alpine-consul-nodejs:1.0.0`.
 
 [nodejs]: https://nodejs.org/en/
 [npm]: https://www.npmjs.com/
+[smebbersonalpineconsulbase410]: https://github.com/smebberson/docker-alpine/tree/alpine-consul-base-v4.1.0/alpine-consul-base
 [smebbersonalpineconsulbase400]: https://github.com/smebberson/docker-alpine/tree/alpine-consul-base-v4.0.0/alpine-consul-base
 [smebbersonalpineconsulbase200]: https://github.com/smebberson/docker-alpine/tree/alpine-consul-base-v2.0.0/alpine-consul-base
 [smebbersonalpineconsulbase100]: https://github.com/smebberson/docker-alpine/tree/alpine-consul-base-v1.0.0/alpine-consul-base
