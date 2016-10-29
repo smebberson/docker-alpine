@@ -1,4 +1,4 @@
-FROM smebberson/alpine-openjdk
+FROM terradatum/alpine-openjdk
 MAINTAINER Scott Mebberson <scott@scottmebberson.com>
 
 # original sample from https://github.com/deis/example-java-jetty
@@ -19,4 +19,4 @@ ADD root /
 
 RUN cd /app && mvn -V -U -B -DskipTests clean dependency:list install
 
-CMD ["/app/start"]
+EXPOSE 8081

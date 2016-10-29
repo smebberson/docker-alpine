@@ -6,11 +6,11 @@ You can [read more about how these images are versioned here](https://github.com
 
 ## OpenJDK 8.x
 
-- OpenJDK v8.92.14: [v8.92.14](VERSIONS.md#v89214)
+- OpenJDK v8.92.14: [v8.92.14](VERSIONS.md#v200)
 
 ## OpenJDK 7.x
 
-- OpenJDK v7.91.2: [v7.91.2](VERSIONS.md#v7912)
+- OpenJDK v7.91.2: [v7.91.2](VERSIONS.md#v100)
 
 [openjdk]: http://openjdk.java.net/
 [aplineopenjdk]: https://github.com/smebberson/docker-alpine/tree/master/alpine-openjdk
