@@ -1,0 +1,16 @@
+version: '2'
+
+services:
+    consul:
+        image: smebberson/alpine-consul
+        restart: always
+    consului:
+        image: smebberson/alpine-consul-ui
+        ports:
+            - 8500:8500
+        restart: always
+    apache:
+        build: ./apache
+        ports:
+            - 80:80
+        restart: always

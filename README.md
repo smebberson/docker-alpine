@@ -226,7 +226,7 @@ This image is designed to run Apache within the context of service discovery (vi
 
 It is suited to running Apache as a proxy to another Docker container.
 
-Latest version is `1.0.0`, or `latest`.
+Latest version is `2.0.0`, or `latest`.
 
 - [README.md](https://github.com/smebberson/docker-alpine/blob/master/alpine-consul-apache/README.md)
 - [VERSIONS.md](https://github.com/smebberson/docker-alpine/blob/master/alpine-consul-apache/VERSIONS.md)

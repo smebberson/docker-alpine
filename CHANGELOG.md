@@ -10,12 +10,18 @@ Each release records it's own specific changes in a VERSIONS.md file.
 - `alpine-consul-redis`: upgraded to `alpine-consul-base:4.1.0`.
 - `alpine-consul-ui`: upgraded to `alpine-consul:1.1.0`.
 - `alpine-consul-ui`: updated to take advantage of `consul-join-wan` script and environment variables `$CONSUL_RETRY_INTERVAL`, `$CONSUL_DOMAIN`, `$CONSUL_DC` and `$CONSUL_CLIENT`. `alpine-consul-ui` `run` script is now inline with the `alpine-consul` `run` script.
+- `alpine-consul-apache`: upgraded to `alpine-consul-base:4.1.0`.
+- `alpine-consul-apache`: added `apk upgrade`.
+- `alpine-consul-apache`: updated to use Consul's built-in HTTP(s) check.
+- `alpine-consul-apache`: fixed Apache runtime error by adding `mkdir -p /run/apache2/` to the `Dockerfile`.
 - Updated the `user-consul-ui` example to use Docker Compose.
+- Updated the `user-consul-apache` example to use Docker Compose. Show's it running with a cluster.
 
 ### Releases
 
 - [Release `v2.1.0` of `alpine-consul-redis`](https://github.com/smebberson/docker-alpine/tree/alpine-consul-redis-v2.1.0/alpine-consul-redis)
 - [Release `v2.1.0` of `alpine-consul-ui`](https://github.com/smebberson/docker-alpine/tree/alpine-consul-ui-v2.1.0/alpine-consul-ui)
+- [Release `v2.0.0` of `alpine-consul-apache`](https://github.com/smebberson/docker-alpine/tree/alpine-consul-apache-v2.0.0/alpine-consul-apache)
 
 ## 2016.10.23
 

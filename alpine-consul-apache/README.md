@@ -14,6 +14,7 @@ This image features:
 
 ## Versions
 
+- `2.0.0`, `latest` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/master/alpine-consul-apache/Dockerfile)
 - `1.0.0` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/master/alpine-consul-apache/Dockerfile)
 
 [See VERSIONS.md for image contents.](https://github.com/smebberson/docker-alpine/blob/master/alpine-consul-apache/VERSIONS.md)
@@ -30,7 +31,7 @@ By default the file at `/etc/consul/conf.d/apache.json` will register an `apache
 
 ## Example
 
-An example of using this image can be found in [examples/user-consul-apache][example].
+An example of using this image can be found in [examples/user-consul-apache][example]. This example shows running Apache within a Consul cluster using Docker Compose.
 
 [alpinelinux]: https://www.alpinelinux.org/
 [consul]: https://consul.io/
