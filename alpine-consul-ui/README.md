@@ -3,7 +3,7 @@
 A Docker image for running [Consul with UI][consul], based on Alpine Linux.
 This image belongs to a suite of images [documented here][dockeralpine].
 
-Image size is ~36.9 MB.
+Image size is ~38 MB.
 
 ## Features
 
@@ -15,7 +15,8 @@ This image features:
 
 ## Versions
 
-- `2.0.0`, `latest` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/alpine-consul-ui-v2.0.0/alpine-consul-ui/Dockerfile)
+- `2.1.0`, `latest` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/alpine-consul-ui-v2.1.0/alpine-consul-ui/Dockerfile)
+- `2.0.0` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/alpine-consul-ui-v2.0.0/alpine-consul-ui/Dockerfile)
 - `1.0.0` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/alpine-consul-ui-v1.0.0/alpine-consul-ui/Dockerfile)
 
 [See VERSIONS.md for image contents.](https://github.com/smebberson/docker-alpine/blob/master/alpine-consul-ui/VERSIONS.md)

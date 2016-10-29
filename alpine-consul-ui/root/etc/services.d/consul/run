@@ -11,7 +11,10 @@ BIND=`host-ip`
 consul-available
 
 # We have another Consul server available. Join it.
-JOIN=`consul-join`
+RETRY_JOIN=`consul-join`
+
+# Provide an entry point for Consul WAN customisation.
+CONSUL_JOIN_WAN=`consul-join-wan`
 
 # Start Consul in Server mode (see /etc/consul/conf.d/bootstrap/config.json).
-s6-setuidgid consul consul agent -config-dir $CONSUL_CONFIG_DIR -advertise $BIND -client 0.0.0.0 $JOIN -retry-interval 5s -ui
+s6-setuidgid consul consul agent -config-dir $CONSUL_CONFIG_DIR -bind $BIND -advertise $BIND -client $CONSUL_CLIENT $RETRY_JOIN -retry-interval $CONSUL_RETRY_INTERVAL -domain $CONSUL_DOMAIN -datacenter $CONSUL_DC $CONSUL_JOIN_WAN -ui

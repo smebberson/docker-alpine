@@ -1,0 +1,9 @@
+version: '2'
+
+services:
+    consul:
+        image: smebberson/alpine-consul
+    consului:
+        image: smebberson/alpine-consul-ui
+        ports:
+            - 8500:8500

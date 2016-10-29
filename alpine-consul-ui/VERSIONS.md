@@ -4,9 +4,20 @@ This file contains all software versions, that correspond to a version of this i
 
 ## Latest
 
-Same as v2.0.0.
+Same as v2.1.0.
 
 Usage: `smebberson/alpine-consul-ui` or `smebberson/alpine-consul-ui:latest`.
+
+## v2.1.0
+
+- [smebberson/alpine-consul: v3.1.0][smebbersonalpineconsul310]
+- [Consul v0.7.0][consului]
+
+Improvements:
+
+- Upgraded to `alpine-consul:3.1.0` which has a slew of updates. [Read more here][smebbersonalpineconsul310].
+
+Usage: `smebberson/alpine-consul-ui:2.1.0`.
 
 ## v2.0.0
 
@@ -29,5 +40,6 @@ Usage: `smebberson/alpine-consul-ui:1.0.0`.
 
 [consului]: https://demo.consul.io/ui/
 [alpineconsului]: https://github.com/smebberson/docker-alpine/tree/master/alpine-consul-ui
+[smebbersonalpineconsul310]: https://github.com/smebberson/docker-alpine/tree/alpine-consul-v3.1.0/alpine-consul
 [smebbersonalpineconsul300]: https://github.com/smebberson/docker-alpine/tree/alpine-consul-v3.0.0/alpine-consul
 [smebbersonalpineconsul100]: https://github.com/smebberson/docker-alpine/tree/alpine-consul-v1.0.0/alpine-consul

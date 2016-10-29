@@ -8,10 +8,14 @@ Each release records it's own specific changes in a VERSIONS.md file.
 ## 2016.10.30
 
 - `alpine-consul-redis`: upgraded to `alpine-consul-base:4.1.0`.
+- `alpine-consul-ui`: upgraded to `alpine-consul:1.1.0`.
+- `alpine-consul-ui`: updated to take advantage of `consul-join-wan` script and environment variables `$CONSUL_RETRY_INTERVAL`, `$CONSUL_DOMAIN`, `$CONSUL_DC` and `$CONSUL_CLIENT`. `alpine-consul-ui` `run` script is now inline with the `alpine-consul` `run` script.
+- Updated the `user-consul-ui` example to use Docker Compose.
 
 ### Releases
 
 - [Release `v2.1.0` of `alpine-consul-redis`](https://github.com/smebberson/docker-alpine/tree/alpine-consul-redis-v2.1.0/alpine-consul-redis)
+- [Release `v2.1.0` of `alpine-consul-ui`](https://github.com/smebberson/docker-alpine/tree/alpine-consul-ui-v2.1.0/alpine-consul-ui)
 
 ## 2016.10.23
 

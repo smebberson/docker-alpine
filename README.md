@@ -273,7 +273,7 @@ Latest version is `2.1.0`, or `latest`.
 
 This image has been designed to connect to a Consul cluster (from `alpine-consul`) and make the Consul admin UI accessible.
 
-Latest version is `2.0.0`, or `latest`.
+Latest version is `2.1.0`, or `latest`.
 
 - [README.md](https://github.com/smebberson/docker-alpine/blob/master/alpine-consul-ui/README.md)
 - [VERSIONS.md](https://github.com/smebberson/docker-alpine/blob/master/alpine-consul-ui/VERSIONS.md)
