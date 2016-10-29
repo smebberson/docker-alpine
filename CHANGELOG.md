@@ -5,6 +5,14 @@ Due to the nature of versioning and the fact this repository houses multiple Doc
 
 Each release records it's own specific changes in a VERSIONS.md file.
 
+## 2016.10.30
+
+- `alpine-consul-redis`: upgraded to `alpine-consul-base:4.1.0`.
+
+### Releases
+
+- [Release `v2.1.0` of `alpine-consul-redis`](https://github.com/smebberson/docker-alpine/tree/alpine-consul-redis-v2.1.0/alpine-consul-redis)
+
 ## 2016.10.23
 
 - `alpine-consul-nodejs`: upgraded to `alpine-consul-base:4.1.0`.
