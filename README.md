@@ -264,7 +264,7 @@ Latest version is `2.0.0`, or `latest`.
 
 This image has been designed to run Redis within the context of service discovery (via Consul).
 
-Latest version is `1.0.0`, or `latest`.
+Latest version is `2.1.0`, or `latest`.
 
 - [README.md](https://github.com/smebberson/docker-alpine/blob/master/alpine-consul-redis/README.md)
 - [VERSIONS.md](https://github.com/smebberson/docker-alpine/blob/master/alpine-consul-redis/VERSIONS.md)

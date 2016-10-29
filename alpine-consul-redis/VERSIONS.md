@@ -4,9 +4,20 @@ This file contains all software versions, that correspond to a version of this i
 
 ## Latest
 
-Same as v2.0.0.
+Same as v2.1.0.
 
 Usage: `smebberson/alpine-consul-redis` or `smebberson/alpine-consul-redis:latest`.
+
+## v2.1.0
+
+- [smebberson/alpine-consul-base: v4.1.0][smebbersonalpineconsulbase410]
+- [redis][redis]: v3.2.0
+
+Improvements:
+
+- Updated to `alpine-consul-base:4.1.0`.
+
+Usage: `smebberson/alpine-consul-redis:2.1.0`.
 
 ## v2.0.0
 
@@ -29,5 +40,6 @@ Usage: `smebberson/alpine-consul-redis:1.0.0`.
 
 [redis]: http://redis.io/
 [alpineconsulredis]: https://github.com/smebberson/docker-alpine/tree/master/alpine-consul-redis
+[smebbersonalpineconsulbase410]: https://github.com/smebberson/docker-alpine/tree/alpine-consul-base-v4.1.0/alpine-consul-base
 [smebbersonalpineconsulbase400]: https://github.com/smebberson/docker-alpine/tree/alpine-consul-base-v4.0.0/alpine-consul-base
 [smebbersonalpineconsulbase100]: https://github.com/smebberson/docker-alpine/tree/alpine-consul-base-v1.0.0/alpine-consul-base
