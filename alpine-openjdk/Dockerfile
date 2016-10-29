@@ -1,4 +1,4 @@
-FROM smebberson/alpine-base
+FROM smebberson/alpine-base:v3.1.0
 MAINTAINER Scott Mebberson <scott@scottmebberson.com>
 
 # Taken from openjdk/8-jdk/alpine/Dockerfile

@@ -13,15 +13,15 @@ This image features:
 
 ## Versions
 
-- `8.92.14`, `latest` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/alpine-openjdk-v8.92.14/alpine-openjdk/Dockerfile)
-- `7.91.2` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/alpine-openjdk-v7.91.2/alpine-openjdk/Dockerfile)
+- `2.0.0`, `latest` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/alpine-openjdk-v2.0.0/alpine-openjdk/Dockerfile)
+- `1.0.0` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/alpine-openjdk-v1.0.0/alpine-openjdk/Dockerfile)
 
 [See VERSIONS.md for image contents.](VERSIONS.md)  
 [See OPENJDK.md to find specific OpenJDK versions.](OPENJDK.md)
 
 ## Usage
 
-To use this image include `FROM smebberson/alpine-openjdk` at the top of your `Dockerfile`. Inheriting from `smebberson/alpine-openjdk` provides you with the OpenJDK, which can then used to launch your Scala Play application or JAR file with [s6][s6]. You have two options for process management:
+To use this image include `FROM smebberson/alpine-openjdk` at the top of your `Dockerfile`. Inheriting from `smebberson/alpine-openjdk` provides you with the OpenJDK, which can then used to launch your Java or Scala application or JAR file with [s6][s6]. You have two options for process management:
 
 - s6 can keep it running for you, restarting it when it crashes.
 - The entire container can exit allowing the host machine to kick in and restart it.
@@ -40,13 +40,13 @@ To start your app, with automatic restarts:
 # cd into our directory
 cd /app
 
-# start our node.js application
+# start our java application
 java -jar your.jar;
 ```
 
 When you run this container, s6 will automatically start your application and make sure it stays running for you.
 
-You'll also need to make sure you go through the usual process of adding your node.js source, installing your packages with `npm` and exposing the necessary ports for your application (usually within your Dockerfile).
+You'll also need to make sure you go through the usual process of adding your java source, installing your packages with `npm` and exposing the necessary ports for your application (usually within your Dockerfile).
 
 ### Container exits
 
@@ -56,7 +56,7 @@ To start your app in a fashion that will exit the container when your app dies, 
 CMD ["java", "-jar", "/app/your.jar"]
 ```
 
-The container will execute the command and your Node app will start running. When it suddenly dies, your container will exit so you'll need processes on your host machine to restart it (i.e. `docker run --autorestart`).
+The container will execute the command and your Java app will start running. When it suddenly dies, your container will exit so you'll need processes on your host machine to restart it (i.e. `docker run --autorestart`).
 
 #### Taking advantage of s6
 
@@ -74,11 +74,11 @@ s6-svscanctl -t /var/run/s6/services
 
 ```
 
-You can simply remove the last line, if you want s6 to automatically restart your Node.js app again.
+You can simply remove the last line, if you want s6 to automatically restart your Java app again.
 
 ### Logging
 
-If you're logging to stdout (which `console.log` does) then you'll be able to review your logs using the standard [Docker process][dockerlogs].
+If you're logging to stdout (which `System.out.println` does) then you'll be able to review your logs using the standard [Docker process][dockerlogs].
 
 ### Handling uncaught exceptions
 

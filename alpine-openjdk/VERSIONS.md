@@ -10,23 +10,23 @@ Same as v8.92.14.
 
 Usage: `smebberson/alpine-openjdk` or `smebberson/alpine-openjdk:latest`.
 
-## v8.92.14
+## v2.0.0
 
-- [smebberson/alpine-base: v3.0.0][smebbersonalpinebase300]
+- [smebberson/alpine-base: v3.1.0][smebbersonalpinebase310]
 - [OpenJDK: v8.92.14][openjdk]
 
-Usage: `smebberson/alpine-openjdk:8.92.14`.
+Usage: `smebberson/alpine-openjdk:2.0.0`.
 
-## v7.91.2
+## v1.0.0
 
-- [smebberson/alpine-base: v3.0.0][smebbersonalpinebase300]
+- [smebberson/alpine-base: v3.1.0][smebbersonalpinebase310]
 - [OpenJDK: v7.91.2][openjdk]
 
-Usage: `smebberson/alpine-openjdk:7.91.2`.
+Usage: `smebberson/alpine-openjdk:1.0.0`.
 
 [nginx]: http://nginx.org/
 [openjdk]: https://openjdk.org/en/
 [openjdk]: https://www.npmjs.com/
 [openjdk-jep223]: http://openjdk.java.net/jeps/223
-[smebbersonalpinebase300]: https://github.com/smebberson/docker-alpine/tree/alpine-base-v3.0.0/alpine-base
+[smebbersonalpinebase310]: https://github.com/smebberson/docker-alpine/tree/alpine-base-v3.1.0/alpine-base
 [alpineopenjdk]: https://github.com/smebberson/docker-alpine/tree/master/alpine-openjdk
