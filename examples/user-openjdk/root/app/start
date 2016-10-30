@@ -1,5 +1,0 @@
-#!/usr/bin/with-contenv sh
-
-cd /app
-
-java -cp target/classes:target/dependency/* HelloWorld
