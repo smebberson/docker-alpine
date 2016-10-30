@@ -1,4 +1,4 @@
-FROM terradatum/alpine-openjdk
+FROM smebberson/alpine-openjdk
 MAINTAINER Scott Mebberson <scott@scottmebberson.com>
 
 # original sample from https://github.com/deis/example-java-jetty
