@@ -1,5 +1,5 @@
 FROM smebberson/alpine-base:v3.1.0
-MAINTAINER Scott Mebberson <scott@scottmebberson.com>
+MAINTAINER G. Richard Bellamy (https://github.com/smebberson/docker-alpine)
 
 # Taken from openjdk/8-jdk/alpine/Dockerfile
 # A few problems with compiling Java from source:
