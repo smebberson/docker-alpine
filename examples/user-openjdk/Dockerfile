@@ -1,5 +1,5 @@
 FROM smebberson/alpine-openjdk
-MAINTAINER Scott Mebberson <scott@scottmebberson.com>
+MAINTAINER G. Richard Bellamy (https://github.com/smebberson/docker-alpine)
 
 # original sample from https://github.com/deis/example-java-jetty
 
