@@ -6,9 +6,16 @@ Looking for a particular version of Node.js? [See NODEJS.md for more information
 
 ## Latest
 
-Same as v5.3.0.
+Same as v5.3.1.
 
 Usage: `smebberson/alpine-consul-nodejs` or `smebberson/alpine-consul-nodejs:latest`.
+
+## v5.3.1
+
+- [Node.js: v6.3.1][nodejs]
+- [npm: v3.10.9][npm]
+
+Usage: `smebberson/alpine-consul-nodejs:5.3.1`.
 
 ## v5.3.0
 
