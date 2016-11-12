@@ -9,11 +9,14 @@ Each release records it's own specific changes in a VERSIONS.md file.
 
 - `alpine-consul-nodejs`: upgraded to Node.js `v6.3.1`.
 - `alpine-nodejs`: upgraded to Node.js `v6.3.1`.
+- `alpine-consul`: upgraded to Consul `v0.7.1`.
+- `alpine-consul`: go-dnsmasq is now run as the go-dnsmasq user.
 
 ### Releases
 
 - [Release `v5.3.1` of `alpine-consul-nodejs`](https://github.com/smebberson/docker-alpine/tree/alpine-consul-nodejs-v5.3.1/alpine-consul-nodejs)
 - [Release `v6.0.1` of `alpine-nodejs`](https://github.com/smebberson/docker-alpine/tree/alpine-nodejs-v6.0.1/alpine-nodejs)
+- [Release `v3.1.1` of `alpine-consul`](https://github.com/smebberson/docker-alpine/tree/alpine-consul-v3.1.1/alpine-consul)
 
 ## 2016.10.30
 

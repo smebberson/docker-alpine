@@ -1,7 +1,7 @@
 FROM smebberson/alpine-base:3.1.0
 MAINTAINER Scott Mebberson <scott@scottmebberson.com>
 
-ENV CONSUL_VERSION=0.7.0 \
+ENV CONSUL_VERSION=0.7.1 \
     CONSUL_DOMAIN=consul \
     CONSUL_CONFIG_DIR=/etc/consul/conf.d/bootstrap \
     CONSUL_SERVER_NAME=consul \

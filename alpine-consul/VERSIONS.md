@@ -4,9 +4,21 @@ This file contains all software versions, that correspond to a version of this i
 
 ## Latest
 
-Same as v3.1.0.
+Same as v3.1.1.
 
 Usage: `smebberson/alpine-consul` or `smebberson/alpine-consul:latest`.
+
+## v3.1.1
+
+- [smebberson/alpine-base: v3.1.0][smebbersonalpinebase310]
+- [consul v0.7.1][consul]
+
+Improvements:
+
+- Consul was upgraded to `v0.7.1`.
+- go-dnsmasq is now run as the user go-dnsmasq.
+
+Usage: `smebberson/alpine-consul:3.1.1`.
 
 ## v3.1.0
 

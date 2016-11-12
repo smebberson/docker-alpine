@@ -4,4 +4,4 @@
 BIND=`host-ip`
 
 # Start go-dnsmasq.
-go-dnsmasq --default-resolver --ndots "1" --fwd-ndots "0" --stubzones=".$CONSUL_DOMAIN/$BIND:8600" --hostsfile=/etc/hosts >> $GO_DNSMASQ_LOG_FILE 2>&1
+s6-setuidgid go-dnsmasq go-dnsmasq --default-resolver --ndots "1" --fwd-ndots "0" --stubzones=".$CONSUL_DOMAIN/$BIND:8600" --hostsfile=/etc/hosts >> $GO_DNSMASQ_LOG_FILE 2>&1
