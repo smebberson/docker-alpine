@@ -215,7 +215,7 @@ This image inherits from `alpine-consul` and is designed as a base image for oth
 
 If you want to create a Docker image to advertise a service in Consul start with this image.
 
-Latest version is `4.1.0`, or `latest`.
+Latest version is `4.1.1`, or `latest`.
 
 - [README.md](https://github.com/smebberson/docker-alpine/blob/master/alpine-consul-base/README.md)
 - [VERSIONS.md](https://github.com/smebberson/docker-alpine/blob/master/alpine-consul-base/VERSIONS.md)
