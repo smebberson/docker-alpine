@@ -8,9 +8,9 @@ MAINTAINER Scott Mebberson <scott@scottmebberson.com>
 
 # Setup environment variables.
 ENV PHP_INI_DIR=/usr/local/etc/php \
-    PHP_VERSION=7.0.10 \
-    GPG_KEYS=1A4E8B7277C42E53DBA9C7B9BCAA30EA9C0D5763 \
-    PHP_SHA256=348476ff7ba8d95a1e28e1059430c10470c5f8110f6d9133d30153dda4cdf56a
+    PHP_VERSION=5.6.28 \
+    GPG_KEYS="0BD78B5F97500D450838F95DFE857D9A90D90EC1 6E4F6AB321FDC07F2C332E3AC2BF0BC433CFC8B3" \
+    PHP_SHA256=07187ba2870f89cef334cd2ad6cb801aeec5eaf283da0293a9a6be75d6786d11
 
 # Add the files neccessary for installing PHP.
 COPY ./root/usr/bin/docker-php-* /usr/bin/
