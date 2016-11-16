@@ -1,8 +1,13 @@
 #!/usr/bin/with-contenv sh
 
-# Setup the directory.
+# Setup the log directory.
 mkdir -p `dirname $PHP_FPM_ERROR_LOG`
 chown www-data:www-data `dirname $PHP_FPM_ERROR_LOG`
+
+# Setup up the configuration directory, unless it already exists.
+if [ ! -e "/usr/local/etc/php-fpm.d" ]; then
+    mkdir -p /usr/local/etc/php-fpm.d
+fi
 
 # Setup the templates for php-fpm.
 confd -onetime -backend env
