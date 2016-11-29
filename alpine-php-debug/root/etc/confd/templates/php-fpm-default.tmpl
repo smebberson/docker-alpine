@@ -104,22 +104,22 @@ pm = dynamic
 ; forget to tweak pm.* to fit your needs.
 ; Note: Used when pm is set to 'static', 'dynamic' or 'ondemand'
 ; Note: This value is mandatory.
-pm.max_children = 5
+pm.max_children = {{getenv "PHP_FPM_PM_MAX_CHILDREN"}}
 
 ; The number of child processes created on startup.
 ; Note: Used only when pm is set to 'dynamic'
 ; Default Value: min_spare_servers + (max_spare_servers - min_spare_servers) / 2
-pm.start_servers = 2
+pm.start_servers = {{getenv "PHP_FPM_PM_START_SERVERS"}}
 
 ; The desired minimum number of idle server processes.
 ; Note: Used only when pm is set to 'dynamic'
 ; Note: Mandatory when pm is set to 'dynamic'
-pm.min_spare_servers = 1
+pm.min_spare_servers = {{getenv "PHP_FPM_PM_MIN_SPARE_SERVERS"}}
 
 ; The desired maximum number of idle server processes.
 ; Note: Used only when pm is set to 'dynamic'
 ; Note: Mandatory when pm is set to 'dynamic'
-pm.max_spare_servers = 3
+pm.max_spare_servers = {{getenv "PHP_FPM_PM_MAX_SPARE_SERVERS"}}
 
 ; The number of seconds after which an idle process will be killed.
 ; Note: Used only when pm is set to 'ondemand'

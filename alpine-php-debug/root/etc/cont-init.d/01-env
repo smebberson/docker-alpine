@@ -36,6 +36,22 @@ if check "PHP_FPM_LISTEN_PORT"; then
     printf "9000" > /var/run/s6/container_environment/PHP_FPM_LISTEN_PORT
 fi
 
+if check "PHP_FPM_PM_MAX_CHILDREN"; then
+    printf "5" > /var/run/s6/container_environment/PHP_FPM_PM_MAX_CHILDREN
+fi
+
+if check "PHP_FPM_PM_START_SERVERS"; then
+    printf "2" > /var/run/s6/container_environment/PHP_FPM_PM_START_SERVERS
+fi
+
+if check "PHP_FPM_PM_MIN_SPARE_SERVERS"; then
+    printf "1" > /var/run/s6/container_environment/PHP_FPM_PM_MIN_SPARE_SERVERS
+fi
+
+if check "PHP_FPM_PM_MAX_SPARE_SERVERS"; then
+    printf "3" > /var/run/s6/container_environment/PHP_FPM_PM_MAX_SPARE_SERVERS
+fi
+
 if check "PHP_FPM_CATCH_WORKERS_OUTPUT"; then
     printf "yes" > /var/run/s6/container_environment/PHP_FPM_CATCH_WORKERS_OUTPUT
 fi
