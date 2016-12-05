@@ -12,58 +12,118 @@ check() {
 # Allows users to easily override these in their Dockerfiles.
 #
 
-if check "PHP_FPM_ACCESS_LOG"; then
-    printf "/var/log/php-fpm/access.log" > /var/run/s6/container_environment/PHP_FPM_ACCESS_LOG
-fi
+# php-fpm
 
 if check "PHP_FPM_ERROR_LOG"; then
     printf "/var/log/php-fpm/error.log" > /var/run/s6/container_environment/PHP_FPM_ERROR_LOG
 fi
 
-if check "PHP_FPM_USER"; then
-    printf "www-data" > /var/run/s6/container_environment/PHP_FPM_USER
+if check "PHP_FPM_SYSLOG_FACILITY"; then
+    printf "daemon" > /var/run/s6/container_environment/PHP_FPM_SYSLOG_FACILITY
 fi
 
-if check "PHP_FPM_GROUP"; then
-    printf "www-data" > /var/run/s6/container_environment/PHP_FPM_GROUP
+if check "PHP_FPM_SYSLOG_IDENT"; then
+    printf "php-fpm" > /var/run/s6/container_environment/PHP_FPM_SYSLOG_IDENT
 fi
 
-if check "PHP_FPM_LISTEN_IP"; then
-    printf "[::]" > /var/run/s6/container_environment/PHP_FPM_LISTEN_IP
+if check "PHP_FPM_LOG_LEVEL"; then
+    printf "notice" > /var/run/s6/container_environment/PHP_FPM_LOG_LEVEL
 fi
 
-if check "PHP_FPM_LISTEN_PORT"; then
-    printf "9000" > /var/run/s6/container_environment/PHP_FPM_LISTEN_PORT
+if check "PHP_FPM_EMERGENCY_RESTART_THRESHOLD"; then
+    printf "0" > /var/run/s6/container_environment/PHP_FPM_EMERGENCY_RESTART_THRESHOLD
 fi
 
-if check "PHP_FPM_PM_MAX_CHILDREN"; then
-    printf "5" > /var/run/s6/container_environment/PHP_FPM_PM_MAX_CHILDREN
+if check "PHP_FPM_EMERGENCY_RESTART_INTERVAL"; then
+    printf "0" > /var/run/s6/container_environment/PHP_FPM_EMERGENCY_RESTART_INTERVAL
 fi
 
-if check "PHP_FPM_PM_START_SERVERS"; then
-    printf "2" > /var/run/s6/container_environment/PHP_FPM_PM_START_SERVERS
+if check "PHP_FPM_PROCESS_CONTROL_TIMEOUT"; then
+    printf "0" > /var/run/s6/container_environment/PHP_FPM_PROCESS_CONTROL_TIMEOUT
 fi
 
-if check "PHP_FPM_PM_MIN_SPARE_SERVERS"; then
-    printf "1" > /var/run/s6/container_environment/PHP_FPM_PM_MIN_SPARE_SERVERS
+if check "PHP_FPM_PROCESS_MAX"; then
+    printf "0" > /var/run/s6/container_environment/PHP_FPM_PROCESS_MAX
 fi
 
-if check "PHP_FPM_PM_MAX_SPARE_SERVERS"; then
-    printf "3" > /var/run/s6/container_environment/PHP_FPM_PM_MAX_SPARE_SERVERS
+# php-fpm-default
+
+if check "PHP_FPM_DEFAULT_POOL_NAME"; then
+    printf "www" > /var/run/s6/container_environment/PHP_FPM_DEFAULT_POOL_NAME
 fi
 
-if check "PHP_FPM_CATCH_WORKERS_OUTPUT"; then
-    printf "yes" > /var/run/s6/container_environment/PHP_FPM_CATCH_WORKERS_OUTPUT
+if check "PHP_FPM_DEFAULT_USER"; then
+    printf "www-data" > /var/run/s6/container_environment/PHP_FPM_DEFAULT_USER
 fi
 
-if check "PHP_FPM_CLEAR_ENV"; then
-    printf "no" > /var/run/s6/container_environment/PHP_FPM_CLEAR_ENV
+if check "PHP_FPM_DEFAULT_GROUP"; then
+    printf "www-data" > /var/run/s6/container_environment/PHP_FPM_DEFAULT_GROUP
 fi
 
-if check "PHP_FPM_MEMORY_LIMIT"; then
-    printf "32M" > /var/run/s6/container_environment/PHP_FPM_MEMORY_LIMIT
+if check "PHP_FPM_DEFAULT_LISTEN_IP"; then
+    printf "[::]" > /var/run/s6/container_environment/PHP_FPM_DEFAULT_LISTEN_IP
 fi
 
-if check "PHP_FPM_SECURITY_LIMIT_EXTENSIONS"; then
-    printf ".php .php3 .php4 .php5 .php7" > /var/run/s6/container_environment/PHP_FPM_SECURITY_LIMIT_EXTENSIONS
+if check "PHP_FPM_DEFAULT_LISTEN_PORT"; then
+    printf "9000" > /var/run/s6/container_environment/PHP_FPM_DEFAULT_LISTEN_PORT
+fi
+
+if check "PHP_FPM_DEFAULT_PM"; then
+    printf "dynamic" > /var/run/s6/container_environment/PHP_FPM_DEFAULT_PM
+fi
+
+if check "PHP_FPM_DEFAULT_PM_MAX_CHILDREN"; then
+    printf "5" > /var/run/s6/container_environment/PHP_FPM_DEFAULT_PM_MAX_CHILDREN
+fi
+
+if check "PHP_FPM_DEFAULT_PM_START_SERVERS"; then
+    printf "2" > /var/run/s6/container_environment/PHP_FPM_DEFAULT_PM_START_SERVERS
+fi
+
+if check "PHP_FPM_DEFAULT_PM_MIN_SPARE_SERVERS"; then
+    printf "1" > /var/run/s6/container_environment/PHP_FPM_DEFAULT_PM_MIN_SPARE_SERVERS
+fi
+
+if check "PHP_FPM_DEFAULT_PM_MAX_SPARE_SERVERS"; then
+    printf "3" > /var/run/s6/container_environment/PHP_FPM_DEFAULT_PM_MAX_SPARE_SERVERS
+fi
+
+if check "PHP_FPM_DEFAULT_PM_PROCESS_IDLE_TIMEOUT"; then
+    printf "10s" > /var/run/s6/container_environment/PHP_FPM_DEFAULT_PM_PROCESS_IDLE_TIMEOUT
+fi
+
+if check "PHP_FPM_DEFAULT_PM_MAX_REQUESTS"; then
+    printf "0" > /var/run/s6/container_environment/PHP_FPM_DEFAULT_PM_MAX_REQUESTS
+fi
+
+if check "PHP_FPM_DEFAULT_ACCESS_LOG"; then
+    printf "/var/log/php-fpm/access.log" > /var/run/s6/container_environment/PHP_FPM_DEFAULT_ACCESS_LOG
+fi
+
+if check "PHP_FPM_DEFAULT_ACCESS_FORMAT"; then
+    printf "%%R - %%u %%t \\\"%%m %%r\\\" %%s" > /var/run/s6/container_environment/PHP_FPM_DEFAULT_ACCESS_FORMAT
+fi
+
+if check "PHP_FPM_DEFAULT_REQUEST_SLOWLOG_TIMEOUT"; then
+    printf "0" > /var/run/s6/container_environment/PHP_FPM_DEFAULT_REQUEST_SLOWLOG_TIMEOUT
+fi
+
+if check "PHP_FPM_DEFAULT_REQUEST_TERMINATE_TIMEOUT"; then
+    printf "0" > /var/run/s6/container_environment/PHP_FPM_DEFAULT_REQUEST_TERMINATE_TIMEOUT
+fi
+
+if check "PHP_FPM_DEFAULT_CATCH_WORKERS_OUTPUT"; then
+    printf "yes" > /var/run/s6/container_environment/PHP_FPM_DEFAULT_CATCH_WORKERS_OUTPUT
+fi
+
+if check "PHP_FPM_DEFAULT_CLEAR_ENV"; then
+    printf "no" > /var/run/s6/container_environment/PHP_FPM_DEFAULT_CLEAR_ENV
+fi
+
+if check "PHP_FPM_DEFAULT_SECURITY_LIMIT_EXTENSIONS"; then
+    printf ".php .php3 .php4 .php5 .php7" > /var/run/s6/container_environment/PHP_FPM_DEFAULT_SECURITY_LIMIT_EXTENSIONS
+fi
+
+if check "PHP_FPM_DEFAULT_MEMORY_LIMIT"; then
+    printf "32M" > /var/run/s6/container_environment/PHP_FPM_DEFAULT_MEMORY_LIMIT
 fi

@@ -1,7 +1,7 @@
 ; Start a new pool named 'www'.
 ; the variable $pool can we used in any directive and will be replaced by the
 ; pool name ('www' here)
-[www]
+[{{getenv "PHP_FPM_DEFAULT_POOL_NAME"}}]
 
 ; Per pool prefix
 ; It only applies on the following directives:
@@ -20,8 +20,8 @@
 ; Unix user/group of processes
 ; Note: The user is mandatory. If the group is not set, the default user's group
 ;       will be used.
-user = {{getenv "PHP_FPM_USER"}}
-group = {{getenv "PHP_FPM_GROUP"}}
+user = {{getenv "PHP_FPM_DEFAULT_USER"}}
+group = {{getenv "PHP_FPM_DEFAULT_GROUP"}}
 
 ; The address on which to accept FastCGI requests.
 ; Valid syntaxes are:
@@ -33,11 +33,12 @@ group = {{getenv "PHP_FPM_GROUP"}}
 ;                            (IPv6 and IPv4-mapped) on a specific port;
 ;   '/path/to/unix/socket' - to listen on a unix socket.
 ; Note: This value is mandatory.
-listen = {{getenv "PHP_FPM_LISTEN_IP"}}:{{getenv "PHP_FPM_LISTEN_PORT"}}
+listen = {{getenv "PHP_FPM_DEFAULT_LISTEN_IP"}}:{{getenv "PHP_FPM_DEFAULT_LISTEN_PORT"}}
 
 ; Set listen(2) backlog.
 ; Default Value: 511 (-1 on FreeBSD and OpenBSD)
 ;listen.backlog = 511
+{{if (getenv "PHP_FPM_DEFAULT_LISTEN_BACKLOG")}}listen.backlog = {{getenv "PHP_FPM_DEFAULT_LISTEN_BACKLOG"}}{{end}}
 
 ; Set permissions for unix socket, if one is used. In Linux, read/write
 ; permissions must be set in order to allow connections from a web server. Many
@@ -45,13 +46,18 @@ listen = {{getenv "PHP_FPM_LISTEN_IP"}}:{{getenv "PHP_FPM_LISTEN_PORT"}}
 ; Default Values: user and group are set as the running user
 ;                 mode is set to 0660
 ;listen.owner = www-data
+{{if (getenv "PHP_FPM_DEFAULT_LISTEN_OWNER")}}listen.owner = {{getenv "PHP_FPM_DEFAULT_LISTEN_OWNER"}}{{end}}
 ;listen.group = www-data
+{{if (getenv "PHP_FPM_DEFAULT_LISTEN_GROUP")}}listen.group = {{getenv "PHP_FPM_DEFAULT_LISTEN_GROUP"}}{{end}}
 ;listen.mode = 0660
+{{if (getenv "PHP_FPM_DEFAULT_LISTEN_MODE")}}listen.mode = {{getenv "PHP_FPM_DEFAULT_LISTEN_MODE"}}{{end}}
 ; When POSIX Access Control Lists are supported you can set them using
 ; these options, value is a comma separated list of user/group names.
 ; When set, listen.owner and listen.group are ignored
 ;listen.acl_users =
+{{if (getenv "PHP_FPM_DEFAULT_LISTEN_ACL_USERS")}}listen.acl_users = {{getenv "PHP_FPM_DEFAULT_LISTEN_ACL_USERS"}}{{end}}
 ;listen.acl_groups =
+{{if (getenv "PHP_FPM_DEFAULT_LISTEN_ACL_GROUPS")}}listen.acl_groups = {{getenv "PHP_FPM_DEFAULT_LISTEN_ACL_GROUPS"}}{{end}}
 
 ; List of addresses (IPv4/IPv6) of FastCGI clients which are allowed to connect.
 ; Equivalent to the FCGI_WEB_SERVER_ADDRS environment variable in the original
@@ -60,6 +66,7 @@ listen = {{getenv "PHP_FPM_LISTEN_IP"}}:{{getenv "PHP_FPM_LISTEN_PORT"}}
 ; accepted from any ip address.
 ; Default Value: any
 ;listen.allowed_clients = 127.0.0.1
+{{if (getenv "PHP_FPM_DEFAULT_LISTEN_ALLOWED_CLIENTS")}}listen.allowed_clients = {{getenv "PHP_FPM_DEFAULT_LISTEN_ALLOWED_CLIENTS"}}{{end}}
 
 ; Specify the nice(2) priority to apply to the pool processes (only if set)
 ; The value can vary from -19 (highest priority) to 20 (lower priority)
@@ -68,6 +75,7 @@ listen = {{getenv "PHP_FPM_LISTEN_IP"}}:{{getenv "PHP_FPM_LISTEN_PORT"}}
 ;         unless it specified otherwise
 ; Default Value: no set
 ; process.priority = -19
+{{if (getenv "PHP_FPM_DEFAULT_PROCESS_PRIORITY")}}listen.allowed_clients = {{getenv "PHP_FPM_DEFAULT_PROCESS_PRIORITY"}}{{end}}
 
 ; Choose how the process manager will control the number of child processes.
 ; Possible Values:
@@ -93,7 +101,7 @@ listen = {{getenv "PHP_FPM_LISTEN_IP"}}:{{getenv "PHP_FPM_LISTEN_PORT"}}
 ;             pm.process_idle_timeout   - The number of seconds after which
 ;                                         an idle process will be killed.
 ; Note: This value is mandatory.
-pm = dynamic
+pm = {{getenv "PHP_FPM_DEFAULT_PM"}}
 
 ; The number of child processes to be created when pm is set to 'static' and the
 ; maximum number of child processes when pm is set to 'dynamic' or 'ondemand'.
@@ -104,33 +112,33 @@ pm = dynamic
 ; forget to tweak pm.* to fit your needs.
 ; Note: Used when pm is set to 'static', 'dynamic' or 'ondemand'
 ; Note: This value is mandatory.
-pm.max_children = {{getenv "PHP_FPM_PM_MAX_CHILDREN"}}
+pm.max_children = {{getenv "PHP_FPM_DEFAULT_PM_MAX_CHILDREN"}}
 
 ; The number of child processes created on startup.
 ; Note: Used only when pm is set to 'dynamic'
 ; Default Value: min_spare_servers + (max_spare_servers - min_spare_servers) / 2
-pm.start_servers = {{getenv "PHP_FPM_PM_START_SERVERS"}}
+pm.start_servers = {{getenv "PHP_FPM_DEFAULT_PM_START_SERVERS"}}
 
 ; The desired minimum number of idle server processes.
 ; Note: Used only when pm is set to 'dynamic'
 ; Note: Mandatory when pm is set to 'dynamic'
-pm.min_spare_servers = {{getenv "PHP_FPM_PM_MIN_SPARE_SERVERS"}}
+pm.min_spare_servers = {{getenv "PHP_FPM_DEFAULT_PM_MIN_SPARE_SERVERS"}}
 
 ; The desired maximum number of idle server processes.
 ; Note: Used only when pm is set to 'dynamic'
 ; Note: Mandatory when pm is set to 'dynamic'
-pm.max_spare_servers = {{getenv "PHP_FPM_PM_MAX_SPARE_SERVERS"}}
+pm.max_spare_servers = {{getenv "PHP_FPM_DEFAULT_PM_MAX_SPARE_SERVERS"}}
 
 ; The number of seconds after which an idle process will be killed.
 ; Note: Used only when pm is set to 'ondemand'
 ; Default Value: 10s
-;pm.process_idle_timeout = 10s;
+pm.process_idle_timeout = {{getenv "PHP_FPM_DEFAULT_PM_PROCESS_IDLE_TIMEOUT"}};
 
 ; The number of requests each child process should execute before respawning.
 ; This can be useful to work around memory leaks in 3rd party libraries. For
 ; endless request processing specify '0'. Equivalent to PHP_FCGI_MAX_REQUESTS.
 ; Default Value: 0
-;pm.max_requests = 500
+pm.max_requests = {{getenv "PHP_FPM_DEFAULT_PM_MAX_REQUESTS"}}
 
 ; The URI to view the FPM status page. If this value is not set, no URI will be
 ; recognized as a status page. It shows the following informations:
@@ -230,6 +238,7 @@ pm.max_spare_servers = {{getenv "PHP_FPM_PM_MAX_SPARE_SERVERS"}}
 ;       may conflict with a real PHP file.
 ; Default Value: not set
 ;pm.status_path = /status
+{{if (getenv "PHP_FPM_DEFAULT_PM_STATUS_PATH")}}pm.status_path = {{getenv "PHP_FPM_DEFAULT_PM_STATUS_PATH"}}{{end}}
 
 ; The ping URI to call the monitoring page of FPM. If this value is not set, no
 ; URI will be recognized as a ping page. This could be used to test from outside
@@ -242,15 +251,17 @@ pm.max_spare_servers = {{getenv "PHP_FPM_PM_MAX_SPARE_SERVERS"}}
 ;       may conflict with a real PHP file.
 ; Default Value: not set
 ;ping.path = /ping
+{{if (getenv "PHP_FPM_DEFAULT_PING_PATH")}}ping.path = {{getenv "PHP_FPM_DEFAULT_PING_PATH"}}{{end}}
 
 ; This directive may be used to customize the response of a ping request. The
 ; response is formatted as text/plain with a 200 response code.
 ; Default Value: pong
 ;ping.response = pong
+{{if (getenv "PHP_FPM_DEFAULT_PING_RESPONSE")}}ping.response = {{getenv "PHP_FPM_DEFAULT_PING_RESPONSE"}}{{end}}
 
 ; The access log file
 ; Default: not set
-access.log = {{getenv "PHP_FPM_ACCESS_LOG"}}
+access.log = {{getenv "PHP_FPM_DEFAULT_ACCESS_LOG"}}
 
 ; The access log format.
 ; The following syntax is allowed
@@ -310,33 +321,37 @@ access.log = {{getenv "PHP_FPM_ACCESS_LOG"}}
 ;
 ; Default: "%R - %u %t \"%m %r\" %s"
 ;access.format = "%R - %u %t \"%m %r%Q%q\" %s %f %{mili}d %{kilo}M %C%%"
+access.format = "{{getenv "PHP_FPM_DEFAULT_ACCESS_FORMAT"}}"
 
 ; The log file for slow requests
 ; Default Value: not set
 ; Note: slowlog is mandatory if request_slowlog_timeout is set
 ;slowlog = log/$pool.log.slow
+{{if (getenv "SLOWLOG")}}slowlog = {{getenv "SLOWLOG"}}{{end}}
 
 ; The timeout for serving a single request after which a PHP backtrace will be
 ; dumped to the 'slowlog' file. A value of '0s' means 'off'.
 ; Available units: s(econds)(default), m(inutes), h(ours), or d(ays)
 ; Default Value: 0
-;request_slowlog_timeout = 0
+request_slowlog_timeout = {{getenv "PHP_FPM_DEFAULT_REQUEST_SLOWLOG_TIMEOUT"}}
 
 ; The timeout for serving a single request after which the worker process will
 ; be killed. This option should be used when the 'max_execution_time' ini option
 ; does not stop script execution for some reason. A value of '0' means 'off'.
 ; Available units: s(econds)(default), m(inutes), h(ours), or d(ays)
 ; Default Value: 0
-;request_terminate_timeout = 0
+request_terminate_timeout = {{getenv "PHP_FPM_DEFAULT_REQUEST_TERMINATE_TIMEOUT"}}
 
 ; Set open file descriptor rlimit.
 ; Default Value: system defined value
 ;rlimit_files = 1024
+{{if (getenv "PHP_FPM_DEFAULT_RLIMIT_FILES")}}rlimit_files = {{getenv "PHP_FPM_DEFAULT_RLIMIT_FILES"}}{{end}}
 
 ; Set max core size rlimit.
 ; Possible Values: 'unlimited' or an integer greater or equal to 0
 ; Default Value: system defined value
 ;rlimit_core = 0
+{{if (getenv "PHP_FPM_DEFAULT_RLIMIT_CORE")}}rlimit_core = {{getenv "PHP_FPM_DEFAULT_RLIMIT_CORE"}}{{end}}
 
 ; Chroot to this directory at the start. This value must be defined as an
 ; absolute path. When this value is not set, chroot is not used.
@@ -348,18 +363,20 @@ access.log = {{getenv "PHP_FPM_ACCESS_LOG"}}
 ;       (error_log, sessions.save_path, ...).
 ; Default Value: not set
 ;chroot =
+{{if (getenv "PHP_FPM_DEFAULT_CHROOT")}}chroot = {{getenv "PHP_FPM_DEFAULT_CHROOT"}}{{end}}
 
 ; Chdir to this directory at the start.
 ; Note: relative path can be used.
 ; Default Value: current directory or / when chroot
 ;chdir = /var/www
+{{if (getenv "PHP_FPM_DEFAULT_CHDIR")}}chdir = {{getenv "PHP_FPM_DEFAULT_CHDIR"}}{{end}}
 
 ; Redirect worker stdout and stderr into main error log. If not set, stdout and
 ; stderr will be redirected to /dev/null according to FastCGI specs.
 ; Note: on highloaded environement, this can cause some delay in the page
 ; process time (several ms).
 ; Default Value: no
-catch_workers_output = {{getenv "PHP_FPM_CATCH_WORKERS_OUTPUT"}}
+catch_workers_output = {{getenv "PHP_FPM_DEFAULT_CATCH_WORKERS_OUTPUT"}}
 
 ; Clear environment in FPM workers
 ; Prevents arbitrary environment variables from reaching FPM worker processes
@@ -368,7 +385,7 @@ catch_workers_output = {{getenv "PHP_FPM_CATCH_WORKERS_OUTPUT"}}
 ; Setting to "no" will make all environment variables available to PHP code
 ; via getenv(), $_ENV and $_SERVER.
 ; Default Value: yes
-clear_env = {{getenv "PHP_FPM_CLEAR_ENV"}}
+clear_env = {{getenv "PHP_FPM_DEFAULT_CLEAR_ENV"}}
 
 ; Limits the extensions of the main script FPM will allow to parse. This can
 ; prevent configuration mistakes on the web server side. You should only limit
@@ -376,7 +393,7 @@ clear_env = {{getenv "PHP_FPM_CLEAR_ENV"}}
 ; exectute php code.
 ; Note: set an empty value to allow all extensions.
 ; Default Value: .php
-;security.limit_extensions = {{getenv "PHP_FPM_SECURITY_LIMIT_EXTENSIONS"}}
+security.limit_extensions = {{getenv "PHP_FPM_DEFAULT_SECURITY_LIMIT_EXTENSIONS"}}
 
 ; Pass environment variables like LD_LIBRARY_PATH. All $VARIABLEs are taken from
 ; the current environment.
@@ -410,5 +427,9 @@ clear_env = {{getenv "PHP_FPM_CLEAR_ENV"}}
 ;php_flag[display_errors] = off
 ;php_admin_value[error_log] = /var/log/fpm-php.www.log
 ;php_admin_flag[log_errors] = on
-php_admin_value[memory_limit] = {{getenv "PHP_FPM_MEMORY_LIMIT"}}
-php_value[memory_limit] = {{getenv "PHP_FPM_MEMORY_LIMIT"}}
+php_admin_value[memory_limit] = {{getenv "PHP_FPM_DEFAULT_INI_MEMORY_LIMIT"}}
+php_value[memory_limit] = {{getenv "PHP_FPM_DEFAULT_INI_MEMORY_LIMIT"}}
+{{if (getenv "PHP_FPM_DEFAULT_INI_MAX_EXECUTION_TIME")}}
+php_admin_value[max_execution_time] = {{getenv "PHP_FPM_DEFAULT_INI_MAX_EXECUTION_TIME"}}
+php_value[max_execution_time] = {{getenv "PHP_FPM_DEFAULT_INI_MAX_EXECUTION_TIME"}}
+{{end}}

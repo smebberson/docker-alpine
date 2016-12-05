@@ -15,6 +15,7 @@
 ; Note: the default prefix is /usr/local/var
 ; Default Value: none
 ;pid = run/php-fpm.pid
+{{if (getenv "PHP_FPM_PID")}}pid = {{getenv "PHP_FPM_PID"}}{{end}}
 
 ; Error log file
 ; If it's set to "syslog", log is sent to syslogd instead of being written
@@ -28,24 +29,24 @@ error_log = {{getenv "PHP_FPM_ERROR_LOG"}}
 ; will be handled differently.
 ; See syslog(3) for possible values (ex daemon equiv LOG_DAEMON)
 ; Default Value: daemon
-;syslog.facility = daemon
+syslog.facility = {{getenv "PHP_FPM_SYSLOG_FACILITY"}}
 
 ; syslog_ident is prepended to every message. If you have multiple FPM
 ; instances running on the same server, you can change the default value
 ; which must suit common needs.
 ; Default Value: php-fpm
-;syslog.ident = php-fpm
+syslog.ident = {{getenv "PHP_FPM_SYSLOG_IDENT"}}
 
 ; Log level
 ; Possible Values: alert, error, warning, notice, debug
 ; Default Value: notice
-;log_level = notice
+log_level = {{getenv "PHP_FPM_LOG_LEVEL"}}
 
 ; If this number of child processes exit with SIGSEGV or SIGBUS within the time
 ; interval set by emergency_restart_interval then FPM will restart. A value
 ; of '0' means 'Off'.
 ; Default Value: 0
-;emergency_restart_threshold = 0
+emergency_restart_threshold = {{getenv "PHP_FPM_EMERGENCY_RESTART_THRESHOLD"}}
 
 ; Interval of time used by emergency_restart_interval to determine when
 ; a graceful restart will be initiated.  This can be useful to work around
@@ -53,20 +54,20 @@ error_log = {{getenv "PHP_FPM_ERROR_LOG"}}
 ; Available Units: s(econds), m(inutes), h(ours), or d(ays)
 ; Default Unit: seconds
 ; Default Value: 0
-;emergency_restart_interval = 0
+emergency_restart_interval = {{getenv "PHP_FPM_EMERGENCY_RESTART_INTERVAL"}}
 
 ; Time limit for child processes to wait for a reaction on signals from master.
 ; Available units: s(econds), m(inutes), h(ours), or d(ays)
 ; Default Unit: seconds
 ; Default Value: 0
-;process_control_timeout = 0
+process_control_timeout = {{getenv "PHP_FPM_PROCESS_CONTROL_TIMEOUT"}}
 
 ; The maximum number of processes FPM will fork. This has been design to control
 ; the global number of processes when using dynamic PM within a lot of pools.
 ; Use it with caution.
 ; Note: A value of 0 indicates no limit
 ; Default Value: 0
-; process.max = 128
+process.max = {{getenv "PHP_FPM_PROCESS_MAX"}}
 
 ; Specify the nice(2) priority to apply to the master process (only if set)
 ; The value can vary from -19 (highest priority) to 20 (lower priority)
@@ -75,6 +76,7 @@ error_log = {{getenv "PHP_FPM_ERROR_LOG"}}
 ;         unless it specified otherwise
 ; Default Value: no set
 ; process.priority = -19
+{{if (getenv "PHP_FPM_PROCESS_PRIORITY")}}process.priority = {{getenv "PHP_FPM_PROCESS_PRIORITY"}}{{end}}
 
 ; Send FPM to background. Set to 'no' to keep FPM in foreground for debugging.
 ; Default Value: yes
@@ -83,11 +85,13 @@ daemonize = no
 ; Set open file descriptor rlimit for the master process.
 ; Default Value: system defined value
 ;rlimit_files = 1024
+{{if (getenv "PHP_FPM_RLIMIT_FILES")}}rlimit_files = {{getenv "PHP_FPM_RLIMIT_FILES"}}{{end}}
 
 ; Set max core size rlimit for the master process.
 ; Possible Values: 'unlimited' or an integer greater or equal to 0
 ; Default Value: system defined value
 ;rlimit_core = 0
+{{if (getenv "PHP_FPM_RLIMIT_CORE")}}rlimit_core = {{getenv "PHP_FPM_RLIMIT_CORE"}}{{end}}
 
 ; Specify the event mechanism FPM will use. The following is available:
 ; - select     (any POSIX os)
