@@ -1,0 +1,10 @@
+# Run the user-consul-openjdk example.
+docker-compose up --build -d && docker-compose scale consul=3
+
+# now you can see the app in action by running
+# curl -X GET http://localhost:8081
+
+# you can also see the consul cluster state at
+# http://localhost:8500
+
+

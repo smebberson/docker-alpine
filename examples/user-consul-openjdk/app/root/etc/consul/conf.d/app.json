@@ -1,0 +1,13 @@
+{
+    "service": {
+        "name": "app",
+        "tags": ["app","java"],
+        "port": 8081,
+        "checks": [
+            {
+                "script": "curl -s -o /dev/null localhost:8081 2>&1",
+                "interval": "5s"
+            }
+        ]
+    }
+}
