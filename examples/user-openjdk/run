@@ -1,6 +1,6 @@
 
 # run the user-openjdk image
-docker run --rm --name user-openjdk -p 8000:5000 smebberson/user-openjdk
+docker run --rm --name user-openjdk -p 8081:8081 smebberson/user-openjdk
 
 # now you can see the app in action by running
-# curl -X GET http://localhost:8000
+# curl -X GET http://localhost:8081
