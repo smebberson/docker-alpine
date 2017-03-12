@@ -175,7 +175,7 @@ The following describes the images that are available and the inheritance chain.
 
 This image is the base for all containers. All other Docker images within this repository inherit from this Container.
 
-Latest version is `3.0.0`, or `latest`.
+Latest version is `3.1.0`, or `latest`.
 
 - [README.md](https://github.com/smebberson/docker-alpine/blob/master/alpine-base/README.md)
 - [VERSIONS.md](https://github.com/smebberson/docker-alpine/blob/master/alpine-base/VERSIONS.md)
@@ -184,7 +184,7 @@ Latest version is `3.0.0`, or `latest`.
 
 This image includes Apache HTTPD with a very basic configuration.
 
-Latest version is `2.0.0`, or `latest`.
+Latest version is `2.0.1`, or `latest`.
 
 - [README.md](https://github.com/smebberson/docker-alpine/blob/master/alpine-apache/README.md)
 - [VERSIONS.md](https://github.com/smebberson/docker-alpine/blob/master/alpine-apache/VERSIONS.md)
@@ -193,7 +193,7 @@ Latest version is `2.0.0`, or `latest`.
 
 This image adds [confd][confd]. It should be seen as a base image suitable for heavy customisation.
 
-Latest version is `3.0.0`, or `latest`.
+Latest version is `3.1.0`, or `latest`.
 
 - [VERSIONS.md](https://github.com/smebberson/docker-alpine/blob/master/alpine-confd/VERSIONS.md)
 - [README.md](https://github.com/smebberson/docker-alpine/blob/master/alpine-confd/README.md)
@@ -204,7 +204,7 @@ This image adds [Consul][consul].
 
 If you want to create a Docker image to run as a Consul agent in server mode (i.e. part of a cluster) start with this image.
 
-Latest version is `3.0.0`, or `latest`.
+Latest version is `3.1.1`, or `latest`.
 
 - [README.md](https://github.com/smebberson/docker-alpine/blob/master/alpine-consul/README.md)
 - [VERSIONS.md](https://github.com/smebberson/docker-alpine/blob/master/alpine-consul/VERSIONS.md)
@@ -215,7 +215,7 @@ This image inherits from `alpine-consul` and is designed as a base image for oth
 
 If you want to create a Docker image to advertise a service in Consul start with this image.
 
-Latest version is `4.0.0`, or `latest`.
+Latest version is `4.1.1`, or `latest`.
 
 - [README.md](https://github.com/smebberson/docker-alpine/blob/master/alpine-consul-base/README.md)
 - [VERSIONS.md](https://github.com/smebberson/docker-alpine/blob/master/alpine-consul-base/VERSIONS.md)
@@ -226,7 +226,7 @@ This image is designed to run Apache within the context of service discovery (vi
 
 It is suited to running Apache as a proxy to another Docker container.
 
-Latest version is `1.0.0`, or `latest`.
+Latest version is `2.0.0`, or `latest`.
 
 - [README.md](https://github.com/smebberson/docker-alpine/blob/master/alpine-consul-apache/README.md)
 - [VERSIONS.md](https://github.com/smebberson/docker-alpine/blob/master/alpine-consul-apache/VERSIONS.md)
@@ -235,7 +235,7 @@ Latest version is `1.0.0`, or `latest`.
 
 This image is designed to run a Node.js application within the context of service discovery (via Consul).
 
-Latest version is `5.2.2`, or `latest`.
+Latest version is `5.3.1`, or `latest`.
 
 - [README.md](https://github.com/smebberson/docker-alpine/blob/master/alpine-consul-nodejs/README.md)
 - [VERSIONS.md](https://github.com/smebberson/docker-alpine/blob/master/alpine-consul-nodejs/VERSIONS.md)
@@ -246,7 +246,7 @@ This image is designed to run Nginx within the context of service discovery (via
 
 It's suited for running an Nginx proxy or to load balance with Nginx to another container.
 
-Latest version is `3.0.1`, or `latest`.
+Latest version is `3.1.0`, or `latest`.
 
 - [README.md](https://github.com/smebberson/docker-alpine/blob/master/alpine-consul-nginx/README.md)
 - [VERSIONS.md](https://github.com/smebberson/docker-alpine/blob/master/alpine-consul-nginx/VERSIONS.md)
@@ -264,7 +264,7 @@ Latest version is `2.0.0`, or `latest`.
 
 This image has been designed to run Redis within the context of service discovery (via Consul).
 
-Latest version is `1.0.0`, or `latest`.
+Latest version is `2.1.0`, or `latest`.
 
 - [README.md](https://github.com/smebberson/docker-alpine/blob/master/alpine-consul-redis/README.md)
 - [VERSIONS.md](https://github.com/smebberson/docker-alpine/blob/master/alpine-consul-redis/VERSIONS.md)
@@ -273,7 +273,7 @@ Latest version is `1.0.0`, or `latest`.
 
 This image has been designed to connect to a Consul cluster (from `alpine-consul`) and make the Consul admin UI accessible.
 
-Latest version is `2.0.0`, or `latest`.
+Latest version is `2.1.0`, or `latest`.
 
 - [README.md](https://github.com/smebberson/docker-alpine/blob/master/alpine-consul-ui/README.md)
 - [VERSIONS.md](https://github.com/smebberson/docker-alpine/blob/master/alpine-consul-ui/VERSIONS.md)
@@ -300,10 +300,10 @@ Latest version is `4.2.2`, or `latest`.
 
 This includes Node.js.
 
-Latest version is `6.0.0`, or `latest`.
+Latest version is `6.0.1`, or `latest`.
 
-- [README.md](https://github.com/smebberson/docker-alpine/blob/alpine-nodejs-v6.0.0/alpine-nodejs/README.md)
-- [VERSIONS.md](https://github.com/smebberson/docker-alpine/blob/alpine-nodejs-v6.0.0/alpine-nodejs/VERSIONS.md)
+- [README.md](https://github.com/smebberson/docker-alpine/blob/alpine-nodejs-v6.0.1/alpine-nodejs/README.md)
+- [VERSIONS.md](https://github.com/smebberson/docker-alpine/blob/alpine-nodejs-v6.0.1/alpine-nodejs/VERSIONS.md)
 
 ### alpine-rabbitmq
 
@@ -493,6 +493,7 @@ We love contributors. Read [CONTRIBUTING.md](CONTRIBUTING.md) for more informati
 - [sandytrinh](https://github.com/sandytrinh)
 - [gaff](https://github.com/Gaff)
 - [ncornag](https://github.com/ncornag)
+- [emmetog](https://github.com/emmetog)
 
 You can view [more information about the contributors here](https://github.com/smebberson/docker-alpine/graphs/contributors).
 

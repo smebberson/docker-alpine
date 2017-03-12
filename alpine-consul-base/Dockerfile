@@ -1,11 +1,12 @@
-FROM smebberson/alpine-consul:3.0.0
+FROM smebberson/alpine-consul:3.1.1
 MAINTAINER Scott Mebberson <scott@scottmebberson.com>
 
-ENV CONSUL_TEMPLATE_VERSION=0.14.0 \
+ENV CONSUL_TEMPLATE_VERSION=0.16.0 \
     CONSUL_CONFIG_DIR=/etc/consul/conf.d
 
 # Download and install Consul Template
-RUN apk add --no-cache curl && \
+RUN apk upgrade --update --no-cache && \
+    apk add --update --no-cache curl && \
     curl -sLo /tmp/consul-template.zip https://releases.hashicorp.com/consul-template/${CONSUL_TEMPLATE_VERSION}/consul-template_${CONSUL_TEMPLATE_VERSION}_linux_amd64.zip && \
     unzip -d /usr/sbin/ /tmp/consul-template.zip && \
     rm /tmp/consul-template.zip && \
@@ -14,8 +15,7 @@ RUN apk add --no-cache curl && \
     adduser -D -g "" -s /bin/sh -G consul-template consul-template && \
     addgroup s6 && \
     addgroup consul s6 && \
-    addgroup consul-template s6 && \
-    rm /etc/services.d/consul/finish
+    addgroup consul-template s6
 
 # Add the files
 ADD root /

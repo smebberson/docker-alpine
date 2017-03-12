@@ -4,9 +4,29 @@ This file contains all software versions, that correspond to a version of this i
 
 ## Latest
 
-Same as v4.0.0.
+Same as v4.1.1.
 
 Usage: `smebberson/alpine-consul-base` or `smebberson/alpine-consul-base:latest`.
+
+## v4.1.1
+
+- [smebberson/alpine-consul: v3.1.1][alpineconsul311]
+
+Improvements:
+
+- This release updates to [alpine-consul v3.1.1 which contains minor changes to the Consul setup.](https://github.com/smebberson/docker-alpine/blob/master/alpine-consul/VERSIONS.md#v311).
+
+Usage: `smebberson/alpine-consul-base:4.1.1`.
+
+## v4.1.0
+
+- [smebberson/alpine-consul: v3.1.0][alpineconsul310]
+
+Improvements:
+
+- This release updates to [alpine-consul v3.1.0 which contains changes to the Consul setup.](https://github.com/smebberson/docker-alpine/blob/master/alpine-consul/VERSIONS.md#v310). You should review them as required.
+
+Usage: `smebberson/alpine-consul-base:4.1.0`.
 
 ## v4.0.0
 
@@ -61,6 +81,8 @@ Usage: `smebberson/alpine-consul-base:1.0.0`.
 
 [alpineconsulbase]: https://github.com/smebberson/docker-alpine/tree/master/alpine-consul-base
 [alpineconsul]: https://github.com/smebberson/docker-alpine/tree/master/alpine-consul
+[alpineconsul311]: https://github.com/smebberson/docker-alpine/tree/alpine-consul-v3.1.1/alpine-consul
+[alpineconsul310]: https://github.com/smebberson/docker-alpine/tree/alpine-consul-v3.1.0/alpine-consul
 [alpineconsul300]: https://github.com/smebberson/docker-alpine/tree/alpine-consul-v3.0.0/alpine-consul
 [alpineconsul200]: https://github.com/smebberson/docker-alpine/tree/alpine-consul-v2.0.0/alpine-consul
 [alpineconsul110]: https://github.com/smebberson/docker-alpine/tree/alpine-consul-v1.1.0/alpine-consul

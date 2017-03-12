@@ -4,14 +4,23 @@ This file contains all software versions, that correspond to a version of this i
 
 ## Latest
 
-Same as v3.0.1.
+Same as v3.1.0.
 
 Usage: `smebberson/alpine-consul-nginx` or `smebberson/alpine-consul-nginx:latest`.
+
+## v3.1.0
+
+- [smebberson/alpine-consul-base: v4.1.0][smebbersonalpineconsulbase410]
+- [nginx][nginx]: v1.8.1 (now uses v3.3/main repo to build nginx)
+
+Usage: `smebberson/alpine-consul-nginx:3.0.1`.
 
 ## v3.0.1
 
 - [smebberson/alpine-consul-base: v4.0.0][smebbersonalpineconsulbase400]
 - [nginx][nginx]: v1.8.1 (now uses v3.3/main repo to build nginx)
+
+Usage: `smebberson/alpine-consul-nginx:3.0.1`.
 
 ## v3.0.0
 
@@ -42,6 +51,7 @@ Usage: `smebberson/alpine-consul-nginx:1.0.0`.
 
 [nginx]: http://nginx.org/
 [alpineconsulnginx]: https://github.com/smebberson/docker-alpine/tree/master/alpine-consul-nginx
+[smebbersonalpineconsulbase410]: https://github.com/smebberson/docker-alpine/tree/alpine-consul-base-v4.1.0/alpine-consul-base
 [smebbersonalpineconsulbase400]: https://github.com/smebberson/docker-alpine/tree/alpine-consul-base-v4.0.0/alpine-consul-base
 [smebbersonalpineconsulbase200]: https://github.com/smebberson/docker-alpine/tree/alpine-consul-base-v2.0.0/alpine-consul-base
 [smebbersonalpineconsulbase100]: https://github.com/smebberson/docker-alpine/tree/alpine-consul-base-v1.0.0/alpine-consul-base

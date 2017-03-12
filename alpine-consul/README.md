@@ -15,7 +15,9 @@ This image features:
 
 ## Versions
 
-- `3.0.0`, `latest` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/alpine-consul-v3.0.0/alpine-consul/Dockerfile)
+- `3.1.1`, `latest` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/alpine-consul-v3.1.1/alpine-consul/Dockerfile)
+- `3.1.0` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/alpine-consul-v3.1.0/alpine-consul/Dockerfile)
+- `3.0.0` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/alpine-consul-v3.0.0/alpine-consul/Dockerfile)
 - `2.0.0` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/alpine-consul-v2.0.0/alpine-consul/Dockerfile)
 - `1.1.0` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/alpine-consul-v1.1.0/alpine-consul/Dockerfile)
 - `1.0.0` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/alpine-consul-v1.0.0/alpine-consul/Dockerfile)
@@ -60,6 +62,30 @@ By default, Consul's DNS domain is `consul.`. This allows you to make DNS querie
 For example, add `ENV CONSUL_DOMAIN=dockeralpine` to your `Dockerfile` and you'll be able to make a DNS query for `nginx.service.dockeralpine` rather than the default.
 
 You can read more about [Consul's DNS interface here][consuldnsinterface].
+
+### Consul DC
+
+By default, Consul runs itself in data center `dc1`. Through customizing the environment variable `CONSUL_DC` you can alter Consul's data center configuration.
+
+For example, ADD `ENV CONSUL_DC=dc2` to your `Dockerfile` and you'll be able to make a DNS query for `nginx.service.dc2.dockeralpine` rather than the default.
+
+### Consul Advertise WAN
+
+By default, Consul advertises itself with the address that it binds to. Within a container the bind address is Dockers private IP and in a multi data center setup that IP would not be reachable. Through customizing the environment variable `CONSUL_ADVERTISE_WAN` you can alter the IP Consul reports to WAN.
+
+For example, `docker run -e "CONSUL_ADVERTISE_WAN=`ifconfig | grep -A 1 'ens4' | tail -1 | cut -d ':' -f 2 | cut -d ' ' -f 1`"` where ens4 is the interface with a reachable IP.
+
+### Consul join WAN
+
+To join Consul server to through WAN to another Consul use environmental variable `CONSUL_JOIN_WAN`. Through customizing this environmental variable you can make Consul communicate across WAN.
+
+For example, `docker run -e "CONSUL_JOIN_WAN=10.128.0.2"` would make Consul reach out to and register itself with `10.128.0.2`.
+
+### Consul translate WAN
+
+By default, Consul does not translate IPs when in WAN. Service discovery from dc1 will return private IPs of dc2. Through customizing the environment variable `CONSUL_TRANSLATE_WAN` you can make Consul to resolve to IP specified with `CONSUL_ADVERTISE_WAN`.
+
+For example, `docker run -e "CONSUL_TRANSLATE_WAN=true"` Consul will resolve to IP defined with `CONSUL_ADVERTISE_WAN`.
 
 ## Example
 

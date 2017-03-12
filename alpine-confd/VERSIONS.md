@@ -4,9 +4,20 @@ This file contains all software versions, that correspond to a version of this i
 
 ## Latest
 
-Same as v3.0.0.
+Same as v3.1.0.
 
 Usage: `smebberson/alpine-confd` or `smebberson/alpine-confd:latest`.
+
+## v3.1.0
+
+- [smebberson/alpine-base: v3.1.0][smebbersonalpinebase310]
+- [confd v0.11.0][confd]
+
+Improvements:
+
+- Updates to alpine-base (go-dnsmasq and s6-overlay).
+
+Usage: `smebberson/alpine-confd:3.1.0`.
 
 ## v3.0.0
 
@@ -58,6 +69,7 @@ Usage: `smebberson/alpine-confd:1.0.0`.
 [smebbersonalpinebase120]: https://github.com/smebberson/docker-alpine/tree/alpine-base-v1.2.0/alpine-base
 [smebbersonalpinebase200]: https://github.com/smebberson/docker-alpine/tree/alpine-base-v2.0.0/alpine-base
 [smebbersonalpinebase300]: https://github.com/smebberson/docker-alpine/tree/alpine-base-v3.0.0/alpine-base
+[smebbersonalpinebase310]: https://github.com/smebberson/docker-alpine/tree/alpine-base-v3.1.0/alpine-base
 [confd]: https://github.com/kelseyhightower/confd
 [alpineconfd]: https://github.com/smebberson/docker-alpine/tree/master/alpine-confd
 [go15]: https://golang.org/doc/go1.5

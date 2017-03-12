@@ -5,6 +5,75 @@ Due to the nature of versioning and the fact this repository houses multiple Doc
 
 Each release records it's own specific changes in a VERSIONS.md file.
 
+## 2016.11.12
+
+- `alpine-consul-nodejs`: upgraded to Node.js `v6.3.1`.
+- `alpine-nodejs`: upgraded to Node.js `v6.3.1`.
+- `alpine-consul`: upgraded to Consul `v0.7.1`.
+- `alpine-consul`: go-dnsmasq is now run as the go-dnsmasq user.
+- `alpine-consul-base`: now inherits from `alpine-consul:3.1.1`.
+
+### Releases
+
+- [Release `v5.3.1` of `alpine-consul-nodejs`](https://github.com/smebberson/docker-alpine/tree/alpine-consul-nodejs-v5.3.1/alpine-consul-nodejs)
+- [Release `v6.0.1` of `alpine-nodejs`](https://github.com/smebberson/docker-alpine/tree/alpine-nodejs-v6.0.1/alpine-nodejs)
+- [Release `v3.1.1` of `alpine-consul`](https://github.com/smebberson/docker-alpine/tree/alpine-consul-v3.1.1/alpine-consul)
+- [Release `v4.1.1` of `alpine-consul-base`](https://github.com/smebberson/docker-alpine/tree/alpine-consul-base-v4.1.1/alpine-consul-base)
+
+## 2016.10.30
+
+- `alpine-consul-redis`: upgraded to `alpine-consul-base:4.1.0`.
+- `alpine-consul-ui`: upgraded to `alpine-consul:1.1.0`.
+- `alpine-consul-ui`: updated to take advantage of `consul-join-wan` script and environment variables `$CONSUL_RETRY_INTERVAL`, `$CONSUL_DOMAIN`, `$CONSUL_DC` and `$CONSUL_CLIENT`. `alpine-consul-ui` `run` script is now inline with the `alpine-consul` `run` script.
+- `alpine-consul-apache`: upgraded to `alpine-consul-base:4.1.0`.
+- `alpine-consul-apache`: added `apk upgrade`.
+- `alpine-consul-apache`: updated to use Consul's built-in HTTP(s) check.
+- `alpine-consul-apache`: fixed Apache runtime error by adding `mkdir -p /run/apache2/` to the `Dockerfile`.
+- Updated the `user-consul-ui` example to use Docker Compose.
+- Updated the `user-consul-apache` example to use Docker Compose. Show's it running with a cluster.
+
+### Releases
+
+- [Release `v2.1.0` of `alpine-consul-redis`](https://github.com/smebberson/docker-alpine/tree/alpine-consul-redis-v2.1.0/alpine-consul-redis)
+- [Release `v2.1.0` of `alpine-consul-ui`](https://github.com/smebberson/docker-alpine/tree/alpine-consul-ui-v2.1.0/alpine-consul-ui)
+- [Release `v2.0.0` of `alpine-consul-apache`](https://github.com/smebberson/docker-alpine/tree/alpine-consul-apache-v2.0.0/alpine-consul-apache)
+
+## 2016.10.23
+
+- `alpine-consul-nodejs`: upgraded to `alpine-consul-base:4.1.0`.
+- `alpine-consul-nginx`: upgraded to `alpine-consul-base:4.1.0`.
+
+### Releases
+
+- [Release `v5.3.0` of `alpine-consul-nodejs`](https://github.com/smebberson/docker-alpine/tree/alpine-consul-nodejs-v5.3.0/alpine-consul-nodejs)
+- [Release `v3.1.0` of `alpine-consul-nginx`](https://github.com/smebberson/docker-alpine/tree/alpine-consul-nginx-v3.1.0/alpine-consul-nginx)
+
+## 2016.10.21
+
+- `alpine-apache`: merged in changes to resolve an issue with Apache quitting.
+- `alpine-apache`: upgraded to Apache `v2.4.23`.
+- `alpine-base`: upgraded go-dnsmasq to `v1.0.7` (resolves DNS issues on container restarts https://github.com/janeczku/go-dnsmasq/issues/18).
+- `alpine-base`: upgraded s6-overlay to `v1.18.1.5`.
+- `alpine-confd`: upgraded FROM to `alpine-base:3.1.0`.
+- `alpine-consul`: upgraded FROM to `alpine-base:3.1.0`.
+- `alpine-consul`: upgraded Consul to `v0.7.0`.
+- `alpine-consul-base`: added `apk upgrade`.
+- `alpine-consul-base`: upgraded consul-template to v0.16.0.
+- `alpine-consul-nodejs`: added `apk upgrade`.
+- `alpine-consul-nginx`: added `apk upgrade`.
+- `alpine-consul-redis`: added `apk upgrade`.
+- `alpine-consul`: removed the `finish` file. This was bringing down the container unnecessarily. If Consul dies, no need to bring down the container. Restart Consul, let it reload the configuration files and attempt to re-join the cluster.
+- `alpine-consul`: update `-dc` to `-datacenter`.
+- `examples/complete`: adding `NODEJS_EXIT` to the environment variables for the `app` service will cause Node.js to exit between 1 minute and 1.5 minutes. This is to simulate nodes going down, to test them rejoining the Consul cluster.
+- Upgraded the Vagrant VM to a new box (based on Ubuntu 16.04). I was running into issues building images which issue `setcap` (after Docker 1.10, https://github.com/docker/docker/issues/20658). This upgrade has resolved those issues. If you're contributing to docker-alpine, you should destroy your VM and set it up again (after a `git pull`).
+
+### Releases
+
+- [Release `v2.0.1` of `alpine-apache`](https://github.com/smebberson/docker-alpine/tree/alpine-apache-v2.0.1/alpine-apache)
+- [Release `v3.1.0` of `alpine-base`](https://github.com/smebberson/docker-alpine/tree/alpine-apache-v3.1.0/alpine-base)
+- [Release `v3.1.0` of `alpine-confd`](https://github.com/smebberson/docker-alpine/tree/alpine-apache-v3.1.0/alpine-confd)
+- [Release `v3.1.0` of `alpine-consul`](https://github.com/smebberson/docker-alpine/tree/alpine-apache-v3.1.0/alpine-consul)
+
 ## 2016.09.12
 
 - `alpine-confd`: upgraded to `alpine-base v3.0.0`.

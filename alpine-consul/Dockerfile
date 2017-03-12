@@ -1,13 +1,17 @@
-FROM smebberson/alpine-base:3.0.0
+FROM smebberson/alpine-base:3.1.0
 MAINTAINER Scott Mebberson <scott@scottmebberson.com>
 
-ENV CONSUL_VERSION=0.6.4 \
+ENV CONSUL_VERSION=0.7.1 \
     CONSUL_DOMAIN=consul \
     CONSUL_CONFIG_DIR=/etc/consul/conf.d/bootstrap \
-    CONSUL_SERVER_NAME=consul
+    CONSUL_SERVER_NAME=consul \
+    CONSUL_DC=dc1 \
+    CONSUL_CLIENT=0.0.0.0 \
+    CONSUL_RETRY_INTERVAL=5s
 
 # Download and install Consul
-RUN apk add --no-cache curl && \
+RUN apk upgrade --update --no-cache && \
+    apk add --update --no-cache curl && \
     curl -sSLo /tmp/consul.zip https://releases.hashicorp.com/consul/{$CONSUL_VERSION}/consul_${CONSUL_VERSION}_linux_amd64.zip && \
     unzip -d /bin /tmp/consul.zip && \
     rm /tmp/consul.zip && \

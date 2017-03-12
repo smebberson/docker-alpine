@@ -3,7 +3,7 @@
 A Docker image for running [Redis][redis] with [Consul][consul], based on Alpine Linux.
 This image belongs to a suite of images [documented here][dockeralpine].
 
-Image size is ~51.3 MB.
+Image size is ~50 MB.
 
 ## Features
 
@@ -16,7 +16,8 @@ This image features:
 
 ## Versions
 
-- `2.0.0`, `latest` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/alpine-consul-redis-v2.0.0/alpine-consul-redis/Dockerfile)
+- `2.1.0`, `latest` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/alpine-consul-redis-v2.1.0/alpine-consul-redis/Dockerfile)
+- `2.0.0` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/alpine-consul-redis-v2.0.0/alpine-consul-redis/Dockerfile)
 - `1.0.0` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/alpine-consul-redis-v1.0.0/alpine-consul-redis/Dockerfile)
 
 [See VERSIONS.md for image contents.](https://github.com/smebberson/docker-alpine/blob/master/alpine-consul-redis/VERSIONS.md)

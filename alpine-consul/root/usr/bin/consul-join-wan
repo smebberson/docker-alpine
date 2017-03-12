@@ -1,0 +1,21 @@
+#!/usr/bin/with-contenv sh
+
+#
+# This script provides an entry point to customise the `-retry-join-wan` and `-advertise-wan`
+# values via the environment variables `CONSUL_JOIN_WAN` and `CONSUL_ADVERTISE_WAN`.
+#
+# If those ENV variables are not set however, this file does nothing.
+#
+
+EXTRA=""
+
+if [ "$CONSUL_JOIN_WAN" ]; then
+EXTRA=$EXTRA" -retry-join-wan $CONSUL_JOIN_WAN"
+fi
+
+if [ "$CONSUL_ADVERTISE_WAN" ]; then
+EXTRA=$EXTRA" -advertise-wan $CONSUL_ADVERTISE_WAN"
+fi
+
+echo "$EXTRA"
+exit 0

@@ -1,4 +1,4 @@
-FROM smebberson/alpine-base:3.0.0
+FROM smebberson/alpine-base:3.1.0
 MAINTAINER Scott Mebberson <scott@scottmebberson.com>
 
 ENV CONFD_VERSION=0.11.0

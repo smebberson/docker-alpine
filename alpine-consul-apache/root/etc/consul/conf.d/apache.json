@@ -2,11 +2,12 @@
     "service": {
         "name": "apache",
         "port": 80,
-        "checks": [
-            {
-                "script": "wget -s http://localhost:80/ping.html > /dev/null 2>&1 || exit 2",
-                "interval": "5s"
-            }
-        ]
+        "check": {
+            "id": "apache",
+            "name": "apache on port 80",
+            "http": "http://localhost/ping.html",
+            "interval": "10s",
+            "timeout": "1s"
+        }
     }
 }

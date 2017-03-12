@@ -9,14 +9,8 @@ services:
         ports:
             - 8500:8500
         restart: always
-    static:
-        build: ./static
+    apache:
+        build: ./apache
         ports:
             - 80:80
-        restart: always
-    cache:
-        image: smebberson/alpine-consul-redis
-        restart: always
-    app:
-        build: ./app
         restart: always

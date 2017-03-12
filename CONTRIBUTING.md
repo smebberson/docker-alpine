@@ -24,6 +24,9 @@ There are files for editors that should keep the file formatting consistent with
 - Fork the repository.
 - Clone your fork locally.
 - Start the vagrant machine by running `vagrant up`.
+- Once everything has been setup, gain access to the VM with `vagrant ssh`.
+- Update the OS with `sudo apt-get dist-upgrade`.
+- Then restart the Vagrant VM.
 
 ## Issues and pull requests
 

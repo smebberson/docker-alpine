@@ -30,3 +30,15 @@ app.get('/ping', function (req, res) {
 app.listen(4000, function () {
     console.log('Node.js running and awaiting incomming connections on port 4000.');
 });
+
+if (process.env.NODEJS_EXIT) {
+
+    let exitIn = Math.floor(60000 + Math.random()*30000);
+
+    console.log(`Will exit in ${Math.floor(exitIn/1000)}s.`);
+
+    setTimeout(() => {
+        process.exit(1);
+    }, exitIn);
+
+}
