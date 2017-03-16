@@ -5,6 +5,14 @@ Due to the nature of versioning and the fact this repository houses multiple Doc
 
 Each release records it's own specific changes in a VERSIONS.md file.
 
+## 2017.03.17
+
+- `alpine-nodejs`: upgraded to Node.js `v6.4.0`.
+
+### Releases
+
+- [Release `v6.1.0` of `alpine-nodejs`](https://github.com/smebberson/docker-alpine/tree/alpine-nodejs-v6.1.0/alpine-nodejs)
+
 ## 2016.11.12
 
 - `alpine-consul-nodejs`: upgraded to Node.js `v6.3.1`.
