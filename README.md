@@ -300,10 +300,10 @@ Latest version is `4.2.2`, or `latest`.
 
 This includes Node.js.
 
-Latest version is `6.1.0`, or `latest`.
+Latest version is `6.2.0`, or `latest`.
 
-- [README.md](https://github.com/smebberson/docker-alpine/blob/alpine-nodejs-v6.1.0/alpine-nodejs/README.md)
-- [VERSIONS.md](https://github.com/smebberson/docker-alpine/blob/alpine-nodejs-v6.1.0/alpine-nodejs/VERSIONS.md)
+- [README.md](https://github.com/smebberson/docker-alpine/blob/alpine-nodejs-v6.2.0/alpine-nodejs/README.md)
+- [VERSIONS.md](https://github.com/smebberson/docker-alpine/blob/alpine-nodejs-v6.2.0/alpine-nodejs/VERSIONS.md)
 
 ### alpine-rabbitmq
 
