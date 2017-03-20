@@ -8,10 +8,12 @@ Each release records it's own specific changes in a VERSIONS.md file.
 ## 2017.03.20
 
 - `alpine-nodejs`: upgraded to Node.js `v6.7.0`.
+- `alpine-nodejs`: upgraded to Node.js `v6.8.0`.
 
 ### Releases
 
 - [Release `v6.4.0` of `alpine-nodejs`](https://github.com/smebberson/docker-alpine/tree/alpine-nodejs-v6.4.0/alpine-nodejs)
+- [Release `v6.5.0` of `alpine-nodejs`](https://github.com/smebberson/docker-alpine/tree/alpine-nodejs-v6.5.0/alpine-nodejs)
 
 ## 2017.03.17
 
