@@ -1,7 +1,7 @@
 FROM smebberson/alpine-base:3.0.0
 MAINTAINER Scott Mebberson <scott@scottmebberson.com>
 
-ENV NODE_VERSION=v6.6.0 NPM_VERSION=3
+ENV NODE_VERSION=v6.7.0 NPM_VERSION=3
 
 RUN apk upgrade --update && \
     apk add --update git curl make gcc g++ python linux-headers libgcc libstdc++ && \
