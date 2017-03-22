@@ -6,6 +6,7 @@ You can [read more about how these images are versioned here](https://github.com
 
 ## 6.x Current branch of Node.js
 
+- Node v6.10.0: [v6.7.0](VERSIONS.md#v670)
 - Node v6.9.5: [v6.6.5](VERSIONS.md#v665)
 - Node v6.9.4: [v6.6.4](VERSIONS.md#v664)
 - Node v6.9.3: [v6.6.3](VERSIONS.md#v663)
