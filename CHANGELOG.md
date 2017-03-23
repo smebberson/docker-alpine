@@ -10,12 +10,14 @@ Each release records it's own specific changes in a VERSIONS.md file.
 - `alpine-nodejs`: upgraded to Node.js `v6.4.0`.
 - `alpine-nodejs`: upgraded to Node.js `v6.5.0`.
 - `alpine-nodejs`: upgraded to Node.js `v6.6.0`.
+- `alpine-nodejs`: upgraded to Node.js `v6.7.0`.
 
 ### Releases
 
 - [Release `v5.4.0` of `alpine-consul-nodejs`](https://github.com/smebberson/docker-alpine/tree/alpine-consul-nodejs-v5.4.0/alpine-consul-nodejs)
 - [Release `v5.5.0` of `alpine-consul-nodejs`](https://github.com/smebberson/docker-alpine/tree/alpine-consul-nodejs-v5.5.0/alpine-consul-nodejs)
 - [Release `v5.6.0` of `alpine-consul-nodejs`](https://github.com/smebberson/docker-alpine/tree/alpine-consul-nodejs-v5.6.0/alpine-consul-nodejs)
+- [Release `v5.7.0` of `alpine-consul-nodejs`](https://github.com/smebberson/docker-alpine/tree/alpine-consul-nodejs-v5.7.0/alpine-consul-nodejs)
 
 ## 2017.03.22
 
