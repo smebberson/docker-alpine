@@ -9,6 +9,7 @@
   "author": "Scott Mebberson",
   "license": "ISC",
   "dependencies": {
-    "node-static": "0.7.x"
+    "node-static": "0.7.x",
+    "shelljs": "0.7.7"
   }
 }

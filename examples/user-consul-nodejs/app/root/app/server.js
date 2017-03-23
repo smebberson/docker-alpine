@@ -1,4 +1,5 @@
-var static = require('node-static');
+var static = require('node-static'),
+    shell = require('shelljs');
 
 //
 // Create a node-static server to serve the current directory
@@ -18,6 +19,20 @@ require('http').createServer(function (request, response) {
         );
 
         return response.end();
+
+    }
+
+    if (request.url === "/version.json") {
+
+        response.writeHead(200,
+            {
+                'Content-Type': 'application/json'
+            }
+        );
+
+        return response.end(JSON.stringify(Object.assign(process.versions, {
+            npm: shell.exec('npm --version', { silent: true }).stdout.replace('\n', '')
+        })));
 
     }
 
