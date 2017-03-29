@@ -58,7 +58,7 @@ TAG="$IMAGE-v$VERSION"
 
 if test "$IMAGE" != "" && test "$VERSION" != "" && test "$COMMENT" != ""; then
     git tag -a "$TAG" -m \""$COMMENT"\"
-    git push origin "$TAG"
+    git push --follow-tags
     exit
 fi
 
