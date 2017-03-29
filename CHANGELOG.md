@@ -8,10 +8,12 @@ Each release records it's own specific changes in a VERSIONS.md file.
 ## 2017.03.29
 
 - `alpine-nodejs`: upgraded to Node.js `v6.9.0`.
+- `alpine-nodejs`: upgraded to Node.js `v6.9.1`.
 
 ### Releases
 
 - [Release `v5.9.0` of `alpine-consul-nodejs`](https://github.com/smebberson/docker-alpine/tree/alpine-consul-nodejs-v5.9.0/alpine-consul-nodejs)
+- [Release `v5.9.1` of `alpine-consul-nodejs`](https://github.com/smebberson/docker-alpine/tree/alpine-consul-nodejs-v5.9.1/alpine-consul-nodejs)
 
 ## 2017.03.23
 

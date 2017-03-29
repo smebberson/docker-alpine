@@ -16,7 +16,8 @@ This image features:
 
 ## Versions
 
-- `5.9.0`, `latest` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/alpine-consul-nodejs-v5.9.0/alpine-consul-nodejs/Dockerfile)
+- `5.9.1`, `latest` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/alpine-consul-nodejs-v5.9.1/alpine-consul-nodejs/Dockerfile)
+- `5.9.0` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/alpine-consul-nodejs-v5.9.0/alpine-consul-nodejs/Dockerfile)
 - `5.8.0` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/alpine-consul-nodejs-v5.8.0/alpine-consul-nodejs/Dockerfile)
 - `5.7.0` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/alpine-consul-nodejs-v5.7.0/alpine-consul-nodejs/Dockerfile)
 - `5.6.0` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/alpine-consul-nodejs-v5.6.0/alpine-consul-nodejs/Dockerfile)
