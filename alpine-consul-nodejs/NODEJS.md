@@ -6,6 +6,7 @@ You can [read more about how these images are versioned here](https://github.com
 
 ## 6.x Current branch of Node.js
 
+- Node v6.9.4: [v6.9.4](https://github.com/smebberson/docker-alpine/blob/master/alpine-consul-nodejs/VERSIONS.md#v594)
 - Node v6.9.3: [v6.9.3](https://github.com/smebberson/docker-alpine/blob/master/alpine-consul-nodejs/VERSIONS.md#v593)
 - Node v6.9.2: [v6.9.2](https://github.com/smebberson/docker-alpine/blob/master/alpine-consul-nodejs/VERSIONS.md#v592)
 - Node v6.9.1: [v6.9.1](https://github.com/smebberson/docker-alpine/blob/master/alpine-consul-nodejs/VERSIONS.md#v591)
