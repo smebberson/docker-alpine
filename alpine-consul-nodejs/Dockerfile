@@ -1,7 +1,7 @@
 FROM smebberson/alpine-consul-base:4.1.0
 MAINTAINER Scott Mebberson <scott@scottmebberson.com>
 
-ENV NODE_VERSION=v6.9.4 NPM_VERSION=3
+ENV NODE_VERSION=v6.9.5 NPM_VERSION=3
 
 RUN apk upgrade --update --no-cache && \
     apk add --update --no-cache git curl make gcc g++ python linux-headers libgcc libstdc++ binutils-gold && \
