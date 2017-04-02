@@ -361,7 +361,7 @@ HOME=/root
 GO_DNSMASQ_LOG_FILE=/var/log/go-dnsmasq/go-dnsmasq.log
 GODNSMASQ_VERSION=1.0.5
 TERM=xterm
-S6_OVERLAY_VERSION=v1.17.2.0
+S6_OVERLAY_VERSION=v1.19.1.1
 PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 PWD=/
 / # exit

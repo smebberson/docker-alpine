@@ -2,7 +2,7 @@ FROM alpine:3.5
 MAINTAINER Scott Mebberson (https://github.com/smebberson/docker-alpine)
 
 # Add s6-overlay
-ENV S6_OVERLAY_VERSION=v1.18.1.5 \
+ENV S6_OVERLAY_VERSION=v1.19.1.1 \
     GODNSMASQ_VERSION=1.0.7
 
 RUN apk add --update --no-cache bind-tools curl libcap && \
