@@ -10,5 +10,6 @@ RUN echo "http://dl-4.alpinelinux.org/alpine/v3.3/main" >> /etc/apk/repositories
 # Add the files
 ADD root /
 
-# Expose the ports for nginx
-EXPOSE 80 443
+# link the logs to stdout/stderr so they get surfaced to docker
+RUN ln -sf /dev/stdout /var/log/nginx/access.log && \
+    ln -sf /dev/stderr /var/log/nginx/error.log
