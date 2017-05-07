@@ -5,6 +5,14 @@ Due to the nature of versioning and the fact this repository houses multiple Doc
 
 Each release records it's own specific changes in a VERSIONS.md file.
 
+## 2017.05.07
+
+- `alpine-nginx-nodejs`: upgraded to Node.js `v6.3.0`.
+
+### Releases
+
+- [Release `v6.3.0` of `alpine-nginx-nodejs`](https://github.com/smebberson/docker-alpine/tree/alpine-nginx-nodejs-v6.3.0/alpine-nginx-nodejs)
+
 ## 2017.03.31
 
 - `alpine-nodejs`: upgraded to Node.js `v6.10.0`.
