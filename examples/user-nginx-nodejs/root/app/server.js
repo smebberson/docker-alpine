@@ -17,7 +17,7 @@ require('http').createServer(function (request, response) {
             }
         );
 
-        return response.end(util.inspect(process.env));
+        return response.end(JSON.stringify(process.env));
 
     }
 
