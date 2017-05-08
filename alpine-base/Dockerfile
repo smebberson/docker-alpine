@@ -17,7 +17,7 @@ RUN apk add --update --no-cache bind-tools curl libcap && \
     adduser -D -g "" -s /bin/sh -G go-dnsmasq go-dnsmasq && \
     setcap CAP_NET_BIND_SERVICE=+eip /bin/go-dnsmasq
 
-ADD root /
+COPY root /
 
 ENTRYPOINT ["/init"]
 CMD []
