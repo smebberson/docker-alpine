@@ -16,10 +16,18 @@ Each release records it's own specific changes in a VERSIONS.md file.
 ## 2017.05.08
 
 - `alpine-nginx-nodejs`: upgraded to Node.js `v6.3.1`.
+- `alpine-base`: created new beta branch `abh-master` from PR #72:
+    - Upgraded to Alpine `v3.5`.
+    - Add the `libcap` package.
+    - Update `s6-overlay` to `v1.19.1.1`.
+- `alpine-base`: move away from `ADD` to `COPY`, inline with Docker best practices.
+- `alpine-base`: renamed `GODNSMASQ_VERSION` to `GO_DNSMASQ_VERSION`.
+- `alpine-base`: added `GO_DNSMASQ_RUNAS` for easy configuration of the user in which `go-dnsmasq` will run as. This is to support environments in which `setcap` doesn't work.
 
 ### Releases
 
 - [Release `v4.3.1` of `alpine-nginx-nodejs`](https://github.com/smebberson/docker-alpine/tree/alpine-nginx-nodejs-v4.3.1/alpine-nginx-nodejs)
+- [Release `v3.2.0-beta.1` of `alpine-base`](https://github.com/smebberson/docker-alpine/tree/alpine-base-v3.2.0-beta.1/alpine-base)
 
 ## 2017.05.07
 

@@ -1,6 +1,11 @@
 #!/usr/bin/with-contenv sh
 
-# unless this has already been defined, set
+# Unless this has already been defined, set it.
 if [ -z "$GO_DNSMASQ_LOG_FILE" ]; then
     printf "/var/log/go-dnsmasq/go-dnsmasq.log" > /var/run/s6/container_environment/GO_DNSMASQ_LOG_FILE
+fi
+
+# Unless this has already been defined, set it.
+if [ -z "$GO_DNSMASQ_RUNAS" ]; then
+    printf "go-dnsmasq" > /var/run/s6/container_environment/GO_DNSMASQ_RUNAS
 fi
