@@ -40,6 +40,8 @@ To overcome these issues, `alpine-base` includes the lightweight container-only 
 
 That means that any image extending this image will now work with [Docker Cloud service discovery and links](https://docs.docker.com/docker-cloud/apps/service-links/) and [Kubernetes service discovery](https://github.com/kubernetes/kubernetes/blob/master/docs/user-guide/services.md#dns).
 
+In some environments, `go-dnsmasq` won't be allowed to bind to port `53`. In this instance, you can set the ENV variable `GO_DNSMASQ_RUNAS` to `root`. While not ideal, that should resolve the issue.
+
 **Note**: despite Alpine Linux v4.4 adding support for the `search` keyword, `go-dnsmasq` has been retained for compatibility. It may or may not be included in future versions.
 
 ## Example
