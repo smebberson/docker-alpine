@@ -17,5 +17,10 @@ if [ "$CONSUL_ADVERTISE_WAN" ]; then
 EXTRA=$EXTRA" -advertise-wan $CONSUL_ADVERTISE_WAN"
 fi
 
+# Output debug messages if required
+if [ "$CONSUL_DEBUG" = "true" ]; then
+    (>&2 echo "[consul-join] $JOIN")
+fi
+
 echo "$EXTRA"
 exit 0
