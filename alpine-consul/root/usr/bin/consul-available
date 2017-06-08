@@ -6,10 +6,20 @@
 # The script will exit 0 once a DNS query has resolved.
 #
 
+# Allow the sleep timeframe to be customised. Default to 1.
+SLEEP=${CONSUL_AVAILABLE_SLEEP:-1}
+
 # Wait until consul-join finds another Consul server.
 until consul-join > /dev/null 2>&1
 do
-    sleep 1
+
+    # Output debug messages if required.
+    if [ "$CONSUL_DEBUG" = "true" ]; then
+        (>&2 echo "[consul-available] sleep ($SLEEP)...")
+    fi
+
+    sleep $SLEEP
+
 done
 
 # We have another Consul server available. Exit 0!
