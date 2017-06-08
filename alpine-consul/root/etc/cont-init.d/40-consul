@@ -1,0 +1,3 @@
+#!/usr/bin/with-contenv sh
+
+mkdir -p `dirname $CONSUL_BOOTSTRAP_LOG_FILE`

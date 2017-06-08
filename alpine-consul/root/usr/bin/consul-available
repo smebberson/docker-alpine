@@ -14,13 +14,13 @@ until consul-join > /dev/null 2>&1
 do
 
     # Output debug messages if required.
-    if [ "$CONSUL_DEBUG" = "true" ]; then
-        (>&2 echo "[consul-available] sleep ($SLEEP)...")
-    fi
+    consul-debug "[consul-available] sleep ($SLEEP)..."
 
     sleep $SLEEP
 
 done
+
+consul-debug "[consul-available] consul is available"
 
 # We have another Consul server available. Exit 0!
 exit 0
