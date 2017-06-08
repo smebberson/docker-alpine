@@ -1,4 +1,4 @@
-FROM smebberson/alpine-consul-base:4.1.0
+FROM smebberson/alpine-consul-base:local
 MAINTAINER Scott Mebberson <scott@scottmebberson.com>
 
 # Install nginx
@@ -12,7 +12,7 @@ RUN echo "http://dl-4.alpinelinux.org/alpine/v3.3/main" >> /etc/apk/repositories
     addgroup consul-template nginx
 
 # Add the files
-ADD root /
+COPY root /
 
 # Setup permissions to allow consul-template to manage nginx
 RUN mkdir /etc/services.d/nginx/supervise/ && \
