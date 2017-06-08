@@ -1,7 +1,8 @@
-FROM smebberson/alpine-consul:3.1.1
+FROM smebberson/alpine-consul:local
 MAINTAINER Scott Mebberson <scott@scottmebberson.com>
 
-ENV CONSUL_TEMPLATE_VERSION=0.16.0 \
+ENV CONSUL_TEMPLATE_VERSION=0.18.5 \
+    CONSUL_DATA_DIR=/data/consul \
     CONSUL_CONFIG_DIR=/etc/consul/conf.d
 
 # Download and install Consul Template
