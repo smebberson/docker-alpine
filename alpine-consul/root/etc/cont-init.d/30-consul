@@ -1,0 +1,6 @@
+#!/usr/bin/with-contenv sh
+
+# Unless this has already been defined, set it.
+if [ -z "$CONSUL_RUNAS" ]; then
+    printf "consul" > /var/run/s6/container_environment/CONSUL_RUNAS
+fi
