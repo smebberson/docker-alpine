@@ -5,6 +5,24 @@ Due to the nature of versioning and the fact this repository houses multiple Doc
 
 Each release records it's own specific changes in a VERSIONS.md file.
 
+## 2017.06.08
+
+- `alpine-consul-base`: updated consul-template configuration file to use a stanza rather than a string.
+
+## 2017.06.02
+
+- `alpine-consul`, `alpine-consul-base`, `alpine-consul-ui`:
+    - upgraded to Consul `v0.8.3`.
+    - added the new `-data-id` argument (customisable via replacing the `/usr/bin/consul-node-id` script).
+    - added the `-data-dir` argument (customisable via the `CONSUL_DATA_DIR` ENV variable).
+    - exposed 8600 and 8600/udp.
+- `alpine-consul-base`: added the `CONSUL_TEMPLATE_RUNAS` ENV variable to customise which user runs consul-template.
+- `alpine-consul-base`: added the `CONSUL_RUNAS` ENV variable to customise which user runs consul.
+- `alpine-consul-redis`: upgrade Redis to `v3.2.5-r0`.
+- `alpine-consul`: added the `GO_DNSMASQ_RUNAS` ENV variable to customise which user runs go-dnsmasq.
+- `alpine-consul`: added the `CONSUL_BOOTSTRAP_DEBUG` to show debug messages. Set to `true`. Information will be output by the `consul-available`, `consul-join` and `consul-join-wan` scripts.
+- `alpine-consul`: added the `CONSUL_AVAILABLE_SLEEP` ENV variable to customise the amount of seconds to sleep between checking for other consul servers.
+
 ## 2017.05.31
 
 ### Releases
