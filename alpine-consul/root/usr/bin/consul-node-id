@@ -9,9 +9,7 @@
 NODE_ID=$(cat /proc/sys/kernel/random/uuid | sed 's/.\{12\}$/'"$(hostname)"'/')
 
 # Output debug messages if required.
-if [ "$CONSUL_DEBUG" = "true" ]; then
-    (>&2 echo "[consul-node-id] node-id: $NODE_ID...")
-fi
+consul-debug "[consul-node-id] node-id: $NODE_ID..."
 
 echo $NODE_ID
 exit 0

@@ -1,0 +1,10 @@
+#!/usr/bin/with-contenv sh
+
+#
+# This script will take anything from stdin and append to a log file.
+#
+
+# Output debug messages if required.
+if [ "$CONSUL_BOOTSTRAP_DEBUG" = "true" ]; then
+    echo "$@" >> $CONSUL_BOOTSTRAP_LOG_FILE
+fi
