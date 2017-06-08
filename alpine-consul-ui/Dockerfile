@@ -1,7 +1,8 @@
-FROM smebberson/alpine-consul:3.1.0
+FROM smebberson/alpine-consul:local
 MAINTAINER Scott Mebberson <scott@scottmebberson.com>
 
-ENV CONSUL_CONFIG_DIR=/etc/consul.d
+ENV CONSUL_DATA_DIR=/data/consul \
+    CONSUL_CONFIG_DIR=/etc/consul.d
 
 # Add the files
 ADD root /
