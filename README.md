@@ -451,7 +451,7 @@ These images are a little different from your standard Docker images. The follow
 
 ### DNS search
 
-By default, Alpine Linux doesn't support DNS `search`. This has been enabled through the use of `go-dnsmasq`.
+By default, Alpine Linux <= v3.4 doesn't support DNS `search`. This has been enabled through the use of `go-dnsmasq`.
 
 ### Where is Bash?
 
