@@ -1,1 +1,1 @@
-docker build -t smebberson/alpine-consul-nodejs /vagrant/alpine-consul-nodejs
+docker build -t smebberson/alpine-consul-nodejs:local /vagrant/alpine-consul-nodejs
