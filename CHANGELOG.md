@@ -9,6 +9,10 @@ Each release records it's own specific changes in a VERSIONS.md file.
 
 - `alpine-consul-base`: updated consul-template configuration file to use a stanza rather than a string.
 
+### Releases
+
+- [Release `v3.2.0-beta.1` of `alpine-consul`](https://github.com/smebberson/docker-alpine/tree/alpine-consul-v3.2.0-beta.1/alpine-consul)
+
 ## 2017.06.02
 
 - `alpine-consul`, `alpine-consul-base`, `alpine-consul-ui`:
