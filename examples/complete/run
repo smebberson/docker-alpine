@@ -1,3 +1,2 @@
-
 # Start the example.
-dc up -d && dc scale consul=3 app=3 && dc logs
+dc up -d && dc scale consul=3 app=3 && dc logs -f

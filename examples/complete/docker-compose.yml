@@ -2,21 +2,31 @@ version: '2'
 
 services:
     consul:
-        image: smebberson/alpine-consul
+        image: smebberson/alpine-consul:local
         restart: always
+        environment:
+            - CONSUL_BOOTSTRAP_DEBUG=true
     consului:
-        image: smebberson/alpine-consul-ui
+        image: smebberson/alpine-consul-ui:local
         ports:
             - 8500:8500
         restart: always
+        environment:
+            - CONSUL_BOOTSTRAP_DEBUG=true
     static:
         build: ./static
         ports:
             - 80:80
         restart: always
+        environment:
+            - CONSUL_BOOTSTRAP_DEBUG=true
     cache:
-        image: smebberson/alpine-consul-redis
+        image: smebberson/alpine-consul-redis:local
         restart: always
+        environment:
+            - CONSUL_BOOTSTRAP_DEBUG=true
     app:
         build: ./app
         restart: always
+        environment:
+            - CONSUL_BOOTSTRAP_DEBUG=true
