@@ -12,6 +12,7 @@ Each release records it's own specific changes in a VERSIONS.md file.
 ### Releases
 
 - [Release `v3.2.0-beta.1` of `alpine-consul`](https://github.com/smebberson/docker-alpine/tree/alpine-consul-v3.2.0-beta.1/alpine-consul)
+- [Release `v4.2.0-beta.1` of `alpine-consul-base`](https://github.com/smebberson/docker-alpine/tree/alpine-consul-base-v4.2.0-beta.1/alpine-consul-base)
 
 ## 2017.06.02
 
@@ -20,6 +21,7 @@ Each release records it's own specific changes in a VERSIONS.md file.
     - added the new `-data-id` argument (customisable via replacing the `/usr/bin/consul-node-id` script).
     - added the `-data-dir` argument (customisable via the `CONSUL_DATA_DIR` ENV variable).
     - exposed 8600 and 8600/udp.
+- `alpine-consul-base`: upgraded consul-template to `v0.18.5`.
 - `alpine-consul-base`: added the `CONSUL_TEMPLATE_RUNAS` ENV variable to customise which user runs consul-template.
 - `alpine-consul-base`: added the `CONSUL_RUNAS` ENV variable to customise which user runs consul.
 - `alpine-consul-redis`: upgrade Redis to `v3.2.5-r0`.
