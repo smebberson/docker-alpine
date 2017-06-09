@@ -246,7 +246,7 @@ This image is designed to run Nginx within the context of service discovery (via
 
 It's suited for running an Nginx proxy or to load balance with Nginx to another container.
 
-Latest version is `3.1.0`, or `latest`.
+Latest version is `3.1.0`, or `latest`. Beta version is `3.2.0-beta.1` or `beta`.
 
 - [README.md](https://github.com/smebberson/docker-alpine/blob/master/alpine-consul-nginx/README.md)
 - [VERSIONS.md](https://github.com/smebberson/docker-alpine/blob/master/alpine-consul-nginx/VERSIONS.md)

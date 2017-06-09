@@ -15,6 +15,7 @@ Each release records it's own specific changes in a VERSIONS.md file.
 - [Release `v4.2.0-beta.1` of `alpine-consul-base`](https://github.com/smebberson/docker-alpine/tree/alpine-consul-base-v4.2.0-beta.1/alpine-consul-base)
 - [Release `v2.2.0-beta.1` of `alpine-consul-ui`](https://github.com/smebberson/docker-alpine/tree/alpine-consul-ui-v2.2.0-beta.1/alpine-consul-ui)
 - [Release `v5.11.0-beta.1` of `alpine-consul-nodejs`](https://github.com/smebberson/docker-alpine/tree/alpine-consul-nodejs-v5.11.0-beta.1/alpine-consul-nodejs)
+- [Release `v3.2.0-beta.1` of `alpine-consul-nodejs`](https://github.com/smebberson/docker-alpine/tree/alpine-consul-nodejs-v3.2.0-beta.1/alpine-consul-nodejs)
 
 ## 2017.06.02
 
