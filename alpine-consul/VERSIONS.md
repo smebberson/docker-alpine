@@ -8,6 +8,30 @@ Same as v3.1.1.
 
 Usage: `smebberson/alpine-consul` or `smebberson/alpine-consul:latest`.
 
+## Beta
+
+Same as v3.2.0-beta.1.
+
+Usage: `smebberson/alpine-consul:3.2.0-beta.1` or `smebberson/alpine-consul:beta`.
+
+## v3.2.0-beta.1
+
+- [smebberson/alpine-base: v3.2.0][smebbersonalpinebase320]
+- [consul v0.8.3][consul]
+
+Improvements:
+
+- Consul was upgraded to `v0.8.3`.
+- go-dnsmasq run user is now configurable via `GO_DNSMASQ_RUNAS`.
+- Consul run user is now configurable via `CONSUL_RUNAS`.
+- The Consul bootstrap process will now output debug information to `CONSUL_BOOTSTRAP_LOG_FILE` (defaults to `/var/log/consul-bootstrap/consul-bootstrap.log`). Set `CONSUL_BOOTSTRAP_DEBUG` to `true`.
+- Added the new `-data-id` argument (customisable via replacing the `/usr/bin/consul-node-id` script).
+- Added the `-data-dir` argument (customisable via `CONSUL_DATA_DIR`).
+- Exposed 8600 and 8600/udp by default.
+- Added the `CONSUL_AVAILABLE_SLEEP` ENV variable to customise the amount of seconds to sleep between checking for other consul servers
+
+Usage: `smebberson/alpine-consul:3.2.0-beta.1`.
+
 ## v3.1.1
 
 - [smebberson/alpine-base: v3.1.0][smebbersonalpinebase310]
@@ -93,6 +117,7 @@ Usage: `smebberson/alpine-consul:1.0.0`.
 [consul]: https://consul.io/
 [consulupgrade]: https://www.consul.io/docs/upgrade-specific.html
 [alpineconsul]: https://github.com/smebberson/docker-alpine/tree/master/alpine-consul
+[smebbersonalpinebase320]: https://github.com/smebberson/docker-alpine/blob/alpine-base-v3.2.0/alpine-base
 [smebbersonalpinebase310]: https://github.com/smebberson/docker-alpine/blob/alpine-base-v3.1.0/alpine-base
 [smebbersonalpinebase300]: https://github.com/smebberson/docker-alpine/blob/alpine-base-v3.0.0/alpine-base
 [smebbersonalpinebase200]: https://github.com/smebberson/docker-alpine/blob/alpine-base-v2.0.0/alpine-base

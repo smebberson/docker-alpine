@@ -88,6 +88,10 @@ By default, Consul does not translate IPs when in WAN. Service discovery from dc
 
 For example, `docker run -e "CONSUL_TRANSLATE_WAN=true"` Consul will resolve to IP defined with `CONSUL_ADVERTISE_WAN`.
 
+## Debugging
+
+The scripts involved in bootstrapping Consul can output debug information if required. To enable set `CONSUL_BOOTSTRAP_DEBUG` to `true`. You can customise the log file location from the default of `/var/log/consul-bootstrap/consul-bootstrap.log` by setting `CONSUL_BOOTSTRAP_LOG_FILE`.
+
 ## Example
 
 An example of using this image can be found in [examples/user-confd][example].
