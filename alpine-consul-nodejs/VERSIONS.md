@@ -10,6 +10,19 @@ Same as v5.10.1.
 
 Usage: `smebberson/alpine-consul-nodejs` or `smebberson/alpine-consul-nodejs:latest`.
 
+## Beta
+
+Same as v5.11.0-beta.1.
+
+Usage: `smebberson/alpine-consul-nodejs:5.11.0-beta.1` or `smebberson/alpine-consul-nodejs:beta`.
+
+## v5.11.0-beta.1
+
+- [Node.js: v6.11.0][nodejs]
+- [npm: v3.10.10][npm]
+
+Usage: `smebberson/alpine-consul-nodejs:5.11.0-beta.1`.
+
 ## v5.10.1
 
 - [Node.js: v6.10.1][nodejs]
