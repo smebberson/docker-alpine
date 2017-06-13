@@ -1,7 +1,7 @@
 FROM smebberson/alpine-base:3.2.0
 MAINTAINER Scott Mebberson <scott@scottmebberson.com>
 
-ENV CONSUL_VERSION=0.8.3 \
+ENV CONSUL_VERSION=0.8.4 \
     CONSUL_DOMAIN=consul \
     CONSUL_DATA_DIR=/data/consul \
     CONSUL_CONFIG_DIR=/etc/consul/conf.d/bootstrap \
@@ -12,7 +12,7 @@ ENV CONSUL_VERSION=0.8.3 \
 
 # Download and install Consul
 RUN apk upgrade --update --no-cache && \
-    apk add --update --no-cache curl && \
+    apk add --update --no-cache curl util-linux && \
     curl -sSLo /tmp/consul.zip https://releases.hashicorp.com/consul/{$CONSUL_VERSION}/consul_${CONSUL_VERSION}_linux_amd64.zip && \
     unzip -d /bin /tmp/consul.zip && \
     rm /tmp/consul.zip && \
