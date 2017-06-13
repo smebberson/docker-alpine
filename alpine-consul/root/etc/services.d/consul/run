@@ -16,5 +16,8 @@ RETRY_JOIN=`consul-join`
 # Provide an entry point for Consul WAN customisation.
 CONSUL_JOIN_WAN=`consul-join-wan`
 
+# Retrieve a UUID for -node-id.
+NODE_ID=`consul-node-id`
+
 # Start Consul.
-s6-setuidgid $CONSUL_RUNAS consul agent -node-id=$(consul-node-id) -data-dir=$CONSUL_DATA_DIR -config-dir $CONSUL_CONFIG_DIR -bind $BIND -advertise $BIND -client $CONSUL_CLIENT $RETRY_JOIN -retry-interval $CONSUL_RETRY_INTERVAL -domain $CONSUL_DOMAIN -datacenter $CONSUL_DC $CONSUL_JOIN_WAN
+s6-setuidgid $CONSUL_RUNAS consul agent -node-id $NODE_ID -data-dir $CONSUL_DATA_DIR -config-dir $CONSUL_CONFIG_DIR -bind $BIND -advertise $BIND -client $CONSUL_CLIENT $RETRY_JOIN -retry-interval $CONSUL_RETRY_INTERVAL -domain $CONSUL_DOMAIN -datacenter $CONSUL_DC $CONSUL_JOIN_WAN
