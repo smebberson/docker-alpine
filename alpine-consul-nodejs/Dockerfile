@@ -1,4 +1,4 @@
-FROM smebberson/alpine-consul-base:4.2.0-beta.1
+FROM smebberson/alpine-consul-base:4.2.0-beta.2
 MAINTAINER Scott Mebberson <scott@scottmebberson.com>
 
 ENV NODE_VERSION=v6.11.0 NPM_VERSION=3

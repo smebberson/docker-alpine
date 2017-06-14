@@ -12,9 +12,16 @@ Usage: `smebberson/alpine-consul-nodejs` or `smebberson/alpine-consul-nodejs:lat
 
 ## Beta
 
-Same as v5.11.0-beta.1.
+Same as v5.11.0-beta.2.
 
-Usage: `smebberson/alpine-consul-nodejs:5.11.0-beta.1` or `smebberson/alpine-consul-nodejs:beta`.
+Usage: `smebberson/alpine-consul-nodejs:5.11.0-beta.2` or `smebberson/alpine-consul-nodejs:beta`.
+
+## v5.11.0-beta.2
+
+- [Node.js: v6.11.0][nodejs]
+- [npm: v3.10.10][npm]
+
+Usage: `smebberson/alpine-consul-nodejs:5.11.0-beta.2`.
 
 ## v5.11.0-beta.1
 

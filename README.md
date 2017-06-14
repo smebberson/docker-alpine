@@ -235,7 +235,7 @@ Latest version is `2.0.0`, or `latest`.
 
 This image is designed to run a Node.js application within the context of service discovery (via Consul).
 
-Latest version is `5.10.1`, or `latest`. Beta version is `5.11.0-beta.1` or `beta`.
+Latest version is `5.10.1`, or `latest`. Beta version is `5.11.0-beta.2` or `beta`.
 
 - [README.md](https://github.com/smebberson/docker-alpine/blob/master/alpine-consul-nodejs/README.md)
 - [VERSIONS.md](https://github.com/smebberson/docker-alpine/blob/master/alpine-consul-nodejs/VERSIONS.md)
