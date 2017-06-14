@@ -10,14 +10,26 @@ Usage: `smebberson/alpine-consul-ui` or `smebberson/alpine-consul-ui:latest`.
 
 ## Beta
 
-Same as v2.2.0-beta.1.
+Same as v2.2.0-beta.2.
 
-Usage: `smebberson/alpine-consul-ui:2.2.0-beta.1` or `smebberson/alpine-consul-ui:beta`.
+Usage: `smebberson/alpine-consul-ui:2.2.0-beta.2` or `smebberson/alpine-consul-ui:beta`.
+
+## v2.2.0-beta.2
+
+- [smebberson/alpine-consul: v3.2.0-beta.2][smebbersonalpineconsul320beta2]
+- [Consul v0.8.5][consului]
+
+Improvements:
+
+- Upgraded to `alpine-consul:3.2.0-beta.2`. which has a slew of updates.
+- Changes to the Consul run script inline with `alpine-consul` `v3.2.0-beta.2`.
+
+Usage: `smebberson/alpine-consul-ui:2.2.0-beta.2`.
 
 ## v2.2.0-beta.1
 
 - [smebberson/alpine-consul: v3.2.0-beta.1][smebbersonalpineconsul320beta1]
-- [Consul v0.7.0][consului]
+- [Consul v0.8.4][consului]
 
 Improvements:
 
@@ -58,6 +70,7 @@ Usage: `smebberson/alpine-consul-ui:1.0.0`.
 
 [consului]: https://demo.consul.io/ui/
 [alpineconsului]: https://github.com/smebberson/docker-alpine/tree/master/alpine-consul-ui
+[smebbersonalpineconsul320beta2]: https://github.com/smebberson/docker-alpine/tree/alpine-consul-v3.2.0-beta.2/alpine-consul
 [smebbersonalpineconsul320beta1]: https://github.com/smebberson/docker-alpine/tree/alpine-consul-v3.2.0-beta.1/alpine-consul
 [smebbersonalpineconsul310]: https://github.com/smebberson/docker-alpine/tree/alpine-consul-v3.1.0/alpine-consul
 [smebbersonalpineconsul300]: https://github.com/smebberson/docker-alpine/tree/alpine-consul-v3.0.0/alpine-consul
