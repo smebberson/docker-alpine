@@ -10,9 +10,22 @@ Usage: `smebberson/alpine-consul` or `smebberson/alpine-consul:latest`.
 
 ## Beta
 
-Same as v3.2.0-beta.1.
+Same as v3.2.0-beta.2.
 
-Usage: `smebberson/alpine-consul:3.2.0-beta.1` or `smebberson/alpine-consul:beta`.
+Usage: `smebberson/alpine-consul:3.2.0-beta.2` or `smebberson/alpine-consul:beta`.
+
+## v3.2.0-beta.2
+
+- [smebberson/alpine-base: v3.2.0][smebbersonalpinebase320]
+- [consul v0.8.4][consul]
+
+Improvements:
+
+- Consul was upgraded to `v0.8.4`.
+- Added `util-linux` package for `uuidgen` binary.
+- `consul-node-id` now uses `uuidgen` for better UUID generation that doesn't clash.
+
+Usage: `smebberson/alpine-consul:3.2.0-beta.2`.
 
 ## v3.2.0-beta.1
 

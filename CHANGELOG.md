@@ -5,6 +5,13 @@ Due to the nature of versioning and the fact this repository houses multiple Doc
 
 Each release records it's own specific changes in a VERSIONS.md file.
 
+## 2017.06.14
+
+- `alpine-consul`:
+    - added `util-linux` package for `uuidgen` binary.
+    - `consul-node-id` now uses `uuidgen` for better UUID generation that doesn't clash.
+    - Upgraded Consul to `v0.8.4`.
+
 ## 2017.06.08
 
 - `alpine-consul-base`: updated consul-template configuration file to use a stanza rather than a string.
