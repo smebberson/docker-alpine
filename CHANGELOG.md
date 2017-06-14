@@ -12,6 +12,11 @@ Each release records it's own specific changes in a VERSIONS.md file.
     - `consul-node-id` now uses `uuidgen` for better UUID generation that doesn't clash.
     - Upgraded Consul to `v0.8.4`.
 
+### Releases
+
+- [Release `v3.2.0-beta.2` of `alpine-consul`](https://github.com/smebberson/docker-alpine/tree/alpine-consul-v3.2.0-beta.2/alpine-consul)
+- [Release `v4.2.0-beta.2` of `alpine-consul-base`](https://github.com/smebberson/docker-alpine/tree/alpine-consul-base-v4.2.0-beta.2/alpine-consul-base)
+
 ## 2017.06.08
 
 - `alpine-consul-base`: updated consul-template configuration file to use a stanza rather than a string.

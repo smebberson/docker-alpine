@@ -10,17 +10,27 @@ Usage: `smebberson/alpine-consul-base` or `smebberson/alpine-consul-base:latest`
 
 ## Beta
 
-Same as v4.2.0-beta.1.
+Same as v4.2.0-beta.2.
 
-Usage: `smebberson/alpine-consul-base:4.2.0-beta.1` or `smebberson/alpine-consul-base:beta`.
+Usage: `smebberson/alpine-consul-base:4.2.0-beta.2` or `smebberson/alpine-consul-base:beta`.
 
-## v4.2.0-beta.1
+## v4.2.0-beta.2
 
-- [smebberson/alpine-consul: v3.2.0][alpineconsul320beta1]
+- [smebberson/alpine-consul: v3.2.0-beta.2][alpineconsul320beta2]
 
 Improvements:
 
-- This release updates to [alpine-consul v3.2.0 which contains changes to the Consul setup.](https://github.com/smebberson/docker-alpine/blob/master/alpine-consul/VERSIONS.md#v320-beta1).
+- This release updates to [alpine-consul v3.2.0-beta.2 which contains changes to the Consul setup.](https://github.com/smebberson/docker-alpine/blob/master/alpine-consul/VERSIONS.md#v320-beta2).
+
+Usage: `smebberson/alpine-consul-base:4.2.0-beta.2`.
+
+## v4.2.0-beta.1
+
+- [smebberson/alpine-consul: v3.2.0-beta.1][alpineconsul320beta1]
+
+Improvements:
+
+- This release updates to [alpine-consul v3.2.0-beta.1 which contains changes to the Consul setup.](https://github.com/smebberson/docker-alpine/blob/master/alpine-consul/VERSIONS.md#v320-beta1).
 - Added `CONSUL_TEMPLATE_RUNAS` to customise which user runs consul-template.
 - Added `CONSUL_RUNAS`to customise which user runs consul.
 - Updated consul-template to v0.18.5.
@@ -100,6 +110,7 @@ Usage: `smebberson/alpine-consul-base:1.0.0`.
 
 [alpineconsulbase]: https://github.com/smebberson/docker-alpine/tree/master/alpine-consul-base
 [alpineconsul]: https://github.com/smebberson/docker-alpine/tree/master/alpine-consul
+[alpineconsul320beta2]: https://github.com/smebberson/docker-alpine/tree/alpine-consul-v3.2.0-beta.2/alpine-consul
 [alpineconsul320beta1]: https://github.com/smebberson/docker-alpine/tree/alpine-consul-v3.2.0-beta.1/alpine-consul
 [alpineconsul311]: https://github.com/smebberson/docker-alpine/tree/alpine-consul-v3.1.1/alpine-consul
 [alpineconsul310]: https://github.com/smebberson/docker-alpine/tree/alpine-consul-v3.1.0/alpine-consul
