@@ -204,7 +204,7 @@ This image adds [Consul][consul].
 
 If you want to create a Docker image to run as a Consul agent in server mode (i.e. part of a cluster) start with this image.
 
-Latest version is `3.1.1`, or `latest`. Beta version is `3.2.0-beta.2` or `beta`.
+Latest version is `3.2.0`, or `latest`.
 
 - [README.md](https://github.com/smebberson/docker-alpine/blob/master/alpine-consul/README.md)
 - [VERSIONS.md](https://github.com/smebberson/docker-alpine/blob/master/alpine-consul/VERSIONS.md)
@@ -215,7 +215,7 @@ This image inherits from `alpine-consul` and is designed as a base image for oth
 
 If you want to create a Docker image to advertise a service in Consul start with this image.
 
-Latest version is `4.1.1`, or `latest`. Beta version is `4.2.0-beta.2` or `beta`.
+Latest version is `4.2.0`, or `latest`.
 
 - [README.md](https://github.com/smebberson/docker-alpine/blob/master/alpine-consul-base/README.md)
 - [VERSIONS.md](https://github.com/smebberson/docker-alpine/blob/master/alpine-consul-base/VERSIONS.md)
@@ -235,7 +235,7 @@ Latest version is `2.0.0`, or `latest`.
 
 This image is designed to run a Node.js application within the context of service discovery (via Consul).
 
-Latest version is `5.10.1`, or `latest`. Beta version is `5.11.0-beta.2` or `beta`.
+Latest version is `5.11.0`, or `latest`.
 
 - [README.md](https://github.com/smebberson/docker-alpine/blob/master/alpine-consul-nodejs/README.md)
 - [VERSIONS.md](https://github.com/smebberson/docker-alpine/blob/master/alpine-consul-nodejs/VERSIONS.md)
@@ -246,7 +246,7 @@ This image is designed to run Nginx within the context of service discovery (via
 
 It's suited for running an Nginx proxy or to load balance with Nginx to another container.
 
-Latest version is `3.1.0`, or `latest`. Beta version is `3.2.0-beta.2` or `beta`.
+Latest version is `3.2.0`, or `latest`.
 
 - [README.md](https://github.com/smebberson/docker-alpine/blob/master/alpine-consul-nginx/README.md)
 - [VERSIONS.md](https://github.com/smebberson/docker-alpine/blob/master/alpine-consul-nginx/VERSIONS.md)
@@ -273,7 +273,7 @@ Latest version is `2.1.0`, or `latest`.
 
 This image has been designed to connect to a Consul cluster (from `alpine-consul`) and make the Consul admin UI accessible.
 
-Latest version is `2.1.0`, or `latest`. Beta version is `2.2.0-beta.2` or `beta`.
+Latest version is `2.2.0`, or `latest`.
 
 - [README.md](https://github.com/smebberson/docker-alpine/blob/master/alpine-consul-ui/README.md)
 - [VERSIONS.md](https://github.com/smebberson/docker-alpine/blob/master/alpine-consul-ui/VERSIONS.md)
