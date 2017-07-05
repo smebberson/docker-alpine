@@ -1,4 +1,4 @@
-FROM smebberson/alpine-consul-base:local
+FROM smebberson/alpine-consul-base:4.2.0
 MAINTAINER Scott Mebberson <scott@scottmebberson.com>
 
 ENV REDIS_VERSION=3.2.5-r0

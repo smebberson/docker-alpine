@@ -16,7 +16,8 @@ This image features:
 
 ## Versions
 
-- `2.1.0`, `latest` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/alpine-consul-redis-v2.1.0/alpine-consul-redis/Dockerfile)
+- `2.2.0`, `latest` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/alpine-consul-redis-v2.2.0/alpine-consul-redis/Dockerfile)
+- `2.1.0` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/alpine-consul-redis-v2.1.0/alpine-consul-redis/Dockerfile)
 - `2.0.0` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/alpine-consul-redis-v2.0.0/alpine-consul-redis/Dockerfile)
 - `1.0.0` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/alpine-consul-redis-v1.0.0/alpine-consul-redis/Dockerfile)
 
