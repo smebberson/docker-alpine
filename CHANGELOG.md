@@ -12,6 +12,7 @@ Each release records it's own specific changes in a VERSIONS.md file.
 - `alpine-consul-ui`: transitioned from beta to full release.
 - `alpine-consul-redis`: updated Redis to `v3.2.5`.
 - `alpine-consul-nginx`: transitioned from beta to full release.
+- `alpine-consul-nodejs`: transitioned from beta to full release.
 
 ### Releases
 
@@ -20,6 +21,7 @@ Each release records it's own specific changes in a VERSIONS.md file.
 - [Release `v2.2.0` of `alpine-consul-ui`](https://github.com/smebberson/docker-alpine/tree/alpine-consul-ui-v2.2.0/alpine-consul-ui)
 - [Release `v2.2.0` of `alpine-consul-redis`](https://github.com/smebberson/docker-alpine/tree/alpine-consul-redis-v2.2.0/alpine-consul-redis)
 - [Release `v3.2.0` of `alpine-consul-nginx`](https://github.com/smebberson/docker-alpine/tree/alpine-consul-nginx-v3.2.0/alpine-consul-nginx)
+- [Release `v5.11.0` of `alpine-consul-nodejs`](https://github.com/smebberson/docker-alpine/tree/alpine-consul-nodejs-v5.11.0/alpine-consul-nodejs)
 
 ## 2017.06.14
 
