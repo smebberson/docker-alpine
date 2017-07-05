@@ -1,4 +1,4 @@
-FROM smebberson/alpine-consul:3.2.0-beta.2
+FROM smebberson/alpine-consul:3.2.0
 MAINTAINER Scott Mebberson <scott@scottmebberson.com>
 
 ENV CONSUL_DATA_DIR=/data/consul \
