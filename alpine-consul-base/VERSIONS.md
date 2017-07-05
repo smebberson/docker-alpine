@@ -4,15 +4,9 @@ This file contains all software versions, that correspond to a version of this i
 
 ## Latest
 
-Same as v4.1.1.
+Same as v4.2.0.
 
 Usage: `smebberson/alpine-consul-base` or `smebberson/alpine-consul-base:latest`.
-
-## Beta
-
-Same as v4.2.0-beta.2.
-
-Usage: `smebberson/alpine-consul-base:4.2.0-beta.2` or `smebberson/alpine-consul-base:beta`.
 
 ## v4.2.0-beta.2
 

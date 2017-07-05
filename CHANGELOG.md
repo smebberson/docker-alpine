@@ -8,10 +8,12 @@ Each release records it's own specific changes in a VERSIONS.md file.
 ## 2017.07.05
 
 - `alpine-consul`: updated consul to `v0.8.5`.
+- `alpine-consul-base`: updated consul-template to `v0.19.0`.
 
 ### Releases
 
 - [Release `v3.2.0` of `alpine-consul`](https://github.com/smebberson/docker-alpine/tree/alpine-consul-v3.2.0/alpine-consul)
+- [Release `v4.2.0` of `alpine-consul-base`](https://github.com/smebberson/docker-alpine/tree/alpine-consul-base-v4.2.0/alpine-consul-base)
 
 ## 2017.06.14
 

@@ -17,8 +17,8 @@ This image features:
 
 ## Versions
 
-- `4.2.0-beta.2`, `beta` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/alpine-consul-base-v4.2.0-beta.2/alpine-consul-base/Dockerfile)
-- `4.1.1`, `latest` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/alpine-consul-base-v4.1.1/alpine-consul-base/Dockerfile)
+- `4.2.0`, `latest` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/alpine-consul-base-v4.2.0/alpine-consul-base/Dockerfile)
+- `4.1.1` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/alpine-consul-base-v4.1.1/alpine-consul-base/Dockerfile)
 - `4.1.0` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/alpine-consul-base-v4.1.0/alpine-consul-base/Dockerfile)
 - `4.0.0` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/alpine-consul-base-v4.0.0/alpine-consul-base/Dockerfile)
 - `3.0.0` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/alpine-consul-base-v3.0.0/alpine-consul-base/Dockerfile)
