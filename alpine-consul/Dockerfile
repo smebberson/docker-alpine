@@ -23,7 +23,7 @@ RUN apk upgrade --update --no-cache && \
     chown -R consul:consul /data/consul
 
 # Add the files
-ADD root /
+COPY root /
 
 VOLUME ["/data/consul"]
 
