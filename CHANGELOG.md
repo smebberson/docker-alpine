@@ -5,6 +5,14 @@ Due to the nature of versioning and the fact this repository houses multiple Doc
 
 Each release records it's own specific changes in a VERSIONS.md file.
 
+## 2017.07.05
+
+- `alpine-consul`: updated consul to `v0.8.5`.
+
+### Releases
+
+- [Release `v3.2.0` of `alpine-consul`](https://github.com/smebberson/docker-alpine/tree/alpine-consul-v3.2.0/alpine-consul)
+
 ## 2017.06.14
 
 - `alpine-consul`:

@@ -4,15 +4,21 @@ This file contains all software versions, that correspond to a version of this i
 
 ## Latest
 
-Same as v3.1.1.
+Same as v3.2.0.
 
 Usage: `smebberson/alpine-consul` or `smebberson/alpine-consul:latest`.
 
-## Beta
+## v3.2.0
 
-Same as v3.2.0-beta.2.
+- [smebberson/alpine-base: v3.2.0][smebbersonalpinebase310]
+- [consul v0.8.5][consul]
 
-Usage: `smebberson/alpine-consul:3.2.0-beta.2` or `smebberson/alpine-consul:beta`.
+Improvements:
+
+- Everything from the `v3.2.0` beta rounds.
+- Consul was upgraded to `v0.8.5`.
+
+Usage: `smebberson/alpine-consul:3.2.0`.
 
 ## v3.2.0-beta.2
 
