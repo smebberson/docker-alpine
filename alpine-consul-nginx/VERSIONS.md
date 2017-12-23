@@ -8,6 +8,17 @@ Same as v3.2.0.
 
 Usage: `smebberson/alpine-consul-nginx` or `smebberson/alpine-consul-nginx:latest`.
 
+## v3.3.0-beta.1
+
+- [smebberson/alpine-consul-base: v4.2.0][smebbersonalpineconsulbase420]
+- [nginx][nginx]: v1.10.3
+
+Improvements:
+
+- Nginx bumped to v1.10.3.
+
+Usage: `smebberson/alpine-consul-nginx:3.3.0-beta.1`.
+
 ## v3.2.0
 
 - [smebberson/alpine-consul-base: v4.2.0][smebbersonalpineconsulbase420]
