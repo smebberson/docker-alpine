@@ -1,5 +1,0 @@
-#!/usr/bin/with-contenv sh
-
-cd /app
-
-NODE_VERSION=`node --version` NPM_VERSION=`npm --version` node server.js

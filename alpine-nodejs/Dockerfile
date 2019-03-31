@@ -1,9 +1,11 @@
-FROM smebberson/alpine-base:3.0.0
+FROM smebberson/alpine-base:3.3.0
 MAINTAINER Scott Mebberson <scott@scottmebberson.com>
 
-ENV NODE_VERSION=v6.11.4 NPM_VERSION=3
+ENV NODE_VERSION=v8.0.0 NPM_VERSION=5
 
-RUN apk upgrade --update && \
+RUN addgroup node && \
+    adduser -D -g "" -s /bin/sh -G node node && \
+    apk upgrade --update && \
     apk add --update git curl make gcc g++ python linux-headers libgcc libstdc++ && \
     curl -sSL https://nodejs.org/dist/${NODE_VERSION}/node-${NODE_VERSION}.tar.gz | tar -xz && \
     cd /node-${NODE_VERSION} && \
@@ -16,3 +18,6 @@ RUN apk upgrade --update && \
     rm -rf /etc/ssl /node-${NODE_VERSION} /usr/include \
     /usr/share/man /tmp/* /var/cache/apk/* /root/.npm /root/.node-gyp \
     /usr/lib/node_modules/npm/man /usr/lib/node_modules/npm/doc /usr/lib/node_modules/npm/html
+
+# Add the files
+COPY root /

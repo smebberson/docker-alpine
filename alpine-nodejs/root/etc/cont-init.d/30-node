@@ -1,0 +1,6 @@
+#!/usr/bin/with-contenv sh
+
+# Unless this has already been defined, set it.
+if [ -z "$NODE_RUNAS" ]; then
+    printf "node" > /var/run/s6/container_environment/NODE_RUNAS
+fi

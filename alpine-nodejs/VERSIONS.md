@@ -4,9 +4,21 @@ This file contains all software versions, that correspond to a version of this i
 
 ## Latest
 
-Same as v6.8.4.
+Same as v8.0.0.
 
 Usage: `smebberson/alpine-nodejs` or `smebberson/alpine-nodejs:latest`.
+
+## v8.0.0
+
+- [smebberson/alpine-base: v3.3.0][smebbersonalpinebase330]
+- [Node.js: v8.0.0][nodejs]
+- [npm: v5.10.0][npm]
+
+Usage: `smebberson/alpine-nodejs:8.0.0`.
+
+### Improvements
+
+- There is now a Node.js user `node`, intended to run Node.js as an unprivileged user. However, this part of the image is up the user and therefore needs to be implemented. Refer to [./examples/user-nodejs](/smebberson/docker-alpine/tree/master/examples/user-nodejs) for an example of this.
 
 ## v6.8.4
 
@@ -290,6 +302,7 @@ Usage: `smebberson/alpine-nodejs:1.0.0`.
 [nginx]: http://nginx.org/
 [nodejs]: https://nodejs.org/en/
 [npm]: https://www.npmjs.com/
+[smebbersonalpinebase330]: https://github.com/smebberson/docker-alpine/tree/alpine-base-v3.3.0/alpine-base
 [smebbersonalpinebase300]: https://github.com/smebberson/docker-alpine/tree/alpine-base-v3.0.0/alpine-base
 [smebbersonalpinebase120]: https://github.com/smebberson/docker-alpine/tree/alpine-base-v1.2.0/alpine-base
 [smebbersonalpinebase100]: https://github.com/smebberson/docker-alpine/tree/alpine-base-v1.0.0/alpine-base

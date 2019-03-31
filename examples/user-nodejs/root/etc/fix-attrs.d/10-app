@@ -1,0 +1,2 @@
+/app true node 0600 0700
+/app/server.js true node 0550 0700

@@ -8,4 +8,4 @@ RUN cd /app && npm install --production
 # Add the remaining source (excluding `root/app/node_modules` thanks to `.dockerignore`).
 ADD root /
 
-CMD ["/app/start"]
+CMD ["/etc/start"]
