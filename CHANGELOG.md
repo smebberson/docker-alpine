@@ -5,6 +5,15 @@ Due to the nature of versioning and the fact this repository houses multiple Doc
 
 Each release records it's own specific changes in a VERSIONS.md file.
 
+## 2019.03.31
+
+- `alpine-base`: upgraded Alpine to `v3.9`.
+- `alpine-base`: upgraded s6-overlay to `v1.22.1.0`.
+
+### Releases
+
+- [Release `v3.3.0` of `alpine-base`](https://github.com/smebberson/docker-alpine/tree/alpine-base-v3.3.0/alpine-base)
+
 ## 2017.10.31
 
 - `alpine-nodejs`: upgraded to Node.js `v6.11.4`.
