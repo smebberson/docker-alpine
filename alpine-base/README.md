@@ -3,7 +3,7 @@
 A Docker image for running just about anything within a container, based on Alpine Linux.
 This image belongs to a suite of images [documented here][dockeralpine].
 
-Image size is ~13.8 MB.
+Image size is ~20.1 MB.
 
 ## Features
 
@@ -15,7 +15,8 @@ This image features:
 
 ## Versions
 
-- `3.2.0`, `latest` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/alpine-base-v3.2.0/alpine-base/Dockerfile)
+- `3.3.0`, `latest` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/alpine-base-v3.3.0/alpine-base/Dockerfile)
+- `3.2.0` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/alpine-base-v3.2.0/alpine-base/Dockerfile)
 - `3.1.0` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/alpine-base-v3.1.0/alpine-base/Dockerfile)
 - `3.0.0` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/alpine-base-v3.0.0/alpine-base/Dockerfile)
 - `2.0.0` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/alpine-base-v2.0.0/alpine-base/Dockerfile)
@@ -34,15 +35,13 @@ To use this image include `FROM smebberson/alpine-base` at the top of your `Dock
 
 ### DNS
 
-Prior to v4.4, Alpine Linux did not support the `search` keyword in `resolv.conf`. This breaks many tools that rely on DNS service discovery, in particular, Kubernetes, Docker Cloud, Consul, Rancher.
+Alpine Linux does not support the `domain` or `search` directives in `resolv.conf`. This breaks many tools that rely on DNS service discovery, in particular, Kubernetes, Docker Cloud, Consul, Rancher. [You can read more about it](http://gliderlabs.viewdocs.io/docker-alpine/caveats/).
 
 To overcome these issues, `alpine-base` includes the lightweight container-only DNS server [go-dnsmasq][godnsmasq] to resolve these issues.
 
 That means that any image extending this image will now work with [Docker Cloud service discovery and links](https://docs.docker.com/docker-cloud/apps/service-links/) and [Kubernetes service discovery](https://github.com/kubernetes/kubernetes/blob/master/docs/user-guide/services.md#dns).
 
 In some environments, `go-dnsmasq` won't be allowed to bind to port `53`. In this instance, you can set the ENV variable `GO_DNSMASQ_RUNAS` to `root`. While not ideal, that should resolve the issue.
-
-**Note**: despite Alpine Linux v4.4 adding support for the `search` keyword, `go-dnsmasq` has been retained for compatibility. It may or may not be included in future versions.
 
 ## Example
 
