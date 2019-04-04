@@ -6,7 +6,7 @@ This file contains all software versions, that correspond to a version of this i
 
 Same as v8.0.0.
 
-Usage: `smebberson/alpine-nodejs` or `smebberson/alpine-nodejs:latest`.
+Usage: `smebberson/alpine-nodejs:8.0.0` or `smebberson/alpine-nodejs:latest`.
 
 ## v8.0.0
 
