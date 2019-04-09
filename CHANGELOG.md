@@ -9,11 +9,13 @@ Each release records it's own specific changes in a VERSIONS.md file.
 
 - `alpine-nodejs`: upgraded Node.js to `v8.9.0`.
 - `alpine-nodejs`: upgraded Node.js to `v8.10.0`.
+- `alpine-nodejs`: upgraded Node.js to `v8.11.0`.
 
 ### Releases
 
 - [Release `v8.9.0` of `alpine-nodejs`](https://github.com/smebberson/docker-alpine/tree/alpine-nodejs-v8.9.0/alpine-nodejs)
 - [Release `v8.10.0` of `alpine-nodejs`](https://github.com/smebberson/docker-alpine/tree/alpine-nodejs-v8.10.0/alpine-nodejs)
+- [Release `v8.11.0` of `alpine-nodejs`](https://github.com/smebberson/docker-alpine/tree/alpine-nodejs-v8.11.0/alpine-nodejs)
 
 ## 2019.04.09
 
