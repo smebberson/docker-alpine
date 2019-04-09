@@ -6,6 +6,7 @@ You can [read more about how these images are versioned here](https://github.com
 
 ## 8.x branch of Node.js
 
+- Node v8.6.0: [v8.6.0](VERSIONS.md#v860)
 - Node v8.5.0: [v8.5.0](VERSIONS.md#v850)
 - Node v8.4.0: [v8.4.0](VERSIONS.md#v840)
 - Node v8.3.0: [v8.3.0](VERSIONS.md#v830)
