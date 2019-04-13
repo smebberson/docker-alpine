@@ -13,7 +13,8 @@ This image features:
 
 ## Versions
 
-- `8.14.0`, `latest` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/alpine-nodejs-v8.14.0/alpine-nodejs/Dockerfile)
+- `8.15.0`, `latest` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/alpine-nodejs-v8.15.0/alpine-nodejs/Dockerfile)
+- `8.14.0` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/alpine-nodejs-v8.14.0/alpine-nodejs/Dockerfile)
 - `8.13.0` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/alpine-nodejs-v8.13.0/alpine-nodejs/Dockerfile)
 - `8.12.0` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/alpine-nodejs-v8.12.0/alpine-nodejs/Dockerfile)
 - `8.11.0` [(Dockerfile)](https://github.com/smebberson/docker-alpine/blob/alpine-nodejs-v8.11.0/alpine-nodejs/Dockerfile)
