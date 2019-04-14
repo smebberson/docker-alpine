@@ -4,6 +4,10 @@ This file contains a map between [Node.js][nodejs] versions and the version of [
 
 You can [read more about how these images are versioned here](https://github.com/smebberson/docker-alpine#versioning).
 
+## 9.x branch of Node.js
+
+- Node v9.0.0: [v9.0.0](VERSIONS.md#v900)
+
 ## 8.x branch of Node.js
 
 - Node v8.15.0: [v8.15.0](VERSIONS.md#v8150)
