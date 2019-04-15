@@ -1,7 +1,7 @@
 FROM smebberson/alpine-base:3.3.0
 MAINTAINER Scott Mebberson <scott@scottmebberson.com>
 
-ENV NODE_VERSION=v9.0.0 NPM_VERSION=6
+ENV NODE_VERSION=v9.1.0 NPM_VERSION=6
 
 RUN addgroup node && \
     adduser -D -g "" -s /bin/sh -G node node && \

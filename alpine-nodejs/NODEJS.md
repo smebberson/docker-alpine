@@ -6,6 +6,7 @@ You can [read more about how these images are versioned here](https://github.com
 
 ## 9.x branch of Node.js
 
+- Node v9.1.0: [v9.1.0](VERSIONS.md#v910)
 - Node v9.0.0: [v9.0.0](VERSIONS.md#v900)
 
 ## 8.x branch of Node.js
