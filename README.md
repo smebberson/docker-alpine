@@ -1,7 +1,5 @@
 # docker-alpine
 
-[![Join the chat at https://gitter.im/smebberson/docker-alpine](https://badges.gitter.im/smebberson/docker-alpine.svg)](https://gitter.im/smebberson/docker-alpine?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
-
 Highly configurable Docker images running [Alpine linux][alpinelinux] and [s6][s6] process management.
 
 **Table of contents**
