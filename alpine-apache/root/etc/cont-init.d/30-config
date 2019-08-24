@@ -1,0 +1,7 @@
+#!/usr/bin/with-contenv sh
+
+mkdir -p /run/apache2
+
+# clear old pid
+[[ -e /run/apache2/httpd.pid ]] && \
+        rm /run/apache2/httpd.pid
