@@ -1,0 +1,13 @@
+version: '2'
+
+services:
+    consul:
+        image: smebberson/alpine-consul:3.1.0
+    consului:
+        image: smebberson/alpine-consul-ui:2.1.0
+        ports:
+            - 8500:8500
+    app:
+        build: ./app
+        ports:
+            - 8081:8081

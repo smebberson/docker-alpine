@@ -1,0 +1,8 @@
+#!/usr/bin/env sh
+
+# perform clean-up here
+curl -s -o /dev/null localhost:8500/v1/agent/service/deregister/app 2>&1
+
+# use s6 to exit the container
+s6-svscanctl -t /var/run/s6/services
+
