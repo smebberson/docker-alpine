@@ -1,4 +1,4 @@
-FROM smebberson/alpine-consul-nodejs
+FROM smebberson/alpine-consul-nodejs:local
 MAINTAINER Scott Mebberson <scott@scottmebberson.com>
 
 # Build the npm modules.

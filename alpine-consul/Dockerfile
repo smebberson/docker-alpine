@@ -1,8 +1,9 @@
-FROM smebberson/alpine-base:3.1.0
+FROM smebberson/alpine-base:3.2.0
 MAINTAINER Scott Mebberson <scott@scottmebberson.com>
 
-ENV CONSUL_VERSION=0.7.1 \
+ENV CONSUL_VERSION=0.8.3 \
     CONSUL_DOMAIN=consul \
+    CONSUL_DATA_DIR=/data/consul \
     CONSUL_CONFIG_DIR=/etc/consul/conf.d/bootstrap \
     CONSUL_SERVER_NAME=consul \
     CONSUL_DC=dc1 \
@@ -26,4 +27,4 @@ ADD root /
 
 VOLUME ["/data/consul"]
 
-EXPOSE 8300 8301 8301/udp 8302 8302/udp 8400 8500 53 53/udp
+EXPOSE 8300 8301 8301/udp 8302 8302/udp 8400 8500 8600 8600/udp 53 53/udp

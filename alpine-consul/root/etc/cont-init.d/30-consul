@@ -1,0 +1,11 @@
+#!/usr/bin/with-contenv sh
+
+# Unless this has already been defined, set it.
+if [ -z "$CONSUL_BOOTSTRAP_LOG_FILE" ]; then
+    printf "/var/log/consul-bootstrap/consul-bootstrap.log" > /var/run/s6/container_environment/CONSUL_BOOTSTRAP_LOG_FILE
+fi
+
+# Unless this has already been defined, set it.
+if [ -z "$CONSUL_RUNAS" ]; then
+    printf "consul" > /var/run/s6/container_environment/CONSUL_RUNAS
+fi

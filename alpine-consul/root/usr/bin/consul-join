@@ -19,6 +19,9 @@ if test -z "$JOIN"; then
     exit 1;
 fi
 
+# Output debug messages if required.
+consul-debug "[consul-join] $JOIN"
+
 # We found at least one. Exit 0!
 echo "$JOIN"
 exit 0

@@ -175,7 +175,7 @@ The following describes the images that are available and the inheritance chain.
 
 This image is the base for all containers. All other Docker images within this repository inherit from this Container.
 
-Latest version is `3.1.0`, or `latest`.
+Latest version is `3.2.0`, or `latest`.
 
 - [README.md](https://github.com/smebberson/docker-alpine/blob/master/alpine-base/README.md)
 - [VERSIONS.md](https://github.com/smebberson/docker-alpine/blob/master/alpine-base/VERSIONS.md)
@@ -291,7 +291,7 @@ Latest version is `3.0.0`, or `latest`.
 
 This image includes both Nginx and Node.js. It's suitable if you want to have Node.js perform configuration for Nginx.
 
-Latest version is `4.3.1`, or `latest`.
+Latest version is `4.4.0`, or `latest`.
 
 - [README.md](https://github.com/smebberson/docker-alpine/blob/master/alpine-nginx-nodejs/README.md)
 - [VERSIONS.md](https://github.com/smebberson/docker-alpine/blob/master/alpine-nginx-nodejs/VERSIONS.md)
@@ -451,7 +451,7 @@ These images are a little different from your standard Docker images. The follow
 
 ### DNS search
 
-By default, Alpine Linux doesn't support DNS `search`. This has been enabled through the use of `go-dnsmasq`.
+By default, Alpine Linux <= v3.4 doesn't support DNS `search`. This has been enabled through the use of `go-dnsmasq`.
 
 ### Where is Bash?
 

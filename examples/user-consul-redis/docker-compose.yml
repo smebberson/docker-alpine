@@ -2,10 +2,16 @@ version: '2'
 
 services:
     consul:
-        image: smebberson/alpine-consul
+        image: smebberson/alpine-consul:local
+        environment:
+            - CONSUL_BOOTSTRAP_DEBUG=true
     consului:
-        image: smebberson/alpine-consul-ui
+        image: smebberson/alpine-consul-ui:local
+        environment:
+            - CONSUL_BOOTSTRAP_DEBUG=true
         ports:
             - 8500:8500
     cache:
-        image: smebberson/alpine-consul-redis
+        image: smebberson/alpine-consul-redis:local
+        environment:
+            - CONSUL_BOOTSTRAP_DEBUG=true

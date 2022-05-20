@@ -17,5 +17,7 @@ if [ "$CONSUL_ADVERTISE_WAN" ]; then
 EXTRA=$EXTRA" -advertise-wan $CONSUL_ADVERTISE_WAN"
 fi
 
+consul-debug "[consul-join] $JOIN"
+
 echo "$EXTRA"
 exit 0

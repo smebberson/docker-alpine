@@ -10,3 +10,8 @@ if [ `consul-template-count` -gt 0 ]; then
     chown -R consul:consul /etc/consul/conf.d /etc/consul/watches
   fi
 fi
+
+# Unless this has already been defined, set it.
+if [ -z "$CONSUL_TEMPLATE_RUNAS" ]; then
+    printf "consul-template" > /var/run/s6/container_environment/CONSUL_TEMPLATE_RUNAS
+fi

@@ -4,9 +4,18 @@ This file contains all software versions, that correspond to a version of this i
 
 ## Latest
 
-Same as v4.3.1.
+Same as v4.4.0.
 
 Usage: `smebberson/alpine-nginx-nodejs` or `smebberson/alpine-nginx-nodejs:latest`.
+
+## v4.4.0
+
+- [smebberson/alpine-nginx: v3.0.0][smebbersonalpinenginx300]
+- [nginx][nginx]: v1.8.1
+- [Node.js][nodejs]: v6.4.0
+- [NPM][npm]: 3.10.5
+
+Usage: `smebberson/alpine-nginx-nodejs:4.4.0`.
 
 ## v4.3.1
 
